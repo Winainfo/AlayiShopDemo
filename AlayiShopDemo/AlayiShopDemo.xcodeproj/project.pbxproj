@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F1D1A131B427719009B324E /* yjh.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F1D1A121B427719009B324E /* yjh.storyboard */; };
 		33D1D8CD1B426689009ADF41 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D1D8CC1B426689009ADF41 /* main.m */; };
 		33D1D8D81B426689009ADF41 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33D1D8D71B426689009ADF41 /* Images.xcassets */; };
 		33D1D8E71B426689009ADF41 /* AlayiShopDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D1D8E61B426689009ADF41 /* AlayiShopDemoTests.m */; };
@@ -83,6 +84,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F1D1A121B427719009B324E /* yjh.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = yjh.storyboard; sourceTree = "<group>"; };
 		33D1D8C71B426689009ADF41 /* AlayiShopDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlayiShopDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33D1D8CB1B426689009ADF41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33D1D8CC1B426689009ADF41 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -232,6 +234,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F1D1A111B4276D4009B324E /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "New Group";
+			sourceTree = "<group>";
+		};
 		33D1D8BE1B426689009ADF41 = {
 			isa = PBXGroup;
 			children = (
@@ -329,6 +338,7 @@
 				33D1D9021B426756009ADF41 /* Main.storyboard */,
 				33D1D8FE1B42671A009ADF41 /* AppDelegate.h */,
 				33D1D8FF1B42671A009ADF41 /* AppDelegate.m */,
+				0F1D1A121B427719009B324E /* yjh.storyboard */,
 			);
 			name = "View(视图)";
 			path = View;
@@ -527,6 +537,7 @@
 		33D1D9AF1B4268AA009ADF41 /* Home(首页) */ = {
 			isa = PBXGroup;
 			children = (
+				0F1D1A111B4276D4009B324E /* New Group */,
 				33D1DAE71B427135009ADF41 /* IndexController.h */,
 				33D1DAE81B427135009ADF41 /* IndexController.m */,
 			);
@@ -676,6 +687,7 @@
 				33D1D9931B42688D009ADF41 /* MJRefresh.bundle in Resources */,
 				33D1D9911B42688D009ADF41 /* MBProgressHUD.bundle in Resources */,
 				33D1D98F1B42688D009ADF41 /* IQKeyboardManager.bundle in Resources */,
+				0F1D1A131B427719009B324E /* yjh.storyboard in Resources */,
 				33D1D8D81B426689009ADF41 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
