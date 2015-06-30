@@ -1,5 +1,5 @@
 //
-//  RequestDataController.h
+//  TestViewController.h
 //  AlayiShopDemo
 //
 //  Created by 吴金林 on 15/6/30.
@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface RequestDataController : UIViewController
+#import "RequestData.h"
+@interface TestViewController : UIViewController
 
 @end
