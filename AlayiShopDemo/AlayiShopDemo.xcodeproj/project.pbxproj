@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0F1D1A131B427719009B324E /* yjh.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F1D1A121B427719009B324E /* yjh.storyboard */; };
+		0F80D93A1B42B15700C46D72 /* wwc.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F80D9391B42B15700C46D72 /* wwc.storyboard */; };
 		3324CC751B4286E300E74E93 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3324CC741B4286E300E74E93 /* TestViewController.m */; };
 		3383227F1B427AA5004CE9C2 /* wjl.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3383227E1B427AA5004CE9C2 /* wjl.storyboard */; };
 		338322821B427BFC004CE9C2 /* RequestData.m in Sources */ = {isa = PBXBuildFile; fileRef = 338322811B427BFC004CE9C2 /* RequestData.m */; };
@@ -87,6 +88,7 @@
 
 /* Begin PBXFileReference section */
 		0F1D1A121B427719009B324E /* yjh.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = yjh.storyboard; sourceTree = "<group>"; };
+		0F80D9391B42B15700C46D72 /* wwc.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = wwc.storyboard; sourceTree = "<group>"; };
 		3324CC731B4286E300E74E93 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		3324CC741B4286E300E74E93 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		3383227E1B427AA5004CE9C2 /* wjl.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = wjl.storyboard; sourceTree = "<group>"; };
@@ -365,6 +367,7 @@
 				3383227E1B427AA5004CE9C2 /* wjl.storyboard */,
 				3324CC731B4286E300E74E93 /* TestViewController.h */,
 				3324CC741B4286E300E74E93 /* TestViewController.m */,
+				0F80D9391B42B15700C46D72 /* wwc.storyboard */,
 			);
 			name = "View(视图)";
 			path = View;
@@ -714,8 +717,8 @@
 				33D1D9911B42688D009ADF41 /* MBProgressHUD.bundle in Resources */,
 				3383227F1B427AA5004CE9C2 /* wjl.storyboard in Resources */,
 				33D1D98F1B42688D009ADF41 /* IQKeyboardManager.bundle in Resources */,
-				0FB75E321B4278A4009BD8F8 /* wwc.storyboard in Resources */,
 				0F1D1A131B427719009B324E /* yjh.storyboard in Resources */,
+				0F80D93A1B42B15700C46D72 /* wwc.storyboard in Resources */,
 				33D1D8D81B426689009ADF41 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
