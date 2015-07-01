@@ -7,7 +7,7 @@
 //
 
 #import "LoginController.h"
-
+#import "PersonalTableViewController.h"
 @interface LoginController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *userNameText;
 @property (weak, nonatomic) IBOutlet UITextField *passWordText;
@@ -84,6 +84,28 @@
         default:
             break;
     }
+}
+//    //获取第一页前10条记录
+//    NSDictionary *params1=[NSDictionary dictionaryWithObjectsAndKeys:@"10",@"pageSize",@"1",@"currPage",@"",@"sortid",@"",@"name",@"",@"type", nil];
+//    [RequestData getFoodListWithPage:params1 FinishCallbackBlock:^(NSDictionary *data) {
+//        NSLog(@"%@",data);
+//    }];
+/**
+ *  登录事件
+ *
+ *  @param sender <#sender description#>
+ */
+- (IBAction)loginSender:(UIButton *)sender {
+    NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:self.userNameText.text,@"username",self.passWordText.text,@"password", nil];
+    [RequestData lgin:params FinishCallbackBlock:^(NSDictionary *data) {
+       NSString *code=data[@"code"];
+        if ([code isEqualToString:@"0"]) {
+            //设置故事板为第一启动
+            UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"wjl" bundle:nil];
+            PersonalTableViewController *Personal=[storyboard instantiateViewControllerWithIdentifier:@"登录后的View"];
+            [self.navigationController pushViewController:Personal animated:YES];
+        }
+    }];
 }
 
 @end
