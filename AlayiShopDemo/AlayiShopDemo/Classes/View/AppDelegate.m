@@ -16,8 +16,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    TestViewController *test=[TestViewController new];
-    self.window.rootViewController=test;
+    //TestViewController *test=[TestViewController new];
+    //self.window.rootViewController=test;
     return YES;
 }
 
