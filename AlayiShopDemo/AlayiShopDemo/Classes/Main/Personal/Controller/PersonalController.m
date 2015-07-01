@@ -10,7 +10,6 @@
 
 
 @interface PersonalController ()
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *viewHeight;
 
 @end
 
@@ -20,13 +19,4 @@
     [super viewDidLoad];
 }
 
-/**
- *  更新约束
- */
--(void)updateViewConstraints
-{
-    [super updateViewConstraints];
-    //设置高度
-    self.viewHeight.constant=CGRectGetHeight([UIScreen mainScreen].bounds);
-}
 @end

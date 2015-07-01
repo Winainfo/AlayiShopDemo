@@ -17,7 +17,8 @@
 		3383227F1B427AA5004CE9C2 /* wjl.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3383227E1B427AA5004CE9C2 /* wjl.storyboard */; };
 		338322821B427BFC004CE9C2 /* RequestData.m in Sources */ = {isa = PBXBuildFile; fileRef = 338322811B427BFC004CE9C2 /* RequestData.m */; };
 		33CBCFD91B43CA8F00FADD5F /* PersonalController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33CBCFD81B43CA8F00FADD5F /* PersonalController.m */; };
-		33CBCFDB1B43F4B000FADD5F /* 个人中心.png in Resources */ = {isa = PBXBuildFile; fileRef = 33CBCFDA1B43F4B000FADD5F /* 个人中心.png */; };
+		33CBCFDE1B4404AF00FADD5F /* PersonalTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33CBCFDD1B4404AF00FADD5F /* PersonalTableViewController.m */; };
+		33CBCFE51B44114800FADD5F /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33CBCFE41B44114800FADD5F /* LoginController.m */; };
 		33D1D8CD1B426689009ADF41 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D1D8CC1B426689009ADF41 /* main.m */; };
 		33D1D8D81B426689009ADF41 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33D1D8D71B426689009ADF41 /* Images.xcassets */; };
 		33D1D8E71B426689009ADF41 /* AlayiShopDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D1D8E61B426689009ADF41 /* AlayiShopDemoTests.m */; };
@@ -108,7 +109,10 @@
 		338322811B427BFC004CE9C2 /* RequestData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestData.m; sourceTree = "<group>"; };
 		33CBCFD71B43CA8F00FADD5F /* PersonalController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalController.h; sourceTree = "<group>"; };
 		33CBCFD81B43CA8F00FADD5F /* PersonalController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalController.m; sourceTree = "<group>"; };
-		33CBCFDA1B43F4B000FADD5F /* 个人中心.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "个人中心.png"; sourceTree = "<group>"; };
+		33CBCFDC1B4404AF00FADD5F /* PersonalTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalTableViewController.h; sourceTree = "<group>"; };
+		33CBCFDD1B4404AF00FADD5F /* PersonalTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalTableViewController.m; sourceTree = "<group>"; };
+		33CBCFE31B44114800FADD5F /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginController.h; sourceTree = "<group>"; };
+		33CBCFE41B44114800FADD5F /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginController.m; sourceTree = "<group>"; };
 		33D1D8C71B426689009ADF41 /* AlayiShopDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlayiShopDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33D1D8CB1B426689009ADF41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33D1D8CC1B426689009ADF41 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -278,6 +282,7 @@
 		3324CC761B42944900E74E93 /* Login(登录) */ = {
 			isa = PBXGroup;
 			children = (
+				33CBCFE21B44112900FADD5F /* Controller */,
 			);
 			name = "Login(登录)";
 			path = Login;
@@ -296,6 +301,17 @@
 			children = (
 				33CBCFD71B43CA8F00FADD5F /* PersonalController.h */,
 				33CBCFD81B43CA8F00FADD5F /* PersonalController.m */,
+				33CBCFDC1B4404AF00FADD5F /* PersonalTableViewController.h */,
+				33CBCFDD1B4404AF00FADD5F /* PersonalTableViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		33CBCFE21B44112900FADD5F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				33CBCFE31B44114800FADD5F /* LoginController.h */,
+				33CBCFE41B44114800FADD5F /* LoginController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -396,7 +412,6 @@
 		33D1D8F31B4266C7009ADF41 /* View(视图) */ = {
 			isa = PBXGroup;
 			children = (
-				33CBCFDA1B43F4B000FADD5F /* 个人中心.png */,
 				33D1D9021B426756009ADF41 /* Main.storyboard */,
 				33D1D8FE1B42671A009ADF41 /* AppDelegate.h */,
 				33D1D8FF1B42671A009ADF41 /* AppDelegate.m */,
@@ -751,7 +766,6 @@
 			files = (
 				33D1D9041B426756009ADF41 /* Main.storyboard in Resources */,
 				33D1D9931B42688D009ADF41 /* MJRefresh.bundle in Resources */,
-				33CBCFDB1B43F4B000FADD5F /* 个人中心.png in Resources */,
 				33D1D9911B42688D009ADF41 /* MBProgressHUD.bundle in Resources */,
 				3383227F1B427AA5004CE9C2 /* wjl.storyboard in Resources */,
 				0F24A7DA1B4410E600E9A9AE /* SequenceCollectionViewCell.xib in Resources */,
@@ -781,6 +795,7 @@
 				33D1D9951B42688D009ADF41 /* MJRefreshConst.m in Sources */,
 				33D1D98B1B42688D009ADF41 /* IQBarButtonItem.m in Sources */,
 				33D1D9871B42688D009ADF41 /* IQKeyboardManager.m in Sources */,
+				33CBCFE51B44114800FADD5F /* LoginController.m in Sources */,
 				33D1D9A21B42688D009ADF41 /* SDWebImageCompat.m in Sources */,
 				33D1D98D1B42688D009ADF41 /* IQToolbar.m in Sources */,
 				33D1D98E1B42688D009ADF41 /* IQUIView+IQKeyboardToolbar.m in Sources */,
@@ -803,6 +818,7 @@
 				3324CC751B4286E300E74E93 /* TestViewController.m in Sources */,
 				33D1D9851B42688D009ADF41 /* IQUIView+Hierarchy.m in Sources */,
 				33D1D9AB1B42688D009ADF41 /* UIImage+WebP.m in Sources */,
+				33CBCFDE1B4404AF00FADD5F /* PersonalTableViewController.m in Sources */,
 				33D1D9941B42688D009ADF41 /* MJRefreshComponent.m in Sources */,
 				33D1D9A51B42688D009ADF41 /* SDWebImageDownloaderOperation.m in Sources */,
 				33D1D98A1B42688D009ADF41 /* IQTextView.m in Sources */,
@@ -963,6 +979,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "73dc033e-13f7-4403-9d8e-e8860c28fc14";
 			};
 			name = Release;
 		};
