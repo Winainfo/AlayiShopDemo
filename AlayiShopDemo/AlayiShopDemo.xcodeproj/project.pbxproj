@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0F1D1A131B427719009B324E /* yjh.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F1D1A121B427719009B324E /* yjh.storyboard */; };
+		0F24A7D91B4410E600E9A9AE /* SequenceCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F24A7D71B4410E600E9A9AE /* SequenceCollectionViewCell.m */; };
+		0F24A7DA1B4410E600E9A9AE /* SequenceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F24A7D81B4410E600E9A9AE /* SequenceCollectionViewCell.xib */; };
+		0F7DFFC81B43CC8600C48B07 /* SortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F7DFFC71B43CC8600C48B07 /* SortViewController.m */; };
 		0F80D93A1B42B15700C46D72 /* wwc.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F80D9391B42B15700C46D72 /* wwc.storyboard */; };
 		3324CC751B4286E300E74E93 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3324CC741B4286E300E74E93 /* TestViewController.m */; };
 		3383227F1B427AA5004CE9C2 /* wjl.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3383227E1B427AA5004CE9C2 /* wjl.storyboard */; };
@@ -88,6 +91,11 @@
 
 /* Begin PBXFileReference section */
 		0F1D1A121B427719009B324E /* yjh.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = yjh.storyboard; sourceTree = "<group>"; };
+		0F24A7D61B4410E600E9A9AE /* SequenceCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SequenceCollectionViewCell.h; sourceTree = "<group>"; };
+		0F24A7D71B4410E600E9A9AE /* SequenceCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SequenceCollectionViewCell.m; sourceTree = "<group>"; };
+		0F24A7D81B4410E600E9A9AE /* SequenceCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SequenceCollectionViewCell.xib; sourceTree = "<group>"; };
+		0F7DFFC61B43CC8600C48B07 /* SortViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SortViewController.h; sourceTree = "<group>"; };
+		0F7DFFC71B43CC8600C48B07 /* SortViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SortViewController.m; sourceTree = "<group>"; };
 		0F80D9391B42B15700C46D72 /* wwc.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = wwc.storyboard; sourceTree = "<group>"; };
 		3324CC731B4286E300E74E93 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		3324CC741B4286E300E74E93 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
@@ -246,6 +254,18 @@
 			children = (
 			);
 			name = "New Group";
+			sourceTree = "<group>";
+		};
+		0F7DFFC51B43CC2D00C48B07 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0F7DFFC61B43CC8600C48B07 /* SortViewController.h */,
+				0F7DFFC71B43CC8600C48B07 /* SortViewController.m */,
+				0F24A7D61B4410E600E9A9AE /* SequenceCollectionViewCell.h */,
+				0F24A7D71B4410E600E9A9AE /* SequenceCollectionViewCell.m */,
+				0F24A7D81B4410E600E9A9AE /* SequenceCollectionViewCell.xib */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		3324CC761B42944900E74E93 /* Login(登录) */ = {
@@ -577,6 +597,7 @@
 		33D1D9B01B4268B9009ADF41 /* Category(分类) */ = {
 			isa = PBXGroup;
 			children = (
+				0F7DFFC51B43CC2D00C48B07 /* Controller */,
 				33D1DAEA1B4271A8009ADF41 /* CategoryViewController.h */,
 				33D1DAEB1B4271A8009ADF41 /* CategoryViewController.m */,
 			);
@@ -716,6 +737,7 @@
 				33D1D9931B42688D009ADF41 /* MJRefresh.bundle in Resources */,
 				33D1D9911B42688D009ADF41 /* MBProgressHUD.bundle in Resources */,
 				3383227F1B427AA5004CE9C2 /* wjl.storyboard in Resources */,
+				0F24A7DA1B4410E600E9A9AE /* SequenceCollectionViewCell.xib in Resources */,
 				33D1D98F1B42688D009ADF41 /* IQKeyboardManager.bundle in Resources */,
 				0F1D1A131B427719009B324E /* yjh.storyboard in Resources */,
 				0F80D93A1B42B15700C46D72 /* wwc.storyboard in Resources */,
@@ -779,10 +801,12 @@
 				33D1D9981B42688D009ADF41 /* MJRefreshGifHeader.m in Sources */,
 				33D1D9AE1B42688D009ADF41 /* UIView+WebCacheOperation.m in Sources */,
 				33D1D9901B42688D009ADF41 /* MBProgressHUD+MJ.m in Sources */,
+				0F7DFFC81B43CC8600C48B07 /* SortViewController.m in Sources */,
 				33D1D9971B42688D009ADF41 /* MJRefreshGifFooter.m in Sources */,
 				33D1D97D1B42688D009ADF41 /* AFHTTPSessionManager.m in Sources */,
 				33D1D9991B42688D009ADF41 /* MJRefreshHeader.m in Sources */,
 				33D1D9961B42688D009ADF41 /* MJRefreshFooter.m in Sources */,
+				0F24A7D91B4410E600E9A9AE /* SequenceCollectionViewCell.m in Sources */,
 				33D1DAF21B4271D2009ADF41 /* PersonalViewController.m in Sources */,
 				33D1D9A41B42688D009ADF41 /* SDWebImageDownloader.m in Sources */,
 				33D1D97C1B42688D009ADF41 /* AFHTTPRequestOperationManager.m in Sources */,
@@ -902,10 +926,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = AlayiShopDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -914,8 +940,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = AlayiShopDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
