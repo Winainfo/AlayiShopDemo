@@ -10,6 +10,7 @@
 		0F1D1A131B427719009B324E /* yjh.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F1D1A121B427719009B324E /* yjh.storyboard */; };
 		0F24A7D91B4410E600E9A9AE /* SequenceCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F24A7D71B4410E600E9A9AE /* SequenceCollectionViewCell.m */; };
 		0F24A7DA1B4410E600E9A9AE /* SequenceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F24A7D81B4410E600E9A9AE /* SequenceCollectionViewCell.xib */; };
+		0F24A7DD1B4416C900E9A9AE /* FinallyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F24A7DC1B4416C900E9A9AE /* FinallyViewController.m */; };
 		0F7DFFC81B43CC8600C48B07 /* SortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F7DFFC71B43CC8600C48B07 /* SortViewController.m */; };
 		0F80D93A1B42B15700C46D72 /* wwc.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F80D9391B42B15700C46D72 /* wwc.storyboard */; };
 		3324CC751B4286E300E74E93 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3324CC741B4286E300E74E93 /* TestViewController.m */; };
@@ -95,6 +96,8 @@
 		0F24A7D61B4410E600E9A9AE /* SequenceCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SequenceCollectionViewCell.h; sourceTree = "<group>"; };
 		0F24A7D71B4410E600E9A9AE /* SequenceCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SequenceCollectionViewCell.m; sourceTree = "<group>"; };
 		0F24A7D81B4410E600E9A9AE /* SequenceCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SequenceCollectionViewCell.xib; sourceTree = "<group>"; };
+		0F24A7DB1B4416C900E9A9AE /* FinallyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinallyViewController.h; sourceTree = "<group>"; };
+		0F24A7DC1B4416C900E9A9AE /* FinallyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinallyViewController.m; sourceTree = "<group>"; };
 		0F7DFFC61B43CC8600C48B07 /* SortViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SortViewController.h; sourceTree = "<group>"; };
 		0F7DFFC71B43CC8600C48B07 /* SortViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SortViewController.m; sourceTree = "<group>"; };
 		0F80D9391B42B15700C46D72 /* wwc.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = wwc.storyboard; sourceTree = "<group>"; };
@@ -266,6 +269,8 @@
 				0F24A7D61B4410E600E9A9AE /* SequenceCollectionViewCell.h */,
 				0F24A7D71B4410E600E9A9AE /* SequenceCollectionViewCell.m */,
 				0F24A7D81B4410E600E9A9AE /* SequenceCollectionViewCell.xib */,
+				0F24A7DB1B4416C900E9A9AE /* FinallyViewController.h */,
+				0F24A7DC1B4416C900E9A9AE /* FinallyViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -794,6 +799,7 @@
 				33D1D98C1B42688D009ADF41 /* IQTitleBarButtonItem.m in Sources */,
 				33D1D9801B42688D009ADF41 /* AFURLConnectionOperation.m in Sources */,
 				33D1D97F1B42688D009ADF41 /* AFSecurityPolicy.m in Sources */,
+				0F24A7DD1B4416C900E9A9AE /* FinallyViewController.m in Sources */,
 				3324CC751B4286E300E74E93 /* TestViewController.m in Sources */,
 				33D1D9851B42688D009ADF41 /* IQUIView+Hierarchy.m in Sources */,
 				33D1D9AB1B42688D009ADF41 /* UIImage+WebP.m in Sources */,
@@ -820,7 +826,6 @@
 				33D1D9991B42688D009ADF41 /* MJRefreshHeader.m in Sources */,
 				33D1D9961B42688D009ADF41 /* MJRefreshFooter.m in Sources */,
 				0F24A7D91B4410E600E9A9AE /* SequenceCollectionViewCell.m in Sources */,
-				33D1DAF21B4271D2009ADF41 /* PersonalViewController.m in Sources */,
 				33D1D9A41B42688D009ADF41 /* SDWebImageDownloader.m in Sources */,
 				33D1D97C1B42688D009ADF41 /* AFHTTPRequestOperationManager.m in Sources */,
 				33D1D9A91B42688D009ADF41 /* UIImage+GIF.m in Sources */,
