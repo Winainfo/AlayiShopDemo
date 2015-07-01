@@ -5,21 +5,22 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="RGc-3B-tLF">
+        <scene sceneID="UHC-0r-iNI">
             <objects>
-                <viewController id="i1B-Qt-Ny7" sceneMemberID="viewController">
+                <viewController id="Bzi-Eq-qfe" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="0k1-iZ-mJu"/>
-                        <viewControllerLayoutGuide type="bottom" id="1k7-f7-MM6"/>
+                        <viewControllerLayoutGuide type="top" id="uDq-Cb-Gm5"/>
+                        <viewControllerLayoutGuide type="bottom" id="Yii-fk-Lof"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="9k9-sa-hKc">
+                    <view key="view" contentMode="scaleToFill" id="Sj6-PO-dxH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.17687859205677148" green="0.1871573366566015" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="tip-W8-gsG"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="y6x-zC-CD6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tWo-cK-XcG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="834" y="54"/>
         </scene>
