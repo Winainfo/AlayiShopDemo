@@ -10,6 +10,7 @@
 #define URL @"http://www.alayicai.com/service"
 #define  APPID @"1001"
 @implementation RequestData
+
 /**
  *  字典转字符串工具类
  *
