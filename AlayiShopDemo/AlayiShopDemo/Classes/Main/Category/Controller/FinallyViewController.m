@@ -1,6 +1,9 @@
 #import "FinallyViewController.h"
 
+
 @interface FinallyViewController ()
+
+
 
 @end
 
@@ -13,9 +16,10 @@
     // 设置的背景图片
     self.cellView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background"]];}
 
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
@@ -34,8 +38,30 @@
     cell.priceLable.text=@"¥5.5/斤";
     return cell;
 }
-
-
+//距离顶部，距离左边，距离底部，距离右边
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+{
+    
+    NSLog(@"----%f----",SIZE);
+    if (SIZE ==320)
+    {
+        return UIEdgeInsetsMake(20, 10, 20, 10);
+        
+    }
+    if (SIZE-375==0)
+    {
+        return UIEdgeInsetsMake(10, 10, 10, 10);
+        
+    }else
+    {
+        return UIEdgeInsetsMake(20, 20, 20, 20);
+    }
+    
+}
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+            return CGSizeMake(135, 150);
+}
 /*
 #pragma mark - Navigation
 

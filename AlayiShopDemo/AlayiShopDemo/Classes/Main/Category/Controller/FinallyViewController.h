@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "SequenceCollectionViewCell.h"
+#import "AppDelegate.h"
+
+#define SIZE [UIScreen mainScreen].bounds.size.width
 
 @interface FinallyViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate>
 @property (strong, nonatomic) IBOutlet UICollectionView *cellView;
