@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "RequestData.h"
 @interface LoginController : UIViewController
 
 @end
