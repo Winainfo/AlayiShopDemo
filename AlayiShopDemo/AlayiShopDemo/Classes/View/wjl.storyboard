@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vsn-Fr-qiB">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
         <!--我的-->
@@ -70,13 +70,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_head" translatesAutoresizingMaskIntoConstraints="NO" id="KCC-Nv-Hl8">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="login_head" translatesAutoresizingMaskIntoConstraints="NO" id="KCC-Nv-Hl8">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="110" id="n6e-Hc-hZJ"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OOi-Pf-IbT">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OOi-Pf-IbT">
                                 <rect key="frame" x="0.0" y="122" width="320" height="100"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MyAddressManager_line_new" translatesAutoresizingMaskIntoConstraints="NO" id="hnk-8Y-5au">
@@ -179,7 +179,7 @@
                                     <constraint firstItem="SuS-TW-LBc" firstAttribute="top" secondItem="pgb-rn-67h" secondAttribute="bottom" constant="8" id="ugx-th-CxV"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bHg-Ad-jKM">
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bHg-Ad-jKM">
                                 <rect key="frame" x="30" y="232" width="260" height="40"/>
                                 <color key="backgroundColor" red="0.88627450980392153" green="0.88627450980392153" blue="0.88627450980392153" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -192,7 +192,7 @@
                                     <action selector="loginSender:" destination="9sq-7F-wdV" eventType="touchUpInside" id="y4v-kd-nqs"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v5F-m4-I4w">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v5F-m4-I4w">
                                 <rect key="frame" x="17" y="289" width="48" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="52V-LH-eBw"/>
@@ -203,7 +203,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VmD-ZH-7Wo">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VmD-ZH-7Wo">
                                 <rect key="frame" x="239" y="289" width="64" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="mQe-7R-2s8"/>
@@ -1331,9 +1331,20 @@
     </scenes>
     <resources>
         <image name="MyAddressManager_line_new" width="320" height="1"/>
+        <image name="feed_back_icon" width="18" height="18"/>
         <image name="login_head" width="320" height="110"/>
+        <image name="my_head_circle" width="65" height="65"/>
+        <image name="my_head_default" width="60" height="60"/>
         <image name="my_message_btn_h" width="20" height="20"/>
         <image name="my_more_btn_n" width="20" height="20"/>
+        <image name="my_order_icon" width="18" height="18"/>
+        <image name="my_service_icon" width="18" height="18"/>
+        <image name="my_unlogin_bg" width="640" height="280"/>
         <image name="register_passwd_off" width="51" height="31"/>
+        <image name="tab2" width="30" height="30"/>
+        <image name="tab4" width="30" height="30"/>
+        <image name="unlogin_head_n" width="60" height="60"/>
+        <image name="wait_money_icon" width="24" height="24"/>
+        <image name="wait_product_icon" width="24" height="24"/>
     </resources>
 </document>

@@ -3,7 +3,7 @@
 
 @interface FinallyViewController ()
 
-
+#define SIZE [UIScreen mainScreen].bounds.size.width
 
 @end
 
@@ -60,7 +60,7 @@
 }
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-            return CGSizeMake(135, 150);
+     return CGSizeMake(135, 150);
 }
 /*
 #pragma mark - Navigation

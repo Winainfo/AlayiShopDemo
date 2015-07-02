@@ -95,11 +95,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Yid-aR-7L4"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="bhZ-bM-Vps">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="boE-vG-f9k">
-                                <rect key="frame" x="0.0" y="64" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qfs-lV-H5X">
                                         <rect key="frame" x="1" y="0.0" width="320" height="44"/>
@@ -176,7 +176,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8yn-gT-iDE">
-                                <rect key="frame" x="0.0" y="108" width="414" height="584"/>
+                                <rect key="frame" x="0.0" y="108" width="320" height="416"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="scrollIndicatorInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="15" minimumInteritemSpacing="10" id="H3J-h6-CEj">
@@ -253,14 +253,14 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Zv8-Kz-2Fw"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="cellView" destination="8yn-gT-iDE" id="hn5-VN-Y4z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UDP-zj-Gdi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1973" y="-244"/>
+            <point key="canvasLocation" x="1783" y="-215"/>
         </scene>
         <!--分类-->
         <scene sceneID="bxR-Z6-aD9">
