@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface PersonalTableViewController : UITableViewController
-
+@property (retain,nonatomic) NSString *userName;
+@property (retain,nonatomic) NSString *score;
 @end

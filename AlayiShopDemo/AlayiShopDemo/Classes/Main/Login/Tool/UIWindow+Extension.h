@@ -1,5 +1,5 @@
 //
-//  PersonalController.h
+//  UIWindow+Extension.h
 //  AlayiShopDemo
 //
 //  Created by 吴金林 on 15/7/2.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PersonalController : UIViewController
-
+@interface UIWindow (Extension)
+-(void)switchRootViewController;
 @end

@@ -21,9 +21,15 @@
 		0F944E3D1B44ED4100E5ED82 /* SequenceCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F944E381B44ED4100E5ED82 /* SequenceCollectionViewCell.m */; };
 		0F944E3E1B44ED4100E5ED82 /* SequenceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F944E391B44ED4100E5ED82 /* SequenceCollectionViewCell.xib */; };
 		0F944E3F1B44ED4100E5ED82 /* SortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F944E3B1B44ED4100E5ED82 /* SortViewController.m */; };
+		331751691B45228400A55B92 /* PersonalController.m in Sources */ = {isa = PBXBuildFile; fileRef = 331751681B45228400A55B92 /* PersonalController.m */; };
 		3324CC751B4286E300E74E93 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3324CC741B4286E300E74E93 /* TestViewController.m */; };
+		333A42781B45675300E2FFBD /* MoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 333A42771B45675300E2FFBD /* MoreController.m */; };
+		333A427B1B4575CF00E2FFBD /* AboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 333A427A1B4575CF00E2FFBD /* AboutController.m */; };
 		3383227F1B427AA5004CE9C2 /* wjl.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3383227E1B427AA5004CE9C2 /* wjl.storyboard */; };
 		338322821B427BFC004CE9C2 /* RequestData.m in Sources */ = {isa = PBXBuildFile; fileRef = 338322811B427BFC004CE9C2 /* RequestData.m */; };
+		33C4184B1B451182002C8601 /* AccountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 33C4184A1B451182002C8601 /* AccountModel.m */; };
+		33C418501B45167E002C8601 /* AccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 33C4184F1B45167E002C8601 /* AccountTool.m */; };
+		33C418531B451B09002C8601 /* UIWindow+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 33C418521B451B09002C8601 /* UIWindow+Extension.m */; };
 		33CBCFDE1B4404AF00FADD5F /* PersonalTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33CBCFDD1B4404AF00FADD5F /* PersonalTableViewController.m */; };
 		33CBCFE51B44114800FADD5F /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33CBCFE41B44114800FADD5F /* LoginController.m */; };
 		33D1D8CD1B426689009ADF41 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D1D8CC1B426689009ADF41 /* main.m */; };
@@ -124,13 +130,23 @@
 		0F944E391B44ED4100E5ED82 /* SequenceCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SequenceCollectionViewCell.xib; sourceTree = "<group>"; };
 		0F944E3A1B44ED4100E5ED82 /* SortViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SortViewController.h; sourceTree = "<group>"; };
 		0F944E3B1B44ED4100E5ED82 /* SortViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SortViewController.m; sourceTree = "<group>"; };
+		331751671B45228400A55B92 /* PersonalController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalController.h; sourceTree = "<group>"; };
+		331751681B45228400A55B92 /* PersonalController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalController.m; sourceTree = "<group>"; };
 		3324CC731B4286E300E74E93 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		3324CC741B4286E300E74E93 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		333A42761B45675300E2FFBD /* MoreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreController.h; sourceTree = "<group>"; };
+		333A42771B45675300E2FFBD /* MoreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreController.m; sourceTree = "<group>"; };
+		333A42791B4575CF00E2FFBD /* AboutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutController.h; sourceTree = "<group>"; };
+		333A427A1B4575CF00E2FFBD /* AboutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutController.m; sourceTree = "<group>"; };
 		3383227E1B427AA5004CE9C2 /* wjl.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = wjl.storyboard; sourceTree = "<group>"; };
 		338322801B427BFC004CE9C2 /* RequestData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestData.h; sourceTree = "<group>"; };
 		338322811B427BFC004CE9C2 /* RequestData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestData.m; sourceTree = "<group>"; };
-		33CBCFD71B43CA8F00FADD5F /* PersonalController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalController.h; sourceTree = "<group>"; };
-		33CBCFD81B43CA8F00FADD5F /* PersonalController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalController.m; sourceTree = "<group>"; };
+		33C418491B451182002C8601 /* AccountModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountModel.h; sourceTree = "<group>"; };
+		33C4184A1B451182002C8601 /* AccountModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountModel.m; sourceTree = "<group>"; };
+		33C4184E1B45167E002C8601 /* AccountTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountTool.h; sourceTree = "<group>"; };
+		33C4184F1B45167E002C8601 /* AccountTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountTool.m; sourceTree = "<group>"; };
+		33C418511B451B09002C8601 /* UIWindow+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+Extension.h"; sourceTree = "<group>"; };
+		33C418521B451B09002C8601 /* UIWindow+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+Extension.m"; sourceTree = "<group>"; };
 		33CBCFDC1B4404AF00FADD5F /* PersonalTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalTableViewController.h; sourceTree = "<group>"; };
 		33CBCFDD1B4404AF00FADD5F /* PersonalTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalTableViewController.m; sourceTree = "<group>"; };
 		33CBCFE31B44114800FADD5F /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginController.h; sourceTree = "<group>"; };
@@ -338,6 +354,8 @@
 		3324CC761B42944900E74E93 /* Login(登录) */ = {
 			isa = PBXGroup;
 			children = (
+				33C4184D1B451667002C8601 /* Tool */,
+				33C418481B45112A002C8601 /* Model */,
 				33CBCFE21B44112900FADD5F /* Controller */,
 			);
 			name = "Login(登录)";
@@ -352,13 +370,44 @@
 			path = Register;
 			sourceTree = "<group>";
 		};
+		333A42721B454E1700E2FFBD /* MoerController */ = {
+			isa = PBXGroup;
+			children = (
+				333A42761B45675300E2FFBD /* MoreController.h */,
+				333A42771B45675300E2FFBD /* MoreController.m */,
+				333A42791B4575CF00E2FFBD /* AboutController.h */,
+				333A427A1B4575CF00E2FFBD /* AboutController.m */,
+			);
+			path = MoerController;
+			sourceTree = "<group>";
+		};
+		33C418481B45112A002C8601 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				33C418491B451182002C8601 /* AccountModel.h */,
+				33C4184A1B451182002C8601 /* AccountModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		33C4184D1B451667002C8601 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				33C4184E1B45167E002C8601 /* AccountTool.h */,
+				33C4184F1B45167E002C8601 /* AccountTool.m */,
+				33C418511B451B09002C8601 /* UIWindow+Extension.h */,
+				33C418521B451B09002C8601 /* UIWindow+Extension.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
 		33CBCFD61B43C9E100FADD5F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				33CBCFD71B43CA8F00FADD5F /* PersonalController.h */,
-				33CBCFD81B43CA8F00FADD5F /* PersonalController.m */,
 				33CBCFDC1B4404AF00FADD5F /* PersonalTableViewController.h */,
 				33CBCFDD1B4404AF00FADD5F /* PersonalTableViewController.m */,
+				331751671B45228400A55B92 /* PersonalController.h */,
+				331751681B45228400A55B92 /* PersonalController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -708,6 +757,7 @@
 		33D1D9B21B426950009ADF41 /* Personal(个人中心) */ = {
 			isa = PBXGroup;
 			children = (
+				333A42721B454E1700E2FFBD /* MoerController */,
 				33CBCFD61B43C9E100FADD5F /* Controller */,
 			);
 			name = "Personal(个人中心)";
@@ -857,6 +907,7 @@
 				33D1D9951B42688D009ADF41 /* MJRefreshConst.m in Sources */,
 				33D1D98B1B42688D009ADF41 /* IQBarButtonItem.m in Sources */,
 				33D1D9871B42688D009ADF41 /* IQKeyboardManager.m in Sources */,
+				331751691B45228400A55B92 /* PersonalController.m in Sources */,
 				33CBCFE51B44114800FADD5F /* LoginController.m in Sources */,
 				33D1D9A21B42688D009ADF41 /* SDWebImageCompat.m in Sources */,
 				33D1D98D1B42688D009ADF41 /* IQToolbar.m in Sources */,
@@ -865,10 +916,13 @@
 				33D1DAEC1B4271A8009ADF41 /* CategoryViewController.m in Sources */,
 				0F6872D71B43BF770001D528 /* SearchViewController.m in Sources */,
 				338322821B427BFC004CE9C2 /* RequestData.m in Sources */,
+				33C418531B451B09002C8601 /* UIWindow+Extension.m in Sources */,
 				33D1D9891B42688D009ADF41 /* IQSegmentedNextPrevious.m in Sources */,
 				33D1D9841B42688D009ADF41 /* IQNSArray+Sort.m in Sources */,
+				33C418501B45167E002C8601 /* AccountTool.m in Sources */,
 				33D1D9A61B42688D009ADF41 /* SDWebImageManager.m in Sources */,
 				0F1C817D1B441F6A00FB72E3 /* UIView+Extension.m in Sources */,
+				33C4184B1B451182002C8601 /* AccountModel.m in Sources */,
 				33D1D9811B42688D009ADF41 /* AFURLRequestSerialization.m in Sources */,
 				33D1D9921B42688D009ADF41 /* MBProgressHUD.m in Sources */,
 				33D1D99D1B42688D009ADF41 /* UIScrollView+MJRefresh.m in Sources */,
@@ -903,6 +957,7 @@
 				33D1D9AE1B42688D009ADF41 /* UIView+WebCacheOperation.m in Sources */,
 				33D1D9901B42688D009ADF41 /* MBProgressHUD+MJ.m in Sources */,
 				33D1D9971B42688D009ADF41 /* MJRefreshGifFooter.m in Sources */,
+				333A42781B45675300E2FFBD /* MoreController.m in Sources */,
 				33D1D97D1B42688D009ADF41 /* AFHTTPSessionManager.m in Sources */,
 				33D1D9991B42688D009ADF41 /* MJRefreshHeader.m in Sources */,
 				33D1D9961B42688D009ADF41 /* MJRefreshFooter.m in Sources */,
@@ -920,6 +975,7 @@
 				33D1D9AA1B42688D009ADF41 /* UIImage+MultiFormat.m in Sources */,
 				33D1D97E1B42688D009ADF41 /* AFNetworkReachabilityManager.m in Sources */,
 				33D1D9001B42671A009ADF41 /* AppDelegate.m in Sources */,
+				333A427B1B4575CF00E2FFBD /* AboutController.m in Sources */,
 				0F1C80CE1B43CA5600FB72E3 /* MyTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

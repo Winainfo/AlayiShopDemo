@@ -8,6 +8,7 @@
 
 #import "LoginController.h"
 #import "PersonalTableViewController.h"
+#import "PersonalController.h"
 @interface LoginController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *userNameText;
 @property (weak, nonatomic) IBOutlet UITextField *passWordText;
@@ -26,7 +27,25 @@
     //2.注册监听
     [center addObserver:self selector:@selector(textChange) name:UITextFieldTextDidChangeNotification object:self.userNameText];
      [center addObserver:self selector:@selector(textChange) name:UITextFieldTextDidChangeNotification object:self.passWordText];
+    //标题
+    self.title=@"登录";
+    //重写返回按钮
+    UIButton *back=[UIButton buttonWithType:UIButtonTypeCustom];
+    [back setFrame:CGRectMake(5, 10, 30, 30 )];
+    [back  setTitle:@"取消" forState:UIControlStateNormal];
+    [back setTitleColor:[UIColor blackColor]forState:UIControlStateNormal];
+    [back addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *barButton=[[UIBarButtonItem alloc]initWithCustomView:back];
+    self.navigationItem.leftBarButtonItem=barButton;
     
+}
+/**
+ *  POP方法
+ *
+ *  @param sender <#sender description#>
+ */
+-(void)back:(id *)sender{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 -(void)dealloc
 {
@@ -86,11 +105,6 @@
             break;
     }
 }
-//    //获取第一页前10条记录
-//    NSDictionary *params1=[NSDictionary dictionaryWithObjectsAndKeys:@"10",@"pageSize",@"1",@"currPage",@"",@"sortid",@"",@"name",@"",@"type", nil];
-//    [RequestData getFoodListWithPage:params1 FinishCallbackBlock:^(NSDictionary *data) {
-//        NSLog(@"%@",data);
-//    }];
 /**
  *  登录事件
  *
@@ -99,11 +113,26 @@
 - (IBAction)loginSender:(UIButton *)sender {
     NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:self.userNameText.text,@"username",self.passWordText.text,@"password", nil];
     [RequestData lgin:params FinishCallbackBlock:^(NSDictionary *data) {
+        //存储账号信息
+        // AccountModel *account=[AccountTool account];
+        AccountModel *account=[AccountModel new];
+        account.userId=data[@"user"][@"id"];
+        NSLog(@"%@",data[@"user"][@"id"]);
+        account.name=data[@"user"][@"name"];
+        account.password=data[@"user"][@"password"];
+        account.pilescore=data[@"user"][@"pilescore"];
+        account.email=data[@"user"][@"email"];
+        account.sex=data[@"user"][@"sex"];
+        account.telephone=data[@"user"][@"telephone"];
+        [AccountTool saveAccount:account];
        NSString *code=data[@"code"];
         if ([code isEqualToString:@"0"]) {
             //设置故事板为第一启动
             UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"wjl" bundle:nil];
-            PersonalTableViewController *Personal=[storyboard instantiateViewControllerWithIdentifier:@"登录后的View"];
+           PersonalController *Personal=[storyboard instantiateViewControllerWithIdentifier:@"个人中心View"];
+            PersonalTableViewController *PersonalTable=[PersonalTableViewController new];
+            PersonalTable.userName=data[@"user"][@"name"];
+            PersonalTable.score=data[@"user"][@"pilescore"];
             [self.navigationController pushViewController:Personal animated:YES];
         }
     }];
