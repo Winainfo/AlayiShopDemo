@@ -17,6 +17,10 @@
 		0F6872CA1B4397A50001D528 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6872C91B4397A50001D528 /* HomeViewController.m */; };
 		0F6872D71B43BF770001D528 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6872D61B43BF770001D528 /* SearchViewController.m */; };
 		0F80D93A1B42B15700C46D72 /* wwc.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F80D9391B42B15700C46D72 /* wwc.storyboard */; };
+		0F944E3C1B44ED4100E5ED82 /* FinallyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F944E361B44ED4100E5ED82 /* FinallyViewController.m */; };
+		0F944E3D1B44ED4100E5ED82 /* SequenceCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F944E381B44ED4100E5ED82 /* SequenceCollectionViewCell.m */; };
+		0F944E3E1B44ED4100E5ED82 /* SequenceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F944E391B44ED4100E5ED82 /* SequenceCollectionViewCell.xib */; };
+		0F944E3F1B44ED4100E5ED82 /* SortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F944E3B1B44ED4100E5ED82 /* SortViewController.m */; };
 		3324CC751B4286E300E74E93 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3324CC741B4286E300E74E93 /* TestViewController.m */; };
 		3383227F1B427AA5004CE9C2 /* wjl.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3383227E1B427AA5004CE9C2 /* wjl.storyboard */; };
 		338322821B427BFC004CE9C2 /* RequestData.m in Sources */ = {isa = PBXBuildFile; fileRef = 338322811B427BFC004CE9C2 /* RequestData.m */; };
@@ -113,6 +117,13 @@
 		0F6872D51B43BF770001D528 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		0F6872D61B43BF770001D528 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		0F80D9391B42B15700C46D72 /* wwc.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = wwc.storyboard; sourceTree = "<group>"; };
+		0F944E351B44ED4100E5ED82 /* FinallyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinallyViewController.h; sourceTree = "<group>"; };
+		0F944E361B44ED4100E5ED82 /* FinallyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinallyViewController.m; sourceTree = "<group>"; };
+		0F944E371B44ED4100E5ED82 /* SequenceCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SequenceCollectionViewCell.h; sourceTree = "<group>"; };
+		0F944E381B44ED4100E5ED82 /* SequenceCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SequenceCollectionViewCell.m; sourceTree = "<group>"; };
+		0F944E391B44ED4100E5ED82 /* SequenceCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SequenceCollectionViewCell.xib; sourceTree = "<group>"; };
+		0F944E3A1B44ED4100E5ED82 /* SortViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SortViewController.h; sourceTree = "<group>"; };
+		0F944E3B1B44ED4100E5ED82 /* SortViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SortViewController.m; sourceTree = "<group>"; };
 		3324CC731B4286E300E74E93 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		3324CC741B4286E300E74E93 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		3383227E1B427AA5004CE9C2 /* wjl.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = wjl.storyboard; sourceTree = "<group>"; };
@@ -313,6 +324,13 @@
 		0F7DFFC51B43CC2D00C48B07 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0F944E351B44ED4100E5ED82 /* FinallyViewController.h */,
+				0F944E361B44ED4100E5ED82 /* FinallyViewController.m */,
+				0F944E371B44ED4100E5ED82 /* SequenceCollectionViewCell.h */,
+				0F944E381B44ED4100E5ED82 /* SequenceCollectionViewCell.m */,
+				0F944E391B44ED4100E5ED82 /* SequenceCollectionViewCell.xib */,
+				0F944E3A1B44ED4100E5ED82 /* SortViewController.h */,
+				0F944E3B1B44ED4100E5ED82 /* SortViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -816,6 +834,7 @@
 				0F1D1A131B427719009B324E /* yjh.storyboard in Resources */,
 				0F80D93A1B42B15700C46D72 /* wwc.storyboard in Resources */,
 				33D1D8D81B426689009ADF41 /* Images.xcassets in Resources */,
+				0F944E3E1B44ED4100E5ED82 /* SequenceCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -860,6 +879,7 @@
 				33D1D97F1B42688D009ADF41 /* AFSecurityPolicy.m in Sources */,
 				3324CC751B4286E300E74E93 /* TestViewController.m in Sources */,
 				0F6872CA1B4397A50001D528 /* HomeViewController.m in Sources */,
+				0F944E3F1B44ED4100E5ED82 /* SortViewController.m in Sources */,
 				33D1D9851B42688D009ADF41 /* IQUIView+Hierarchy.m in Sources */,
 				33D1D9AB1B42688D009ADF41 /* UIImage+WebP.m in Sources */,
 				33CBCFDE1B4404AF00FADD5F /* PersonalTableViewController.m in Sources */,
@@ -879,6 +899,7 @@
 				33D1D9861B42688D009ADF41 /* IQUIWindow+Hierarchy.m in Sources */,
 				33D1D9AD1B42688D009ADF41 /* UIImageView+WebCache.m in Sources */,
 				33D1D9981B42688D009ADF41 /* MJRefreshGifHeader.m in Sources */,
+				0F944E3C1B44ED4100E5ED82 /* FinallyViewController.m in Sources */,
 				33D1D9AE1B42688D009ADF41 /* UIView+WebCacheOperation.m in Sources */,
 				33D1D9901B42688D009ADF41 /* MBProgressHUD+MJ.m in Sources */,
 				33D1D9971B42688D009ADF41 /* MJRefreshGifFooter.m in Sources */,
@@ -887,6 +908,7 @@
 				33D1D9961B42688D009ADF41 /* MJRefreshFooter.m in Sources */,
 				0F1C817C1B441F6A00FB72E3 /* HWSearchBar.m in Sources */,
 				33D1D9A41B42688D009ADF41 /* SDWebImageDownloader.m in Sources */,
+				0F944E3D1B44ED4100E5ED82 /* SequenceCollectionViewCell.m in Sources */,
 				0F1C80D31B43CD8400FB72E3 /* UIView+Extension.m in Sources */,
 				33D1D97C1B42688D009ADF41 /* AFHTTPRequestOperationManager.m in Sources */,
 				33D1D9A91B42688D009ADF41 /* UIImage+GIF.m in Sources */,
