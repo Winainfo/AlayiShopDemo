@@ -13,27 +13,55 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="100" height="110"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wti-Fj-krl">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wti-Fj-krl">
                         <rect key="frame" x="0.0" y="0.0" width="100" height="78"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="78" id="U5N-K5-ziX"/>
+                        </constraints>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="item_grid_body_price_bg_red" translatesAutoresizingMaskIntoConstraints="NO" id="l2F-eH-E3L">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="item_grid_body_price_bg_red" translatesAutoresizingMaskIntoConstraints="NO" id="l2F-eH-E3L">
                         <rect key="frame" x="0.0" y="16" width="45" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="ISL-9P-h6Y"/>
+                            <constraint firstAttribute="width" constant="45" id="fSt-gu-ayx"/>
+                        </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="￥4.80" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="USr-gr-EdB">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥4.80" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="USr-gr-EdB">
                         <rect key="frame" x="0.0" y="18" width="42" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="42" id="K5o-o8-pG4"/>
+                            <constraint firstAttribute="height" constant="21" id="YVg-VA-BqH"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="dsadsa" translatesAutoresizingMaskIntoConstraints="NO" id="nWo-I5-8Ot">
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="dsadsa" translatesAutoresizingMaskIntoConstraints="NO" id="nWo-I5-8Ot">
                         <rect key="frame" x="0.0" y="79" width="100" height="31"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="31" id="kz7-5C-wxM"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
+            <constraints>
+                <constraint firstItem="USr-gr-EdB" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="1ez-d2-8aS"/>
+                <constraint firstItem="l2F-eH-E3L" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="16" id="3BR-Hd-U8A"/>
+                <constraint firstItem="Wti-Fj-krl" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="6lY-VN-qV2"/>
+                <constraint firstItem="USr-gr-EdB" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="18" id="74q-iO-ihf"/>
+                <constraint firstItem="nWo-I5-8Ot" firstAttribute="top" secondItem="USr-gr-EdB" secondAttribute="bottom" constant="40" id="7jN-HI-h2T"/>
+                <constraint firstAttribute="bottom" secondItem="nWo-I5-8Ot" secondAttribute="bottom" id="FHj-kd-vhq"/>
+                <constraint firstAttribute="trailing" secondItem="Wti-Fj-krl" secondAttribute="trailing" id="GHa-pz-r5A"/>
+                <constraint firstItem="l2F-eH-E3L" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="QCX-aU-54f"/>
+                <constraint firstItem="nWo-I5-8Ot" firstAttribute="top" secondItem="l2F-eH-E3L" secondAttribute="bottom" constant="39" id="S4t-WD-bIK"/>
+                <constraint firstAttribute="trailing" secondItem="nWo-I5-8Ot" secondAttribute="trailing" id="VW2-0w-HyE"/>
+                <constraint firstItem="nWo-I5-8Ot" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ZLr-1a-OeJ"/>
+                <constraint firstItem="Wti-Fj-krl" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="xrc-VZ-Idd"/>
+            </constraints>
             <size key="customSize" width="50" height="186"/>
             <connections>
                 <outlet property="imageView" destination="Wti-Fj-krl" id="RUB-Df-pz8"/>

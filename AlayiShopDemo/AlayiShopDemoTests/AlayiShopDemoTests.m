@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
+#define SIZE [UIScreen mainScreen].bounds.size.width
 
 @interface AlayiShopDemoTests : XCTestCase
 
