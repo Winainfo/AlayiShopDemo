@@ -42,6 +42,25 @@
             </objects>
             <point key="canvasLocation" x="1667" y="-1092"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="FMk-Nx-ZtN">
+            <objects>
+                <viewController id="g48-7L-5w3" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZbS-G8-Fd0"/>
+                        <viewControllerLayoutGuide type="bottom" id="6HZ-Y9-rCE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mKC-8b-SC9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tPV-T2-hwZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2357" y="-1806"/>
+        </scene>
         <!--LoginView-->
         <scene sceneID="yC6-WX-EPN">
             <objects>
@@ -54,14 +73,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="login_head" translatesAutoresizingMaskIntoConstraints="NO" id="KCC-Nv-Hl8">
-                                <rect key="frame" x="0.0" y="64" width="320" height="110"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_head" translatesAutoresizingMaskIntoConstraints="NO" id="KCC-Nv-Hl8">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="110" id="n6e-Hc-hZJ"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OOi-Pf-IbT">
-                                <rect key="frame" x="0.0" y="186" width="320" height="100"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OOi-Pf-IbT">
+                                <rect key="frame" x="0.0" y="122" width="320" height="100"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MyAddressManager_line_new" translatesAutoresizingMaskIntoConstraints="NO" id="hnk-8Y-5au">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
@@ -163,8 +182,8 @@
                                     <constraint firstItem="SuS-TW-LBc" firstAttribute="top" secondItem="pgb-rn-67h" secondAttribute="bottom" constant="8" id="ugx-th-CxV"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bHg-Ad-jKM">
-                                <rect key="frame" x="30" y="296" width="260" height="40"/>
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bHg-Ad-jKM">
+                                <rect key="frame" x="30" y="232" width="260" height="40"/>
                                 <color key="backgroundColor" red="0.88627450980392153" green="0.88627450980392153" blue="0.88627450980392153" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="TmP-xr-2fh"/>
@@ -176,8 +195,8 @@
                                     <action selector="loginSender:" destination="9sq-7F-wdV" eventType="touchUpInside" id="y4v-kd-nqs"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v5F-m4-I4w">
-                                <rect key="frame" x="17" y="353" width="48" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v5F-m4-I4w">
+                                <rect key="frame" x="17" y="289" width="48" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="52V-LH-eBw"/>
                                 </constraints>
@@ -187,8 +206,8 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VmD-ZH-7Wo">
-                                <rect key="frame" x="239" y="353" width="64" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VmD-ZH-7Wo">
+                                <rect key="frame" x="239" y="289" width="64" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="mQe-7R-2s8"/>
                                     <constraint firstAttribute="width" constant="64" id="nvf-d9-ZfV"/>
@@ -229,7 +248,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tus-ce-z1O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2322" y="-1122"/>
+            <point key="canvasLocation" x="2548" y="-1118"/>
         </scene>
         <!--购物车View-->
         <scene sceneID="qed-pX-1XE">
@@ -831,7 +850,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y6L-m9-6QK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2695" y="-1152"/>
+            <point key="canvasLocation" x="2997" y="-1148"/>
         </scene>
         <!--登录后前的View-->
         <scene sceneID="gjL-Ty-CoJ">
@@ -1310,7 +1329,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iZS-Ma-Mig" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1982" y="-1075"/>
+            <point key="canvasLocation" x="2102" y="-1099"/>
         </scene>
     </scenes>
     <resources>
