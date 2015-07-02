@@ -26,6 +26,7 @@
     //2.注册监听
     [center addObserver:self selector:@selector(textChange) name:UITextFieldTextDidChangeNotification object:self.userNameText];
      [center addObserver:self selector:@selector(textChange) name:UITextFieldTextDidChangeNotification object:self.passWordText];
+    
 }
 -(void)dealloc
 {
