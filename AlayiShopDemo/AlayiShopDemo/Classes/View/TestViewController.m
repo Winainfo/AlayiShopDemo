@@ -29,20 +29,20 @@
 //    [RequestData getFoodListWithPage:params1 FinishCallbackBlock:^(NSDictionary *data) {
 //        NSLog(@"%@",data);
 //    }];
-//    //搜索青菜
-//    NSDictionary *params2=[NSDictionary dictionaryWithObjectsAndKeys:@"10",@"pageSize",@"1",@"currPage",@"",@"sortid",@"草鸡",@"name",@"",@"type", nil];
-//    [RequestData getFoodListWithPage:params2 FinishCallbackBlock:^(NSDictionary *data) {
-//        NSLog(@"%@",data);
-//    }];
+    //搜索青菜
+    NSDictionary *params2=[NSDictionary dictionaryWithObjectsAndKeys:@"10",@"pageSize",@"1",@"currPage",@"",@"sortid",@"草鸡",@"name",@"",@"type", nil];
+    [RequestData getFoodListWithPage:params2 FinishCallbackBlock:^(NSDictionary *data) {
+        NSLog(@"%@",data);
+    }];
     //查找分类下的菜获取第一页前10条记录
-//    NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:nil];
-//    [RequestData getFoodSortList:params FinishCallbackBlock:^(NSDictionary * data) {
-//        NSString *sortId=data[@"sortList"][0][@"id"];
-//        NSDictionary *params3=[NSDictionary dictionaryWithObjectsAndKeys:@"10",@"pageSize",@"1",@"currPage",sortId,@"sortid",@"",@"name",@"",@"type", nil];
-//        [RequestData getFoodListWithPage:params3 FinishCallbackBlock:^(NSDictionary *data1) {
-//            NSLog(@"%@",data1);
-//        }];
-//    }];
+    NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:nil];
+    [RequestData getFoodSortList:params FinishCallbackBlock:^(NSDictionary * data) {
+        NSString *sortId=data[@"sortList"][0][@"id"];
+        NSDictionary *params3=[NSDictionary dictionaryWithObjectsAndKeys:@"10",@"pageSize",@"1",@"currPage",sortId,@"sortid",@"",@"name",@"",@"type", nil];
+        [RequestData getFoodListWithPage:params3 FinishCallbackBlock:^(NSDictionary *data1) {
+            NSLog(@"%@",data1);
+        }];
+    }];
     //获取菜的详细信息
 //    NSDictionary *params1=[NSDictionary dictionaryWithObjectsAndKeys:@"10",@"pageSize",@"1",@"currPage",@"",@"sortid",@"",@"name",@"",@"type", nil];
 //    [RequestData getFoodListWithPage:params1 FinishCallbackBlock:^(NSDictionary *data) {
