@@ -1,15 +1,15 @@
 
 #import "HomeTableViewController.h"
+#import "UIImageView+WebCache.h"
+#import "RequestData.h"
 #define WIDTH [UIScreen mainScreen].bounds.size.width
 #define HEIGHT [UIScreen mainScreen].bounds.size.height
 
 
-@interface HomeTableViewController ()
+@interface HomeTableViewController ()<UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *adView;
-
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *sectionDisA1;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *sectionDisA2;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *sectionDisA3;
+@property (retain,nonatomic) NSMutableArray *hotImages;
+@property (weak, nonatomic) IBOutlet UIPageControl *myPageControl;
 
 @end
 
@@ -17,88 +17,75 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+   
+    //设置代理
+    self.adView.delegate = self;
+    //滚动视图背景色
+   self.adView.backgroundColor = [UIColor colorWithRed:0.866 green:0.853 blue:0.895 alpha:1.000];
+    //页面控制的当前页
+    self.myPageControl.currentPage = 0;
     
-   self.adView.backgroundColor = [UIColor colorWithRed:130.0/255.0 green:138.0/255.0 blue:94.0/255.0 alpha:1];
+    self.hotImages = [NSMutableArray arrayWithCapacity:1];
+    //获取首页广告图片数组
+    NSDictionary *prama = [NSDictionary dictionaryWithObjectsAndKeys: nil];
+    [RequestData getAllHotFoodList:prama FinishCallbackBlock:^(NSDictionary * data) {
+//        NSLog(@"data == %@",data[@"hotFoodList"]);
+        self.hotImages = data[@"hotFoodList"];
+         NSLog(@" self.HOtImages == %@",self.hotImages);
+        //设置滚动视图的包含的视图大小和图片
+        [self scrollViewWithFrame:self.adView.frame andImages:self.hotImages];
+        //设置定时滚动
+        NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(scrollAdView) userInfo:nil repeats:YES];
+    }];
     
-//    self.view.frame.size.width
+    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.000 green:0.517 blue:0.000 alpha:1.000];
     
-    //热销栏设置约束相等
-//    self.sectionDisA1.constant = self.view.frame.size.width/3.0;
-//    self.sectionDisA2.constant = self.view.frame.size.width/3.0;
-//    self.sectionDisA3.constant = self.view.frame.size.width/3.0;
 }
 
+-(void)scrollViewWithFrame:(CGRect)frame andImages:(NSArray *)images
+{
+    self.adView.showsHorizontalScrollIndicator = NO;
+    self.adView.showsVerticalScrollIndicator = NO;
+    self.adView.pagingEnabled = YES;
+   //不显示边框外视图
+    self.adView.bounces= NO;
+    self.adView.contentSize = CGSizeMake(self.adView.frame.size.width*images.count, self.adView.frame.size.height);
+    self.myPageControl.numberOfPages = images.count;
+    //为滚动视图添加图片
+    for (int i=0; i<images.count; i++) {
+        //拼接图片网址·
+        NSString *urlStr =[NSString stringWithFormat:@"http://www.alayicai.com%@",images[i][@"pic"]];
+        //转换成url
+        NSURL *imgUrl = [NSURL URLWithString:urlStr];
+        UIImageView *imageV = [[UIImageView alloc]initWithFrame:CGRectMake(i*frame.size.width, 0, frame.size.width, frame.size.height)];
+        [imageV sd_setImageWithURL:imgUrl];
+        [self.adView addSubview:imageV];
+    }
+    
+}
+
+//定时器自动滚动广告
+- (void)scrollAdView
+{
+    int currentNum=(self.adView.contentOffset.x/self.adView.frame.size.width+1);
+    if (currentNum == 5) {
+        currentNum = 0;
+    }
+    self.adView.contentOffset=CGPointMake(self.adView.frame.size.width*currentNum,0);
+    self.myPageControl.currentPage = currentNum;
+    
+}
+#pragma mark 手动拖动的代理
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    int page = scrollView.contentOffset.x/self.adView.frame.size.width;
+    self.myPageControl.currentPage=page;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-//#pragma mark - Table view data source
 
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//#warning Potentially incomplete method implementation.
-//    // Return the number of sections.
-//    return 0;
-//}
-//
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//#warning Incomplete method implementation.
-//    // Return the number of rows in the section.
-//    return 0;
-//}
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

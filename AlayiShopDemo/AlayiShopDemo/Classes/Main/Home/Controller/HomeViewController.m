@@ -1,4 +1,5 @@
 #import "HomeViewController.h"
+
 #define WIDTH [UIScreen mainScreen].bounds.size.width
 #define HEIGHT [UIScreen mainScreen].bounds.size.height
 
@@ -17,10 +18,14 @@
 //    temp.size.height = 140;
 //    self.adView.frame = temp;
     self.view.backgroundColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.000 green:0.517 blue:0.000 alpha:1.000];
+    
     
    
     
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
