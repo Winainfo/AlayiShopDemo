@@ -1,5 +1,4 @@
 #import "SortViewController.h"
-
 @interface SortViewController ()
 @property (strong, nonatomic) IBOutlet UITableView *myTableView;
 @property (strong, nonatomic) NSArray *arr;

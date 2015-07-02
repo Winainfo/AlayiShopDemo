@@ -1,6 +1,6 @@
 #import "FinallyViewController.h"
 
-
+#define SIZE [[UIScreen mainScreen] bounds].size.width
 @interface FinallyViewController ()
 
 #define SIZE [UIScreen mainScreen].bounds.size.width
