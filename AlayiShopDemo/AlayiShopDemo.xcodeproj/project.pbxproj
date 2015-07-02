@@ -20,6 +20,9 @@
 		3324CC751B4286E300E74E93 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3324CC741B4286E300E74E93 /* TestViewController.m */; };
 		3383227F1B427AA5004CE9C2 /* wjl.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3383227E1B427AA5004CE9C2 /* wjl.storyboard */; };
 		338322821B427BFC004CE9C2 /* RequestData.m in Sources */ = {isa = PBXBuildFile; fileRef = 338322811B427BFC004CE9C2 /* RequestData.m */; };
+		33CBCFD91B43CA8F00FADD5F /* PersonalController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33CBCFD81B43CA8F00FADD5F /* PersonalController.m */; };
+		33CBCFDE1B4404AF00FADD5F /* PersonalTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33CBCFDD1B4404AF00FADD5F /* PersonalTableViewController.m */; };
+		33CBCFE51B44114800FADD5F /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33CBCFE41B44114800FADD5F /* LoginController.m */; };
 		33D1D8CD1B426689009ADF41 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D1D8CC1B426689009ADF41 /* main.m */; };
 		33D1D8D81B426689009ADF41 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33D1D8D71B426689009ADF41 /* Images.xcassets */; };
 		33D1D8E71B426689009ADF41 /* AlayiShopDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D1D8E61B426689009ADF41 /* AlayiShopDemoTests.m */; };
@@ -80,7 +83,6 @@
 		33D1DAE91B427135009ADF41 /* IndexController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D1DAE81B427135009ADF41 /* IndexController.m */; };
 		33D1DAEC1B4271A8009ADF41 /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D1DAEB1B4271A8009ADF41 /* CategoryViewController.m */; };
 		33D1DAEF1B4271C8009ADF41 /* CartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D1DAEE1B4271C8009ADF41 /* CartViewController.m */; };
-		33D1DAF21B4271D2009ADF41 /* PersonalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D1DAF11B4271D2009ADF41 /* PersonalViewController.m */; };
 		33D1DAF51B4271DD009ADF41 /* CommonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D1DAF41B4271DD009ADF41 /* CommonViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -117,6 +119,12 @@
 		3383227E1B427AA5004CE9C2 /* wjl.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = wjl.storyboard; sourceTree = "<group>"; };
 		338322801B427BFC004CE9C2 /* RequestData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestData.h; sourceTree = "<group>"; };
 		338322811B427BFC004CE9C2 /* RequestData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestData.m; sourceTree = "<group>"; };
+		33CBCFD71B43CA8F00FADD5F /* PersonalController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalController.h; sourceTree = "<group>"; };
+		33CBCFD81B43CA8F00FADD5F /* PersonalController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalController.m; sourceTree = "<group>"; };
+		33CBCFDC1B4404AF00FADD5F /* PersonalTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalTableViewController.h; sourceTree = "<group>"; };
+		33CBCFDD1B4404AF00FADD5F /* PersonalTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalTableViewController.m; sourceTree = "<group>"; };
+		33CBCFE31B44114800FADD5F /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginController.h; sourceTree = "<group>"; };
+		33CBCFE41B44114800FADD5F /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginController.m; sourceTree = "<group>"; };
 		33D1D8C71B426689009ADF41 /* AlayiShopDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlayiShopDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33D1D8CB1B426689009ADF41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33D1D8CC1B426689009ADF41 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -240,8 +248,6 @@
 		33D1DAEB1B4271A8009ADF41 /* CategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryViewController.m; sourceTree = "<group>"; };
 		33D1DAED1B4271C8009ADF41 /* CartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartViewController.h; sourceTree = "<group>"; };
 		33D1DAEE1B4271C8009ADF41 /* CartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartViewController.m; sourceTree = "<group>"; };
-		33D1DAF01B4271D2009ADF41 /* PersonalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalViewController.h; sourceTree = "<group>"; };
-		33D1DAF11B4271D2009ADF41 /* PersonalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalViewController.m; sourceTree = "<group>"; };
 		33D1DAF31B4271DD009ADF41 /* CommonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonViewController.h; sourceTree = "<group>"; };
 		33D1DAF41B4271DD009ADF41 /* CommonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -305,9 +311,24 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		0F7DFFC51B43CC2D00C48B07 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0F7DFFC61B43CC8600C48B07 /* SortViewController.h */,
+				0F7DFFC71B43CC8600C48B07 /* SortViewController.m */,
+				0F24A7D61B4410E600E9A9AE /* SequenceCollectionViewCell.h */,
+				0F24A7D71B4410E600E9A9AE /* SequenceCollectionViewCell.m */,
+				0F24A7D81B4410E600E9A9AE /* SequenceCollectionViewCell.xib */,
+				0F24A7DB1B4416C900E9A9AE /* FinallyViewController.h */,
+				0F24A7DC1B4416C900E9A9AE /* FinallyViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		3324CC761B42944900E74E93 /* Login(登录) */ = {
 			isa = PBXGroup;
 			children = (
+				33CBCFE21B44112900FADD5F /* Controller */,
 			);
 			name = "Login(登录)";
 			path = Login;
@@ -319,6 +340,26 @@
 			);
 			name = "Register(注册)";
 			path = Register;
+			sourceTree = "<group>";
+		};
+		33CBCFD61B43C9E100FADD5F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				33CBCFD71B43CA8F00FADD5F /* PersonalController.h */,
+				33CBCFD81B43CA8F00FADD5F /* PersonalController.m */,
+				33CBCFDC1B4404AF00FADD5F /* PersonalTableViewController.h */,
+				33CBCFDD1B4404AF00FADD5F /* PersonalTableViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		33CBCFE21B44112900FADD5F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				33CBCFE31B44114800FADD5F /* LoginController.h */,
+				33CBCFE41B44114800FADD5F /* LoginController.m */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		33D1D8BE1B426689009ADF41 = {
@@ -636,6 +677,7 @@
 		33D1D9B01B4268B9009ADF41 /* Category(分类) */ = {
 			isa = PBXGroup;
 			children = (
+				0F7DFFC51B43CC2D00C48B07 /* Controller */,
 				33D1DAEA1B4271A8009ADF41 /* CategoryViewController.h */,
 				33D1DAEB1B4271A8009ADF41 /* CategoryViewController.m */,
 			);
@@ -656,8 +698,7 @@
 		33D1D9B21B426950009ADF41 /* Personal(个人中心) */ = {
 			isa = PBXGroup;
 			children = (
-				33D1DAF01B4271D2009ADF41 /* PersonalViewController.h */,
-				33D1DAF11B4271D2009ADF41 /* PersonalViewController.m */,
+				33CBCFD61B43C9E100FADD5F /* Controller */,
 			);
 			name = "Personal(个人中心)";
 			path = Personal;
@@ -779,6 +820,7 @@
 				33D1D9931B42688D009ADF41 /* MJRefresh.bundle in Resources */,
 				33D1D9911B42688D009ADF41 /* MBProgressHUD.bundle in Resources */,
 				3383227F1B427AA5004CE9C2 /* wjl.storyboard in Resources */,
+				0F24A7DA1B4410E600E9A9AE /* SequenceCollectionViewCell.xib in Resources */,
 				33D1D98F1B42688D009ADF41 /* IQKeyboardManager.bundle in Resources */,
 				0F1D1A131B427719009B324E /* yjh.storyboard in Resources */,
 				0F80D93A1B42B15700C46D72 /* wwc.storyboard in Resources */,
@@ -805,6 +847,7 @@
 				33D1D9951B42688D009ADF41 /* MJRefreshConst.m in Sources */,
 				33D1D98B1B42688D009ADF41 /* IQBarButtonItem.m in Sources */,
 				33D1D9871B42688D009ADF41 /* IQKeyboardManager.m in Sources */,
+				33CBCFE51B44114800FADD5F /* LoginController.m in Sources */,
 				33D1D9A21B42688D009ADF41 /* SDWebImageCompat.m in Sources */,
 				33D1D98D1B42688D009ADF41 /* IQToolbar.m in Sources */,
 				33D1D98E1B42688D009ADF41 /* IQUIView+IQKeyboardToolbar.m in Sources */,
@@ -824,10 +867,12 @@
 				33D1D98C1B42688D009ADF41 /* IQTitleBarButtonItem.m in Sources */,
 				33D1D9801B42688D009ADF41 /* AFURLConnectionOperation.m in Sources */,
 				33D1D97F1B42688D009ADF41 /* AFSecurityPolicy.m in Sources */,
+				0F24A7DD1B4416C900E9A9AE /* FinallyViewController.m in Sources */,
 				3324CC751B4286E300E74E93 /* TestViewController.m in Sources */,
 				0F6872CA1B4397A50001D528 /* HomeViewController.m in Sources */,
 				33D1D9851B42688D009ADF41 /* IQUIView+Hierarchy.m in Sources */,
 				33D1D9AB1B42688D009ADF41 /* UIImage+WebP.m in Sources */,
+				33CBCFDE1B4404AF00FADD5F /* PersonalTableViewController.m in Sources */,
 				33D1D9941B42688D009ADF41 /* MJRefreshComponent.m in Sources */,
 				33D1D9A51B42688D009ADF41 /* SDWebImageDownloaderOperation.m in Sources */,
 				33D1D98A1B42688D009ADF41 /* IQTextView.m in Sources */,
@@ -846,6 +891,7 @@
 				33D1D9981B42688D009ADF41 /* MJRefreshGifHeader.m in Sources */,
 				33D1D9AE1B42688D009ADF41 /* UIView+WebCacheOperation.m in Sources */,
 				33D1D9901B42688D009ADF41 /* MBProgressHUD+MJ.m in Sources */,
+				0F7DFFC81B43CC8600C48B07 /* SortViewController.m in Sources */,
 				33D1D9971B42688D009ADF41 /* MJRefreshGifFooter.m in Sources */,
 				33D1D97D1B42688D009ADF41 /* AFHTTPSessionManager.m in Sources */,
 				33D1D9991B42688D009ADF41 /* MJRefreshHeader.m in Sources */,
@@ -972,10 +1018,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = AlayiShopDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -984,10 +1032,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = AlayiShopDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "73dc033e-13f7-4403-9d8e-e8860c28fc14";
 			};
 			name = Release;
 		};
