@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="K7X-Ip-Qaj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="K7X-Ip-Qaj">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
         <!--Search View Controller-->
@@ -184,7 +184,7 @@
             <objects>
                 <tableViewController id="ego-W2-c6M" customClass="HomeTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="VmZ-hq-2fk">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
@@ -195,7 +195,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0Cb-T5-6xi" id="QVL-pY-ZXQ">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QdG-Rd-xGF">
+                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QdG-Rd-xGF">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="140" id="Gea-wc-1zf"/>
@@ -215,26 +215,26 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="m4Q-UY-icA" id="VCw-uN-S7v">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="横线.png" translatesAutoresizingMaskIntoConstraints="NO" id="0Hd-GC-c5g">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="横线.png" translatesAutoresizingMaskIntoConstraints="NO" id="0Hd-GC-c5g">
                                                     <rect key="frame" x="7" y="21" width="399" height="1"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="0.59999999999999998" id="Wxc-hx-AQk"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="竖线.png" translatesAutoresizingMaskIntoConstraints="NO" id="NvQ-4n-obY">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="竖线.png" translatesAutoresizingMaskIntoConstraints="NO" id="NvQ-4n-obY">
                                                     <rect key="frame" x="206" y="21" width="1" height="172"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="172" id="8Ja-CB-XTl"/>
                                                         <constraint firstAttribute="width" constant="0.59999999999999998" id="dPO-ES-CI9"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="横线.png" translatesAutoresizingMaskIntoConstraints="NO" id="g40-fY-tzO">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="横线.png" translatesAutoresizingMaskIntoConstraints="NO" id="g40-fY-tzO">
                                                     <rect key="frame" x="206" y="104" width="199" height="1"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="0.59999999999999998" id="an0-qg-Cg3"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="横线.png" translatesAutoresizingMaskIntoConstraints="NO" id="tCM-G2-vu6">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="横线.png" translatesAutoresizingMaskIntoConstraints="NO" id="tCM-G2-vu6">
                                                     <rect key="frame" x="7" y="193" width="398" height="1"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="0.59999999999999998" id="NWy-Q0-WT8"/>
@@ -246,7 +246,7 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="竖线.png" translatesAutoresizingMaskIntoConstraints="NO" id="nNx-eb-8Gf">
                                                     <rect key="frame" x="273" y="193" width="1" height="119"/>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="横线.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ar7-U6-tLP">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="横线.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ar7-U6-tLP">
                                                     <rect key="frame" x="7" y="311" width="398" height="1"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="0.59999999999999998" id="QS4-ui-1SC"/>
@@ -310,7 +310,7 @@
                             <outlet property="delegate" destination="ego-W2-c6M" id="I92-B8-emh"/>
                         </connections>
                     </tableView>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="adView" destination="QdG-Rd-xGF" id="ozc-iw-8v8"/>
                     </connections>
