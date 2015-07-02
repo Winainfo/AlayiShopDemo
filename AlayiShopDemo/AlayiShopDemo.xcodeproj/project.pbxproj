@@ -14,6 +14,9 @@
 		0F1C817C1B441F6A00FB72E3 /* HWSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1C81791B441F6A00FB72E3 /* HWSearchBar.m */; };
 		0F1C817D1B441F6A00FB72E3 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1C817B1B441F6A00FB72E3 /* UIView+Extension.m */; };
 		0F1D1A131B427719009B324E /* yjh.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F1D1A121B427719009B324E /* yjh.storyboard */; };
+		0F4D19FF1B452B91008B0BE7 /* ShoppingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F4D19FD1B452B91008B0BE7 /* ShoppingTableViewCell.m */; };
+		0F4D1A001B452B91008B0BE7 /* ShoppingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F4D19FE1B452B91008B0BE7 /* ShoppingTableViewCell.xib */; };
+		0F4D1A031B453AAD008B0BE7 /* ShoppingCarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F4D1A021B453AAD008B0BE7 /* ShoppingCarController.m */; };
 		0F6872CA1B4397A50001D528 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6872C91B4397A50001D528 /* HomeViewController.m */; };
 		0F6872D71B43BF770001D528 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6872D61B43BF770001D528 /* SearchViewController.m */; };
 		0F80D93A1B42B15700C46D72 /* wwc.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F80D9391B42B15700C46D72 /* wwc.storyboard */; };
@@ -112,6 +115,11 @@
 		0F1C817A1B441F6A00FB72E3 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		0F1C817B1B441F6A00FB72E3 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		0F1D1A121B427719009B324E /* yjh.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = yjh.storyboard; sourceTree = "<group>"; };
+		0F4D19FC1B452B91008B0BE7 /* ShoppingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingTableViewCell.h; sourceTree = "<group>"; };
+		0F4D19FD1B452B91008B0BE7 /* ShoppingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingTableViewCell.m; sourceTree = "<group>"; };
+		0F4D19FE1B452B91008B0BE7 /* ShoppingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShoppingTableViewCell.xib; sourceTree = "<group>"; };
+		0F4D1A011B453AAD008B0BE7 /* ShoppingCarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingCarController.h; sourceTree = "<group>"; };
+		0F4D1A021B453AAD008B0BE7 /* ShoppingCarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingCarController.m; sourceTree = "<group>"; };
 		0F6872C81B4397A50001D528 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		0F6872C91B4397A50001D528 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		0F6872D51B43BF770001D528 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
@@ -472,9 +480,9 @@
 				33D1D8FE1B42671A009ADF41 /* AppDelegate.h */,
 				33D1D8FF1B42671A009ADF41 /* AppDelegate.m */,
 				0F1D1A121B427719009B324E /* yjh.storyboard */,
-				3383227E1B427AA5004CE9C2 /* wjl.storyboard */,
 				3324CC731B4286E300E74E93 /* TestViewController.h */,
 				3324CC741B4286E300E74E93 /* TestViewController.m */,
+				3383227E1B427AA5004CE9C2 /* wjl.storyboard */,
 				0F80D9391B42B15700C46D72 /* wwc.storyboard */,
 			);
 			name = "View(视图)";
@@ -700,6 +708,11 @@
 			children = (
 				33D1DAED1B4271C8009ADF41 /* CartViewController.h */,
 				33D1DAEE1B4271C8009ADF41 /* CartViewController.m */,
+				0F4D19FC1B452B91008B0BE7 /* ShoppingTableViewCell.h */,
+				0F4D19FD1B452B91008B0BE7 /* ShoppingTableViewCell.m */,
+				0F4D1A011B453AAD008B0BE7 /* ShoppingCarController.h */,
+				0F4D1A021B453AAD008B0BE7 /* ShoppingCarController.m */,
+				0F4D19FE1B452B91008B0BE7 /* ShoppingTableViewCell.xib */,
 			);
 			name = "Cart(购物车)";
 			path = Cart;
@@ -827,6 +840,7 @@
 			files = (
 				33D1D9041B426756009ADF41 /* Main.storyboard in Resources */,
 				0F1C80CF1B43CA5600FB72E3 /* MyTableViewCell.xib in Resources */,
+				0F4D1A001B452B91008B0BE7 /* ShoppingTableViewCell.xib in Resources */,
 				33D1D9931B42688D009ADF41 /* MJRefresh.bundle in Resources */,
 				33D1D9911B42688D009ADF41 /* MBProgressHUD.bundle in Resources */,
 				3383227F1B427AA5004CE9C2 /* wjl.storyboard in Resources */,
@@ -864,6 +878,7 @@
 				33D1D9A81B42688D009ADF41 /* UIButton+WebCache.m in Sources */,
 				33D1DAEC1B4271A8009ADF41 /* CategoryViewController.m in Sources */,
 				0F6872D71B43BF770001D528 /* SearchViewController.m in Sources */,
+				0F4D1A031B453AAD008B0BE7 /* ShoppingCarController.m in Sources */,
 				338322821B427BFC004CE9C2 /* RequestData.m in Sources */,
 				33D1D9891B42688D009ADF41 /* IQSegmentedNextPrevious.m in Sources */,
 				33D1D9841B42688D009ADF41 /* IQNSArray+Sort.m in Sources */,
@@ -890,6 +905,7 @@
 				0F1C810C1B43E09800FB72E3 /* HomeTableViewController.m in Sources */,
 				33D1DAE91B427135009ADF41 /* IndexController.m in Sources */,
 				33D1D99B1B42688D009ADF41 /* MJRefreshLegendHeader.m in Sources */,
+				0F4D19FF1B452B91008B0BE7 /* ShoppingTableViewCell.m in Sources */,
 				33D1D97B1B42688D009ADF41 /* AFHTTPRequestOperation.m in Sources */,
 				33D1D9AC1B42688D009ADF41 /* UIImageView+HighlightedWebCache.m in Sources */,
 				33D1D9831B42688D009ADF41 /* AFURLSessionManager.m in Sources */,

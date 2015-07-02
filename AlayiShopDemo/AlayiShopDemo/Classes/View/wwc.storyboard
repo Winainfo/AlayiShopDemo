@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Wed-XW-lgM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Wed-XW-lgM">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
@@ -18,11 +18,12 @@
                     </tabBar>
                     <connections>
                         <segue destination="BO8-P9-8Hq" kind="relationship" relationship="viewControllers" id="nUY-Hn-Z7S"/>
+                        <segue destination="M43-pY-4Js" kind="relationship" relationship="viewControllers" id="oPx-7q-9Wz"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ctu-6v-Cgs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="509" y="-156"/>
+            <point key="canvasLocation" x="691" y="-109"/>
         </scene>
         <!--吴文成分类界面-->
         <scene sceneID="MJA-4p-rdK">
@@ -33,11 +34,11 @@
                         <viewControllerLayoutGuide type="bottom" id="CMK-Hx-Zha"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0PK-J7-fQA">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="cell" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="9Zh-d3-lHP">
-                                <rect key="frame" x="10" y="10" width="394" height="667"/>
+                                <rect key="frame" x="10" y="10" width="300" height="499"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
@@ -77,14 +78,14 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="myTableView" destination="9Zh-d3-lHP" id="bQN-rf-mHJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i83-G0-VTe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1422" y="-215"/>
+            <point key="canvasLocation" x="1555" y="-215"/>
         </scene>
         <!--Finally View Controller-->
         <scene sceneID="203-Er-gBz">
@@ -260,7 +261,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UDP-zj-Gdi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1783" y="-215"/>
+            <point key="canvasLocation" x="2313" y="-109"/>
         </scene>
         <!--分类-->
         <scene sceneID="bxR-Z6-aD9">
@@ -280,12 +281,71 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nLO-Rx-ohq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1061" y="-109"/>
+            <point key="canvasLocation" x="1116" y="-222"/>
+        </scene>
+        <!--购物车-->
+        <scene sceneID="vsT-po-TwC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="M43-pY-4Js" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="购物车" image="tab2" id="Fsp-42-YY8"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="l6g-ZS-ZZs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="uTJ-qV-jpu" kind="relationship" relationship="rootViewController" id="nHg-Xu-lE3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MEN-Nj-0t0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1116" y="523"/>
+        </scene>
+        <!--Shopping Car Controller-->
+        <scene sceneID="nTq-0L-IUo">
+            <objects>
+                <viewController id="uTJ-qV-jpu" customClass="ShoppingCarController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ow0-KN-nWq"/>
+                        <viewControllerLayoutGuide type="bottom" id="Aj4-TI-hsh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fmv-Ws-cFv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="1" sectionHeaderHeight="15" sectionFooterHeight="100" translatesAutoresizingMaskIntoConstraints="NO" id="PKj-85-OSB">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="uTJ-qV-jpu" id="33k-Pi-df8"/>
+                                    <outlet property="delegate" destination="uTJ-qV-jpu" id="UOp-Xt-FOl"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Aj4-TI-hsh" firstAttribute="top" secondItem="PKj-85-OSB" secondAttribute="bottom" id="5Nb-dJ-Kt3"/>
+                            <constraint firstItem="PKj-85-OSB" firstAttribute="top" secondItem="fmv-Ws-cFv" secondAttribute="top" id="O6j-LA-GNl"/>
+                            <constraint firstAttribute="trailing" secondItem="PKj-85-OSB" secondAttribute="trailing" id="QYu-YK-iC5"/>
+                            <constraint firstItem="PKj-85-OSB" firstAttribute="leading" secondItem="fmv-Ws-cFv" secondAttribute="leading" id="VCN-85-SjG"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="FeH-Ze-rwL"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="myTableView" destination="PKj-85-OSB" id="AbX-Af-mAA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kYx-YD-9Sz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1467" y="523"/>
         </scene>
     </scenes>
     <resources>
         <image name="footer_search_icon" width="25" height="25"/>
         <image name="item_grid_filter_down_active_arrow" width="12" height="13"/>
         <image name="tab1" width="30" height="30"/>
+        <image name="tab2" width="30" height="30"/>
     </resources>
 </document>

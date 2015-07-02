@@ -24,7 +24,7 @@
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 8;
+    return 9;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -35,7 +35,7 @@
     //    cell.backgroundView=Bg;
     cell.imageView.image=[UIImage imageNamed:@"1.png"];
     cell.nameText.text=@"品名";
-    cell.priceLable.text=@"¥5.5/斤";
+    cell.priceText.text=@"¥5.5/斤";
     return cell;
 }
 //距离顶部，距离左边，距离底部，距离右边
@@ -48,20 +48,30 @@
         return UIEdgeInsetsMake(20, 10, 20, 10);
         
     }
-    if (SIZE-375==0)
+    if (SIZE==375)
     {
         return UIEdgeInsetsMake(10, 10, 10, 10);
         
     }else
     {
-        return UIEdgeInsetsMake(20, 20, 20, 20);
+        return UIEdgeInsetsMake(10, 10, 10, 10);
     }
     
 }
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-     return CGSizeMake(135, 150);
+    if (SIZE ==320) {
+        return CGSizeMake(145, 150);
+    }
+    if (SIZE ==375) {
+        return CGSizeMake(110, 150);
+    }
+    else
+    {
+         return CGSizeMake(120, 160);
+    }
 }
+
 /*
 #pragma mark - Navigation
 
