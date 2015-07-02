@@ -1,23 +1,25 @@
-//
-//  IndexController.m
-//  AlayiShopDemo
-//
-//  Created by 吴金林 on 15/6/30.
-//  Copyright (c) 2015年 kolin. All rights reserved.
-//
+#import "HomeViewController.h"
+#define WIDTH [UIScreen mainScreen].bounds.size.width
+#define HEIGHT [UIScreen mainScreen].bounds.size.height
 
-#import "IndexController.h"
-
-@interface IndexController ()
+@interface HomeViewController ()
+@property (weak, nonatomic) IBOutlet UIScrollView *adView;
 
 @end
 
-@implementation IndexController
+@implementation HomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-//    self.view.backgroundColor = [UIColor redColor];
+
+//    CGRect temp = self.adView.frame;
+//    temp.size.width = WIDTH;
+//    temp.size.height = 140;
+//    self.adView.frame = temp;
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+   
+    
 }
 
 - (void)didReceiveMemoryWarning {
