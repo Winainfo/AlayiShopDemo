@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0F1C58F31B453C1C00FBBEB3 /* 背景图3X 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F1C58F21B453C1C00FBBEB3 /* 背景图3X 2.png */; };
-		0F1C58F51B453DFD00FBBEB3 /* 背景图3X 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F1C58F41B453DFD00FBBEB3 /* 背景图3X 3.png */; };
 		0F1C80CE1B43CA5600FB72E3 /* MyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1C80CC1B43CA5600FB72E3 /* MyTableViewCell.m */; };
 		0F1C80CF1B43CA5600FB72E3 /* MyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F1C80CD1B43CA5600FB72E3 /* MyTableViewCell.xib */; };
 		0F1C80D31B43CD8400FB72E3 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1C80D21B43CD8400FB72E3 /* UIView+Extension.m */; };
@@ -98,6 +96,7 @@
 		33D1DAEC1B4271A8009ADF41 /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D1DAEB1B4271A8009ADF41 /* CategoryViewController.m */; };
 		33D1DAEF1B4271C8009ADF41 /* CartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D1DAEE1B4271C8009ADF41 /* CartViewController.m */; };
 		33D1DAF51B4271DD009ADF41 /* CommonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D1DAF41B4271DD009ADF41 /* CommonViewController.m */; };
+		33D6A7AA1B4598F5003901BF /* ARLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D6A7A91B4598F5003901BF /* ARLabel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,8 +110,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0F1C58F21B453C1C00FBBEB3 /* 背景图3X 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "背景图3X 2.png"; sourceTree = "<group>"; };
-		0F1C58F41B453DFD00FBBEB3 /* 背景图3X 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "背景图3X 3.png"; sourceTree = "<group>"; };
 		0F1C80CB1B43CA5600FB72E3 /* MyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableViewCell.h; sourceTree = "<group>"; };
 		0F1C80CC1B43CA5600FB72E3 /* MyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableViewCell.m; sourceTree = "<group>"; };
 		0F1C80CD1B43CA5600FB72E3 /* MyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyTableViewCell.xib; sourceTree = "<group>"; };
@@ -288,6 +285,8 @@
 		33D1DAEE1B4271C8009ADF41 /* CartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartViewController.m; sourceTree = "<group>"; };
 		33D1DAF31B4271DD009ADF41 /* CommonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonViewController.h; sourceTree = "<group>"; };
 		33D1DAF41B4271DD009ADF41 /* CommonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonViewController.m; sourceTree = "<group>"; };
+		33D6A7A81B4598F5003901BF /* ARLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARLabel.h; sourceTree = "<group>"; };
+		33D6A7A91B4598F5003901BF /* ARLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARLabel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -466,12 +465,6 @@
 				33D1D8D71B426689009ADF41 /* Images.xcassets */,
 				33D1D8CB1B426689009ADF41 /* Info.plist */,
 				33D1D8CC1B426689009ADF41 /* main.m */,
-				0F1F94BD1B451781005FDFA0 /* cart_arrow_white@2x.png */,
-				0F1F94BF1B452520005FDFA0 /* u=2147176363,2491323798&fm=21&gp=0.jpg */,
-				0F1F94B91B450E33005FDFA0 /* 背景图1X.png */,
-				0F1F94BB1B4512B0005FDFA0 /* 背景图3X.png */,
-				0F1C58F21B453C1C00FBBEB3 /* 背景图3X 2.png */,
-				0F1C58F41B453DFD00FBBEB3 /* 背景图3X 3.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -522,6 +515,7 @@
 		33D1D8F21B4266BC009ADF41 /* Lib(第三方) */ = {
 			isa = PBXGroup;
 			children = (
+				33D6A7A71B4598F5003901BF /* ARLabel */,
 				33D1D9051B42688C009ADF41 /* AFNetworking */,
 				33D1D9191B42688C009ADF41 /* IQKeyBoardManager */,
 				33D1D93A1B42688D009ADF41 /* MBProgressHUD */,
@@ -818,6 +812,15 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		33D6A7A71B4598F5003901BF /* ARLabel */ = {
+			isa = PBXGroup;
+			children = (
+				33D6A7A81B4598F5003901BF /* ARLabel.h */,
+				33D6A7A91B4598F5003901BF /* ARLabel.m */,
+			);
+			path = ARLabel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -898,9 +901,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F1F94BC1B4512B0005FDFA0 /* 背景图3X.png in Resources */,
 				33D1D9041B426756009ADF41 /* Main.storyboard in Resources */,
-				0F1F94C01B452520005FDFA0 /* u=2147176363,2491323798&fm=21&gp=0.jpg in Resources */,
 				0F1C80CF1B43CA5600FB72E3 /* MyTableViewCell.xib in Resources */,
 				0F4D1A001B452B91008B0BE7 /* ShoppingTableViewCell.xib in Resources */,
 				33D1D9931B42688D009ADF41 /* MJRefresh.bundle in Resources */,
@@ -908,11 +909,7 @@
 				3383227F1B427AA5004CE9C2 /* wjl.storyboard in Resources */,
 				33D1D98F1B42688D009ADF41 /* IQKeyboardManager.bundle in Resources */,
 				0F1D1A131B427719009B324E /* yjh.storyboard in Resources */,
-				0F1C58F51B453DFD00FBBEB3 /* 背景图3X 3.png in Resources */,
-				0F1F94BE1B451781005FDFA0 /* cart_arrow_white@2x.png in Resources */,
 				0F80D93A1B42B15700C46D72 /* wwc.storyboard in Resources */,
-				0F1F94BA1B450E33005FDFA0 /* 背景图1X.png in Resources */,
-				0F1C58F31B453C1C00FBBEB3 /* 背景图3X 2.png in Resources */,
 				33D1D8D81B426689009ADF41 /* Images.xcassets in Resources */,
 				0F944E3E1B44ED4100E5ED82 /* SequenceCollectionViewCell.xib in Resources */,
 			);
@@ -989,6 +986,7 @@
 				33D1D9AE1B42688D009ADF41 /* UIView+WebCacheOperation.m in Sources */,
 				33D1D9901B42688D009ADF41 /* MBProgressHUD+MJ.m in Sources */,
 				33D1D9971B42688D009ADF41 /* MJRefreshGifFooter.m in Sources */,
+				33D6A7AA1B4598F5003901BF /* ARLabel.m in Sources */,
 				333A42781B45675300E2FFBD /* MoreController.m in Sources */,
 				33D1D97D1B42688D009ADF41 /* AFHTTPSessionManager.m in Sources */,
 				33D1D9991B42688D009ADF41 /* MJRefreshHeader.m in Sources */,
