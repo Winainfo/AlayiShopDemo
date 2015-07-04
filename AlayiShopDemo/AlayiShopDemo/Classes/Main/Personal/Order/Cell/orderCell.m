@@ -19,6 +19,9 @@
     NSDictionary *attributes = @{ NSFontAttributeName:[UIFont fontWithName:@"Heiti Sc" size:14.0], NSParagraphStyleAttributeName:paragrphStyle};
     self.contentTextView.attributedText=[[NSAttributedString alloc]initWithString:self.contentTextView.text attributes:attributes];
     
+    //设置代理
+    self.imageScrollView.delegate=self;
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

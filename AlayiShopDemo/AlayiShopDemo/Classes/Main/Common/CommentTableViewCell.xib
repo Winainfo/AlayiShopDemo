@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -13,7 +13,60 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="无昵称用户" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C9n-2I-d3c" customClass="ARLabel">
+                        <rect key="frame" x="27" y="8" width="114" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="HI6-JM-IsY"/>
+                            <constraint firstAttribute="width" constant="114" id="Jac-Pb-75p"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="13"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="东西蛮可爱。小孩子很喜欢。就是白色的发了个蓝色的。确实不错" translatesAutoresizingMaskIntoConstraints="NO" id="w17-dn-r0m">
+                        <rect key="frame" x="15" y="28" width="291" height="43"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="43" id="E9E-mA-SNb"/>
+                            <constraint firstAttribute="width" constant="291" id="G4D-or-PGi"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="15"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015-06-30 07:59" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIr-BB-AIG">
+                        <rect key="frame" x="199" y="70" width="102" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="TaJ-XP-cYg"/>
+                            <constraint firstAttribute="width" constant="102" id="vdO-VF-pTV"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="12"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="虚线2" translatesAutoresizingMaskIntoConstraints="NO" id="qyG-UE-foP">
+                        <rect key="frame" x="5" y="95" width="310" height="1"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="f2M-mU-LQm"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="C9n-2I-d3c" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="08f-y3-poH"/>
+                    <constraint firstAttribute="trailing" secondItem="XIr-BB-AIG" secondAttribute="trailing" constant="19" id="5uS-E4-Ae4"/>
+                    <constraint firstAttribute="trailing" secondItem="w17-dn-r0m" secondAttribute="trailing" constant="14" id="7qV-Gw-oDq"/>
+                    <constraint firstItem="w17-dn-r0m" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="AFD-vV-PkE"/>
+                    <constraint firstItem="C9n-2I-d3c" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="27" id="ER5-bM-wFY"/>
+                    <constraint firstItem="qyG-UE-foP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="QRM-i6-aAw"/>
+                    <constraint firstItem="XIr-BB-AIG" firstAttribute="top" secondItem="w17-dn-r0m" secondAttribute="bottom" constant="-1" id="U7Z-hm-mM0"/>
+                    <constraint firstItem="qyG-UE-foP" firstAttribute="top" secondItem="XIr-BB-AIG" secondAttribute="bottom" constant="4" id="iZP-UV-s3k"/>
+                    <constraint firstItem="w17-dn-r0m" firstAttribute="top" secondItem="C9n-2I-d3c" secondAttribute="bottom" constant="3" id="kVB-Eg-JVR"/>
+                    <constraint firstAttribute="trailing" secondItem="qyG-UE-foP" secondAttribute="trailing" constant="5" id="v4Z-fp-sBl"/>
+                </constraints>
             </tableViewCellContentView>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="虚线2" width="200" height="2"/>
+    </resources>
 </document>

@@ -89,46 +89,25 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dyd-au-VUh" userLabel="ImageView">
                         <rect key="frame" x="0.0" y="53" width="320" height="90"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food" translatesAutoresizingMaskIntoConstraints="NO" id="4vu-Cv-tcB">
-                                <rect key="frame" x="10" y="12" width="66" height="66"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="66" id="OvL-vy-NxS"/>
-                                    <constraint firstAttribute="height" constant="66" id="di1-4c-H0s"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food" translatesAutoresizingMaskIntoConstraints="NO" id="Wxd-9i-mYG">
-                                <rect key="frame" x="84" y="12" width="66" height="66"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="66" id="6qB-Md-xf0"/>
-                                    <constraint firstAttribute="width" constant="66" id="jYI-Lk-gE6"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food" translatesAutoresizingMaskIntoConstraints="NO" id="7ht-2H-Xf9">
-                                <rect key="frame" x="158" y="12" width="66" height="66"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="66" id="ZUc-i6-8GZ"/>
-                                    <constraint firstAttribute="height" constant="66" id="hlp-AN-UNQ"/>
-                                </constraints>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MyAddressManager_line_new" translatesAutoresizingMaskIntoConstraints="NO" id="U3J-vX-hhK">
                                 <rect key="frame" x="10" y="88" width="310" height="1"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="gMb-x1-EY3"/>
                                 </constraints>
                             </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0jB-uT-2fH">
+                                <rect key="frame" x="0.0" y="5" width="320" height="80"/>
+                            </scrollView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="7ht-2H-Xf9" secondAttribute="centerY" id="2QJ-Tc-X7f"/>
-                            <constraint firstItem="4vu-Cv-tcB" firstAttribute="top" secondItem="Dyd-au-VUh" secondAttribute="top" constant="12" id="Egx-kW-MGT"/>
+                            <constraint firstItem="0jB-uT-2fH" firstAttribute="leading" secondItem="Dyd-au-VUh" secondAttribute="leading" id="5UZ-wX-ien"/>
+                            <constraint firstItem="0jB-uT-2fH" firstAttribute="top" secondItem="Dyd-au-VUh" secondAttribute="top" constant="5" id="HMQ-t3-qpM"/>
+                            <constraint firstItem="U3J-vX-hhK" firstAttribute="top" secondItem="0jB-uT-2fH" secondAttribute="bottom" constant="3" id="IQV-UZ-iME"/>
                             <constraint firstAttribute="trailing" secondItem="U3J-vX-hhK" secondAttribute="trailing" id="KOw-Qg-BXd"/>
-                            <constraint firstItem="Wxd-9i-mYG" firstAttribute="leading" secondItem="4vu-Cv-tcB" secondAttribute="trailing" constant="8" id="VnJ-s6-og7"/>
-                            <constraint firstAttribute="centerY" secondItem="4vu-Cv-tcB" secondAttribute="centerY" id="Xcp-T5-uQk"/>
-                            <constraint firstAttribute="centerY" secondItem="Wxd-9i-mYG" secondAttribute="centerY" id="adN-7P-pjq"/>
                             <constraint firstItem="U3J-vX-hhK" firstAttribute="leading" secondItem="Dyd-au-VUh" secondAttribute="leading" constant="10" id="cQL-Br-wIp"/>
-                            <constraint firstItem="7ht-2H-Xf9" firstAttribute="leading" secondItem="Wxd-9i-mYG" secondAttribute="trailing" constant="8" id="gBX-XW-BHQ"/>
                             <constraint firstAttribute="height" constant="90" id="hvD-YZ-4lS"/>
-                            <constraint firstItem="4vu-Cv-tcB" firstAttribute="leading" secondItem="Dyd-au-VUh" secondAttribute="leading" constant="10" id="j1I-qY-URv"/>
                             <constraint firstAttribute="bottom" secondItem="U3J-vX-hhK" secondAttribute="bottom" constant="1" id="kn0-L2-PrA"/>
+                            <constraint firstAttribute="trailing" secondItem="0jB-uT-2fH" secondAttribute="trailing" id="ydA-hG-q9p"/>
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PoG-I3-moy" userLabel="ConentView">
@@ -250,7 +229,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="contentTextView" destination="vPT-lR-Snh" id="Lfk-l5-uga"/>
-                <outlet property="goodsImageView" destination="4vu-Cv-tcB" id="4Wc-yG-TLB"/>
+                <outlet property="imageScrollView" destination="0jB-uT-2fH" id="iEW-r7-JSR"/>
                 <outlet property="lineLabel" destination="ihb-3l-1Ec" id="6mP-yF-BeO"/>
                 <outlet property="orderidLabel" destination="E4E-Mb-VqI" id="fxo-Hz-7ky"/>
                 <outlet property="priceLabel" destination="20O-fx-1AA" id="cge-ht-BVy"/>
@@ -263,7 +242,6 @@
     </objects>
     <resources>
         <image name="MyAddressManager_line_new" width="320" height="1"/>
-        <image name="food" width="329" height="220"/>
         <image name="my_list_arrow" width="13" height="13"/>
     </resources>
 </document>

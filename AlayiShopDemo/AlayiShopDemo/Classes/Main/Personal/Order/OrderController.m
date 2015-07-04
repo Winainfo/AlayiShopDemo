@@ -9,8 +9,10 @@
 #import "OrderController.h"
 #import "RequestData.h"
 #import "AccountTool.h"
+#import "UIImageView+WebCache.h"
 @interface OrderController ()<UITableViewDataSource,UITableViewDelegate>
 @property(retain,nonatomic)NSArray *goods;
+@property(retain,nonatomic)NSArray *imageArray;
 @property(assign,nonatomic)int height;
 @end
 
@@ -92,6 +94,20 @@
         cell.contentTextView.text=self.goods[indexPath.row][@"title"];
         cell.timeLabel.text=self.goods[indexPath.row][@"ordertime"];
         cell.priceLabel.text=self.goods[indexPath.row][@"formatSumprice"];
+         NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:self.goods[indexPath.row][@"orderid"],@"orderid", nil];
+        [RequestData getOrderListByOrderid:params FinishCallbackBlock:^(NSDictionary *data) {
+            self.imageArray=data[@"orderlistList"];
+            cell.imageScrollView.contentSize=CGSizeMake(cell.imageScrollView.frame.size.width*self.imageArray.count, cell.imageScrollView.frame.size.height);
+            for (int i=0; i<self.imageArray.count; i++) {
+                //拼接图片网址·
+                NSString *urlStr =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.imageArray[indexPath.row][@"foodpic"]];
+                //转换成url
+                NSURL *imgUrl = [NSURL URLWithString:urlStr];
+                UIImageView *imageV = [[UIImageView alloc]initWithFrame:CGRectMake((i*60)+10, 0, 70, 70)];
+                [imageV sd_setImageWithURL:imgUrl];
+                [cell.imageScrollView addSubview:imageV];
+            }
+        }];
         if ([self.goods[indexPath.row][@"statuText"]isEqualToString:@"已完成" ]) {
             self.height=184;
             //创建xib文件对象
@@ -156,13 +172,6 @@
  */
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    if ([type isEqualToString:@"0"]) {
-//        return 270;
-//        
-//    }else if([type isEqualToString:@"1"]||[self.goods[indexPath.row][@"statuText"]isEqualToString:@"已完成" ])
-//    {
-//       return 184;
-//    }
     return self.height;
 }
 @end
