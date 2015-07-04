@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WaterCell : UITableViewCell
+@interface WaterCell : UITableViewCell<UIScrollViewDelegate>
+@property (weak, nonatomic) IBOutlet UIScrollView *imageScrollView;
 
 @end

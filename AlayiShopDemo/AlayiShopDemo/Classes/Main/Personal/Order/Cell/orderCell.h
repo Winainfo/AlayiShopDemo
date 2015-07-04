@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ARLabel.h"
-@interface orderCell : UITableViewCell
+@interface orderCell : UITableViewCell<UIScrollViewDelegate>
 /**订单编号*/
 @property (weak, nonatomic) IBOutlet ARLabel *orderidLabel;
 /**订单状态*/
@@ -25,4 +25,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *stateButton;
 /**分割线*/
 @property (weak, nonatomic) IBOutlet ARLabel *lineLabel;
+/**产品图片滚动*/
+@property (weak, nonatomic) IBOutlet UIScrollView *imageScrollView;
+@property (weak, nonatomic) IBOutlet UIView *goodsView;
+/**内容*/
+@property (weak, nonatomic) IBOutlet UILabel *contetLabel;
+
 @end

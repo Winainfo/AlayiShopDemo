@@ -7,7 +7,8 @@
 //
 
 #import "orderCell.h"
-
+#import "RequestData.h"
+#import "UIImageView+WebCache.h"
 @implementation orderCell
 
 - (void)awakeFromNib {
@@ -18,6 +19,9 @@
     //字体大小UITextAttributeFont:[UIFont fontWithName:@"Heiti TC" size:0.0]
     NSDictionary *attributes = @{ NSFontAttributeName:[UIFont fontWithName:@"Heiti Sc" size:14.0], NSParagraphStyleAttributeName:paragrphStyle};
     self.contentTextView.attributedText=[[NSAttributedString alloc]initWithString:self.contentTextView.text attributes:attributes];
+    
+    //设置代理
+   // self.imageScrollView.delegate=self;
     
 }
 
