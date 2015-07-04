@@ -15,8 +15,8 @@
         "capInsets" : {
           "bottom" : 8,
           "top" : 8,
-          "right" : 9,
-          "left" : 8
+          "left" : 8,
+          "right" : 9
         }
       },
       "idiom" : "universal",
