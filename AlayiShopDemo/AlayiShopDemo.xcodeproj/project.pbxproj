@@ -35,7 +35,6 @@
 		333A427B1B4575CF00E2FFBD /* AboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 333A427A1B4575CF00E2FFBD /* AboutController.m */; };
 		3383227F1B427AA5004CE9C2 /* wjl.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3383227E1B427AA5004CE9C2 /* wjl.storyboard */; };
 		338322821B427BFC004CE9C2 /* RequestData.m in Sources */ = {isa = PBXBuildFile; fileRef = 338322811B427BFC004CE9C2 /* RequestData.m */; };
-		3394F29F1B46271300CB951C /* IMG_0079.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 3394F29E1B46271300CB951C /* IMG_0079.PNG */; };
 		3394F2A61B463B7000CB951C /* BZGFormField.m in Sources */ = {isa = PBXBuildFile; fileRef = 3394F2A51B463B7000CB951C /* BZGFormField.m */; };
 		3394F2A91B46468B00CB951C /* AdviseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3394F2A81B46468B00CB951C /* AdviseController.m */; };
 		33C4184B1B451182002C8601 /* AccountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 33C4184A1B451182002C8601 /* AccountModel.m */; };
@@ -109,7 +108,6 @@
 		33F955381B468A0C00E25192 /* EditUserController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F955371B468A0C00E25192 /* EditUserController.m */; };
 		33F9553E1B46A11800E25192 /* orderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F9553C1B46A11800E25192 /* orderCell.m */; };
 		33F9553F1B46A11800E25192 /* orderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33F9553D1B46A11800E25192 /* orderCell.xib */; };
-		33F955411B46A2BF00E25192 /* IMG_0081.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 33F955401B46A2BF00E25192 /* IMG_0081.PNG */; };
 		33F955441B46AEC000E25192 /* OrderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F955431B46AEC000E25192 /* OrderController.m */; };
 /* End PBXBuildFile section */
 
