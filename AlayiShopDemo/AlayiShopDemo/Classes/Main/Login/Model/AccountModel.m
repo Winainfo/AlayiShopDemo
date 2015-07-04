@@ -33,6 +33,7 @@
     [aCoder encodeObject:self.pilescore forKey:@"pilescore"];
     [aCoder encodeObject:self.email forKey:@"email"];
     [aCoder encodeObject:self.sex forKey:@"sex"];
+    [aCoder encodeObject:self.telephone forKey:@"telephone"];
 }
 /**
  *  当从沙盒解析一个对象(从沙盒加载一个对象时)时，就会调用这个方法

@@ -125,6 +125,7 @@
         account.sex=data[@"user"][@"sex"];
         account.telephone=data[@"user"][@"telephone"];
         [AccountTool saveAccount:account];
+        NSLog(@"-----%@-----",data[@"user"][@"telephone"]);
        NSString *code=data[@"code"];
         if ([code isEqualToString:@"0"]) {
             //设置故事板为第一启动

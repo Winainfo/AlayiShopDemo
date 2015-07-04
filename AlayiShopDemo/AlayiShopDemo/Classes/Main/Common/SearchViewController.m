@@ -48,7 +48,7 @@ static BOOL isHistory = NO;
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    self.hotSearchView.backgroundColor = [UIColor colorWithRed:165/255.0 green:254/255.0 blue:181/255.0 alpha:1.000];
+    self.hotSearchView.backgroundColor = [UIColor lightGrayColor];
     self.historySearchView.backgroundColor = [UIColor colorWithRed:235/255.0 green:235/255.0 blue:241/255.0 alpha:1.000];
     //隐藏“清除历史”按钮
     self.clearView.hidden = YES;
@@ -63,7 +63,7 @@ static BOOL isHistory = NO;
 //点击热门搜索，改变背景色，显示热门搜索菜名
 - (IBAction)ClickHot:(id)sender {
      if (isHistory == YES){
-        self.hotSearchView.backgroundColor = [UIColor colorWithRed:165/255.0 green:254/255.0 blue:181/255.0 alpha:1.000];
+        self.hotSearchView.backgroundColor = [UIColor lightGrayColor];
         self.historySearchView.backgroundColor = [UIColor colorWithRed:235/255.0 green:235/255.0 blue:241/255.0 alpha:1.000];
          //隐藏“清除历史”按钮
          self.clearView.hidden = YES;
@@ -74,7 +74,7 @@ static BOOL isHistory = NO;
 //点击历史搜索，改变背景色，显示历史搜索菜名
 - (IBAction)ClickHistory:(id)sender {
     if (isHistory == NO) {
-        self.historySearchView.backgroundColor = [UIColor colorWithRed:165/255.0 green:254/255.0 blue:181/255.0 alpha:1.000];
+        self.historySearchView.backgroundColor = [UIColor lightGrayColor];
         self.hotSearchView.backgroundColor = [UIColor colorWithRed:235/255.0 green:235/255.0 blue:241/255.0 alpha:1.000];
        isHistory = YES;
         //显示“清除历史”按钮
