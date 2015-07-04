@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="K7X-Ip-Qaj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="WHj-ld-PE2">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
@@ -189,7 +189,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Olf-MU-5yX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1542" y="298"/>
+            <point key="canvasLocation" x="2354" y="298"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="TU2-yL-ZR8">
@@ -318,7 +318,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1gJ-16-8SK">
                                                 <rect key="frame" x="0.0" y="322" width="320" height="375"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baicai" translatesAutoresizingMaskIntoConstraints="NO" id="6YU-gH-Dye">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food" translatesAutoresizingMaskIntoConstraints="NO" id="6YU-gH-Dye">
                                                         <rect key="frame" x="3" y="3" width="230" height="130"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="230" id="6QA-H7-XyD"/>
@@ -604,7 +604,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U4F-cc-CCV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2414" y="246"/>
+            <point key="canvasLocation" x="3226" y="246"/>
         </scene>
         <!--首页-->
         <scene sceneID="zTX-gV-54e">
@@ -624,7 +624,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gZh-l9-zkU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1027" y="321"/>
+            <point key="canvasLocation" x="1839" y="321"/>
         </scene>
         <!--Home Table View Controller-->
         <scene sceneID="O1p-Ph-Dw3">
@@ -761,11 +761,30 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="THT-1e-y6c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1933" y="239"/>
+            <point key="canvasLocation" x="2745" y="239"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Ltg-lm-cWy">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="WHj-ld-PE2" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="As2-Hm-XW1">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="K7X-Ip-Qaj" kind="relationship" relationship="viewControllers" id="T1x-7h-nij"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zMD-FD-fPX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1167" y="321"/>
         </scene>
     </scenes>
     <resources>
-        <image name="baicai" width="72" height="71"/>
+        <image name="food" width="329" height="220"/>
         <image name="goodsbackground" width="310" height="334"/>
         <image name="messageBg" width="100" height="100"/>
         <image name="more-arrow" width="24" height="24"/>
