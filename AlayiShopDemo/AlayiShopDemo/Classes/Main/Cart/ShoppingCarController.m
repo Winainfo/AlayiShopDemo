@@ -1,17 +1,15 @@
-//
-//  ShoppingCarController.m
-//  AlayiShopDemo
-//
-//  Created by ibokan on 15/7/2.
-//  Copyright (c) 2015年 kolin. All rights reserved.
-//
-
 #import "ShoppingCarController.h"
-#import "ShoppingTableViewCell.h"
+
 #define SIZE [UIScreen mainScreen].bounds.size.width
 
 @interface ShoppingCarController ()<UITableViewDataSource,UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *myTableView;
+@property (strong, nonatomic) ShoppingTableViewCell *cell;//单元格属性
+@property (strong, nonatomic) UIButton *editorBut;//移动图片上面的编辑按钮
+@property (assign, nonatomic) int count;//数量
+@property (strong, nonatomic) UILabel *arrPrice;//总价
+@property (strong, nonatomic) NSArray *moveArray;
+
 
 @end
 
@@ -19,8 +17,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"%f",SIZE);
     
-}
+    }
 
 #pragma mark - Table view data source
 
@@ -34,21 +33,47 @@
 {
     return 150;
 }
+
+#pragma mark ---设置单元格内容
+
+
 //设置表格内容
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    //重用单元格
     static NSString *cellIdentify = @"ShoppingTableViewCell";
     static BOOL isReg = NO;
     if (!isReg) {
         UINib *nib = [UINib nibWithNibName:@"ShoppingTableViewCell" bundle:[NSBundle mainBundle]];
         [tableView registerNib:nib forCellReuseIdentifier:cellIdentify];
     }
-    ShoppingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentify];
+     self.cell = [tableView dequeueReusableCellWithIdentifier:cellIdentify];
     
-    cell.nameLab.text = @"香葱(小葱)/50g[简装]";
-    cell.numlab.text = @"5.00";
-    cell.foodView.image = [UIImage imageNamed:@"baicai"];
-    return cell;
+    //设置编辑完成按钮位置
+    self.editorBut = [[UIButton alloc]initWithFrame:CGRectMake(240, 4, 60, 30)];
+    self.editorBut.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"login_btn_gray"]];
+    [self.editorBut setTitle:@"编辑" forState:UIControlStateNormal];
+    
+    //编辑按钮点击事件
+    [self.editorBut addTarget:self action:@selector(editorBut:) forControlEvents:UIControlEventTouchUpInside];
+    
+    //减少按钮点击事件
+    [self.cell.reduceBut addTarget:self action:@selector(reduceEvent:) forControlEvents:UIControlEventTouchUpInside];
+    
+    //增加按钮点击事件
+    [self.cell.addBut addTarget:self action:@selector(addEvent:) forControlEvents:UIControlEventTouchUpInside];
+    
+//    //删除按钮点击事件
+//    [self.cell.removeBut addTarget:self action:@selector(removeBut:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.cell.moveView addSubview:self.editorBut];
+    
+    self.cell.nameLab.text = @"香葱(小葱)/50g[简装]";
+    self.cell.moveNum.text = @"0.00";//要和增加删除界面的数字相同
+    
+    self.cell.foodView.image = [UIImage imageNamed:@"baicai"];
+    
+    return self.cell;
 }
 
 //设置表头内容
@@ -79,16 +104,17 @@
     lab.text = @"总额";
     lab.font = [UIFont fontWithName:@"Helvetica" size:14.0];
     
-    UILabel *labTwo = [[UILabel alloc]initWithFrame:CGRectMake(10, 30, 50, 20)];
-    labTwo.text = @"￥1.00";
-    labTwo.font = [UIFont fontWithName:@"Helvetica" size:14.0];
-    labTwo.textColor = [UIColor redColor];
+    self.arrPrice = [[UILabel alloc]initWithFrame:CGRectMake(20, 30, 50, 20)];
+    self.arrPrice.font = [UIFont fontWithName:@"Helvetica" size:14.0];
+    self.arrPrice.textColor = [UIColor redColor];
+    self.arrPrice.text = @"0.00";
+    
     
     UIButton *but = [[UIButton alloc]initWithFrame:CGRectMake(180, 10, 100, 40)];
     //设置按钮背景图片
     [but setBackgroundImage:[UIImage imageNamed:@"shopping_cart_btn_with_icon"] forState:UIControlStateNormal];
     //设置按钮标题字体和字体样式
-    [but setTitle:@"购物车" forState:UIControlStateNormal];
+    [but setTitle:@"结账" forState:UIControlStateNormal];
     but.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
     //设置按钮字体在按钮内的位置
     [but titleRectForContentRect:CGRectMake(40, 20, 20, 20)];
@@ -96,13 +122,15 @@
     but.tintColor = [UIColor whiteColor];
     //设置字体距离边框5像素
     but.contentEdgeInsets = UIEdgeInsetsMake(0,0, 0, 5);
+    
+    
     //设置表尾图片
     if (section==0) {
-        v = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SIZE, 100)];
+        v = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SIZE, 0)];
         UIImageView *i =[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"shopping_cart_body_bg_02"]];
         [v addSubview:i];//添加图片
         [v addSubview:lab];//添加lab
-        [v addSubview:labTwo];//添加第二个lab
+        [v addSubview:self.arrPrice];//添加第二个lab
         [v addSubview:but];//添加按钮
     }
     return v;
@@ -110,9 +138,77 @@
     
     
 }
+
 //设置表尾高度
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
     return 10;
 }
+
+
+#pragma  mark ---按钮点击事件
+
+
+//按钮点击事件
+-(void) editorBut :(UIButton *)sender
+{
+    static BOOL chat = NO;
+    if (chat==NO) {
+        self.cell.editorConstraint.constant = -SIZE/2.0;
+        [self.editorBut setTitle:@"完成" forState:UIControlStateNormal];
+        
+        chat =YES;
+    }else
+    {
+        self.cell.editorConstraint.constant = 0;
+        [self.editorBut setTitle:@"编辑" forState:UIControlStateNormal];
+        chat = NO;
+    }
+    self.cell.moveNum.text = self.cell.editoNumLab.text ;
+    float onePirce=[self.cell.UnitPriceLab.text floatValue];
+    float numArr=[self.cell.moveNum.text floatValue];
+    float sum = 0;
+    sum = onePirce * numArr;
+    NSString *sumStr=[NSString stringWithFormat:@"%.2f",sum];
+    self.arrPrice.text=sumStr;
+    
+}
+
+//减少按钮事件
+- (void) reduceEvent:(UIButton *)sender
+{
+    self.count =  [self.cell.editoNumLab.text intValue];
+    if (self.count>=0)
+    {
+        self.count--;
+        
+    }
+    //将count中转化成字符串类型赋值给shopcount
+    self.cell.editoNumLab.text=[NSString stringWithFormat:@"%d",self.count];
+}
+
+- (void) addEvent:(UIButton *)sender
+{
+    self.count =  [self.cell.editoNumLab.text intValue];
+    if (self.count>=0)
+    {
+        self.count++;
+        
+    }
+    //将count中转化成字符串类型赋值给shopcount
+    self.cell.editoNumLab.text=[NSString stringWithFormat:@"%d",self.count];
+}
+
+//删除单元格按钮
+//-(void) removeBut:(UIButton *)sender
+//{
+//    [self  delete:self.cell];
+//}
+
+//删除单元格
+//-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//   
+//
+//}
 @end
