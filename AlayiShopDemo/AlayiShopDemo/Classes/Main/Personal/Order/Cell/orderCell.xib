@@ -237,7 +237,7 @@
                 <outlet property="stateLabel" destination="yP2-Go-MpX" id="U8V-cS-Pyp"/>
                 <outlet property="timeLabel" destination="odQ-e4-qKr" id="JtZ-Zc-vZF"/>
             </connections>
-            <point key="canvasLocation" x="329" y="322"/>
+            <point key="canvasLocation" x="417" y="321"/>
         </tableViewCell>
     </objects>
     <resources>

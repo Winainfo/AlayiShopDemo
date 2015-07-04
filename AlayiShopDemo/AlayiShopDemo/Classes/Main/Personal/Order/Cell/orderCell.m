@@ -7,7 +7,8 @@
 //
 
 #import "orderCell.h"
-
+#import "RequestData.h"
+#import "UIImageView+WebCache.h"
 @implementation orderCell
 
 - (void)awakeFromNib {

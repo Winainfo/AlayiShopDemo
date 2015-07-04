@@ -90,7 +90,7 @@
                                     <constraint firstItem="2u1-U6-g4h" firstAttribute="top" secondItem="LKi-Oe-Y3S" secondAttribute="top" constant="22" id="zli-gZ-z3q"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IP0-OO-H09" userLabel="LeftView">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IP0-OO-H09" userLabel="LeftView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="147"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shopping_cart_body_bg_03" translatesAutoresizingMaskIntoConstraints="NO" id="IEK-fe-8KC">

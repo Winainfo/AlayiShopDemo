@@ -121,6 +121,24 @@
             }
             //取消Cell选中时背景
             cell.selectionStyle=UITableViewCellSelectionStyleNone;
+            [RequestData getOrderListByOrderid:params FinishCallbackBlock:^(NSDictionary *data) {
+                NSArray *imageArray=data[@"orderlistList"];
+                cell.imageScrollView.contentSize=CGSizeMake(cell.imageScrollView.frame.size.width*imageArray.count, cell.imageScrollView.frame.size.height);
+                cell.imageScrollView.delegate=self;
+                if (imageArray.count<=4) {
+                    cell.imageScrollView.userInteractionEnabled=NO;
+                }
+                for (int i=0; i<imageArray.count; i++) {
+                    //拼接图片网址·
+                    NSString *urlStr =[NSString stringWithFormat:@"http://www.alayicai.com%@",imageArray[i][@"foodpic"]];
+                    //转换成url
+                    NSURL *imgUrl = [NSURL URLWithString:urlStr];
+                    UIImageView *imageV = [[UIImageView alloc]initWithFrame:CGRectMake((i*80)+5, 0, 70, 80)];
+                    [imageV sd_setImageWithURL:imgUrl];
+                    [cell.imageScrollView addSubview:imageV];
+                }
+            }];
+
             return cell;
         }else if ([self.goods[indexPath.row][@"statuText"]isEqualToString:@"已支付" ])
         {
