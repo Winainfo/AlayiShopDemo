@@ -761,10 +761,10 @@
 			children = (
 				33D1DAED1B4271C8009ADF41 /* CartViewController.h */,
 				33D1DAEE1B4271C8009ADF41 /* CartViewController.m */,
-				0F4D19FC1B452B91008B0BE7 /* ShoppingTableViewCell.h */,
-				0F4D19FD1B452B91008B0BE7 /* ShoppingTableViewCell.m */,
 				0F4D1A011B453AAD008B0BE7 /* ShoppingCarController.h */,
 				0F4D1A021B453AAD008B0BE7 /* ShoppingCarController.m */,
+				0F4D19FC1B452B91008B0BE7 /* ShoppingTableViewCell.h */,
+				0F4D19FD1B452B91008B0BE7 /* ShoppingTableViewCell.m */,
 				0F4D19FE1B452B91008B0BE7 /* ShoppingTableViewCell.xib */,
 			);
 			name = "Cart(购物车)";

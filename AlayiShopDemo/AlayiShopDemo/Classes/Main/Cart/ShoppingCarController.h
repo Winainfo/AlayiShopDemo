@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ShoppingTableViewCell.h"
 
 @interface ShoppingCarController : UIViewController
 
