@@ -17,6 +17,10 @@
 
 @implementation PersonalTableViewController
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [self showTabBar];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     //取消滚动条
@@ -40,6 +44,57 @@
     {
         self.userNameLabel.text=self.userName;
         self.scoreLabel.text=self.score;
+    }
+}
+/**
+ *  显示TabBar
+ */
+- (void)showTabBar
+
+{
+    if (self.tabBarController.tabBar.hidden == NO)
+    {
+        return;
+    }
+    UIView *contentView;
+    if ([[self.tabBarController.view.subviews objectAtIndex:0] isKindOfClass:[UITabBar class]])
+        
+        contentView = [self.tabBarController.view.subviews objectAtIndex:1];
+    
+    else
+        
+        contentView = [self.tabBarController.view.subviews objectAtIndex:0];
+    contentView.frame = CGRectMake(contentView.bounds.origin.x, contentView.bounds.origin.y,  contentView.bounds.size.width, contentView.bounds.size.height - self.tabBarController.tabBar.frame.size.height);
+    self.tabBarController.tabBar.hidden = NO;
+    
+}
+
+/**
+ *  该方法在视图跳转时被触发
+ *
+ *  @param segue  <#segue description#>
+ *  @param sender <#sender description#>
+ */
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"orderCell"]) {
+        id theSegue=segue.destinationViewController;
+        [theSegue setValue:@"0" forKey:@"type"];
+    }
+    if ([segue.identifier isEqualToString:@"WaterCell"])
+    {
+        id theSegue=segue.destinationViewController;
+        [theSegue setValue:@"3" forKey:@"type"];
+    }
+    if ([segue.identifier isEqualToString:@"payCell"])
+    {
+        id theSegue=segue.destinationViewController;
+        [theSegue setValue:@"1" forKey:@"type"];
+    }
+    if ([segue.identifier isEqualToString:@"makingCell"])
+    {
+        id theSegue=segue.destinationViewController;
+        [theSegue setValue:@"2" forKey:@"type"];
     }
 }
 @end

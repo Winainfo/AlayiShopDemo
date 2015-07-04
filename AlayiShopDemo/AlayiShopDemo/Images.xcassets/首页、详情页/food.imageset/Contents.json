@@ -8,12 +8,12 @@
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "food-1.jpg"
+      "filename" : "food@2x.jpg"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "food-2.jpg"
+      "filename" : "food@3x.jpg"
     }
   ],
   "info" : {

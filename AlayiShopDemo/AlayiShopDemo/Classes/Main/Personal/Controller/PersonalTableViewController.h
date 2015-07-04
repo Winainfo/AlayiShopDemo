@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "OrderController.h"
 @interface PersonalTableViewController : UITableViewController
 @property (retain,nonatomic) NSString *userName;
 @property (retain,nonatomic) NSString *score;
