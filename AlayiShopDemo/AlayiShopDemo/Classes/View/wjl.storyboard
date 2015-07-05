@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vsn-Fr-qiB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vsn-Fr-qiB">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
@@ -881,7 +881,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For iPhone V4.2.1 build22026" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zlC-u1-HeN" customClass="ARLabel">
-                                <rect key="frame" x="78.5" y="194" width="163" height="21"/>
+                                <rect key="frame" x="79" y="194" width="163" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="NdJ-8a-9NY"/>
                                 </constraints>
@@ -1322,10 +1322,10 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dRY-4r-6ks" id="FZa-BI-G6b">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Tn-DC-qis" userLabel="TopView">
+                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Tn-DC-qis" userLabel="TopView">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="166"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_head" translatesAutoresizingMaskIntoConstraints="NO" id="GAm-qt-XBB">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="login_head" translatesAutoresizingMaskIntoConstraints="NO" id="GAm-qt-XBB">
                                                             <rect key="frame" x="0.0" y="0.0" width="320" height="166"/>
                                                         </imageView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="my_head_circle" translatesAutoresizingMaskIntoConstraints="NO" id="lFz-2Z-kM1">
@@ -1381,7 +1381,7 @@
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <view alpha="0.15000000596046448" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cJv-3u-rXD">
+                                                        <view alpha="0.15000000596046448" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cJv-3u-rXD">
                                                             <rect key="frame" x="0.0" y="122" width="320" height="44"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z72-m5-dDd">
@@ -1427,7 +1427,7 @@
                                                                 <constraint firstAttribute="height" constant="44" id="mDJ-aW-jTv"/>
                                                             </constraints>
                                                         </view>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ia7-VO-e7Z">
+                                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ia7-VO-e7Z">
                                                             <rect key="frame" x="0.0" y="0.0" width="320" height="122"/>
                                                             <state key="normal">
                                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -1881,10 +1881,10 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DW9-gL-YM5" id="bwj-VA-ncw">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7tE-vc-7pK" userLabel="TopView">
+                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7tE-vc-7pK" userLabel="TopView">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="166"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="my_unlogin_bg" translatesAutoresizingMaskIntoConstraints="NO" id="Srg-qY-Z00">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="my_unlogin_bg" translatesAutoresizingMaskIntoConstraints="NO" id="Srg-qY-Z00">
                                                             <rect key="frame" x="0.0" y="0.0" width="320" height="166"/>
                                                         </imageView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="my_head_circle" translatesAutoresizingMaskIntoConstraints="NO" id="X2g-cO-tge">
@@ -1894,7 +1894,7 @@
                                                                 <constraint firstAttribute="height" constant="66" id="wEB-RD-Dhc"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <view alpha="0.15000000596046448" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pTt-Pv-YKC">
+                                                        <view alpha="0.15000000596046448" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pTt-Pv-YKC">
                                                             <rect key="frame" x="0.0" y="122" width="320" height="44"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I0D-WS-oNQ">
