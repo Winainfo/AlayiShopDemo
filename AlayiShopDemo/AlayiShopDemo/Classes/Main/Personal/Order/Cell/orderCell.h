@@ -25,8 +25,5 @@
 @property (weak, nonatomic) IBOutlet ARLabel *lineLabel;
 /**产品图片滚动*/
 @property (weak, nonatomic) IBOutlet UIScrollView *imageScrollView;
-@property (weak, nonatomic) IBOutlet UIView *goodsView;
-/**内容*/
-@property (weak, nonatomic) IBOutlet UILabel *contetLabel;
 
 @end

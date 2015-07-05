@@ -1,10 +1,11 @@
 
 
 #import "DetailViewController.h"
+#import "CommentTableViewCell.h"
 #import "ARLabel.h"
 #define WIDTH [UIScreen mainScreen].bounds.size.width
 
-@interface DetailViewController ()
+@interface DetailViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UIView *detailView;
 @property (weak, nonatomic) IBOutlet UIView *assessView;
 @property (weak, nonatomic) IBOutlet ARLabel *goodsNum;
@@ -22,8 +23,31 @@ static BOOL isAssess = NO;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //注册xib
+    UINib *nib = [UINib nibWithNibName:@"CommentTableViewCell" bundle:[NSBundle mainBundle]];
+    [self.commentTable registerNib:nib forCellReuseIdentifier:@"CommentTableViewCell"];
     
     
+}
+
+#pragma mark 表格代理
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 3;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    CommentTableViewCell *cell = [self.commentTable dequeueReusableCellWithIdentifier:@"CommentTableViewCell"];
+    if (!cell) {
+        cell = [CommentTableViewCell new];
+    }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    return cell;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 100;    
 }
 
 -(void)viewWillAppear:(BOOL)animated

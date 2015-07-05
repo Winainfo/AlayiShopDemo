@@ -12,7 +12,7 @@
 #import "UIImageView+WebCache.h"
 @interface OrderController ()<UITableViewDataSource,UITableViewDelegate>
 @property(retain,nonatomic)NSArray *goods;
-
+@property(retain,nonatomic)NSArray *imageArray;
 @property(assign,nonatomic)int height;
 @end
 
@@ -90,22 +90,13 @@
         cell.stateLabel.text=self.goods[indexPath.row][@"statuText"];
         cell.timeLabel.text=self.goods[indexPath.row][@"ordertime"];
         cell.priceLabel.text=self.goods[indexPath.row][@"formatSumprice"];
-        cell.contetLabel.text=self.goods[indexPath.row][@"title"];
          NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:self.goods[indexPath.row][@"orderid"],@"orderid", nil];
         [RequestData getOrderListByOrderid:params FinishCallbackBlock:^(NSDictionary *data) {
-           NSArray *imageArray=data[@"orderlistList"];
-            cell.imageScrollView.contentSize=CGSizeMake(cell.imageScrollView.frame.size.width*imageArray.count, cell.imageScrollView.frame.size.height);
-            cell.imageScrollView.delegate=self;
-            if (imageArray.count==1) {
-                cell.goodsView.hidden=NO;
-                cell.imageScrollView.hidden=YES;
-            }
-            if (imageArray.count<=4) {
-                cell.imageScrollView.userInteractionEnabled=NO;
-            }
-            for (int i=0; i<imageArray.count; i++) {
+            self.imageArray=data[@"orderlistList"];
+            cell.imageScrollView.contentSize=CGSizeMake(cell.imageScrollView.frame.size.width*self.imageArray.count, cell.imageScrollView.frame.size.height);
+            for (int i=0; i<self.imageArray.count; i++) {
                 //拼接图片网址·
-                NSString *urlStr =[NSString stringWithFormat:@"http://www.alayicai.com%@",imageArray[i][@"foodpic"]];
+                NSString *urlStr =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.imageArray[indexPath.row][@"foodpic"]];
                 //转换成url
                 NSURL *imgUrl = [NSURL URLWithString:urlStr];
                 UIImageView *imageV = [[UIImageView alloc]initWithFrame:CGRectMake((i*80)+5, 0, 70, 80)];

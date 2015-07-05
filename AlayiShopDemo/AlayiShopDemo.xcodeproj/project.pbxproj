@@ -114,7 +114,6 @@
 		33F955321B46805500E25192 /* UserInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F955311B46805500E25192 /* UserInfoController.m */; };
 		33F955381B468A0C00E25192 /* EditUserController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F955371B468A0C00E25192 /* EditUserController.m */; };
 		33F9553E1B46A11800E25192 /* orderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F9553C1B46A11800E25192 /* orderCell.m */; };
-		33F9553F1B46A11800E25192 /* orderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33F9553D1B46A11800E25192 /* orderCell.xib */; };
 		33F955441B46AEC000E25192 /* OrderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F955431B46AEC000E25192 /* OrderController.m */; };
 /* End PBXBuildFile section */
 
