@@ -23,6 +23,8 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //设置导航栏标题颜色和字体大小UITextAttributeFont:[UIFont fontWithName:@"Heiti TC" size:0.0]
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"Heiti Sc" size:16.0],NSForegroundColorAttributeName:[UIColor blackColor]}];
     //取消滚动条
     self.myTableview.showsVerticalScrollIndicator=NO;
     //显示用户名

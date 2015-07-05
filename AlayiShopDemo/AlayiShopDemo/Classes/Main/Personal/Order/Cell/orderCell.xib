@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
@@ -108,7 +107,7 @@
                                             <constraint firstAttribute="width" constant="80" id="qBE-S1-5dV"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXZ-dX-ZvP">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXZ-dX-ZvP" customClass="ARLabel">
                                         <rect key="frame" x="115" y="8" width="162" height="64"/>
                                         <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="16"/>
                                         <color key="textColor" red="0.94901960780000005" green="0.3294117647" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -196,7 +195,7 @@
                                     <constraint firstAttribute="height" constant="21" id="yXi-XY-zhb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015-07-03 10:00:39" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="odQ-e4-qKr" customClass="ARLabel">
@@ -254,9 +253,9 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="contetLabel" destination="QXZ-dX-ZvP" id="C5V-lB-bPV"/>
+                <outlet property="contetLabel" destination="QXZ-dX-ZvP" id="TLG-00-NzP"/>
                 <outlet property="goodsImageView" destination="Lu7-6C-PmX" id="gU4-bK-wBu"/>
-                <outlet property="goodsView" destination="KYN-Rt-IKF" id="REk-SJ-iE1"/>
+                <outlet property="goodsView" destination="H2p-sc-9uM" id="muA-8Q-QKy"/>
                 <outlet property="imageScrollView" destination="0jB-uT-2fH" id="iEW-r7-JSR"/>
                 <outlet property="lineLabel" destination="ihb-3l-1Ec" id="6mP-yF-BeO"/>
                 <outlet property="orderidLabel" destination="E4E-Mb-VqI" id="fxo-Hz-7ky"/>

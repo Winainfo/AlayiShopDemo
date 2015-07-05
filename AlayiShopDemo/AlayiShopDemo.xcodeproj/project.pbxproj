@@ -20,7 +20,6 @@
 		0F6872CA1B4397A50001D528 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6872C91B4397A50001D528 /* HomeViewController.m */; };
 		0F6872D71B43BF770001D528 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6872D61B43BF770001D528 /* SearchViewController.m */; };
 		0F7DCB351B477EF300D56AC1 /* ShoppingCartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F7DCB331B477EF300D56AC1 /* ShoppingCartTableViewCell.m */; };
-		0F7DCB361B477EF300D56AC1 /* ShoppingCartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F7DCB341B477EF300D56AC1 /* ShoppingCartTableViewCell.xib */; };
 		0F80D93A1B42B15700C46D72 /* wwc.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F80D9391B42B15700C46D72 /* wwc.storyboard */; };
 		0F944E3C1B44ED4100E5ED82 /* FinallyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F944E361B44ED4100E5ED82 /* FinallyViewController.m */; };
 		0F944E3D1B44ED4100E5ED82 /* SequenceCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F944E381B44ED4100E5ED82 /* SequenceCollectionViewCell.m */; };
@@ -438,14 +437,6 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
-		3324CC771B42947500E74E93 /* Register(注册) */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Register(注册)";
-			path = Register;
-			sourceTree = "<group>";
-		};
 		333A42721B454E1700E2FFBD /* MoerController(更多) */ = {
 			isa = PBXGroup;
 			children = (
@@ -580,7 +571,6 @@
 		33D1D8F11B4266AE009ADF41 /* Main(主要) */ = {
 			isa = PBXGroup;
 			children = (
-				3324CC771B42947500E74E93 /* Register(注册) */,
 				3324CC761B42944900E74E93 /* Login(登录) */,
 				33D1D9B41B4269E6009ADF41 /* Tools(工具类、请求数据) */,
 				33D1D9B31B426982009ADF41 /* Common(公共) */,
@@ -1037,7 +1027,6 @@
 				3324D0401B46EC99001DA5C4 /* WaterCell.xib in Resources */,
 				0F944E3E1B44ED4100E5ED82 /* SequenceCollectionViewCell.xib in Resources */,
 				33E8CC6F1B4803A3001034D1 /* IMG_0085.PNG in Resources */,
-				33F9553F1B46A11800E25192 /* orderCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -28,6 +28,28 @@
 //}
 - (void)viewDidLoad {
     [super viewDidLoad];
+    if ([type isEqualToString:@"0"]) {
+        self.title=@"我的订单";
+    }else if([type isEqualToString:@"1"])
+    {
+        self.title=@"未付款订单";
+    }else if([type isEqualToString:@"2"])
+    {
+        self.title=@"进行中的订单";
+    }else if([type isEqualToString:@"3"])
+    {
+        self.title=@"已完成的订单";
+    }
+    
+    //设置导航栏标题颜色和字体大小UITextAttributeFont:[UIFont fontWithName:@"Heiti TC" size:0.0]
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"Heiti Sc" size:16.0],NSForegroundColorAttributeName:[UIColor blackColor]}];
+    //重写返回按钮
+    UIButton *back=[UIButton buttonWithType:UIButtonTypeCustom];
+    [back setFrame:CGRectMake(0, 0, 13, 13 )];
+    [back setBackgroundImage:[UIImage imageNamed:@"my_left_arrow"] forState:UIControlStateNormal];
+    [back addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *barButton=[[UIBarButtonItem alloc]initWithCustomView:back];
+    self.navigationItem.leftBarButtonItem=barButton;
     if ([type isEqualToString:@"0"]||[type isEqualToString:@"1"]||[type isEqualToString:@"2"]) {
         //创建xib文件对象
         UINib *nib=[UINib nibWithNibName:@"orderCell" bundle:[NSBundle mainBundle]];
@@ -54,6 +76,14 @@
             [self.myTableView reloadData];
         });
     }];
+}
+/**
+ *  POP方法
+ *
+ *  @param sender <#sender description#>
+ */
+-(void)back:(id *)sender{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 #pragma mark UITable代理方法
 /**
@@ -92,16 +122,25 @@
         cell.priceLabel.text=self.goods[indexPath.row][@"formatSumprice"];
          NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:self.goods[indexPath.row][@"orderid"],@"orderid", nil];
         [RequestData getOrderListByOrderid:params FinishCallbackBlock:^(NSDictionary *data) {
-            self.imageArray=data[@"orderlistList"];
-            cell.imageScrollView.contentSize=CGSizeMake(cell.imageScrollView.frame.size.width*self.imageArray.count, cell.imageScrollView.frame.size.height);
-            for (int i=0; i<self.imageArray.count; i++) {
+            NSArray *imageArray=data[@"orderlistList"];
+            cell.imageScrollView.contentSize=CGSizeMake(cell.imageScrollView.frame.size.width*imageArray.count, cell.imageScrollView.frame.size.height);
+            cell.imageScrollView.delegate=self;
+            if (imageArray.count==1) {
+                cell.goodsView.hidden=NO;
+                cell.imageScrollView.hidden=YES;
+            }
+            
+            if (imageArray.count<=4) {
+                cell.imageScrollView.userInteractionEnabled=NO;
+            }
+            for (int i=0; i<imageArray.count; i++) {
                 //拼接图片网址·
-                NSString *urlStr =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.imageArray[indexPath.row][@"foodpic"]];
+                NSString *urlStr =[NSString stringWithFormat:@"http://www.alayicai.com%@",imageArray[i][@"foodpic"]];
                 //转换成url
                 NSURL *imgUrl = [NSURL URLWithString:urlStr];
                 UIImageView *imageV = [[UIImageView alloc]initWithFrame:CGRectMake((i*80)+5, 0, 70, 80)];
-                [cell.goodsImageView sd_setImageWithURL:imgUrl];
                 [imageV sd_setImageWithURL:imgUrl];
+                [cell.goodsImageView sd_setImageWithURL:imgUrl];
                 [cell.imageScrollView addSubview:imageV];
             }
         }];
