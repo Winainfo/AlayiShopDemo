@@ -10,12 +10,13 @@
 #import "UIView+Extension.h"
 #import "HWSearchBar.h"
 
-@interface SearchViewController ()
+@interface SearchViewController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *hotSearchView;
 @property (weak, nonatomic) IBOutlet UIView *historySearchView;
 @property (weak, nonatomic) IBOutlet UITextField *clearView;
 @property (weak, nonatomic) IBOutlet UIButton *clearBtn;
+@property (weak, nonatomic) IBOutlet UITableView *hitoryTable;
 
 
 @end
@@ -34,6 +35,8 @@ static BOOL isHistory = NO;
     mySearchBar.width = 300;
     mySearchBar.height = 30;
     self.navigationItem.titleView = mySearchBar;
+    //设置搜索栏的代理
+    mySearchBar.delegate=self;
     
     //取消左侧导航栏按钮
     UIBarButtonItem *leftBtn = [[UIBarButtonItem alloc]init];
@@ -43,6 +46,7 @@ static BOOL isHistory = NO;
     //默认“清除搜索历史”按钮隐藏
     self.clearView.hidden = YES;
     self.clearBtn.hidden = YES;
+    self.hitoryTable.hidden = YES;
     
 }
 
@@ -53,6 +57,7 @@ static BOOL isHistory = NO;
     //隐藏“清除历史”按钮
     self.clearView.hidden = YES;
     self.clearBtn.hidden = YES;
+    self.hitoryTable.hidden = YES;
     isHistory = NO;
 }
 
@@ -68,6 +73,7 @@ static BOOL isHistory = NO;
          //隐藏“清除历史”按钮
          self.clearView.hidden = YES;
          self.clearBtn.hidden = YES;
+         self.hitoryTable.hidden = YES;
         isHistory = NO;
     }
 }
@@ -80,9 +86,25 @@ static BOOL isHistory = NO;
         //显示“清除历史”按钮
         self.clearView.hidden = NO;
         self.clearBtn.hidden = NO;
+        self.hitoryTable.hidden = NO;
     }
     
 }
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 10;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"myCell"];
+    if (!cell) {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"myCell"];
+    }
+    cell.textLabel.text = @"搜索历史";
+    return cell ;
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

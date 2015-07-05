@@ -98,46 +98,15 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0jB-uT-2fH">
                                 <rect key="frame" x="0.0" y="5" width="320" height="80"/>
                             </scrollView>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KYN-Rt-IKF" userLabel="goodsView">
-                                <rect key="frame" x="0.0" y="4" width="320" height="80"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lu7-6C-PmX">
-                                        <rect key="frame" x="10" y="0.0" width="80" height="80"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="80" id="BhV-gz-LQq"/>
-                                            <constraint firstAttribute="height" constant="80" id="oXe-37-27v"/>
-                                        </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXZ-dX-ZvP">
-                                        <rect key="frame" x="112" y="8" width="165" height="64"/>
-                                        <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="16"/>
-                                        <color key="textColor" red="0.94901960780000005" green="0.3294117647" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="Lu7-6C-PmX" firstAttribute="top" secondItem="KYN-Rt-IKF" secondAttribute="top" id="1m7-Sl-742"/>
-                                    <constraint firstAttribute="bottom" secondItem="QXZ-dX-ZvP" secondAttribute="bottom" constant="8" id="9GK-T8-IRc"/>
-                                    <constraint firstItem="Lu7-6C-PmX" firstAttribute="leading" secondItem="KYN-Rt-IKF" secondAttribute="leading" constant="10" id="NGE-Vd-G9b"/>
-                                    <constraint firstAttribute="trailing" secondItem="QXZ-dX-ZvP" secondAttribute="trailing" constant="43" id="bBB-92-uIJ"/>
-                                    <constraint firstItem="QXZ-dX-ZvP" firstAttribute="top" secondItem="KYN-Rt-IKF" secondAttribute="top" constant="8" id="cOw-Ot-BzA"/>
-                                    <constraint firstItem="QXZ-dX-ZvP" firstAttribute="leading" secondItem="Lu7-6C-PmX" secondAttribute="trailing" constant="22" id="hNl-dC-YxJ"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <constraints>
                             <constraint firstItem="0jB-uT-2fH" firstAttribute="leading" secondItem="Dyd-au-VUh" secondAttribute="leading" id="5UZ-wX-ien"/>
                             <constraint firstItem="0jB-uT-2fH" firstAttribute="top" secondItem="Dyd-au-VUh" secondAttribute="top" constant="5" id="HMQ-t3-qpM"/>
                             <constraint firstItem="U3J-vX-hhK" firstAttribute="top" secondItem="0jB-uT-2fH" secondAttribute="bottom" constant="3" id="IQV-UZ-iME"/>
                             <constraint firstAttribute="trailing" secondItem="U3J-vX-hhK" secondAttribute="trailing" id="KOw-Qg-BXd"/>
-                            <constraint firstItem="U3J-vX-hhK" firstAttribute="top" secondItem="KYN-Rt-IKF" secondAttribute="bottom" constant="4" id="Mil-lq-Mjp"/>
-                            <constraint firstAttribute="trailing" secondItem="KYN-Rt-IKF" secondAttribute="trailing" id="RC8-4V-ctW"/>
-                            <constraint firstItem="KYN-Rt-IKF" firstAttribute="top" secondItem="Dyd-au-VUh" secondAttribute="top" constant="4" id="Wlf-mM-2ZA"/>
                             <constraint firstItem="U3J-vX-hhK" firstAttribute="leading" secondItem="Dyd-au-VUh" secondAttribute="leading" constant="10" id="cQL-Br-wIp"/>
                             <constraint firstAttribute="height" constant="90" id="hvD-YZ-4lS"/>
                             <constraint firstAttribute="bottom" secondItem="U3J-vX-hhK" secondAttribute="bottom" constant="1" id="kn0-L2-PrA"/>
-                            <constraint firstItem="KYN-Rt-IKF" firstAttribute="leading" secondItem="Dyd-au-VUh" secondAttribute="leading" id="pxt-3I-A1F"/>
                             <constraint firstAttribute="trailing" secondItem="0jB-uT-2fH" secondAttribute="trailing" id="ydA-hG-q9p"/>
                         </constraints>
                     </view>
@@ -260,9 +229,6 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="contentTextView" destination="vPT-lR-Snh" id="Lfk-l5-uga"/>
-                <outlet property="contetLabel" destination="QXZ-dX-ZvP" id="C5V-lB-bPV"/>
-                <outlet property="goodsImageView" destination="Lu7-6C-PmX" id="gU4-bK-wBu"/>
-                <outlet property="goodsView" destination="KYN-Rt-IKF" id="REk-SJ-iE1"/>
                 <outlet property="imageScrollView" destination="0jB-uT-2fH" id="iEW-r7-JSR"/>
                 <outlet property="lineLabel" destination="ihb-3l-1Ec" id="6mP-yF-BeO"/>
                 <outlet property="orderidLabel" destination="E4E-Mb-VqI" id="fxo-Hz-7ky"/>

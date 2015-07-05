@@ -21,7 +21,7 @@
     self.contentTextView.attributedText=[[NSAttributedString alloc]initWithString:self.contentTextView.text attributes:attributes];
     
     //设置代理
-   // self.imageScrollView.delegate=self;
+    self.imageScrollView.delegate=self;
     
 }
 
