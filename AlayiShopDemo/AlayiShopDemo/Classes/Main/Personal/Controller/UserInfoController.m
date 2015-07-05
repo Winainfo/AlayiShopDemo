@@ -83,7 +83,7 @@
 {
     if ([segue.identifier isEqualToString:@"nameSegue"]) {
         id theSegue=segue.destinationViewController;
-        [theSegue setValue:self.nameLabel.text forKey:@"name"];
+        [theSegue setValue:@"2" forKey:@"name"];
     }
     if ([segue.identifier isEqualToString:@"sexSegue"])
     {

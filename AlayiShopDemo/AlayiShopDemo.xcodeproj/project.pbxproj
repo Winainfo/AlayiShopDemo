@@ -28,6 +28,10 @@
 		0FA5A6A31B47AD7200ED2A10 /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FA5A6A11B47AD7200ED2A10 /* CommentTableViewCell.xib */; };
 		0FD12C741B4669A500CD5C14 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD12C731B4669A500CD5C14 /* DetailViewController.m */; };
 		331751691B45228400A55B92 /* PersonalController.m in Sources */ = {isa = PBXBuildFile; fileRef = 331751681B45228400A55B92 /* PersonalController.m */; };
+		331A47F61B48350400AF3B71 /* OrderInfoTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 331A47F51B48350400AF3B71 /* OrderInfoTableController.m */; };
+		331C9CDB1B48D42D00EE773F /* ScoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 331C9CD91B48D42D00EE773F /* ScoreCell.m */; };
+		331C9CDC1B48D42D00EE773F /* ScoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 331C9CDA1B48D42D00EE773F /* ScoreCell.xib */; };
+		331C9CDF1B48DA1100EE773F /* ScoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 331C9CDE1B48DA1100EE773F /* ScoreController.m */; };
 		3324CC751B4286E300E74E93 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3324CC741B4286E300E74E93 /* TestViewController.m */; };
 		3324D03F1B46EC99001DA5C4 /* WaterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3324D03D1B46EC99001DA5C4 /* WaterCell.m */; };
 		3324D0401B46EC99001DA5C4 /* WaterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3324D03E1B46EC99001DA5C4 /* WaterCell.xib */; };
@@ -104,6 +108,7 @@
 		33D1DAEF1B4271C8009ADF41 /* CartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D1DAEE1B4271C8009ADF41 /* CartViewController.m */; };
 		33D1DAF51B4271DD009ADF41 /* CommonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D1DAF41B4271DD009ADF41 /* CommonViewController.m */; };
 		33D6A7AA1B4598F5003901BF /* ARLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D6A7A91B4598F5003901BF /* ARLabel.m */; };
+		33E8CC6F1B4803A3001034D1 /* IMG_0085.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 33E8CC6E1B4803A3001034D1 /* IMG_0085.PNG */; };
 		33F955321B46805500E25192 /* UserInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F955311B46805500E25192 /* UserInfoController.m */; };
 		33F955381B468A0C00E25192 /* EditUserController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F955371B468A0C00E25192 /* EditUserController.m */; };
 		33F9553E1B46A11800E25192 /* orderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F9553C1B46A11800E25192 /* orderCell.m */; };
@@ -158,6 +163,13 @@
 		0FD12C731B4669A500CD5C14 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		331751671B45228400A55B92 /* PersonalController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalController.h; sourceTree = "<group>"; };
 		331751681B45228400A55B92 /* PersonalController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalController.m; sourceTree = "<group>"; };
+		331A47F41B48350400AF3B71 /* OrderInfoTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderInfoTableController.h; sourceTree = "<group>"; };
+		331A47F51B48350400AF3B71 /* OrderInfoTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderInfoTableController.m; sourceTree = "<group>"; };
+		331C9CD81B48D42D00EE773F /* ScoreCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreCell.h; sourceTree = "<group>"; };
+		331C9CD91B48D42D00EE773F /* ScoreCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreCell.m; sourceTree = "<group>"; };
+		331C9CDA1B48D42D00EE773F /* ScoreCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScoreCell.xib; sourceTree = "<group>"; };
+		331C9CDD1B48DA1100EE773F /* ScoreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreController.h; sourceTree = "<group>"; };
+		331C9CDE1B48DA1100EE773F /* ScoreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreController.m; sourceTree = "<group>"; };
 		3324CC731B4286E300E74E93 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		3324CC741B4286E300E74E93 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		3324D03C1B46EC99001DA5C4 /* WaterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterCell.h; sourceTree = "<group>"; };
@@ -312,6 +324,7 @@
 		33D1DAF41B4271DD009ADF41 /* CommonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonViewController.m; sourceTree = "<group>"; };
 		33D6A7A81B4598F5003901BF /* ARLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARLabel.h; sourceTree = "<group>"; };
 		33D6A7A91B4598F5003901BF /* ARLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARLabel.m; sourceTree = "<group>"; };
+		33E8CC6E1B4803A3001034D1 /* IMG_0085.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_0085.PNG; sourceTree = "<group>"; };
 		33F955301B46805500E25192 /* UserInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoController.h; sourceTree = "<group>"; };
 		33F955311B46805500E25192 /* UserInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoController.m; sourceTree = "<group>"; };
 		33F955361B468A0C00E25192 /* EditUserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditUserController.h; sourceTree = "<group>"; };
@@ -397,6 +410,19 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		331C9CD71B48D40400EE773F /* Score(积分) */ = {
+			isa = PBXGroup;
+			children = (
+				331C9CD81B48D42D00EE773F /* ScoreCell.h */,
+				331C9CD91B48D42D00EE773F /* ScoreCell.m */,
+				331C9CDA1B48D42D00EE773F /* ScoreCell.xib */,
+				331C9CDD1B48DA1100EE773F /* ScoreController.h */,
+				331C9CDE1B48DA1100EE773F /* ScoreController.m */,
+			);
+			name = "Score(积分)";
+			path = Score;
+			sourceTree = "<group>";
+		};
 		3324CC761B42944900E74E93 /* Login(登录) */ = {
 			isa = PBXGroup;
 			children = (
@@ -416,7 +442,7 @@
 			path = Register;
 			sourceTree = "<group>";
 		};
-		333A42721B454E1700E2FFBD /* MoerController */ = {
+		333A42721B454E1700E2FFBD /* MoerController(更多) */ = {
 			isa = PBXGroup;
 			children = (
 				333A42761B45675300E2FFBD /* MoreController.h */,
@@ -424,6 +450,7 @@
 				333A42791B4575CF00E2FFBD /* AboutController.h */,
 				333A427A1B4575CF00E2FFBD /* AboutController.m */,
 			);
+			name = "MoerController(更多)";
 			path = MoerController;
 			sourceTree = "<group>";
 		};
@@ -580,6 +607,7 @@
 		33D1D8F31B4266C7009ADF41 /* View(视图) */ = {
 			isa = PBXGroup;
 			children = (
+				33E8CC6E1B4803A3001034D1 /* IMG_0085.PNG */,
 				3394F29E1B46271300CB951C /* IMG_0079.PNG */,
 				33F955401B46A2BF00E25192 /* IMG_0081.PNG */,
 				33D1D9021B426756009ADF41 /* Main.storyboard */,
@@ -827,8 +855,9 @@
 		33D1D9B21B426950009ADF41 /* Personal(个人中心) */ = {
 			isa = PBXGroup;
 			children = (
-				33F955391B469CF200E25192 /* Order */,
-				333A42721B454E1700E2FFBD /* MoerController */,
+				331C9CD71B48D40400EE773F /* Score(积分) */,
+				33F955391B469CF200E25192 /* Order(订单) */,
+				333A42721B454E1700E2FFBD /* MoerController(更多) */,
 				33CBCFD61B43C9E100FADD5F /* Controller */,
 			);
 			name = "Personal(个人中心)";
@@ -880,13 +909,16 @@
 			path = ARLabel;
 			sourceTree = "<group>";
 		};
-		33F955391B469CF200E25192 /* Order */ = {
+		33F955391B469CF200E25192 /* Order(订单) */ = {
 			isa = PBXGroup;
 			children = (
 				33F9553A1B469D1000E25192 /* Cell */,
 				33F955421B46AEC000E25192 /* OrderController.h */,
 				33F955431B46AEC000E25192 /* OrderController.m */,
+				331A47F41B48350400AF3B71 /* OrderInfoTableController.h */,
+				331A47F51B48350400AF3B71 /* OrderInfoTableController.m */,
 			);
+			name = "Order(订单)";
 			path = Order;
 			sourceTree = "<group>";
 		};
@@ -993,9 +1025,11 @@
 				0FA5A6A31B47AD7200ED2A10 /* CommentTableViewCell.xib in Resources */,
 				0F1D1A131B427719009B324E /* yjh.storyboard in Resources */,
 				0F80D93A1B42B15700C46D72 /* wwc.storyboard in Resources */,
+				331C9CDC1B48D42D00EE773F /* ScoreCell.xib in Resources */,
 				33D1D8D81B426689009ADF41 /* Images.xcassets in Resources */,
 				3324D0401B46EC99001DA5C4 /* WaterCell.xib in Resources */,
 				0F944E3E1B44ED4100E5ED82 /* SequenceCollectionViewCell.xib in Resources */,
+				33E8CC6F1B4803A3001034D1 /* IMG_0085.PNG in Resources */,
 				33F9553F1B46A11800E25192 /* orderCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1021,10 +1055,12 @@
 				33D1D9871B42688D009ADF41 /* IQKeyboardManager.m in Sources */,
 				331751691B45228400A55B92 /* PersonalController.m in Sources */,
 				33CBCFE51B44114800FADD5F /* LoginController.m in Sources */,
+				331C9CDB1B48D42D00EE773F /* ScoreCell.m in Sources */,
 				33D1D9A21B42688D009ADF41 /* SDWebImageCompat.m in Sources */,
 				33F955381B468A0C00E25192 /* EditUserController.m in Sources */,
 				33D1D98D1B42688D009ADF41 /* IQToolbar.m in Sources */,
 				33D1D98E1B42688D009ADF41 /* IQUIView+IQKeyboardToolbar.m in Sources */,
+				331C9CDF1B48DA1100EE773F /* ScoreController.m in Sources */,
 				33D1D9A81B42688D009ADF41 /* UIButton+WebCache.m in Sources */,
 				33D1DAEC1B4271A8009ADF41 /* CategoryViewController.m in Sources */,
 				0F6872D71B43BF770001D528 /* SearchViewController.m in Sources */,
@@ -1047,6 +1083,7 @@
 				33D1D98C1B42688D009ADF41 /* IQTitleBarButtonItem.m in Sources */,
 				33D1D9801B42688D009ADF41 /* AFURLConnectionOperation.m in Sources */,
 				3394F2A91B46468B00CB951C /* AdviseController.m in Sources */,
+				331A47F61B48350400AF3B71 /* OrderInfoTableController.m in Sources */,
 				33D1D97F1B42688D009ADF41 /* AFSecurityPolicy.m in Sources */,
 				3324CC751B4286E300E74E93 /* TestViewController.m in Sources */,
 				33F9553E1B46A11800E25192 /* orderCell.m in Sources */,

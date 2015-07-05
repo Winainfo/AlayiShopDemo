@@ -16,7 +16,6 @@
 @synthesize name;
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.valueLabel.text=name;
 }
 
 
