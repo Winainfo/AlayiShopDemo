@@ -13,8 +13,6 @@
 @property (weak, nonatomic) IBOutlet ARLabel *orderidLabel;
 /**订单状态*/
 @property (weak, nonatomic) IBOutlet ARLabel *stateLabel;
-/**订单内容*/
-@property (weak, nonatomic) IBOutlet UITextView *contentTextView;
 /**订单日期*/
 @property (weak, nonatomic) IBOutlet ARLabel *timeLabel;
 /**商品图片*/
@@ -27,5 +25,9 @@
 @property (weak, nonatomic) IBOutlet ARLabel *lineLabel;
 /**产品图片滚动*/
 @property (weak, nonatomic) IBOutlet UIScrollView *imageScrollView;
+/**产品标题*/
+@property (unsafe_unretained, nonatomic) IBOutlet ARLabel *contetLabel;
+@property (unsafe_unretained, nonatomic) IBOutlet UIView *goodsView;
+
 
 @end

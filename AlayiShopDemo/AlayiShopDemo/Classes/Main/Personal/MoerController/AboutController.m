@@ -7,7 +7,7 @@
 //
 
 #import "AboutController.h"
-
+#import "RequestData.h"
 @interface AboutController ()
 
 @end
@@ -16,7 +16,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    //信息
+    NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:@"1",@"id", nil];
+    [RequestData getInfoById:params FinishCallbackBlock:^(NSDictionary *data) {
+        NSLog(@"%@",data[@"info"][@"content"]);
+    }];
 }
 
 /**

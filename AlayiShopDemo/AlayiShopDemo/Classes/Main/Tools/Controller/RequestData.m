@@ -408,19 +408,27 @@
 +(void)getInfoById:(NSDictionary *)data FinishCallbackBlock:(void (^)(NSDictionary *))block{
     //1.请求管理者
     AFHTTPRequestOperationManager *mgr=[AFHTTPRequestOperationManager manager];
-    mgr.responseSerializer=[AFJSONResponseSerializer serializer];
+    mgr.requestSerializer = [AFHTTPRequestSerializer serializer];
+    mgr.responseSerializer = [AFHTTPResponseSerializer serializer];
     //2.拼接参数
     NSString *jsonDic=[RequestData getJsonStr:data];
     NSDictionary *params=@{@"method":@"getInfoById",@"appid":APPID,@"data":jsonDic};
     NSLog(@"字典为：%@",params);
     //3.发生请求
+    
     [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+       //NSData *data = responseObject;
+        NSString *str=[[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];
+        NSString *newstr=[RequestData flattenHTML:str trimWhiteSpace:YES];
+        NSDictionary *dict=[RequestData dictionaryWithJsonString:newstr];
         NSLog(@"信息数据请求成功--");
-        block(responseObject);
+        block(dict);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"信息数据请求失败-%@",error);
     }];
 }
+
+
 /**
  * 添加反馈信息
  *
@@ -648,5 +656,54 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"修改帐号请求失败-%@",error);
     }];
+}
+/**
+ *  NSString去除所有HTML标签
+ *
+ *  @param html <#html description#>
+ *  @param trim <#trim description#>
+ *
+ *  @return <#return value description#>
+ */
++ (NSString *)flattenHTML:(NSString *)html trimWhiteSpace:(BOOL)trim {
+    NSScanner *theScanner = [NSScanner scannerWithString:html];
+    NSString *text = nil;
+    
+    while ([theScanner isAtEnd] == NO) {
+        // find start of tag
+        [theScanner scanUpToString:@"<" intoString:NULL] ;
+        // find end of tag
+        [theScanner scanUpToString:@">" intoString:&text] ;
+        // replace the found tag with a space
+        //(you can filter multi-spaces out later if you wish)
+        html = [html stringByReplacingOccurrencesOfString:
+                [ NSString stringWithFormat:@"%@>", text]
+                                               withString:@""];
+    }
+    
+    // trim off whitespace
+    return trim ? [html stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] : html;
+}
+
+/*!
+ * @brief 把格式化的JSON格式的字符串转换成字典
+ * @param jsonString JSON格式的字符串
+ * @return 返回字典
+ */
++ (NSDictionary *)dictionaryWithJsonString:(NSString *)jsonString {
+    if (jsonString == nil) {
+        return nil;
+    }
+    
+    NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *err;
+    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData
+                                                        options:NSJSONReadingMutableContainers
+                                                          error:&err];
+    if(err) {
+        NSLog(@"json解析失败：%@",err);
+        return nil;
+    }
+    return dic;
 }
 @end

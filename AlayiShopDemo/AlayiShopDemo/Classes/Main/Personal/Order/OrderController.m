@@ -28,15 +28,35 @@
 //}
 - (void)viewDidLoad {
     [super viewDidLoad];
+    if ([type isEqualToString:@"0"]) {
+        self.title=@"我的订单";
+    }else if([type isEqualToString:@"1"])
+    {
+        self.title=@"未付款订单";
+    }else if([type isEqualToString:@"2"])
+    {
+        self.title=@"进行中的订单";
+    }else if([type isEqualToString:@"3"])
+    {
+        self.title=@"已完成的订单";
+    }
+    
+    //设置导航栏标题颜色和字体大小UITextAttributeFont:[UIFont fontWithName:@"Heiti TC" size:0.0]
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"Heiti Sc" size:16.0],NSForegroundColorAttributeName:[UIColor blackColor]}];
+    //重写返回按钮
+    UIButton *back=[UIButton buttonWithType:UIButtonTypeCustom];
+    [back setFrame:CGRectMake(0, 0, 13, 13 )];
+    [back setBackgroundImage:[UIImage imageNamed:@"my_left_arrow"] forState:UIControlStateNormal];
+    [back addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *barButton=[[UIBarButtonItem alloc]initWithCustomView:back];
+    self.navigationItem.leftBarButtonItem=barButton;
     if ([type isEqualToString:@"0"]||[type isEqualToString:@"1"]||[type isEqualToString:@"2"]) {
-        self.height=270;
         //创建xib文件对象
         UINib *nib=[UINib nibWithNibName:@"orderCell" bundle:[NSBundle mainBundle]];
         //注册到表格视图
         [self.myTableView  registerNib:nib forCellReuseIdentifier:@"orderCell"];
     }else if([type isEqualToString:@"3"])
     {
-        self.height=184;
         //创建xib文件对象
         UINib *nib=[UINib nibWithNibName:@"WaterCell" bundle:[NSBundle mainBundle]];
         //注册到表格视图
@@ -47,7 +67,7 @@
     
     AccountModel *account=[AccountTool account];
     //获取用户所有订单0.用户所有订单、1.未付款订单、2.进行中的订单、3.已完成的订单
-    NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:type,@"type",account.userId,@"userid",@"10",@"pageSize",@"1",@"currPage", nil];
+    NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:type,@"type",account.userId,@"userid",@"20",@"pageSize",@"1",@"currPage", nil];
     [RequestData getUserOrderListWithPage:params FinishCallbackBlock:^(NSDictionary *data) {
         self.goods=data[@"orderList"];
         
@@ -56,7 +76,14 @@
             [self.myTableView reloadData];
         });
     }];
-
+}
+/**
+ *  POP方法
+ *
+ *  @param sender <#sender description#>
+ */
+-(void)back:(id *)sender{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 #pragma mark UITable代理方法
 /**
@@ -91,25 +118,33 @@
         cell.selectionStyle=UITableViewCellSelectionStyleNone;
         cell.orderidLabel.text=self.goods[indexPath.row][@"orderid"];
         cell.stateLabel.text=self.goods[indexPath.row][@"statuText"];
-        cell.contentTextView.text=self.goods[indexPath.row][@"title"];
         cell.timeLabel.text=self.goods[indexPath.row][@"ordertime"];
         cell.priceLabel.text=self.goods[indexPath.row][@"formatSumprice"];
          NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:self.goods[indexPath.row][@"orderid"],@"orderid", nil];
         [RequestData getOrderListByOrderid:params FinishCallbackBlock:^(NSDictionary *data) {
-            self.imageArray=data[@"orderlistList"];
-            cell.imageScrollView.contentSize=CGSizeMake(cell.imageScrollView.frame.size.width*self.imageArray.count, cell.imageScrollView.frame.size.height);
-            for (int i=0; i<self.imageArray.count; i++) {
+            NSArray *imageArray=data[@"orderlistList"];
+            cell.imageScrollView.contentSize=CGSizeMake(cell.imageScrollView.frame.size.width*imageArray.count, cell.imageScrollView.frame.size.height);
+            cell.imageScrollView.delegate=self;
+            if (imageArray.count==1) {
+                cell.goodsView.hidden=NO;
+                cell.imageScrollView.hidden=YES;
+            }
+            
+            if (imageArray.count<=4) {
+                cell.imageScrollView.userInteractionEnabled=NO;
+            }
+            for (int i=0; i<imageArray.count; i++) {
                 //拼接图片网址·
-                NSString *urlStr =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.imageArray[indexPath.row][@"foodpic"]];
+                NSString *urlStr =[NSString stringWithFormat:@"http://www.alayicai.com%@",imageArray[i][@"foodpic"]];
                 //转换成url
                 NSURL *imgUrl = [NSURL URLWithString:urlStr];
-                UIImageView *imageV = [[UIImageView alloc]initWithFrame:CGRectMake((i*60)+10, 0, 70, 70)];
+                UIImageView *imageV = [[UIImageView alloc]initWithFrame:CGRectMake((i*80)+5, 0, 70, 80)];
                 [imageV sd_setImageWithURL:imgUrl];
+                [cell.goodsImageView sd_setImageWithURL:imgUrl];
                 [cell.imageScrollView addSubview:imageV];
             }
         }];
         if ([self.goods[indexPath.row][@"statuText"]isEqualToString:@"已完成" ]) {
-            self.height=184;
             //创建xib文件对象
             UINib *nib=[UINib nibWithNibName:@"WaterCell" bundle:[NSBundle mainBundle]];
             //注册到表格视图
@@ -121,10 +156,19 @@
             }
             //取消Cell选中时背景
             cell.selectionStyle=UITableViewCellSelectionStyleNone;
+            cell.orderidLabel.text=self.goods[indexPath.row][@"orderid"];
+            cell.timeLabel.text=self.goods[indexPath.row][@"ordertime"];
+            cell.priceLabel.text=self.goods[indexPath.row][@"formatSumprice"];
+            cell.contetLabel.text=self.goods[indexPath.row][@"title"];
             [RequestData getOrderListByOrderid:params FinishCallbackBlock:^(NSDictionary *data) {
                 NSArray *imageArray=data[@"orderlistList"];
                 cell.imageScrollView.contentSize=CGSizeMake(cell.imageScrollView.frame.size.width*imageArray.count, cell.imageScrollView.frame.size.height);
                 cell.imageScrollView.delegate=self;
+                if (imageArray.count==1) {
+                    cell.goodsView.hidden=NO;
+                    cell.imageScrollView.hidden=YES;
+                }
+
                 if (imageArray.count<=4) {
                     cell.imageScrollView.userInteractionEnabled=NO;
                 }
@@ -135,6 +179,7 @@
                     NSURL *imgUrl = [NSURL URLWithString:urlStr];
                     UIImageView *imageV = [[UIImageView alloc]initWithFrame:CGRectMake((i*80)+5, 0, 70, 80)];
                     [imageV sd_setImageWithURL:imgUrl];
+                    [cell.goodsImageView sd_setImageWithURL:imgUrl];
                     [cell.imageScrollView addSubview:imageV];
                 }
             }];
@@ -142,16 +187,14 @@
             return cell;
         }else if ([self.goods[indexPath.row][@"statuText"]isEqualToString:@"已支付" ])
         {
-            self.height=270;
             //创建xib文件对象
             UINib *nib=[UINib nibWithNibName:@"orderCell" bundle:[NSBundle mainBundle]];
             //注册到表格视图
             [self.myTableView  registerNib:nib forCellReuseIdentifier:@"orderCell"];
-         [cell.stateButton setTitle:@"确认收货" forState:UIControlStateNormal];
+            [cell.stateButton setTitle:@"确认收货" forState:UIControlStateNormal];
             [cell.stateButton addTarget:self action:@selector(ok:) forControlEvents:UIControlEventTouchUpInside];
         }else if ([self.goods[indexPath.row][@"statuText"]isEqualToString:@"未付款"])
         {
-            self.height=270;
             //创建xib文件对象
             UINib *nib=[UINib nibWithNibName:@"orderCell" bundle:[NSBundle mainBundle]];
             //注册到表格视图
@@ -159,9 +202,22 @@
             
             [cell.stateButton setTitle:@"去付款" forState:UIControlStateNormal];
             [cell.stateButton addTarget:self action:@selector(go:) forControlEvents:UIControlEventTouchUpInside];
+        }else if ([self.goods[indexPath.row][@"statuText"]isEqualToString:@"已取消"])
+        {
+            //创建xib文件对象
+            UINib *nib=[UINib nibWithNibName:@"orderCell" bundle:[NSBundle mainBundle]];
+            //注册到表格视图
+            [self.myTableView  registerNib:nib forCellReuseIdentifier:@"orderCell"];
+            
+            [cell.stateButton setTitle:@"重新下单" forState:UIControlStateNormal];
+            //[cell.stateButton addTarget:self action:@selector(go:) forControlEvents:UIControlEventTouchUpInside];
         }
          return cell;
     }else if ([type isEqualToString:@"3"]){
+        //创建xib文件对象
+        UINib *nib=[UINib nibWithNibName:@"WaterCell" bundle:[NSBundle mainBundle]];
+        //注册到表格视图
+        [self.myTableView  registerNib:nib forCellReuseIdentifier:@"WaterCell"];
         static NSString *cellStr=@"WaterCell";
         WaterCell *cell=[tableView dequeueReusableCellWithIdentifier:cellStr];
         if (cell==nil) {
@@ -169,6 +225,38 @@
         }
         //取消Cell选中时背景
         cell.selectionStyle=UITableViewCellSelectionStyleNone;
+        cell.orderidLabel.text=self.goods[indexPath.row][@"orderid"];
+        cell.timeLabel.text=self.goods[indexPath.row][@"ordertime"];
+        cell.priceLabel.text=self.goods[indexPath.row][@"formatSumprice"];
+        cell.contetLabel.text=self.goods[indexPath.row][@"title"];
+         NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:self.goods[indexPath.row][@"orderid"],@"orderid", nil];
+        [RequestData getOrderListByOrderid:params FinishCallbackBlock:^(NSDictionary *data) {
+            NSArray *imageArray=data[@"orderlistList"];
+            cell.imageScrollView.contentSize=CGSizeMake(cell.imageScrollView.frame.size.width*imageArray.count, cell.imageScrollView.frame.size.height);
+            cell.imageScrollView.delegate=self;
+            if (imageArray.count==1) {
+                cell.goodsView.hidden=NO;
+                cell.imageScrollView.hidden=YES;
+            }else
+            {
+                cell.goodsView.hidden=YES;
+                cell.imageScrollView.hidden=NO;
+            }
+            if (imageArray.count<=4) {
+                cell.imageScrollView.userInteractionEnabled=NO;
+            }
+            for (int i=0; i<imageArray.count; i++) {
+                //拼接图片网址·
+                NSString *urlStr =[NSString stringWithFormat:@"http://www.alayicai.com%@",imageArray[i][@"foodpic"]];
+                //转换成url
+                NSURL *imgUrl = [NSURL URLWithString:urlStr];
+                UIImageView *imageV = [[UIImageView alloc]initWithFrame:CGRectMake((i*80)+5, 0, 70, 80)];
+                [imageV sd_setImageWithURL:imgUrl];
+                [cell.goodsImageView sd_setImageWithURL:imgUrl];
+                [cell.imageScrollView addSubview:imageV];
+            }
+        }];
+        
         return cell;
 
     }
@@ -190,6 +278,6 @@
  */
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return self.height;
+    return 221;
 }
 @end
