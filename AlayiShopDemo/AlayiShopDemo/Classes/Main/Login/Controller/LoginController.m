@@ -21,6 +21,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //设置导航栏标题颜色和字体大小UITextAttributeFont:[UIFont fontWithName:@"Heiti TC" size:0.0]
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"Heiti Sc" size:16.0],NSForegroundColorAttributeName:[UIColor blackColor]}];
     //监听文本输入框的改变
     //1.拿到通知中心
     NSNotificationCenter *center=[NSNotificationCenter defaultCenter];
@@ -30,7 +32,7 @@
     //标题
     self.title=@"登录";
     //重写返回按钮
-    UIButton *back=[UIButton buttonWithType:UIButtonTypeCustom];
+    UIButton *back=[UIButton buttonWithType:UIButtonTypeSystem];
     [back setFrame:CGRectMake(5, 10, 30, 30 )];
     [back  setTitle:@"取消" forState:UIControlStateNormal];
     [back setTitleColor:[UIColor blackColor]forState:UIControlStateNormal];
