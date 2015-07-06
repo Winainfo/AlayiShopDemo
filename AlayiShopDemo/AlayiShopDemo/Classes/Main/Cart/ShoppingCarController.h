@@ -10,5 +10,7 @@
 @property (strong, nonatomic) IBOutlet UIView *editorView;
 /**总金额*/
 @property (strong, nonatomic) IBOutlet UITextField *allMoney;
+/**购物车编辑按钮属性*/
+@property (strong, nonatomic) IBOutlet UIButton *spcEditor;
 
 @end
