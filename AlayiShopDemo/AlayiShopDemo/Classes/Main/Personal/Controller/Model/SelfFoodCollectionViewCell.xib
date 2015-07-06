@@ -29,6 +29,9 @@
                             <color key="titleColor" red="0.98431378599999997" green="0.0" blue="0.090196080509999998" alpha="1" colorSpace="deviceRGB"/>
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
+                        <connections>
+                            <action selector="editClick:" destination="gTV-IL-0wX" eventType="touchUpInside" id="ixo-UU-Bmg"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r9d-87-gGU">
                         <rect key="frame" x="74" y="140" width="46" height="30"/>
@@ -41,6 +44,9 @@
                             <color key="titleColor" red="0.98431378599999997" green="0.0" blue="0.090196080509999998" alpha="1" colorSpace="deviceRGB"/>
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
+                        <connections>
+                            <action selector="deleteClick:" destination="gTV-IL-0wX" eventType="touchUpInside" id="TcW-g9-ONn"/>
+                        </connections>
                     </button>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -64,6 +70,10 @@
                 <constraint firstItem="r9d-87-gGU" firstAttribute="leading" secondItem="KiT-Ve-eCM" secondAttribute="trailing" constant="28" id="zBh-Pz-8RC"/>
             </constraints>
             <size key="customSize" width="148" height="113"/>
+            <connections>
+                <outlet property="foodImage" destination="ZY0-fF-bf4" id="DtH-Ov-7F6"/>
+                <outlet property="foodTitle" destination="roj-of-1hE" id="iL2-4T-c6K"/>
+            </connections>
             <point key="canvasLocation" x="288" y="185"/>
         </collectionViewCell>
     </objects>

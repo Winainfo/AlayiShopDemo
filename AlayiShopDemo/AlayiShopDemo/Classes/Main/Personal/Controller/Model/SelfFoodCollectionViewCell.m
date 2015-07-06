@@ -13,5 +13,12 @@
 - (void)awakeFromNib {
     // Initialization code
 }
+//编辑我的自制菜
+- (IBAction)editClick:(id)sender {
+    
+}
+//删除我的自制菜
+- (IBAction)deleteClick:(id)sender {
+}
 
 @end
