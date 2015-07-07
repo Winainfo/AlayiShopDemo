@@ -286,7 +286,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Nxh-zR-ZcK">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="89.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </tableView>
                                             </subviews>
@@ -340,7 +340,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="只工作日送货 （双休日、假日不用送货）" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6OG-4P-Tx6" customClass="ARLabel">
-                                                    <rect key="frame" x="93" y="36" width="219" height="26.5"/>
+                                                    <rect key="frame" x="93" y="36" width="219" height="27"/>
                                                     <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="12"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -638,7 +638,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="积分说明" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTC-p7-acJ" customClass="ARLabel">
-                                        <rect key="frame" x="242" y="4.5" width="60" height="21"/>
+                                        <rect key="frame" x="242" y="5" width="60" height="21"/>
                                         <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="15"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -941,7 +941,7 @@
                                             <constraint firstAttribute="width" constant="13" id="8US-Fz-TnF"/>
                                             <constraint firstAttribute="height" constant="13" id="BAf-cf-pDJ"/>
                                         </constraints>
-                                        <state key="normal" image="7865422A-A382-4946-860C-0A6C441F315C">
+                                        <state key="normal" image="2B99639F-5E1E-414B-B6AF-0C8FCBBBD399">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -966,7 +966,7 @@
                                             <constraint firstAttribute="width" constant="13" id="1Pd-IK-1H2"/>
                                             <constraint firstAttribute="height" constant="13" id="Vny-9p-g8m"/>
                                         </constraints>
-                                        <state key="normal" image="7865422A-A382-4946-860C-0A6C441F315C">
+                                        <state key="normal" image="2B99639F-5E1E-414B-B6AF-0C8FCBBBD399">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -2346,7 +2346,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="7865422A-A382-4946-860C-0A6C441F315C" width="13" height="13">
+        <image name="2B99639F-5E1E-414B-B6AF-0C8FCBBBD399" width="13" height="13">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
