@@ -105,14 +105,22 @@
 {
     //1.请求管理者
     AFHTTPRequestOperationManager *mgr=[AFHTTPRequestOperationManager manager];
-    mgr.responseSerializer=[AFJSONResponseSerializer serializer];
+    mgr.requestSerializer = [AFHTTPRequestSerializer serializer];
+    mgr.responseSerializer = [AFHTTPResponseSerializer serializer];
+    //2.拼接参数
     NSString *jsonDic=[RequestData getJsonStr:data];
     NSDictionary *params=@{@"method":@"getFoodListWithPage",@"appid":APPID,@"data":jsonDic};
+    //3.发生请求
+    
     [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-         NSLog(@"数据请求成功--");
-        block(responseObject);
+        //NSData *data = responseObject;
+        NSString *str=[[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];
+        NSString *newstr=[RequestData flattenHTML:str trimWhiteSpace:YES];
+        NSDictionary *dict=[RequestData dictionaryWithJsonString:newstr];
+        NSLog(@"信息数据请求成功--");
+        block(dict);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"数据请求失败-%@",error);
+        NSLog(@"信息数据请求失败-%@",error);
     }];
 }
 #pragma mark 菜的详细信息
@@ -402,7 +410,7 @@
  * 获取服务信息详情
  *
  *  @param data  <#data description#>
- *  @param block <#block description#>
+ *  @param block block description
  */
 +(void)getInfoById:(NSDictionary *)data FinishCallbackBlock:(void (^)(NSDictionary *))block{
     //1.请求管理者
@@ -415,11 +423,11 @@
     //3.发生请求
     
     [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-       //NSData *data = responseObject;
-        NSString *str=[[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];
+        NSData *data=[RequestData changeFormat:responseObject];
+      NSString *str=[[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];
         NSString *newstr=[RequestData flattenHTML:str trimWhiteSpace:YES];
         NSDictionary *dict=[RequestData dictionaryWithJsonString:newstr];
-        NSLog(@"信息数据请求成功--");
+        NSLog(@"信息数据请求成功--%@",data);
         block(dict);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"信息数据请求失败-%@",error);
@@ -654,6 +662,23 @@
         NSLog(@"修改帐号请求失败-%@",error);
     }];
 }
+
+/**
+ *  将传入的二进制数据转为字符串后将content字段删除
+ *  @param data 包含content字段的二进制数据
+ *  @return 不包含content字段的二进制数据
+ */
++(NSData*) changeFormat:(NSData*) data{
+    NSString *str = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"hello" ofType:@"json"];
+    str=[NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+    NSString *regStr=@"\"content\":\"<.+,\"fmtContent2\"";
+    NSRange rage=[str rangeOfString:regStr options:NSRegularExpressionSearch];
+    NSString *newStr= [str stringByReplacingCharactersInRange:rage withString:@"\"fmtContent2\""];
+    NSData *newData=[newStr dataUsingEncoding:NSUTF8StringEncoding];
+    return newData;
+}
+
 /**
  *  NSString去除所有HTML标签
  *
@@ -677,7 +702,6 @@
                 [ NSString stringWithFormat:@"%@>", text]
                                                withString:@""];
     }
-    
     // trim off whitespace
     return trim ? [html stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] : html;
 }

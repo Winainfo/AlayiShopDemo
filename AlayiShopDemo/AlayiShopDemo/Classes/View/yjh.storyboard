@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I3y-c6-Wa4">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I3y-c6-Wa4">
                                 <rect key="frame" x="0.0" y="67" width="160" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CwT-Ma-6cg">
@@ -37,7 +37,7 @@
                                     <constraint firstAttribute="height" constant="40" id="ZsN-Wq-Fbv"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FgM-0C-yJT">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FgM-0C-yJT">
                                 <rect key="frame" x="160" y="67" width="160" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aH3-KV-ygb">
@@ -788,6 +788,26 @@
             </objects>
             <point key="canvasLocation" x="4152" y="-21"/>
         </scene>
+        <!--首页-->
+        <scene sceneID="zTX-gV-54e">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="K7X-Ip-Qaj" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="首页" image="tab0" id="qtF-dD-Cg6"/>
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fTN-22-tA4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="kh2-lJ-aGq" kind="relationship" relationship="rootViewController" id="a2i-D2-AbS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gZh-l9-zkU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1839" y="321"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Ltg-lm-cWy">
             <objects>
@@ -832,6 +852,7 @@
         <image name="skuview_decrease" width="16" height="16"/>
         <image name="skuview_increase" width="16" height="16"/>
         <image name="sousuo" width="16" height="16"/>
+        <image name="tab0" width="30" height="30"/>
         <image name="tab2" width="30" height="30"/>
     </resources>
 </document>

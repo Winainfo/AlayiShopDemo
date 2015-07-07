@@ -19,7 +19,7 @@
     //信息
     NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:@"1",@"id", nil];
     [RequestData getInfoById:params FinishCallbackBlock:^(NSDictionary *data) {
-        NSLog(@"%@",data[@"info"][@"content"]);
+       // NSLog(@"%@",data[@"info"][@"fmtContent2"]);
     }];
 }
 

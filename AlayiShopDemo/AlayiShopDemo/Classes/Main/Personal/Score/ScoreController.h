@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ScoreCell.h"
+#import "MJRefresh.h"
 @interface ScoreController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *myTableView;
 @end
