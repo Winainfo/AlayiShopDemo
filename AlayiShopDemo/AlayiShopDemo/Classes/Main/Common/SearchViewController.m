@@ -29,6 +29,7 @@ static BOOL isHistory = NO;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    [self setNavStyle];
     
     //为导航栏视图添加搜索栏
     HWSearchBar *mySearchBar = [HWSearchBar searchBar];
@@ -48,6 +49,23 @@ static BOOL isHistory = NO;
     self.clearBtn.hidden = YES;
     self.hitoryTable.hidden = YES;
     
+}
+
+//设置导航栏按钮样式
+-(void)setNavStyle
+{
+    //更改导航栏返回按钮图片
+    UIButton *leftBtn=[UIButton buttonWithType:UIButtonTypeCustom];
+    [leftBtn setImage:[UIImage imageNamed:@"my_left_arrow"] forState:UIControlStateNormal];
+    leftBtn.frame=CGRectMake(-5, 5, 30, 30);
+    [leftBtn addTarget:self action:@selector(backView) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *left=[[UIBarButtonItem alloc]initWithCustomView:leftBtn];
+    self.navigationItem.leftBarButtonItem=left;
+}
+//放回回上一页
+-(void)backView
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 -(void)viewWillAppear:(BOOL)animated

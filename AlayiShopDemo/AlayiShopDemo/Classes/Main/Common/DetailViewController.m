@@ -12,6 +12,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *goodsNumText;
 @property (weak, nonatomic) IBOutlet UITableView *commentTable;
 @property (weak, nonatomic) IBOutlet UIView *detailBottomView;
+@property (weak, nonatomic) IBOutlet UIButton *evaluateBtn;
 
 
 @end
@@ -23,11 +24,30 @@ static BOOL isAssess = NO;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+      [self setNavStyle];
+    self.evaluateBtn.backgroundColor = [UIColor whiteColor];
+    
     //注册xib
     UINib *nib = [UINib nibWithNibName:@"CommentTableViewCell" bundle:[NSBundle mainBundle]];
     [self.commentTable registerNib:nib forCellReuseIdentifier:@"CommentTableViewCell"];
     
-    
+}
+
+//设置导航栏按钮样式
+-(void)setNavStyle
+{
+    //更改导航栏返回按钮图片
+    UIButton *leftBtn=[UIButton buttonWithType:UIButtonTypeCustom];
+    [leftBtn setImage:[UIImage imageNamed:@"my_left_arrow"] forState:UIControlStateNormal];
+    leftBtn.frame=CGRectMake(-5, 5, 30, 30);
+    [leftBtn addTarget:self action:@selector(backView) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *left=[[UIBarButtonItem alloc]initWithCustomView:leftBtn];
+    self.navigationItem.leftBarButtonItem=left;
+}
+//放回回上一页
+-(void)backView
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark 表格代理

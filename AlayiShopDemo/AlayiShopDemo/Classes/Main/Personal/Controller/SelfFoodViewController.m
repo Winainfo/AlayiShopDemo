@@ -2,6 +2,7 @@
 #import "SelfFoodViewController.h"
 #import "SelfFoodCollectionViewCell.h"
 #import "RequestData.h"
+#import "UIImageView+WebCache.h"
 #import "API.h"
 #define HEIGHT [UIScreen mainScreen].bounds.size.height
 #define WIDTH [UIScreen mainScreen].bounds.size.width
@@ -10,6 +11,7 @@
 @property(retain,nonatomic)UICollectionView *selfFoodV;//九宫格视图
 @property(retain,nonatomic)NSMutableArray *selfFoodListArr;//所有自制菜的数组
 @property(retain,nonatomic)NSMutableArray *titleArr;
+@property(retain,nonatomic)NSMutableArray *picUrlArr;
 @property(retain,nonatomic)NSMutableArray *picArr;
 
 @end
@@ -20,9 +22,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    [self setNavStyle];
+    
     //为数组申请空间
     self.selfFoodListArr = [NSMutableArray arrayWithCapacity:1];
     self.titleArr = [NSMutableArray arrayWithCapacity:1];
+    self.picUrlArr = [NSMutableArray arrayWithCapacity:1];
     self.picArr = [NSMutableArray arrayWithCapacity:1];
     
     //创建展示自制菜的九宫格
@@ -46,7 +51,11 @@
            [ self.titleArr addObject:obj[@"title"]];
        }
        for (id obj in self.selfFoodListArr) {
-           [self.picArr addObject:obj[@"pic"]];
+//           [self.picUrlArr addObject:obj[@"pic"]];
+           NSString *str = [NSString stringWithFormat:@"http://www.alayicai.com%@",obj[@"pic"]];
+           NSURL *url = [NSURL URLWithString:str];
+           [self.picUrlArr addObject:url];
+           NSLog(@"== 图片网址数组 == %@",self.picUrlArr);
        }
        [self.selfFoodV reloadData];
    } falure:^(NSError *er) {
@@ -55,11 +64,28 @@
  
 }
 
+//设置导航栏按钮样式
+-(void)setNavStyle
+{
+    //更改导航栏返回按钮图片
+    UIButton *leftBtn=[UIButton buttonWithType:UIButtonTypeCustom];
+    [leftBtn setImage:[UIImage imageNamed:@"my_left_arrow"] forState:UIControlStateNormal];
+    leftBtn.frame=CGRectMake(-5, 5, 30, 30);
+    [leftBtn addTarget:self action:@selector(backView) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *left=[[UIBarButtonItem alloc]initWithCustomView:leftBtn];
+    self.navigationItem.leftBarButtonItem=left;
+}
+//放回回上一页
+-(void)backView
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 #pragma mark -- collectionView 代理 --
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-//    return self.titleArr.count;
-    return 10;
+    return self.titleArr.count;
+//    return 10;
 }
 //定义展示的Section的个数
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
@@ -70,7 +96,11 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     SelfFoodCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"SelfFoodCollectionViewCell" forIndexPath:indexPath];
-//    cell.backgroundColor = [UIColor redColor];
+
+    //设置自制菜的图片
+    [cell.foodImage sd_setImageWithURL:self.picUrlArr[indexPath.row]];
+    //设置自制菜菜名
+    cell.foodTitle.text = self.titleArr[indexPath.row];
     return cell;
 }
 //设置单元格尺寸的代理

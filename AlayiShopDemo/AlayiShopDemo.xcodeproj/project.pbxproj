@@ -23,16 +23,19 @@
 		0F70D5111B493B4F008962B2 /* AboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F70D5101B493B4F008962B2 /* AboutUsViewController.m */; };
 		0F70D5141B4959AE008962B2 /* SelfFoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F70D5131B4959AE008962B2 /* SelfFoodViewController.m */; };
 		0F70D5191B495FFB008962B2 /* SelfFoodCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F70D5171B495FFB008962B2 /* SelfFoodCollectionViewCell.m */; };
-		0F70D51A1B495FFB008962B2 /* SelfFoodCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F70D5181B495FFB008962B2 /* SelfFoodCollectionViewCell.xib */; };
 		0F7DCB351B477EF300D56AC1 /* ShoppingCartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F7DCB331B477EF300D56AC1 /* ShoppingCartTableViewCell.m */; };
 		0F80D93A1B42B15700C46D72 /* wwc.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F80D9391B42B15700C46D72 /* wwc.storyboard */; };
 		0F944E3C1B44ED4100E5ED82 /* FinallyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F944E361B44ED4100E5ED82 /* FinallyViewController.m */; };
 		0F944E3D1B44ED4100E5ED82 /* SequenceCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F944E381B44ED4100E5ED82 /* SequenceCollectionViewCell.m */; };
 		0F944E3E1B44ED4100E5ED82 /* SequenceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F944E391B44ED4100E5ED82 /* SequenceCollectionViewCell.xib */; };
 		0F944E3F1B44ED4100E5ED82 /* SortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F944E3B1B44ED4100E5ED82 /* SortViewController.m */; };
+		0F98CBEC1B4BC64C00151A26 /* EvaluateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F98CBEB1B4BC64C00151A26 /* EvaluateViewController.m */; };
+		0F98CBEF1B4C060500151A26 /* LoginBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F98CBEE1B4C060500151A26 /* LoginBar.m */; };
+		0F98CBF21B4C064600151A26 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F98CBF11B4C064600151A26 /* RegisterViewController.m */; };
 		0FA5A6A21B47AD7200ED2A10 /* CommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA5A6A01B47AD7200ED2A10 /* CommentTableViewCell.m */; };
 		0FA5A6A31B47AD7200ED2A10 /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FA5A6A11B47AD7200ED2A10 /* CommentTableViewCell.xib */; };
 		0FD12C741B4669A500CD5C14 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD12C731B4669A500CD5C14 /* DetailViewController.m */; };
+		0FDA99761B4B66B4000E4CE4 /* AddSelfFoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FDA99751B4B66B4000E4CE4 /* AddSelfFoodViewController.m */; };
 		331751691B45228400A55B92 /* PersonalController.m in Sources */ = {isa = PBXBuildFile; fileRef = 331751681B45228400A55B92 /* PersonalController.m */; };
 		331A47F61B48350400AF3B71 /* OrderInfoTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 331A47F51B48350400AF3B71 /* OrderInfoTableController.m */; };
 		331C9CDB1B48D42D00EE773F /* ScoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 331C9CD91B48D42D00EE773F /* ScoreCell.m */; };
@@ -173,11 +176,19 @@
 		0F944E391B44ED4100E5ED82 /* SequenceCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SequenceCollectionViewCell.xib; sourceTree = "<group>"; };
 		0F944E3A1B44ED4100E5ED82 /* SortViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SortViewController.h; sourceTree = "<group>"; };
 		0F944E3B1B44ED4100E5ED82 /* SortViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SortViewController.m; sourceTree = "<group>"; };
+		0F98CBEA1B4BC64C00151A26 /* EvaluateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvaluateViewController.h; sourceTree = "<group>"; };
+		0F98CBEB1B4BC64C00151A26 /* EvaluateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EvaluateViewController.m; sourceTree = "<group>"; };
+		0F98CBED1B4C060500151A26 /* LoginBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginBar.h; sourceTree = "<group>"; };
+		0F98CBEE1B4C060500151A26 /* LoginBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginBar.m; sourceTree = "<group>"; };
+		0F98CBF01B4C064600151A26 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		0F98CBF11B4C064600151A26 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		0FA5A69F1B47AD7200ED2A10 /* CommentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentTableViewCell.h; sourceTree = "<group>"; };
 		0FA5A6A01B47AD7200ED2A10 /* CommentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentTableViewCell.m; sourceTree = "<group>"; };
 		0FA5A6A11B47AD7200ED2A10 /* CommentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
 		0FD12C721B4669A500CD5C14 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		0FD12C731B4669A500CD5C14 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		0FDA99741B4B66B4000E4CE4 /* AddSelfFoodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddSelfFoodViewController.h; sourceTree = "<group>"; };
+		0FDA99751B4B66B4000E4CE4 /* AddSelfFoodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddSelfFoodViewController.m; sourceTree = "<group>"; };
 		331751671B45228400A55B92 /* PersonalController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalController.h; sourceTree = "<group>"; };
 		331751681B45228400A55B92 /* PersonalController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalController.m; sourceTree = "<group>"; };
 		331A47F41B48350400AF3B71 /* OrderInfoTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderInfoTableController.h; sourceTree = "<group>"; };
@@ -511,6 +522,10 @@
 				331751671B45228400A55B92 /* PersonalController.h */,
 				331751681B45228400A55B92 /* PersonalController.m */,
 				3394F2A71B46468B00CB951C /* AdviseController.h */,
+				0F98CBED1B4C060500151A26 /* LoginBar.h */,
+				0F98CBEE1B4C060500151A26 /* LoginBar.m */,
+				0F98CBF01B4C064600151A26 /* RegisterViewController.h */,
+				0F98CBF11B4C064600151A26 /* RegisterViewController.m */,
 				3394F2A81B46468B00CB951C /* AdviseController.m */,
 				33F955301B46805500E25192 /* UserInfoController.h */,
 				33F955311B46805500E25192 /* UserInfoController.m */,
@@ -520,6 +535,8 @@
 				0F70D5101B493B4F008962B2 /* AboutUsViewController.m */,
 				0F70D5121B4959AE008962B2 /* SelfFoodViewController.h */,
 				0F70D5131B4959AE008962B2 /* SelfFoodViewController.m */,
+				0FDA99741B4B66B4000E4CE4 /* AddSelfFoodViewController.h */,
+				0FDA99751B4B66B4000E4CE4 /* AddSelfFoodViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -903,6 +920,8 @@
 				0FA5A69F1B47AD7200ED2A10 /* CommentTableViewCell.h */,
 				0FA5A6A01B47AD7200ED2A10 /* CommentTableViewCell.m */,
 				0FA5A6A11B47AD7200ED2A10 /* CommentTableViewCell.xib */,
+				0F98CBEA1B4BC64C00151A26 /* EvaluateViewController.h */,
+				0F98CBEB1B4BC64C00151A26 /* EvaluateViewController.m */,
 			);
 			name = "Common(公共)";
 			path = Common;
@@ -1082,11 +1101,13 @@
 				33D1D9871B42688D009ADF41 /* IQKeyboardManager.m in Sources */,
 				331751691B45228400A55B92 /* PersonalController.m in Sources */,
 				33CBCFE51B44114800FADD5F /* LoginController.m in Sources */,
+				0F98CBEC1B4BC64C00151A26 /* EvaluateViewController.m in Sources */,
 				331C9CDB1B48D42D00EE773F /* ScoreCell.m in Sources */,
 				33D1D9A21B42688D009ADF41 /* SDWebImageCompat.m in Sources */,
 				33F955381B468A0C00E25192 /* EditUserController.m in Sources */,
 				33D1D98D1B42688D009ADF41 /* IQToolbar.m in Sources */,
 				33D1D98E1B42688D009ADF41 /* IQUIView+IQKeyboardToolbar.m in Sources */,
+				0F98CBEF1B4C060500151A26 /* LoginBar.m in Sources */,
 				331C9CDF1B48DA1100EE773F /* ScoreController.m in Sources */,
 				33D1D9A81B42688D009ADF41 /* UIButton+WebCache.m in Sources */,
 				33D1DAEC1B4271A8009ADF41 /* CategoryViewController.m in Sources */,
@@ -1095,6 +1116,7 @@
 				0FD12C741B4669A500CD5C14 /* DetailViewController.m in Sources */,
 				338322821B427BFC004CE9C2 /* RequestData.m in Sources */,
 				33C418531B451B09002C8601 /* UIWindow+Extension.m in Sources */,
+				0F98CBF21B4C064600151A26 /* RegisterViewController.m in Sources */,
 				33D1D9891B42688D009ADF41 /* IQSegmentedNextPrevious.m in Sources */,
 				33D1D9841B42688D009ADF41 /* IQNSArray+Sort.m in Sources */,
 				0F70D5141B4959AE008962B2 /* SelfFoodViewController.m in Sources */,
@@ -1123,6 +1145,7 @@
 				0F6063471B4A33DE007BE999 /* API.m in Sources */,
 				33D1D9AB1B42688D009ADF41 /* UIImage+WebP.m in Sources */,
 				3394F2A61B463B7000CB951C /* BZGFormField.m in Sources */,
+				0FDA99761B4B66B4000E4CE4 /* AddSelfFoodViewController.m in Sources */,
 				33CBCFDE1B4404AF00FADD5F /* PersonalTableViewController.m in Sources */,
 				33D1D9941B42688D009ADF41 /* MJRefreshComponent.m in Sources */,
 				33D1D9A51B42688D009ADF41 /* SDWebImageDownloaderOperation.m in Sources */,

@@ -42,6 +42,7 @@
     
 }
 
+
 -(void)scrollViewWithFrame:(CGRect)frame andImages:(NSArray *)images
 {
     self.adView.showsHorizontalScrollIndicator = NO;
