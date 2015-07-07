@@ -35,7 +35,9 @@
     //显示数据
     [self showData];
     //去掉多余的分割线
-    [self setExtraCellLineHidden:self.myTableView];
+    //[self setExtraCellLineHidden:self.myTableView];
+    
+    [self.myTableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
 }
 /**
  *  POP方法
@@ -71,6 +73,21 @@
     UIView *view =[ [UIView alloc]init];
     view.backgroundColor = [UIColor clearColor];
     [tableView setTableFooterView:view];
+}
+
+static void setLastCellSeperatorToLeft(UITableViewCell* cell)
+{
+    if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
+        [cell setSeparatorInset:UIEdgeInsetsZero];
+    }
+    
+    if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
+        [cell setLayoutMargins:UIEdgeInsetsZero];
+    }
+    
+    if([cell respondsToSelector:@selector(setPreservesSuperviewLayoutMargins:)]){
+        [cell setPreservesSuperviewLayoutMargins:NO];
+    }
 }
 
 /**

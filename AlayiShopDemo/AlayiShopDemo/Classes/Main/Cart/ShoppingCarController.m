@@ -25,6 +25,7 @@
     NSNotificationCenter *center=[NSNotificationCenter defaultCenter];
     //2.注册监听
     [center addObserver:self selector:@selector(textChange) name:UITextFieldTextDidChangeNotification object:self.newcell.cellMoveNum.text];
+    [self.spcEditor setTitle:@"编辑" forState:UIControlStateNormal ];
     
 }
 
@@ -86,7 +87,7 @@
     self.newcell.cellLabText.text = @"香葱(小葱)/50g[简装]";
     self.newcell.cellMoveNum.text = @"1";//要和增加删除界面的数字相同
     
-    self.newcell.cellImage.image = [UIImage imageNamed:@"baicai"];
+    self.newcell.cellImage.image = [UIImage imageNamed:@"1"];
     
     return self.newcell;
 }
@@ -241,6 +242,18 @@
 - (IBAction)shoppingEditorBut:(id)sender
 {
     self.editorView.hidden =!self.editorView.hidden;
+    
+    static BOOL bol = NO;
+    if (bol==NO) {
+        [self.spcEditor setTitle:@"完成" forState:UIControlStateNormal ];
+        
+        bol=YES;
+    }else
+    {
+        
+        [self.spcEditor setTitle:@"编辑" forState:UIControlStateNormal ];
+        bol = NO;
+    }
 }
 
 

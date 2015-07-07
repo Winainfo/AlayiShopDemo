@@ -10,10 +10,12 @@
 #import "RequestData.h"
 #import "AccountTool.h"
 #import "UIImageView+WebCache.h"
+#import "OrderInfoTableController.h"
 @interface OrderController ()<UITableViewDataSource,UITableViewDelegate>
 @property(retain,nonatomic)NSArray *goods;
 @property(retain,nonatomic)NSArray *imageArray;
 @property(assign,nonatomic)int height;
+@property(assign,nonatomic)int page;
 @end
 
 @implementation OrderController
@@ -64,18 +66,21 @@
     }
     self.myTableView.separatorStyle=NO;
     self.myTableView.backgroundColor=[UIColor colorWithRed:229.0/255.0 green:229.0/255.0 blue:229.0/255.0 alpha:1];
-    
+    //设置页码
+    self.page=1;
+    NSString *pageStr=[NSString stringWithFormat:@"%i",self.page];
     AccountModel *account=[AccountTool account];
     //获取用户所有订单0.用户所有订单、1.未付款订单、2.进行中的订单、3.已完成的订单
-    NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:type,@"type",account.userId,@"userid",@"20",@"pageSize",@"1",@"currPage", nil];
+    NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:type,@"type",account.userId,@"userid",@"5",@"pageSize",pageStr,@"currPage", nil];
     [RequestData getUserOrderListWithPage:params FinishCallbackBlock:^(NSDictionary *data) {
         self.goods=data[@"orderList"];
-        
+        NSLog(@"%@",data);
         //调用主线程
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.myTableView reloadData];
         });
     }];
+    [self setupRefresh];
 }
 /**
  *  POP方法
@@ -85,6 +90,78 @@
 -(void)back:(id *)sender{
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+/**
+ *  集成刷新控件
+ */
+- (void)setupRefresh
+{
+    // 1.下拉刷新(进入刷新状态就会调用self的headerRereshing)
+    [self.myTableView addHeaderWithTarget:self action:@selector(headerRereshing)];
+    [self.myTableView headerBeginRefreshing];
+    
+    // 2.上拉加载更多(进入刷新状态就会调用self的footerRereshing)
+    [self.myTableView addFooterWithTarget:self action:@selector(footerRereshing)];
+    
+    // 设置文字(也可以不设置,默认的文字在MJRefreshConst中修改)
+    self.myTableView.headerPullToRefreshText = @"下拉可以刷新了";
+    self.myTableView.headerReleaseToRefreshText = @"松开马上刷新了";
+    self.myTableView.headerRefreshingText = @"正在帮新中";
+    
+    self.myTableView.footerPullToRefreshText = @"上拉可以加载更多数据了";
+    self.myTableView.footerReleaseToRefreshText = @"松开马上加载更多数据了";
+    self.myTableView.footerRefreshingText = @"正在加载中";
+}
+
+#pragma mark 开始进入刷新状态
+/**
+ *  下拉刷新
+ */
+- (void)headerRereshing
+{
+    if (self.page==1) {
+        self.page=1;
+    }else
+    {
+        self.page-=1;
+    }
+    NSString *pageStr=[NSString stringWithFormat:@"%i",self.page];
+    AccountModel *account=[AccountTool account];
+    //获取用户所有订单0.用户所有订单、1.未付款订单、2.进行中的订单、3.已完成的订单
+    NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:type,@"type",account.userId,@"userid",@"5",@"pageSize",pageStr,@"currPage", nil];
+    [RequestData getUserOrderListWithPage:params FinishCallbackBlock:^(NSDictionary *data) {
+        self.goods=data[@"orderList"];
+        
+        //调用主线程
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.myTableView reloadData];
+        });
+    }];
+    
+    [self.myTableView reloadData];
+    [self.myTableView headerEndRefreshing];
+}
+/**
+ *  上拉加载
+ */
+- (void)footerRereshing
+{
+    self.page+=1;
+    NSString *pageStr=[NSString stringWithFormat:@"%i",self.page];
+    AccountModel *account=[AccountTool account];
+    //获取用户所有订单0.用户所有订单、1.未付款订单、2.进行中的订单、3.已完成的订单
+    NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:type,@"type",account.userId,@"userid",@"5",@"pageSize",pageStr,@"currPage", nil];
+    [RequestData getUserOrderListWithPage:params FinishCallbackBlock:^(NSDictionary *data) {
+        self.goods=data[@"orderList"];
+        
+        //调用主线程
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.myTableView reloadData];
+        });
+    }];    [self.myTableView reloadData];
+    [self.myTableView footerEndRefreshing];
+}
+
 #pragma mark UITable代理方法
 /**
  *  设置单元格数量
@@ -118,7 +195,7 @@
         cell.selectionStyle=UITableViewCellSelectionStyleNone;
         cell.orderidLabel.text=self.goods[indexPath.row][@"orderid"];
         cell.stateLabel.text=self.goods[indexPath.row][@"statuText"];
-        cell.timeLabel.text=self.goods[indexPath.row][@"ordertime"];
+        cell.timeLabel.text=self.goods[indexPath.row][@"formatOrdertime"];
         cell.priceLabel.text=self.goods[indexPath.row][@"formatSumprice"];
          NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:self.goods[indexPath.row][@"orderid"],@"orderid", nil];
         [RequestData getOrderListByOrderid:params FinishCallbackBlock:^(NSDictionary *data) {
@@ -157,7 +234,7 @@
             //取消Cell选中时背景
             cell.selectionStyle=UITableViewCellSelectionStyleNone;
             cell.orderidLabel.text=self.goods[indexPath.row][@"orderid"];
-            cell.timeLabel.text=self.goods[indexPath.row][@"ordertime"];
+            cell.timeLabel.text=self.goods[indexPath.row][@"formatOrdertime"];
             cell.priceLabel.text=self.goods[indexPath.row][@"formatSumprice"];
             cell.contetLabel.text=self.goods[indexPath.row][@"title"];
             [RequestData getOrderListByOrderid:params FinishCallbackBlock:^(NSDictionary *data) {
@@ -226,7 +303,7 @@
         //取消Cell选中时背景
         cell.selectionStyle=UITableViewCellSelectionStyleNone;
         cell.orderidLabel.text=self.goods[indexPath.row][@"orderid"];
-        cell.timeLabel.text=self.goods[indexPath.row][@"ordertime"];
+        cell.timeLabel.text=self.goods[indexPath.row][@"formatOrdertime"];
         cell.priceLabel.text=self.goods[indexPath.row][@"formatSumprice"];
         cell.contetLabel.text=self.goods[indexPath.row][@"title"];
          NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:self.goods[indexPath.row][@"orderid"],@"orderid", nil];
@@ -261,6 +338,30 @@
 
     }
     return nil;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"%@",self.goods[indexPath.row][@"orderid"]);
+    //设置故事板为第一启动
+    UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"wjl" bundle:nil];
+    OrderInfoTableController *order=[storyboard instantiateViewControllerWithIdentifier:@"订单明细View"];
+    order.orderNum=self.goods[indexPath.row][@"orderid"];
+    order.formatSumprice=self.goods[indexPath.row][@"formatSumprice"];
+    if ([self.goods[indexPath.row][@"paytype"] isEqualToString:@"1"]) {
+        order.statuText=@"支付宝";
+    }else if([self.goods[indexPath.row][@"paytype"] isEqualToString:@"2"])
+    {
+        order.statuText=@"现金支付";
+    }
+    if([self.goods[indexPath.row][@"taketype"] isEqualToString:@"1"])
+    {
+        order.taketype=@"自提";
+    }else if([self.goods[indexPath.row][@"taketype"] isEqualToString:@"2"])
+    {
+        order.taketype=@"送货上门";
+    }
+    [self.navigationController pushViewController:order animated:YES];
 }
 -(void)ok:(UIButton *)sender{
     NSLog(@"确认收货");

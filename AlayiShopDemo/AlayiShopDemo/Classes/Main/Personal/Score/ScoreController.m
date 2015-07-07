@@ -11,6 +11,7 @@
 #import "AccountTool.h"
 @interface ScoreController ()
 @property (retain,nonatomic)NSArray *scoreArray;
+@property (assign,nonatomic)int page;
 @end
 
 @implementation ScoreController
@@ -32,9 +33,11 @@
     [self.myTableView  registerNib:nib forCellReuseIdentifier:@"ScoreCell"];
     self.myTableView.separatorStyle=NO;
     self.myTableView.backgroundColor=[UIColor colorWithRed:229.0/255.0 green:229.0/255.0 blue:229.0/255.0 alpha:1];
+    //设置页码
+    self.page=1;
+    NSString *pageStr=[NSString stringWithFormat:@"%i",self.page];
     AccountModel *account=[AccountTool account];
-    //获取用户所有订单0.用户所有订单、1.未付款订单、2.进行中的订单、3.已完成的订单
-    NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:account.userId,@"userid",@"10",@"pageSize",@"1",@"currPage", nil];
+    NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:account.userId,@"userid",@"10",@"pageSize",pageStr,@"currPage", nil];
     [RequestData getUserAllScoreWithPage:params FinishCallbackBlock:^(NSDictionary *data) {
         self.scoreArray=data[@"scoreList"];
         //调用主线程
@@ -42,6 +45,7 @@
             [self.myTableView reloadData];
         });
     }];
+    [self setupRefresh];
 }
 /**
  *  POP方法
@@ -51,6 +55,77 @@
 -(void)back:(id *)sender{
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+
+/**
+ *  集成刷新控件
+ */
+- (void)setupRefresh
+{
+    // 1.下拉刷新(进入刷新状态就会调用self的headerRereshing)
+    [self.myTableView addHeaderWithTarget:self action:@selector(headerRereshing)];
+    [self.myTableView headerBeginRefreshing];
+    
+    // 2.上拉加载更多(进入刷新状态就会调用self的footerRereshing)
+    [self.myTableView addFooterWithTarget:self action:@selector(footerRereshing)];
+    
+    // 设置文字(也可以不设置,默认的文字在MJRefreshConst中修改)
+    self.myTableView.headerPullToRefreshText = @"下拉可以刷新了";
+    self.myTableView.headerReleaseToRefreshText = @"松开马上刷新了";
+    self.myTableView.headerRefreshingText = @"正在帮新中";
+    
+    self.myTableView.footerPullToRefreshText = @"上拉可以加载更多数据了";
+    self.myTableView.footerReleaseToRefreshText = @"松开马上加载更多数据了";
+    self.myTableView.footerRefreshingText = @"正在加载中";
+}
+
+#pragma mark 开始进入刷新状态
+/**
+ *  下拉刷新
+ */
+- (void)headerRereshing
+{
+    if (self.page==1) {
+        self.page=1;
+    }else
+    {
+        self.page-=1;
+    }
+    NSString *pageStr=[NSString stringWithFormat:@"%i",self.page];
+    AccountModel *account=[AccountTool account];
+    NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:account.userId,@"userid",@"10",@"pageSize",pageStr,@"currPage", nil];
+    [RequestData getUserAllScoreWithPage:params FinishCallbackBlock:^(NSDictionary *data) {
+        self.scoreArray=data[@"scoreList"];
+        //调用主线程
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.myTableView reloadData];
+        });
+    }];
+
+    [self.myTableView reloadData];
+    [self.myTableView headerEndRefreshing];
+}
+/**
+ *  上拉加载
+ */
+- (void)footerRereshing
+{
+    self.page+=1;
+    NSString *pageStr=[NSString stringWithFormat:@"%i",self.page];
+    AccountModel *account=[AccountTool account];
+    NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:account.userId,@"userid",@"10",@"pageSize",pageStr,@"currPage", nil];
+    [RequestData getUserAllScoreWithPage:params FinishCallbackBlock:^(NSDictionary *data) {
+        self.scoreArray=data[@"scoreList"];
+        //调用主线程
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.myTableView reloadData];
+        });
+    }];
+    [self.myTableView reloadData];
+    [self.myTableView footerEndRefreshing];
+}
+
+//
 #pragma mark UITable代理方法
 /**
  *  设置单元格数量
