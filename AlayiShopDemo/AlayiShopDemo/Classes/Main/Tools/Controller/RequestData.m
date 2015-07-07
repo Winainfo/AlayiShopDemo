@@ -420,6 +420,7 @@
     //2.拼接参数
     NSString *jsonDic=[RequestData getJsonStr:data];
     NSDictionary *params=@{@"method":@"getInfoById",@"appid":APPID,@"data":jsonDic};
+    NSLog(@"字典为：%@",params);
     //3.发生请求
     
     [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -654,6 +655,7 @@
     //2.拼接参数
     NSString *jsonDic=[RequestData getJsonStr:data];
     NSDictionary *params=@{@"method":@"getAllHotFoodList",@"appid":APPID,@"data":jsonDic};
+    NSLog(@"字典为：%@",params);
     //3.发生请求
     [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"修改帐号请求成功--");
