@@ -1186,7 +1186,7 @@
                                             <constraint firstAttribute="width" constant="13" id="8US-Fz-TnF"/>
                                             <constraint firstAttribute="height" constant="13" id="BAf-cf-pDJ"/>
                                         </constraints>
-                                        <state key="normal" image="CD96E7D6-50EC-4FA5-AEFD-5529096A02E5">
+                                        <state key="normal" image="1AABB42C-1E40-4A84-9C20-1A88F9A39190">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -1211,7 +1211,7 @@
                                             <constraint firstAttribute="width" constant="13" id="1Pd-IK-1H2"/>
                                             <constraint firstAttribute="height" constant="13" id="Vny-9p-g8m"/>
                                         </constraints>
-                                        <state key="normal" image="CD96E7D6-50EC-4FA5-AEFD-5529096A02E5">
+                                        <state key="normal" image="1AABB42C-1E40-4A84-9C20-1A88F9A39190">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -2591,7 +2591,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="CD96E7D6-50EC-4FA5-AEFD-5529096A02E5" width="13" height="13">
+        <image name="1AABB42C-1E40-4A84-9C20-1A88F9A39190" width="13" height="13">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -2678,6 +2678,6 @@ AAIBAAAAAAAAAEIAAAAAAAAAAAAAAAAAAAzTA
         <image name="wait_product_icon" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="TmY-Mb-JIE"/>
+        <segue reference="cLp-TM-777"/>
     </inferredMetricsTieBreakers>
 </document>
