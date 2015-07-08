@@ -45,7 +45,7 @@
             [self.myTableView reloadData];
         });
     }];
-    [self setupRefresh];
+   // [self setupRefresh];
 }
 /**
  *  POP方法

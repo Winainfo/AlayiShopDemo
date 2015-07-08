@@ -66,7 +66,7 @@
         self.goodsArray=data[@"orderlistList"];
         //右边按钮
         ARLabel *numLabel=[[ARLabel alloc]initWithFrame:CGRectMake(0, 0, 30, 20)];
-        numLabel.text=[NSString stringWithFormat:@"共%ld件",self.goodsArray.count];
+        numLabel.text=[NSString stringWithFormat:@"共%ld件",(unsigned long)self.goodsArray.count];
         numLabel.font=[UIFont fontWithName:@"Heiti Sc" size:16.0];
         numLabel.textColor=[UIColor grayColor];
         UIBarButtonItem *rightBtn=[[UIBarButtonItem alloc]initWithCustomView:numLabel];

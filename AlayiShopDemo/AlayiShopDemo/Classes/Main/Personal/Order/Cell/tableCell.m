@@ -1,14 +1,14 @@
 //
-//  TableViewCell.m
-//  Test
+//  tableCell.m
+//  AlayiShopDemo
 //
-//  Created by ibokan on 15/6/29.
+//  Created by 吴金林 on 15/7/8.
 //  Copyright (c) 2015年 kolin. All rights reserved.
 //
 
-#import "MyTableViewCell.h"
+#import "tableCell.h"
 
-@implementation MyTableViewCell
+@implementation tableCell
 
 - (void)awakeFromNib {
     // Initialization code

@@ -51,7 +51,7 @@
                             <constraint firstAttribute="height" constant="21" id="y95-Ow-z8x"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="14"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -82,6 +82,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="MyAddressManager_line_new" width="320" height="1"/>
+        <image name="MyAddressManager_line_new" width="640" height="2"/>
     </resources>
 </document>

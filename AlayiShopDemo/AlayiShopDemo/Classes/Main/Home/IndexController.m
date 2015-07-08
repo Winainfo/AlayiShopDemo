@@ -10,6 +10,7 @@
 
 @interface IndexController ()
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *viewHeight;
 @end
 
 @implementation IndexController
@@ -20,19 +21,9 @@
 //    self.view.backgroundColor = [UIColor redColor];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)updateViewConstraints{
+    [super updateViewConstraints];
+    //设置高度
+    self.viewHeight.constant=CGRectGetHeight([UIScreen mainScreen].bounds)*2;
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end

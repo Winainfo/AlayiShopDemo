@@ -268,7 +268,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="MyAddressManager_line_new" width="320" height="1"/>
+        <image name="MyAddressManager_line_new" width="640" height="2"/>
         <image name="my_list_arrow" width="13" height="13"/>
     </resources>
 </document>
