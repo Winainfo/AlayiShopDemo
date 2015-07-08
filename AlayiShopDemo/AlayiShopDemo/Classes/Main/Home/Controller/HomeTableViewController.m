@@ -82,11 +82,5 @@
     int page = scrollView.contentOffset.x/self.adView.frame.size.width;
     self.myPageControl.currentPage=page;
 }
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
 
 @end

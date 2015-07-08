@@ -2,18 +2,16 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "MyAddressManager_line_new@2x-2.png"
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "MyAddressManager_line_new@2x.png"
+      "filename" : "bg@2x.png"
     },
     {
       "idiom" : "universal",
-      "scale" : "3x",
-      "filename" : "MyAddressManager_line_new@2x-1.png"
+      "scale" : "3x"
     }
   ],
   "info" : {

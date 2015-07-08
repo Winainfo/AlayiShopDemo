@@ -139,7 +139,7 @@
         <!--阿拉亿配菜-->
         <scene sceneID="PHI-lU-sdq">
             <objects>
-                <viewController id="kh2-lJ-aGq" customClass="HomeViewController" sceneMemberID="viewController">
+                <viewController id="kh2-lJ-aGq" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZCi-sS-zDo"/>
                         <viewControllerLayoutGuide type="bottom" id="iYS-Ys-f6n"/>
@@ -927,10 +927,10 @@
             </objects>
             <point key="canvasLocation" x="4774" y="-26"/>
         </scene>
-        <!--Home Table View Controller-->
+        <!--Table View Controller-->
         <scene sceneID="O1p-Ph-Dw3">
             <objects>
-                <tableViewController id="DBM-hK-Eui" customClass="HomeTableViewController" sceneMemberID="viewController">
+                <tableViewController id="DBM-hK-Eui" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Ax9-iF-Swq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1035,14 +1035,37 @@
                                                 <constraint firstAttribute="trailing" secondItem="O0Z-lf-OFU" secondAttribute="trailing" id="3PX-Bl-aVH"/>
                                                 <constraint firstAttribute="trailing" secondItem="N4c-dy-lCS" secondAttribute="trailing" id="3zt-kj-8oD"/>
                                                 <constraint firstItem="N4c-dy-lCS" firstAttribute="leading" secondItem="xXv-BO-7HN" secondAttribute="leading" id="4Id-o0-PxA"/>
+                                                <constraint firstItem="Gpm-Rp-n9n" firstAttribute="leading" secondItem="Dw9-zW-wz1" secondAttribute="leading" id="4oe-PT-dAC"/>
+                                                <constraint firstItem="JCp-GS-1Bu" firstAttribute="trailing" secondItem="35l-fA-h8y" secondAttribute="trailing" id="54M-ME-Q2z"/>
                                                 <constraint firstItem="O0Z-lf-OFU" firstAttribute="top" secondItem="xXv-BO-7HN" secondAttribute="top" id="5Ze-eo-YNm"/>
+                                                <constraint firstItem="IlW-TM-JWw" firstAttribute="top" secondItem="JCp-GS-1Bu" secondAttribute="bottom" constant="1" id="6Z4-V9-auV"/>
+                                                <constraint firstItem="JCp-GS-1Bu" firstAttribute="leading" secondItem="OdY-c3-1qe" secondAttribute="leading" id="6qB-YU-Fxm"/>
+                                                <constraint firstItem="AC0-oV-ZNI" firstAttribute="leading" secondItem="IlW-TM-JWw" secondAttribute="trailing" constant="1" id="CB5-iw-zQS"/>
+                                                <constraint firstItem="IlW-TM-JWw" firstAttribute="leading" secondItem="W5H-Kc-rYN" secondAttribute="trailing" constant="1" id="Cny-sA-buo"/>
+                                                <constraint firstItem="Gpm-Rp-n9n" firstAttribute="trailing" secondItem="AC0-oV-ZNI" secondAttribute="trailing" id="F5P-lV-mfH"/>
+                                                <constraint firstItem="IlW-TM-JWw" firstAttribute="top" secondItem="W5H-Kc-rYN" secondAttribute="top" id="G8Y-NW-jdw"/>
+                                                <constraint firstItem="IlW-TM-JWw" firstAttribute="bottom" secondItem="W5H-Kc-rYN" secondAttribute="bottom" id="HLl-ya-5JM"/>
+                                                <constraint firstItem="IlW-TM-JWw" firstAttribute="bottom" secondItem="35l-fA-h8y" secondAttribute="bottom" id="HrE-K2-Qkj"/>
                                                 <constraint firstItem="OdY-c3-1qe" firstAttribute="leading" secondItem="O0Z-lf-OFU" secondAttribute="leading" id="LAU-6d-CqQ"/>
+                                                <constraint firstItem="Gpm-Rp-n9n" firstAttribute="trailing" secondItem="OdY-c3-1qe" secondAttribute="trailing" id="LbJ-Jc-ps8"/>
                                                 <constraint firstAttribute="bottom" secondItem="N4c-dy-lCS" secondAttribute="bottom" id="QU6-Wq-eCE"/>
                                                 <constraint firstAttribute="centerX" secondItem="O0Z-lf-OFU" secondAttribute="centerX" id="RYL-7S-mj2"/>
+                                                <constraint firstItem="35l-fA-h8y" firstAttribute="top" secondItem="O0Z-lf-OFU" secondAttribute="top" id="SHW-bx-gMr"/>
+                                                <constraint firstItem="IlW-TM-JWw" firstAttribute="centerX" secondItem="OdY-c3-1qe" secondAttribute="centerX" id="Swd-Kv-IdB"/>
+                                                <constraint firstAttribute="trailing" secondItem="JCp-GS-1Bu" secondAttribute="trailing" constant="160" id="Tol-s9-jI0"/>
+                                                <constraint firstItem="IlW-TM-JWw" firstAttribute="bottom" secondItem="AC0-oV-ZNI" secondAttribute="bottom" id="V1f-dB-VgV"/>
+                                                <constraint firstItem="JCp-GS-1Bu" firstAttribute="top" secondItem="Gpm-Rp-n9n" secondAttribute="top" id="V7R-Qi-djK"/>
+                                                <constraint firstItem="JCp-GS-1Bu" firstAttribute="top" secondItem="O0Z-lf-OFU" secondAttribute="bottom" constant="24" id="WnX-1x-0wu"/>
+                                                <constraint firstItem="IlW-TM-JWw" firstAttribute="leading" secondItem="xXv-BO-7HN" secondAttribute="leading" constant="107" id="aVA-7p-aaZ"/>
                                                 <constraint firstItem="O0Z-lf-OFU" firstAttribute="leading" secondItem="xXv-BO-7HN" secondAttribute="leading" id="dEu-Hz-7Nu"/>
+                                                <constraint firstItem="IlW-TM-JWw" firstAttribute="top" secondItem="AC0-oV-ZNI" secondAttribute="top" id="ftb-ob-TO2"/>
                                                 <constraint firstItem="OdY-c3-1qe" firstAttribute="top" secondItem="O0Z-lf-OFU" secondAttribute="bottom" id="jVY-RE-0zl"/>
+                                                <constraint firstItem="Dw9-zW-wz1" firstAttribute="top" secondItem="Gpm-Rp-n9n" secondAttribute="bottom" constant="1" id="lgM-8I-fde"/>
+                                                <constraint firstItem="JCp-GS-1Bu" firstAttribute="leading" secondItem="W5H-Kc-rYN" secondAttribute="leading" id="mzf-jP-fAl"/>
                                                 <constraint firstItem="OdY-c3-1qe" firstAttribute="trailing" secondItem="O0Z-lf-OFU" secondAttribute="trailing" id="wkZ-qz-lgM"/>
                                                 <constraint firstItem="N4c-dy-lCS" firstAttribute="top" secondItem="O0Z-lf-OFU" secondAttribute="bottom" id="xB0-6J-l23"/>
+                                                <constraint firstItem="Dw9-zW-wz1" firstAttribute="leading" secondItem="JCp-GS-1Bu" secondAttribute="trailing" id="xIi-lM-pba"/>
+                                                <constraint firstItem="Gpm-Rp-n9n" firstAttribute="trailing" secondItem="Dw9-zW-wz1" secondAttribute="trailing" id="xjS-c4-DcZ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1055,10 +1078,6 @@
                         </connections>
                     </tableView>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                    <connections>
-                        <outlet property="adView" destination="oY7-kX-yLb" id="crM-E2-rof"/>
-                        <outlet property="myPageControl" destination="qME-at-hEv" id="YkH-kW-MII"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="THT-1e-y6c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

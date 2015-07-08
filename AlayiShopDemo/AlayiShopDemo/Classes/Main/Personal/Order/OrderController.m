@@ -9,6 +9,7 @@
 #import "OrderController.h"
 #import "RequestData.h"
 #import "AccountTool.h"
+#import "tableCell.h"
 #import "UIImageView+WebCache.h"
 #import "OrderInfoTableController.h"
 @interface OrderController ()<UITableViewDataSource,UITableViewDelegate>
@@ -54,9 +55,9 @@
     self.navigationItem.leftBarButtonItem=barButton;
     if ([type isEqualToString:@"0"]||[type isEqualToString:@"1"]||[type isEqualToString:@"2"]) {
         //创建xib文件对象
-        UINib *nib=[UINib nibWithNibName:@"orderCell" bundle:[NSBundle mainBundle]];
+        UINib *nib=[UINib nibWithNibName:@"tableCell" bundle:[NSBundle mainBundle]];
         //注册到表格视图
-        [self.myTableView  registerNib:nib forCellReuseIdentifier:@"orderCell"];
+        [self.myTableView  registerNib:nib forCellReuseIdentifier:@"tableCell"];
     }else if([type isEqualToString:@"3"])
     {
         //创建xib文件对象
@@ -80,7 +81,7 @@
             [self.myTableView reloadData];
         });
     }];
-    [self setupRefresh];
+    //[self setupRefresh];
 }
 /**
  *  POP方法
@@ -128,7 +129,7 @@
     NSString *pageStr=[NSString stringWithFormat:@"%i",self.page];
     AccountModel *account=[AccountTool account];
     //获取用户所有订单0.用户所有订单、1.未付款订单、2.进行中的订单、3.已完成的订单
-    NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:type,@"type",account.userId,@"userid",@"5",@"pageSize",pageStr,@"currPage", nil];
+    NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:type,@"type",account.userId,@"userid",@"2",@"pageSize",pageStr,@"currPage", nil];
     [RequestData getUserOrderListWithPage:params FinishCallbackBlock:^(NSDictionary *data) {
         self.goods=data[@"orderList"];
         
@@ -150,7 +151,7 @@
     NSString *pageStr=[NSString stringWithFormat:@"%i",self.page];
     AccountModel *account=[AccountTool account];
     //获取用户所有订单0.用户所有订单、1.未付款订单、2.进行中的订单、3.已完成的订单
-    NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:type,@"type",account.userId,@"userid",@"5",@"pageSize",pageStr,@"currPage", nil];
+    NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:type,@"type",account.userId,@"userid",@"2",@"pageSize",pageStr,@"currPage", nil];
     [RequestData getUserOrderListWithPage:params FinishCallbackBlock:^(NSDictionary *data) {
         self.goods=data[@"orderList"];
         
@@ -186,7 +187,7 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([type isEqualToString:@"0"]||[type isEqualToString:@"1"]||[type isEqualToString:@"2"]) {
-        static NSString *cellStr=@"orderCell";
+        static NSString *cellStr=@"tableCell";
         orderCell *cell=[tableView dequeueReusableCellWithIdentifier:cellStr];
         if (cell==nil) {
             cell=[[orderCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellStr];
@@ -265,26 +266,26 @@
         }else if ([self.goods[indexPath.row][@"statuText"]isEqualToString:@"已支付" ])
         {
             //创建xib文件对象
-            UINib *nib=[UINib nibWithNibName:@"orderCell" bundle:[NSBundle mainBundle]];
+            UINib *nib=[UINib nibWithNibName:@"tableCell" bundle:[NSBundle mainBundle]];
             //注册到表格视图
-            [self.myTableView  registerNib:nib forCellReuseIdentifier:@"orderCell"];
+            [self.myTableView  registerNib:nib forCellReuseIdentifier:@"tableCell"];
             [cell.stateButton setTitle:@"确认收货" forState:UIControlStateNormal];
             [cell.stateButton addTarget:self action:@selector(ok:) forControlEvents:UIControlEventTouchUpInside];
         }else if ([self.goods[indexPath.row][@"statuText"]isEqualToString:@"未付款"])
         {
             //创建xib文件对象
-            UINib *nib=[UINib nibWithNibName:@"orderCell" bundle:[NSBundle mainBundle]];
+            UINib *nib=[UINib nibWithNibName:@"tableCell" bundle:[NSBundle mainBundle]];
             //注册到表格视图
-            [self.myTableView  registerNib:nib forCellReuseIdentifier:@"orderCell"];
+            [self.myTableView  registerNib:nib forCellReuseIdentifier:@"tableCell"];
             
             [cell.stateButton setTitle:@"去付款" forState:UIControlStateNormal];
             [cell.stateButton addTarget:self action:@selector(go:) forControlEvents:UIControlEventTouchUpInside];
         }else if ([self.goods[indexPath.row][@"statuText"]isEqualToString:@"已取消"])
         {
             //创建xib文件对象
-            UINib *nib=[UINib nibWithNibName:@"orderCell" bundle:[NSBundle mainBundle]];
+            UINib *nib=[UINib nibWithNibName:@"tableCell" bundle:[NSBundle mainBundle]];
             //注册到表格视图
-            [self.myTableView  registerNib:nib forCellReuseIdentifier:@"orderCell"];
+            [self.myTableView  registerNib:nib forCellReuseIdentifier:@"tableCell"];
             
             [cell.stateButton setTitle:@"重新下单" forState:UIControlStateNormal];
             //[cell.stateButton addTarget:self action:@selector(go:) forControlEvents:UIControlEventTouchUpInside];
