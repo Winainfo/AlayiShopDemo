@@ -16,15 +16,15 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.font = [UIFont systemFontOfSize:15];
-        self.placeholder = @"请输入用户名";
+        self.placeholder = @"  请输入用户名";
         self.background = [UIImage imageNamed:@"common_image_controls"];
         self.clearButtonMode = UITextFieldViewModeWhileEditing;
         
         // 通过init来创建初始化绝大部分控件，控件都是没有尺寸
         UIImageView *searchIcon = [[UIImageView alloc] init];
         searchIcon.image = [UIImage imageNamed:@"common_btn_addbook"];
-        searchIcon.width = 30;
-        searchIcon.height = 30;
+        searchIcon.width = 35;
+        searchIcon.height = 25;
         searchIcon.contentMode = UIViewContentModeCenter;
         self.leftView = searchIcon;
         self.leftViewMode = UITextFieldViewModeAlways;

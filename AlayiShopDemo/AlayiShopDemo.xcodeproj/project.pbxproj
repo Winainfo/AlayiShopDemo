@@ -114,7 +114,6 @@
 		33D4E80A1B4986DA00E55A45 /* MJRefreshFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D4E7FE1B4986DA00E55A45 /* MJRefreshFooterView.m */; };
 		33D4E80B1B4986DA00E55A45 /* MJRefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D4E8001B4986DA00E55A45 /* MJRefreshHeaderView.m */; };
 		33D4E80C1B4986DA00E55A45 /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D4E8021B4986DA00E55A45 /* UIScrollView+MJExtension.m */; };
-		33D4E80D1B4986DA00E55A45 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D4E8041B4986DA00E55A45 /* UIScrollView+MJRefresh.m */; };
 		33D4E80E1B4986DA00E55A45 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D4E8061B4986DA00E55A45 /* UIView+MJExtension.m */; };
 		33D6A7AA1B4598F5003901BF /* ARLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D6A7A91B4598F5003901BF /* ARLabel.m */; };
 		33F955321B46805500E25192 /* UserInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F955311B46805500E25192 /* UserInfoController.m */; };
@@ -517,11 +516,11 @@
 				33CBCFDD1B4404AF00FADD5F /* PersonalTableViewController.m */,
 				331751671B45228400A55B92 /* PersonalController.h */,
 				331751681B45228400A55B92 /* PersonalController.m */,
-				3394F2A71B46468B00CB951C /* AdviseController.h */,
 				0F98CBED1B4C060500151A26 /* LoginBar.h */,
 				0F98CBEE1B4C060500151A26 /* LoginBar.m */,
 				0F98CBF01B4C064600151A26 /* RegisterViewController.h */,
 				0F98CBF11B4C064600151A26 /* RegisterViewController.m */,
+				3394F2A71B46468B00CB951C /* AdviseController.h */,
 				3394F2A81B46468B00CB951C /* AdviseController.m */,
 				33F955301B46805500E25192 /* UserInfoController.h */,
 				33F955311B46805500E25192 /* UserInfoController.m */,
@@ -855,8 +854,6 @@
 				0F7DCB341B477EF300D56AC1 /* ShoppingCartTableViewCell.xib */,
 				0F17BB581B4A699D00B51A2F /* OrderFormViewController.h */,
 				0F17BB591B4A699D00B51A2F /* OrderFormViewController.m */,
-				0FEA4B8C1B4BC09C00824090 /* InventoryViewController.h */,
-				0FEA4B8D1B4BC09C00824090 /* InventoryViewController.m */,
 			);
 			name = "Cart(购物车)";
 			path = Cart;
@@ -1160,7 +1157,6 @@
 				33D1D8CD1B426689009ADF41 /* main.m in Sources */,
 				33D1D9861B42688D009ADF41 /* IQUIWindow+Hierarchy.m in Sources */,
 				3324D03F1B46EC99001DA5C4 /* WaterCell.m in Sources */,
-				0FEA4B8E1B4BC09C00824090 /* InventoryViewController.m in Sources */,
 				33D1D9AD1B42688D009ADF41 /* UIImageView+WebCache.m in Sources */,
 				0F944E3C1B44ED4100E5ED82 /* FinallyViewController.m in Sources */,
 				33D1D9AE1B42688D009ADF41 /* UIView+WebCacheOperation.m in Sources */,
