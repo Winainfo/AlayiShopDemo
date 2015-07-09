@@ -103,7 +103,6 @@
 		33D1D9AC1B42688D009ADF41 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D1D9761B42688D009ADF41 /* UIImageView+HighlightedWebCache.m */; };
 		33D1D9AD1B42688D009ADF41 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D1D9781B42688D009ADF41 /* UIImageView+WebCache.m */; };
 		33D1D9AE1B42688D009ADF41 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D1D97A1B42688D009ADF41 /* UIView+WebCacheOperation.m */; };
-		33D1DAE91B427135009ADF41 /* IndexController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D1DAE81B427135009ADF41 /* IndexController.m */; };
 		33D1DAEC1B4271A8009ADF41 /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D1DAEB1B4271A8009ADF41 /* CategoryViewController.m */; };
 		33D1DAEF1B4271C8009ADF41 /* CartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D1DAEE1B4271C8009ADF41 /* CartViewController.m */; };
 		33D1DAF51B4271DD009ADF41 /* CommonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D1DAF41B4271DD009ADF41 /* CommonViewController.m */; };
@@ -322,8 +321,6 @@
 		33D1D9781B42688D009ADF41 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		33D1D9791B42688D009ADF41 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		33D1D97A1B42688D009ADF41 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
-		33D1DAE71B427135009ADF41 /* IndexController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexController.h; sourceTree = "<group>"; };
-		33D1DAE81B427135009ADF41 /* IndexController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexController.m; sourceTree = "<group>"; };
 		33D1DAEA1B4271A8009ADF41 /* CategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryViewController.h; sourceTree = "<group>"; };
 		33D1DAEB1B4271A8009ADF41 /* CategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryViewController.m; sourceTree = "<group>"; };
 		33D1DAED1B4271C8009ADF41 /* CartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartViewController.h; sourceTree = "<group>"; };
@@ -813,8 +810,6 @@
 			children = (
 				0F1C80D01B43CD5800FB72E3 /* Categary */,
 				0F6872C11B4394C00001D528 /* Controller */,
-				33D1DAE71B427135009ADF41 /* IndexController.h */,
-				33D1DAE81B427135009ADF41 /* IndexController.m */,
 				332351701B4CF33B00D9A735 /* TableViewController.h */,
 				332351711B4CF33B00D9A735 /* TableViewController.m */,
 			);
@@ -1145,7 +1140,6 @@
 				33D1D98A1B42688D009ADF41 /* IQTextView.m in Sources */,
 				33D1D99F1B42688D009ADF41 /* MKAnnotationView+WebCache.m in Sources */,
 				0F1C810C1B43E09800FB72E3 /* HomeTableViewController.m in Sources */,
-				33D1DAE91B427135009ADF41 /* IndexController.m in Sources */,
 				0F4D19FF1B452B91008B0BE7 /* ShoppingTableViewCell.m in Sources */,
 				33D4E80C1B4986DA00E55A45 /* UIScrollView+MJExtension.m in Sources */,
 				33D4E80A1B4986DA00E55A45 /* MJRefreshFooterView.m in Sources */,
