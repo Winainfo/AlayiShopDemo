@@ -475,7 +475,7 @@
     NSDictionary *params=@{@"method":@"getAllSelfFoodWithPage",@"appid":APPID,@"data":jsonDic};
     //3.发生请求
     [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"自制菜数据请求成功--");
+        NSLog(@"自制菜数据请求成功--%@---",responseObject);
         block(responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"自制菜数据请求失败-%@",error);
