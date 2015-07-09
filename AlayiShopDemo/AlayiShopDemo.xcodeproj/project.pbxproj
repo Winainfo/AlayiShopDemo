@@ -12,7 +12,6 @@
 		0F1C810C1B43E09800FB72E3 /* HomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1C810B1B43E09800FB72E3 /* HomeTableViewController.m */; };
 		0F1C817C1B441F6A00FB72E3 /* HWSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1C81791B441F6A00FB72E3 /* HWSearchBar.m */; };
 		0F1C817D1B441F6A00FB72E3 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1C817B1B441F6A00FB72E3 /* UIView+Extension.m */; };
-		0F1D1A131B427719009B324E /* yjh.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F1D1A121B427719009B324E /* yjh.storyboard */; };
 		0F4D19FF1B452B91008B0BE7 /* ShoppingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F4D19FD1B452B91008B0BE7 /* ShoppingTableViewCell.m */; };
 		0F4D1A001B452B91008B0BE7 /* ShoppingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F4D19FE1B452B91008B0BE7 /* ShoppingTableViewCell.xib */; };
 		0F4D1A031B453AAD008B0BE7 /* ShoppingCarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F4D1A021B453AAD008B0BE7 /* ShoppingCarController.m */; };
@@ -143,7 +142,6 @@
 		0F1C81791B441F6A00FB72E3 /* HWSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWSearchBar.m; sourceTree = "<group>"; };
 		0F1C817A1B441F6A00FB72E3 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		0F1C817B1B441F6A00FB72E3 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
-		0F1D1A121B427719009B324E /* yjh.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = yjh.storyboard; sourceTree = "<group>"; };
 		0F4D19FC1B452B91008B0BE7 /* ShoppingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingTableViewCell.h; sourceTree = "<group>"; };
 		0F4D19FD1B452B91008B0BE7 /* ShoppingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingTableViewCell.m; sourceTree = "<group>"; };
 		0F4D19FE1B452B91008B0BE7 /* ShoppingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShoppingTableViewCell.xib; sourceTree = "<group>"; };
@@ -636,7 +634,6 @@
 				33D1D9021B426756009ADF41 /* Main.storyboard */,
 				33D1D8FE1B42671A009ADF41 /* AppDelegate.h */,
 				33D1D8FF1B42671A009ADF41 /* AppDelegate.m */,
-				0F1D1A121B427719009B324E /* yjh.storyboard */,
 				3324CC731B4286E300E74E93 /* TestViewController.h */,
 				3324CC741B4286E300E74E93 /* TestViewController.m */,
 				3383227E1B427AA5004CE9C2 /* wjl.storyboard */,
@@ -1053,7 +1050,6 @@
 				33D1D98F1B42688D009ADF41 /* IQKeyboardManager.bundle in Resources */,
 				33EA3E641B4CC7AF00278995 /* tableCell.xib in Resources */,
 				0FA5A6A31B47AD7200ED2A10 /* CommentTableViewCell.xib in Resources */,
-				0F1D1A131B427719009B324E /* yjh.storyboard in Resources */,
 				33D4E8071B4986DA00E55A45 /* MJRefresh.bundle in Resources */,
 				0F80D93A1B42B15700C46D72 /* wwc.storyboard in Resources */,
 				33887C4F1B4BD1C700E2F57D /* OrderInfoCell.xib in Resources */,
@@ -1288,7 +1284,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = AlayiShopDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = AlayiShopDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "73dc033e-13f7-4403-9d8e-e8860c28fc14";
@@ -1307,7 +1303,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = AlayiShopDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = AlayiShopDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "73dc033e-13f7-4403-9d8e-e8860c28fc14";
