@@ -4,6 +4,7 @@
 #import "RequestData.h"
 #import "UIImageView+WebCache.h"
 #import "API.h"
+#import "MJRefresh.h"
 #define HEIGHT [UIScreen mainScreen].bounds.size.height
 #define WIDTH [UIScreen mainScreen].bounds.size.width
 
@@ -44,23 +45,6 @@
     
     //调用接口请求数据
     NSDictionary *prama = [NSDictionary dictionaryWithObjectsAndKeys:@"10",@"pageSize",@"1",@"currPage",@"32",@"userid", nil];
-//   [API netAccess:prama andMethod:@"getUserSelfFoodWithPage" success:^(NSDictionary *successCode) {
-//       self.selfFoodListArr = successCode[@"selfFoodList"];
-//       NSLog(@"我的自制菜 === %@",successCode);
-//       for (id obj in self.selfFoodListArr) {
-//           [ self.titleArr addObject:obj[@"title"]];
-//       }
-//       for (id obj in self.selfFoodListArr) {
-////           [self.picUrlArr addObject:obj[@"pic"]];
-//           NSString *str = [NSString stringWithFormat:@"http://www.alayicai.com%@",obj[@"pic"]];
-//           NSURL *url = [NSURL URLWithString:str];
-//           [self.picUrlArr addObject:url];
-//           NSLog(@"== 图片网址数组 == %@",self.picUrlArr);
-//       }
-//       [self.selfFoodV reloadData];
-//   } falure:^(NSError *er) {
-//       NSLog(@"请求失败%@",er);
-//   }];
  
 }
 
