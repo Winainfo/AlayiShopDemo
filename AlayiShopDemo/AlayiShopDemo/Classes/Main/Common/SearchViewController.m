@@ -9,120 +9,120 @@
 #import "SearchViewController.h"
 #import "UIView+Extension.h"
 #import "HWSearchBar.h"
+#import "HistoryTableViewCell.h"
+#import "HistoryClass.h"
+#import "FinallyViewController.h"
+#import "RequestData.h"
 
 @interface SearchViewController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 
-@property (weak, nonatomic) IBOutlet UIView *hotSearchView;
+
 @property (weak, nonatomic) IBOutlet UIView *historySearchView;
 @property (weak, nonatomic) IBOutlet UITextField *clearView;
 @property (weak, nonatomic) IBOutlet UIButton *clearBtn;
 @property (weak, nonatomic) IBOutlet UITableView *hitoryTable;
+@property (retain,nonatomic) HWSearchBar *mySearchBar;
+@property (retain,nonatomic) NSArray *hisArr;//存储搜索历史的数组
 
 
 @end
 
 @implementation SearchViewController
 
-static BOOL isHistory = NO;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self setNavStyle];
+//    [self setNavStyle];
+    
+    self.hisArr = [HistoryClass findall];
     
     //为导航栏视图添加搜索栏
-    HWSearchBar *mySearchBar = [HWSearchBar searchBar];
-    mySearchBar.width = 300;
-    mySearchBar.height = 30;
-    self.navigationItem.titleView = mySearchBar;
+    _mySearchBar = [HWSearchBar searchBar];
+    _mySearchBar.width = 300;
+    _mySearchBar.height = 30;
+    self.navigationItem.titleView = _mySearchBar;
     //设置搜索栏的代理
-    mySearchBar.delegate=self;
+    _mySearchBar.delegate=self;
+    
+    //注册自定义搜索历史单元格
+    UINib *nib = [UINib nibWithNibName:@"HistoryTableViewCell" bundle:[NSBundle mainBundle]];
+    [self.hitoryTable registerNib:nib forCellReuseIdentifier:@"HistoryTableViewCell"];
+    
     
     //取消左侧导航栏按钮
-    UIBarButtonItem *leftBtn = [[UIBarButtonItem alloc]init];
-    leftBtn.title = @"";
-    self.navigationItem.leftBarButtonItem = leftBtn;
+//    UIBarButtonItem *leftBtn = [[UIBarButtonItem alloc]init];
+//    leftBtn.title = @"";
+//    self.navigationItem.leftBarButtonItem = leftBtn;
+
     
-    //默认“清除搜索历史”按钮隐藏
-    self.clearView.hidden = YES;
-    self.clearBtn.hidden = YES;
-    self.hitoryTable.hidden = YES;
     
 }
 
 //设置导航栏按钮样式
--(void)setNavStyle
-{
-    //更改导航栏返回按钮图片
-    UIButton *leftBtn=[UIButton buttonWithType:UIButtonTypeCustom];
-    [leftBtn setImage:[UIImage imageNamed:@"my_left_arrow"] forState:UIControlStateNormal];
-    leftBtn.frame=CGRectMake(-5, 5, 30, 30);
-    [leftBtn addTarget:self action:@selector(backView) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *left=[[UIBarButtonItem alloc]initWithCustomView:leftBtn];
-    self.navigationItem.leftBarButtonItem=left;
-}
-//放回回上一页
--(void)backView
-{
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
--(void)viewWillAppear:(BOOL)animated
-{
-    self.hotSearchView.backgroundColor = [UIColor lightGrayColor];
-    self.historySearchView.backgroundColor = [UIColor colorWithRed:235/255.0 green:235/255.0 blue:241/255.0 alpha:1.000];
-    //隐藏“清除历史”按钮
-    self.clearView.hidden = YES;
-    self.clearBtn.hidden = YES;
-    self.hitoryTable.hidden = YES;
-    isHistory = NO;
-}
+//-(void)setNavStyle
+//{
+//    //更改导航栏返回按钮图片
+//    UIButton *leftBtn=[UIButton buttonWithType:UIButtonTypeCustom];
+//    [leftBtn setImage:[UIImage imageNamed:@"my_left_arrow"] forState:UIControlStateNormal];
+//    leftBtn.frame=CGRectMake(-5, 5, 30, 30);
+//    [leftBtn addTarget:self action:@selector(backView) forControlEvents:UIControlEventTouchUpInside];
+//    UIBarButtonItem *left=[[UIBarButtonItem alloc]initWithCustomView:leftBtn];
+//    self.navigationItem.leftBarButtonItem=left;
+//}
+////放回回上一页
+//-(void)backView
+//{
+//    [self.navigationController popViewControllerAnimated:YES];
+//}
 
 //点击放回上一界面
 - (IBAction)backView:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
-//点击热门搜索，改变背景色，显示热门搜索菜名
-- (IBAction)ClickHot:(id)sender {
-     if (isHistory == YES){
-        self.hotSearchView.backgroundColor = [UIColor lightGrayColor];
-        self.historySearchView.backgroundColor = [UIColor colorWithRed:235/255.0 green:235/255.0 blue:241/255.0 alpha:1.000];
-         //隐藏“清除历史”按钮
-         self.clearView.hidden = YES;
-         self.clearBtn.hidden = YES;
-         self.hitoryTable.hidden = YES;
-        isHistory = NO;
-    }
-}
-//点击历史搜索，改变背景色，显示历史搜索菜名
-- (IBAction)ClickHistory:(id)sender {
-    if (isHistory == NO) {
-        self.historySearchView.backgroundColor = [UIColor lightGrayColor];
-        self.hotSearchView.backgroundColor = [UIColor colorWithRed:235/255.0 green:235/255.0 blue:241/255.0 alpha:1.000];
-       isHistory = YES;
-        //显示“清除历史”按钮
-        self.clearView.hidden = NO;
-        self.clearBtn.hidden = NO;
-        self.hitoryTable.hidden = NO;
-    }
-    
-}
 
+#pragma mark 表格代理
+//单元格个数
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    return self.hisArr.count;
 }
-
+//单元格内容
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"myCell"];
+    HistoryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HistoryTableViewCell"];
     if (!cell) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"myCell"];
+        cell = [[HistoryTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"HistoryTableViewCell"];
     }
-    cell.textLabel.text = @"搜索历史";
+    HistoryClass *history = self.hisArr[indexPath.row];
+    cell.foodName.text = history.Hname;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell ;
 }
+//行高
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 35;
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    HistoryClass *history = self.hisArr[indexPath.row];
+    NSString *hitoryName = history.Hname;
+    //通过历史搜索进行查找商品
+    NSDictionary *param=[NSDictionary dictionaryWithObjectsAndKeys:@"10",@"pageSize",@"1",@"currPage",@"",@"sortid",hitoryName,@"name",@"",@"type", nil];
+    [RequestData getFoodListWithPage:param FinishCallbackBlock:^(NSDictionary * data) {
+        FinallyViewController *finalV = [FinallyViewController new];
+        
+        
+    }];
+}
 
+#pragma mark 文本框代理
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [HistoryClass insertHname:_mySearchBar.text];
+    return YES;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

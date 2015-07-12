@@ -19,6 +19,8 @@
 @property (weak, nonatomic) IBOutlet BZGFormField *confirm;
 @property (weak, nonatomic) IBOutlet UIImageView *manClick;
 @property (weak, nonatomic) IBOutlet UIImageView *womenClick;
+
+
 @property (assign,nonatomic) int sexId;
 
 @end
@@ -36,8 +38,19 @@
     
     //设置性别单选按钮
     [self setSex];
-   
-    
+}
+
+//注册
+-(void)registerClick:(id *)sender
+{
+    if(!(self.sexId && self.userName.textField.text && self.phoneNum.textField.text && self.mailboxTxt.textField.text && self.passwordTxt.textField.text && self.confirm.textField.text))
+    {
+        UIAlertView *registerAlertV = [[UIAlertView alloc]initWithTitle:@"警告" message:@"请填写完整信息" delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
+        [registerAlertV show];
+    }else
+    {
+        NSLog(@"发起注册请求");
+    }
 }
 
 #pragma mark 设置性别单选按钮
@@ -89,11 +102,7 @@
 {
     [self.navigationController popViewControllerAnimated:YES];
 }
-//注册
--(void)registerClick:(id *)sender
-{
-    
-}
+
 
 #pragma mark 判断文本框是否有内容
 -(void)judgementTextField{
