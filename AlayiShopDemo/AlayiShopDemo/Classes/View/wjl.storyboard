@@ -5004,10 +5004,10 @@
             </objects>
             <point key="canvasLocation" x="-1416" y="-919.5"/>
         </scene>
-        <!--Category Controller-->
+        <!--分类View-->
         <scene sceneID="s21-02-oqx">
             <objects>
-                <viewController id="tOm-ay-nEg" customClass="CategoryController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="分类View" title="分类View" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tOm-ay-nEg" customClass="CategoryController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OyT-UL-99U"/>
                         <viewControllerLayoutGuide type="bottom" id="Wyb-qv-sPL"/>
