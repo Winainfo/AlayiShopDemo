@@ -23,25 +23,18 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOg-0r-8mi">
-                        <rect key="frame" x="285" y="6" width="20" height="20"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="单色线条" translatesAutoresizingMaskIntoConstraints="NO" id="S6Q-Na-glv">
+                        <rect key="frame" x="20" y="33" width="280" height="1"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="20" id="GnS-ZZ-w7H"/>
-                            <constraint firstAttribute="height" constant="20" id="HOK-Da-lHX"/>
+                            <constraint firstAttribute="height" constant="1" id="pkL-w7-siJ"/>
                         </constraints>
-                        <state key="normal" image="icon_close">
-                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                        </state>
-                        <connections>
-                            <action selector="deleteHistory:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="EBH-Nl-3eF"/>
-                        </connections>
-                    </button>
+                    </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="DOg-0r-8mi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="6DM-zL-lsS"/>
-                    <constraint firstAttribute="bottom" secondItem="DOg-0r-8mi" secondAttribute="bottom" constant="8" id="Oep-P5-lzp"/>
                     <constraint firstItem="Abw-Rw-CVf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="Oez-dO-LbE"/>
-                    <constraint firstAttribute="trailing" secondItem="DOg-0r-8mi" secondAttribute="trailing" constant="15" id="uij-Sh-BdT"/>
+                    <constraint firstAttribute="trailing" secondItem="S6Q-Na-glv" secondAttribute="trailing" constant="20" id="VqY-sv-fXC"/>
+                    <constraint firstAttribute="bottom" secondItem="S6Q-Na-glv" secondAttribute="bottom" id="Xfz-HQ-6gy"/>
+                    <constraint firstItem="S6Q-Na-glv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="u9g-lq-wGl"/>
                     <constraint firstItem="Abw-Rw-CVf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="25" id="x2u-wf-BgJ"/>
                 </constraints>
             </tableViewCellContentView>
@@ -52,6 +45,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="icon_close" width="60" height="60"/>
+        <image name="单色线条" width="50" height="50"/>
     </resources>
 </document>
