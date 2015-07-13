@@ -11,7 +11,6 @@
 #import "AppDelegate.h"
 
 
-
 @interface FinallyViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate>
 @property (strong, nonatomic) IBOutlet UICollectionView *cellView;
 

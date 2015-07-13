@@ -56,8 +56,6 @@
 		33887C4E1B4BD1C700E2F57D /* OrderInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 33887C4C1B4BD1C700E2F57D /* OrderInfoCell.m */; };
 		33887C4F1B4BD1C700E2F57D /* OrderInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33887C4D1B4BD1C700E2F57D /* OrderInfoCell.xib */; };
 		33887C521B4BE76C00E2F57D /* OrderInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33887C511B4BE76C00E2F57D /* OrderInfoController.m */; };
-		3393DDDD1B5204330016BBD1 /* CategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3393DDDB1B5204330016BBD1 /* CategoryCell.m */; };
-		3393DDDE1B5204330016BBD1 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3393DDDC1B5204330016BBD1 /* CategoryCell.xib */; };
 		3393DDE31B520FA80016BBD1 /* CategoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3393DDE21B520FA80016BBD1 /* CategoryController.m */; };
 		3394F2A61B463B7000CB951C /* BZGFormField.m in Sources */ = {isa = PBXBuildFile; fileRef = 3394F2A51B463B7000CB951C /* BZGFormField.m */; };
 		3394F2A91B46468B00CB951C /* AdviseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3394F2A81B46468B00CB951C /* AdviseController.m */; };
@@ -231,9 +229,6 @@
 		33887C4D1B4BD1C700E2F57D /* OrderInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderInfoCell.xib; sourceTree = "<group>"; };
 		33887C501B4BE76C00E2F57D /* OrderInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderInfoController.h; sourceTree = "<group>"; };
 		33887C511B4BE76C00E2F57D /* OrderInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderInfoController.m; sourceTree = "<group>"; };
-		3393DDDA1B5204330016BBD1 /* CategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryCell.h; sourceTree = "<group>"; };
-		3393DDDB1B5204330016BBD1 /* CategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryCell.m; sourceTree = "<group>"; };
-		3393DDDC1B5204330016BBD1 /* CategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		3393DDE11B520FA80016BBD1 /* CategoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryController.h; sourceTree = "<group>"; };
 		3393DDE21B520FA80016BBD1 /* CategoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryController.m; sourceTree = "<group>"; };
 		3394F2A41B463B7000CB951C /* BZGFormField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BZGFormField.h; sourceTree = "<group>"; };
@@ -515,9 +510,6 @@
 		3393DDD91B5203BF0016BBD1 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				3393DDDA1B5204330016BBD1 /* CategoryCell.h */,
-				3393DDDB1B5204330016BBD1 /* CategoryCell.m */,
-				3393DDDC1B5204330016BBD1 /* CategoryCell.xib */,
 				33E6F7461B52B4B2009F4936 /* Category_Cell.h */,
 				33E6F7471B52B4B2009F4936 /* Category_Cell.m */,
 				33E6F7481B52B4B2009F4936 /* Category_Cell.xib */,
@@ -1115,7 +1107,6 @@
 				33D4E8071B4986DA00E55A45 /* MJRefresh.bundle in Resources */,
 				0F80D93A1B42B15700C46D72 /* wwc.storyboard in Resources */,
 				33887C4F1B4BD1C700E2F57D /* OrderInfoCell.xib in Resources */,
-				3393DDDE1B5204330016BBD1 /* CategoryCell.xib in Resources */,
 				331C9CDC1B48D42D00EE773F /* ScoreCell.xib in Resources */,
 				33D1D8D81B426689009ADF41 /* Images.xcassets in Resources */,
 				3324D0401B46EC99001DA5C4 /* WaterCell.xib in Resources */,
@@ -1164,7 +1155,6 @@
 				338322821B427BFC004CE9C2 /* RequestData.m in Sources */,
 				33E6F7491B52B4B2009F4936 /* Category_Cell.m in Sources */,
 				332351721B4CF33B00D9A735 /* TableViewController.m in Sources */,
-				3393DDDD1B5204330016BBD1 /* CategoryCell.m in Sources */,
 				33C418531B451B09002C8601 /* UIWindow+Extension.m in Sources */,
 				0F98CBF21B4C064600151A26 /* RegisterViewController.m in Sources */,
 				33D1D9891B42688D009ADF41 /* IQSegmentedNextPrevious.m in Sources */,
