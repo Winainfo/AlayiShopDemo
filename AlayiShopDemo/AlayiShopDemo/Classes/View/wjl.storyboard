@@ -1096,7 +1096,7 @@
                                             <constraint firstAttribute="width" constant="13" id="8US-Fz-TnF"/>
                                             <constraint firstAttribute="height" constant="13" id="BAf-cf-pDJ"/>
                                         </constraints>
-                                        <state key="normal" image="E23A69AA-94D3-4CC8-8930-79F476DEC967">
+                                        <state key="normal" image="E5C3D1B4-9868-42B1-B43B-15AE31F28CEA">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -1121,7 +1121,7 @@
                                             <constraint firstAttribute="width" constant="13" id="1Pd-IK-1H2"/>
                                             <constraint firstAttribute="height" constant="13" id="Vny-9p-g8m"/>
                                         </constraints>
-                                        <state key="normal" image="E23A69AA-94D3-4CC8-8930-79F476DEC967">
+                                        <state key="normal" image="E5C3D1B4-9868-42B1-B43B-15AE31F28CEA">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -5204,7 +5204,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="130" height="140"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -5463,7 +5463,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="130" height="140"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -6643,7 +6643,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="E23A69AA-94D3-4CC8-8930-79F476DEC967" width="13" height="13">
+        <image name="E5C3D1B4-9868-42B1-B43B-15AE31F28CEA" width="13" height="13">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
