@@ -186,7 +186,7 @@
  */
 -(void)recomGoodsData
 {
-    NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:@"6",@"pageSize",@"2",@"currPage",@"",@"sortid",@"",@"name",@"",@"type",nil];
+    NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:@"6",@"pageSize",@"2",@"currPage",@"",@"sortid",@"",@"name",@"5",@"type",nil];
     [RequestData getFoodListWithPage:params FinishCallbackBlock:^(NSDictionary *data) {
         self.recomArray=data[@"foodList"];
         NSLog(@"---%@---",self.recomArray);
@@ -295,4 +295,22 @@
     }];
 }
 
+
+/**
+ *  该方法在视图跳转时被触发
+ *
+ *  @param segue  <#segue description#>
+ *  @param sender <#sender description#>
+ */
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"AllGoods"]) {
+        id theSegue=segue.destinationViewController;
+        [theSegue setValue:@"0" forKey:@"type"];
+    }
+    if ([segue.identifier isEqualToString:@"RecomGoods"]) {
+        id theSegue=segue.destinationViewController;
+        [theSegue setValue:@"5" forKey:@"type"];
+    }
+}
 @end
