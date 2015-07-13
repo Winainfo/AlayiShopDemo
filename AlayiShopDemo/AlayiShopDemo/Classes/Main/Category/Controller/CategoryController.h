@@ -14,5 +14,9 @@
 /**价格*/
 @property (weak, nonatomic) IBOutlet UIImageView *priceImageView;
 
+@property (retain,nonatomic) NSArray *goodsArray;
+@property (assign,nonatomic)BOOL sales_flag;
+@property (assign,nonatomic)BOOL price_flag;
+
 @property(retain,nonatomic)NSString *type;
 @end

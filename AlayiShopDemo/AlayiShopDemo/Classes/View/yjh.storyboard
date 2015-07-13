@@ -29,7 +29,7 @@
                                         <rect key="frame" x="13" y="10" width="20" height="20"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="Het-LM-PoS"/>
                                     <constraint firstAttribute="height" constant="40" id="cZM-Ae-rMm"/>
@@ -57,6 +57,9 @@
                                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="cleanAllHistory:" destination="2l9-TG-1rB" eventType="touchUpInside" id="DEc-le-vIg"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -76,7 +79,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="hBY-dr-H1D" firstAttribute="top" secondItem="FgM-0C-yJT" secondAttribute="bottom" constant="2" id="5jn-2j-oUa"/>
                             <constraint firstItem="FgM-0C-yJT" firstAttribute="leading" secondItem="t5A-6x-fqz" secondAttribute="leading" id="AFL-be-xmn"/>
@@ -88,22 +91,7 @@
                             <constraint firstAttribute="trailing" secondItem="hBY-dr-H1D" secondAttribute="trailing" id="pR6-vL-1YV"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="dJG-l5-eP8">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="nzH-r9-2HN">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="nNX-2T-kA0">
-                                <rect key="frame" x="274" y="7" width="30" height="15"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
-                                <state key="normal" title="取消">
-                                    <color key="titleColor" red="1" green="0.3856180461" blue="0.2204638974" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="backView:" destination="2l9-TG-1rB" eventType="touchUpInside" id="8Z4-UN-KVc"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="dJG-l5-eP8"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="clearBtn" destination="TZ8-n5-63A" id="fQW-gg-HSx"/>

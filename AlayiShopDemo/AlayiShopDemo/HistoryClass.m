@@ -72,5 +72,23 @@
     sqlite3_finalize(stmt);
 }
 
++(void) deleteAllHistory
+{
+    //打开数据连接
+    sqlite3 *db=[DB openDB];
+    //创建sql语句对象
+    sqlite3_stmt *stmt=nil;
+    int result=sqlite3_prepare_v2(db, "delete from HISTORYinfo", -1, &stmt, NULL);
+    //(?,?,?)？是为了防止sql注入
+    if (result==SQLITE_OK) {//判断sql语句的有效性
+        
+        if (sqlite3_step(stmt)!=SQLITE_DONE) {
+            NSLog(@"数据删除异常");
+        }
+    }
+    
+    sqlite3_finalize(stmt);
+}
+
 
 @end

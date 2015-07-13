@@ -7,24 +7,29 @@
 //
 
 #import "CategoryController.h"
+//自定义搜索栏的头
+#import "HWSearchBar.h"
+//UIView 的类目，可直接设置frame,size...
+#import "UIView+Extension.h"
+
 #import "Category_Cell.h"
 #import "RequestData.h"
 #import "UIImageView+WebCache.h"
 //获得当前屏幕宽高点数（非像素）
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
 #define kScreenWidth  [UIScreen mainScreen].bounds.size.width
-@interface CategoryController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
+@interface CategoryController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-
-@property (retain,nonatomic) NSArray *goodsArray;
-@property (assign,nonatomic)BOOL sales_flag;
-@property (assign,nonatomic)BOOL price_flag;
+@property (retain,nonatomic) HWSearchBar *mySearchBar;//搜索栏
 @end
 
 @implementation CategoryController
 @synthesize type;
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self setNavStyle];
+    
     NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:@"10",@"pageSize",@"1",@"currPage",@"",@"sortid",@"",@"name",type,@"type",nil];
     [RequestData getFoodListWithPage:params FinishCallbackBlock:^(NSDictionary *data)  {
         self.goodsArray=data[@"foodList"];
@@ -36,6 +41,31 @@
     }];
     //注册Cell
     [self.collectionView registerClass:[Category_Cell class] forCellWithReuseIdentifier:@"Category_Cell"];
+    
+    //为导航栏视图添加搜索栏
+    _mySearchBar = [HWSearchBar searchBar];
+    _mySearchBar.width = 300;
+    _mySearchBar.height = 30;
+    self.navigationItem.titleView = _mySearchBar;
+    //设置搜索栏的代理
+    _mySearchBar.delegate=self;
+}
+
+//设置导航栏按钮样式
+-(void)setNavStyle
+{
+    //更改导航栏返回按钮图片
+    UIButton *leftBtn=[UIButton buttonWithType:UIButtonTypeCustom];
+    [leftBtn setImage:[UIImage imageNamed:@"my_left_arrow"] forState:UIControlStateNormal];
+    leftBtn.frame=CGRectMake(-5, 5, 30, 30);
+    [leftBtn addTarget:self action:@selector(backView) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *left=[[UIBarButtonItem alloc]initWithCustomView:leftBtn];
+    self.navigationItem.leftBarButtonItem=left;
+}
+//放回回上一页
+-(void)backView
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark 实现代理方法
@@ -54,7 +84,7 @@
     cell.goodsSaleslabel.text=[NSString stringWithFormat:@"销量:%@笔",self.goodsArray[indexPath.row][@"salenum"]];
     cell.goodsSpecLabel.text=self.goodsArray[indexPath.row][@"norm"];
     //照片
-    //拼接图片网址·
+    //拼接图片网址
     NSString *urlStr =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.goodsArray[indexPath.row][@"pic"]];
     //转换成url
     NSURL *imgUrl = [NSURL URLWithString:urlStr];
@@ -181,7 +211,28 @@
         default:
             break;
     }
+}
 
+#pragma mark 文本框代理
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    
+    //点击RETURN键即开始搜索，跳转到搜索结果页
+    NSString *searchTxt =[textField.text stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    //通过历史搜索进行查找商品
+    NSDictionary *param=[NSDictionary dictionaryWithObjectsAndKeys:@"10",@"pageSize",@"1",@"currPage",@"",@"sortid",searchTxt,@"name",@"",@"type", nil];
+    [RequestData getFoodListWithPage:param FinishCallbackBlock:^(NSDictionary * data) {
+        
+        NSArray *foodListArr = data[@"foodList"];
+        NSLog(@"搜索结果 == %@",foodListArr);
+        //为搜索结果赋值
+        self.goodsArray = foodListArr;
+        [self.collectionView reloadData];
+    }];
+    //搜索完成清空输入框的文字
+    textField.text = nil;
+    [textField resignFirstResponder];//收起键盘
+    return YES;
 }
 
 @end
