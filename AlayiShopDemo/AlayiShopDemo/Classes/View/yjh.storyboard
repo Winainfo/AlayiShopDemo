@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="4rm-2o-c3J">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="4rm-2o-c3J">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
@@ -107,7 +108,7 @@
         <!--Detail View Controller-->
         <scene sceneID="TU2-yL-ZR8">
             <objects>
-                <viewController id="CBR-st-cAE" customClass="DetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="详情View" id="CBR-st-cAE" customClass="DetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="exd-eM-uRq"/>
                         <viewControllerLayoutGuide type="bottom" id="xyH-Yw-y3C"/>
@@ -153,7 +154,7 @@
                                             </scrollView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Gp-WV-QoE" userLabel="bgView1">
                                                 <rect key="frame" x="0.0" y="140" width="253" height="41"/>
-                                                <color key="backgroundColor" red="0.96946022730000003" green="0.5339164405557234" blue="0.38121234720273195" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="41" id="CMC-cw-YzQ"/>
                                                 </constraints>
@@ -165,12 +166,12 @@
                                                     <constraint firstAttribute="height" constant="21" id="N51-fQ-75j"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="15"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="1" green="0.3121700033" blue="0.42705086440000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TId-1o-Jd3" userLabel="bgView4">
                                                 <rect key="frame" x="257" y="140" width="63" height="41"/>
-                                                <color key="backgroundColor" red="1" green="0.3856180461" blue="0.2204638974" alpha="0.78000000000000003" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="41" id="i8K-YB-dwK"/>
                                                     <constraint firstAttribute="width" constant="63" id="xed-4F-C0g"/>
@@ -182,7 +183,7 @@
                                                     <constraint firstAttribute="height" constant="21" id="rzQ-rk-OYq"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="15"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eTn-dQ-ZKN" userLabel="shareBtn">
@@ -197,21 +198,21 @@
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M1d-qM-8CI" userLabel="bgView2">
                                                 <rect key="frame" x="0.0" y="233" width="320" height="42"/>
-                                                <color key="backgroundColor" red="0.96946022730000003" green="0.71170146878065477" blue="0.57217715408972958" alpha="0.35000000000000003" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="42" id="A2Z-sP-krs"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="规格：新鲜" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5g2-U8-tRz">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="规格：新鲜" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5g2-U8-tRz" customClass="ARLabel">
                                                 <rect key="frame" x="104" y="244" width="87" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="RAM-aL-EZO"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="15"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OUQ-xu-HJi">
+                                            <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OUQ-xu-HJi">
                                                 <rect key="frame" x="0.0" y="280" width="160" height="40"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CDo-EP-NH0">
@@ -237,14 +238,11 @@
                                                     <constraint firstAttribute="height" constant="40" id="uO4-Os-FEh"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="444-ZE-VmC">
+                                            <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="444-ZE-VmC">
                                                 <rect key="frame" x="160" y="280" width="160" height="40"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZeP-S8-FJk">
-                                                        <rect key="frame" x="0.0" y="5" width="95" height="30"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="30" id="gNh-Vu-X2C"/>
-                                                        </constraints>
+                                                        <rect key="frame" x="0.0" y="5" width="160" height="30"/>
                                                         <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
                                                         <state key="normal" title="评价">
                                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -255,30 +253,15 @@
                                                             <action selector="assessClick:" destination="CBR-st-cAE" eventType="touchUpInside" id="yZe-y7-4DD"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nJd-h1-k4a">
-                                                        <rect key="frame" x="103" y="0.0" width="57" height="40"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="57" id="F0c-1a-pmQ"/>
-                                                            <constraint firstAttribute="height" constant="40" id="rA0-el-Zpx"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="12"/>
-                                                        <state key="normal" title="我要评价">
-                                                            <color key="titleColor" red="1" green="0.308493464" blue="0.3567391734" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                        </state>
-                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
-                                                    <constraint firstItem="ZeP-S8-FJk" firstAttribute="top" secondItem="444-ZE-VmC" secondAttribute="top" constant="5" id="40t-XS-8lG"/>
                                                     <constraint firstAttribute="height" constant="40" id="6oS-ue-gKW"/>
-                                                    <constraint firstItem="nJd-h1-k4a" firstAttribute="leading" secondItem="ZeP-S8-FJk" secondAttribute="trailing" constant="8" id="L19-po-Eqa"/>
-                                                    <constraint firstAttribute="trailing" secondItem="nJd-h1-k4a" secondAttribute="trailing" id="MVF-Ce-PFc"/>
-                                                    <constraint firstItem="nJd-h1-k4a" firstAttribute="top" secondItem="444-ZE-VmC" secondAttribute="top" id="Mtu-AD-78R"/>
+                                                    <constraint firstItem="ZeP-S8-FJk" firstAttribute="leading" secondItem="444-ZE-VmC" secondAttribute="leading" id="Hy6-Ah-TdL"/>
                                                     <constraint firstAttribute="width" constant="160" id="S2A-oK-9WV"/>
-                                                    <constraint firstItem="ZeP-S8-FJk" firstAttribute="leading" secondItem="444-ZE-VmC" secondAttribute="leading" id="eNw-f6-Gqe"/>
-                                                    <constraint firstAttribute="bottom" secondItem="ZeP-S8-FJk" secondAttribute="bottom" constant="5" id="m3a-4u-0rO"/>
-                                                    <constraint firstAttribute="bottom" secondItem="nJd-h1-k4a" secondAttribute="bottom" id="mwf-dr-XRM"/>
+                                                    <constraint firstAttribute="bottom" secondItem="ZeP-S8-FJk" secondAttribute="bottom" constant="5" id="WVS-BE-gQk"/>
+                                                    <constraint firstItem="ZeP-S8-FJk" firstAttribute="top" secondItem="444-ZE-VmC" secondAttribute="top" constant="5" id="gvS-LK-wAZ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ZeP-S8-FJk" secondAttribute="trailing" id="l1d-hg-Hnm"/>
                                                 </constraints>
                                             </view>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Td5-GA-aYc">
@@ -345,7 +328,7 @@
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IFx-ZX-D2B" userLabel="bgView3">
                                                 <rect key="frame" x="0.0" y="185" width="320" height="44"/>
-                                                <color key="backgroundColor" red="0.66286194959515921" green="0.75682579052887855" blue="0.83921568629999999" alpha="0.38" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="4bR-5a-1NK"/>
                                                 </constraints>
@@ -365,33 +348,33 @@
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wDw-bc-ceI" userLabel="niceView1">
                                                 <rect key="frame" x="0.0" y="280" width="320" height="3"/>
-                                                <color key="backgroundColor" red="1" green="0.3856180461381804" blue="0.22046389739942807" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="3" id="eLC-Jx-MNf"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TYM-7I-hgT" userLabel="niceView2">
                                                 <rect key="frame" x="0.0" y="318" width="320" height="3"/>
-                                                <color key="backgroundColor" red="1" green="0.3856180461" blue="0.2204638974" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.7546190411" green="0.82769765790000005" blue="0.96946022730000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="3" id="zcp-mP-uye"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="销量：99" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nIH-Xi-YsC">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="销量：99" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nIH-Xi-YsC" customClass="ARLabel">
                                                 <rect key="frame" x="8" y="244" width="88" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="OvJ-gM-kyd"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="15"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Mt-RH-XVU" userLabel="niceView3">
-                                                <rect key="frame" x="158" y="280" width="3" height="40"/>
-                                                <color key="backgroundColor" red="0.95294117647058818" green="0.29019607843137257" blue="0.17254901960784313" alpha="1" colorSpace="calibratedRGB"/>
+                                                <rect key="frame" x="158" y="283" width="3" height="37"/>
+                                                <color key="backgroundColor" red="0.7546190411" green="0.82769765790000005" blue="0.96946022730000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="3" id="1wa-qK-T43"/>
-                                                    <constraint firstAttribute="height" constant="40" id="GR1-1G-6ke"/>
+                                                    <constraint firstAttribute="height" constant="37" id="GR1-1G-6ke"/>
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="htX-Ui-r7E">
@@ -454,7 +437,7 @@
                                             <constraint firstItem="htX-Ui-r7E" firstAttribute="top" secondItem="pq9-wb-4uW" secondAttribute="bottom" constant="24" id="UHD-0Z-1He"/>
                                             <constraint firstItem="6Gp-WV-QoE" firstAttribute="top" secondItem="SQq-rE-LeV" secondAttribute="bottom" id="WUn-xg-9Cc"/>
                                             <constraint firstItem="7fI-FZ-F6c" firstAttribute="top" secondItem="SQq-rE-LeV" secondAttribute="bottom" constant="53" id="XHQ-6b-k5k"/>
-                                            <constraint firstItem="8Mt-RH-XVU" firstAttribute="top" secondItem="Tww-76-5Oo" secondAttribute="top" constant="280" id="XTY-DR-SDI"/>
+                                            <constraint firstItem="8Mt-RH-XVU" firstAttribute="top" secondItem="Tww-76-5Oo" secondAttribute="top" constant="283" id="XTY-DR-SDI"/>
                                             <constraint firstItem="5g2-U8-tRz" firstAttribute="leading" secondItem="nIH-Xi-YsC" secondAttribute="trailing" constant="8" id="Xrs-Lc-gcR"/>
                                             <constraint firstItem="SQq-rE-LeV" firstAttribute="top" secondItem="Tww-76-5Oo" secondAttribute="top" id="YRa-db-Nqt"/>
                                             <constraint firstItem="444-ZE-VmC" firstAttribute="top" secondItem="5g2-U8-tRz" secondAttribute="bottom" constant="15" id="bpj-t5-pmH"/>
@@ -494,7 +477,7 @@
                                     <constraint firstItem="Tww-76-5Oo" firstAttribute="leading" secondItem="36x-Gu-XBv" secondAttribute="leading" id="pYh-yv-ycw"/>
                                 </constraints>
                             </scrollView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l1x-mC-mz9">
+                            <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l1x-mC-mz9">
                                 <rect key="frame" x="0.0" y="513" width="160" height="55"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y1h-cA-y27">
@@ -505,7 +488,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="15"/>
                                         <state key="normal" title="加入购物车">
-                                            <color key="titleColor" red="1" green="0.3121700033" blue="0.42705086440000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -513,7 +496,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="0.45000000000000001" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="y1h-cA-y27" firstAttribute="leading" secondItem="l1x-mC-mz9" secondAttribute="leading" id="9Ut-7s-33c"/>
                                     <constraint firstAttribute="height" constant="55" id="DC5-gf-Y1R"/>
@@ -636,9 +619,16 @@
                         <outlet property="commentTable" destination="Td5-GA-aYc" id="WYC-c9-b8F"/>
                         <outlet property="detailBottomView" destination="1gJ-16-8SK" id="UFW-p1-4Ld"/>
                         <outlet property="detailView" destination="OUQ-xu-HJi" id="f25-aQ-rkv"/>
-                        <outlet property="evaluateBtn" destination="nJd-h1-k4a" id="OK1-vK-TLf"/>
+                        <outlet property="goodsArea" destination="WMl-B5-HvI" id="2a8-dk-OWx"/>
+                        <outlet property="goodsDescribe" destination="d0j-zp-oBU" id="hQG-DN-46y"/>
+                        <outlet property="goodsDetailImage" destination="6YU-gH-Dye" id="K9h-pl-T6l"/>
+                        <outlet property="goodsImage" destination="rr2-4q-tDI" id="wv4-my-PYz"/>
+                        <outlet property="goodsName" destination="pq9-wb-4uW" id="NmV-jh-v3T"/>
+                        <outlet property="goodsNorms" destination="5g2-U8-tRz" id="3ZR-20-v55"/>
                         <outlet property="goodsNum" destination="kkV-aV-YVn" id="bDw-Qe-WsG"/>
                         <outlet property="goodsNumText" destination="7fI-FZ-F6c" id="9gr-gm-ZMy"/>
+                        <outlet property="goodsPrice" destination="Kzj-H0-O4W" id="fK4-nJ-TMN"/>
+                        <outlet property="goodsSales" destination="nIH-Xi-YsC" id="TmZ-7P-n31"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U4F-cc-CCV" userLabel="First Responder" sceneMemberID="firstResponder"/>

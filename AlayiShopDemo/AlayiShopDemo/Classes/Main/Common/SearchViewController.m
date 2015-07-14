@@ -117,7 +117,7 @@
         NSArray *foodListArr = data[@"foodList"];
         NSLog(@"搜索结果 == %@",foodListArr);
         
-        //设置故事板为第一启动
+        //跳转不同的故事版
         UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"wjl" bundle:nil];
         CategoryController *cateV=[storyboard instantiateViewControllerWithIdentifier:@"分类View"];
         [self.navigationController pushViewController:cateV animated:YES];

@@ -19,4 +19,6 @@
 @property (weak, nonatomic) IBOutlet ARLabel *goodsPriceLabel;
 /**商品销量*/
 @property (weak, nonatomic) IBOutlet ARLabel *goodsSaleslabel;
+/**商品ID**/
+@property (assign,nonatomic) int goodsID;
 @end
