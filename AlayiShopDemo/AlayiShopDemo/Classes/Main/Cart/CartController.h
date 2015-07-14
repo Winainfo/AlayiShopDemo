@@ -12,6 +12,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *myTableView;
 /**合计*/
 @property (weak, nonatomic) IBOutlet UILabel *priceCount;
-/**总额*/
-@property (weak, nonatomic) IBOutlet UILabel *priceSum;
+/*编辑按钮*/
+@property (weak, nonatomic) IBOutlet UIButton *editBtn;
 @end

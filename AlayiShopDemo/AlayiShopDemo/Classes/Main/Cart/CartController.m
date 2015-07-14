@@ -15,12 +15,15 @@
 @property(assign,nonatomic)BOOL flag;
 @property(assign,nonatomic)BOOL editFlag;
 @property(retain,nonatomic)NSArray *goodArray;
+@property(retain,nonatomic)NSArray *goodArray1;
 @property(retain,nonatomic)NSMutableArray *infoArr;
 @property(assign,nonatomic)float allPrice;
 /**结算*/
 @property (weak, nonatomic) IBOutlet UIView *countView;
 /**删除*/
 @property (weak, nonatomic) IBOutlet UIView *deleteView;
+/**空购物车*/
+@property (weak, nonatomic) IBOutlet UIView *nullView;
 
 
 @end
@@ -28,13 +31,30 @@
 @implementation CartController
 -(void)viewWillAppear:(BOOL)animated
 {
-    int i=[self.cell.numText.text intValue];
-    float price=[self.cell.goodsPriceLabel.text floatValue];
-    float sum=i*price;
-    self.priceCount.text=[NSString stringWithFormat:@"合计:¥%.2f",sum];
+    [self.myTableView reloadData];
+//    //获取用户购物车的信息
+//    AccountModel *account=[AccountTool account];
+//    NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:account.userId,@"userid",nil];
+//    [RequestData getUserCartList:params FinishCallbackBlock:^(NSDictionary *data) {
+//        NSLog(@"%@",data);
+//        self.goodArray1=data[@"cartList"];
+//        if (self.goodArray1.count<1) {
+//            self.myTableView.hidden=YES;
+//            self.countView.hidden=YES;
+//            self.nullView.hidden=NO;
+//            self.editBtn.hidden=YES;
+//        }else
+//        {
+//            self.myTableView.hidden=NO;
+//            self.countView.hidden=NO;
+//            self.nullView.hidden=YES;
+//            self.editBtn.hidden=NO;
+//        }
+//    }];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self viewWillAppear:YES];
     //初始化数据
     self.allPrice = 0.0;
     //创建xib文件对象
@@ -44,28 +64,41 @@
     //取消单元格线
     self.myTableView.separatorStyle=NO;
     self.infoArr = [[NSMutableArray alloc]init];
-
+    //设置导航栏标题颜色和字体大小UITextAttributeFont:[UIFont fontWithName:@"Heiti TC" size:0.0]
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"Heiti Sc" size:16.0],NSForegroundColorAttributeName:[UIColor blackColor]}];
     //获取用户购物车的信息
     AccountModel *account=[AccountTool account];
     NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:account.userId,@"userid",nil];
     [RequestData getUserCartList:params FinishCallbackBlock:^(NSDictionary *data) {
         NSLog(@"%@",data);
         self.goodArray=data[@"cartList"];
-        for (int i=0; i<self.goodArray.count; i++) {
-            NSMutableDictionary *infoDict=[[NSMutableDictionary alloc]init];
-            int goodsId=[self.goodArray[i][@"id"] intValue];
-            [infoDict setValue:[NSNumber numberWithInt:goodsId] forKey:@"goodsId"];
-            [infoDict setValue:self.goodArray[i][@"foodname"] forKey:@"goodsTitle"];
-            float price=[self.goodArray[i][@"price"] floatValue];
-            [infoDict setValue:[NSNumber numberWithFloat:price] forKey:@"goodsPrice"];
-            int num=[self.goodArray[i][@"number"] intValue];
-            [infoDict setValue:[NSNumber numberWithInt:num] forKey:@"goodsNum"];
-            [infoDict setValue:self.goodArray[i][@"foodpic"] forKey:@"imageName"];
-            [infoDict setValue:[NSNumber numberWithBool:NO] forKey:@"selectState"];
-            //封装数据模型
-            GoodsInfoModel *goodsModel = [[GoodsInfoModel alloc]initWithDict:infoDict];
-            //将数据模型放入数组中
-            [self.infoArr addObject:goodsModel];
+        if (self.goodArray.count<1) {
+            self.myTableView.hidden=YES;
+            self.countView.hidden=YES;
+            self.nullView.hidden=NO;
+            self.editBtn.hidden=YES;
+        }else
+        {
+            self.myTableView.hidden=NO;
+            self.countView.hidden=NO;
+            self.nullView.hidden=YES;
+            self.editBtn.hidden=NO;
+            for (int i=0; i<self.goodArray.count; i++) {
+                NSMutableDictionary *infoDict=[[NSMutableDictionary alloc]init];
+                int goodsId=[self.goodArray[i][@"id"] intValue];
+                [infoDict setValue:[NSNumber numberWithInt:goodsId] forKey:@"goodsId"];
+                [infoDict setValue:self.goodArray[i][@"foodname"] forKey:@"goodsTitle"];
+                float price=[self.goodArray[i][@"price"] floatValue];
+                [infoDict setValue:[NSNumber numberWithFloat:price] forKey:@"goodsPrice"];
+                int num=[self.goodArray[i][@"number"] intValue];
+                [infoDict setValue:[NSNumber numberWithInt:num] forKey:@"goodsNum"];
+                [infoDict setValue:self.goodArray[i][@"foodpic"] forKey:@"imageName"];
+                [infoDict setValue:[NSNumber numberWithBool:NO] forKey:@"selectState"];
+                //封装数据模型
+                GoodsInfoModel *goodsModel = [[GoodsInfoModel alloc]initWithDict:infoDict];
+                //将数据模型放入数组中
+                [self.infoArr addObject:goodsModel];
+            }
         }
         //调用主线程
         dispatch_async(dispatch_get_main_queue(), ^{
