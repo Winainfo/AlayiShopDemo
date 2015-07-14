@@ -415,6 +415,7 @@
 +(void)getInfoById:(NSDictionary *)data FinishCallbackBlock:(void (^)(NSDictionary *))block{
     //1.请求管理者
     AFHTTPRequestOperationManager *mgr=[AFHTTPRequestOperationManager manager];
+    mgr.responseSerializer=[AFJSONResponseSerializer serializer];
     mgr.requestSerializer = [AFHTTPRequestSerializer serializer];
     mgr.responseSerializer = [AFHTTPResponseSerializer serializer];
     //2.拼接参数
@@ -423,11 +424,11 @@
     //3.发生请求
     
     [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSData *data=[RequestData changeFormat:responseObject];
-      NSString *str=[[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];
-        NSString *newstr=[RequestData flattenHTML:str trimWhiteSpace:YES];
-        NSDictionary *dict=[RequestData dictionaryWithJsonString:newstr];
-        NSLog(@"信息数据请求成功--%@",data);
+        //NSData *data=[RequestData changeFormat:responseObject];
+        NSString *str=[[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];
+       // NSString *newstr=[RequestData flattenHTML:str trimWhiteSpace:YES];
+        NSDictionary *dict=[RequestData dictionaryWithJsonString:str];
+        NSLog(@"信息数据请求成功--");
         block(dict);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"信息数据请求失败-%@",error);

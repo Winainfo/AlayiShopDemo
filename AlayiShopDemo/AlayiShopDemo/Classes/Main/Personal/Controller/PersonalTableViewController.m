@@ -98,5 +98,20 @@
         id theSegue=segue.destinationViewController;
         [theSegue setValue:@"2" forKey:@"type"];
     }
+    //关于我们
+    if ([segue.identifier isEqualToString:@"gywm"]) {
+        id theSegue=segue.destinationViewController;
+        [theSegue setValue:@"1" forKey:@"type"];
+    }
+    //加盟合作
+    if ([segue.identifier isEqualToString:@"jmhz"]) {
+        id theSegue=segue.destinationViewController;
+        [theSegue setValue:@"2" forKey:@"type"];
+    }
+    //配送区域
+    if ([segue.identifier isEqualToString:@"psqy"]) {
+        id theSegue=segue.destinationViewController;
+        [theSegue setValue:@"3" forKey:@"type"];
+    }
 }
 @end

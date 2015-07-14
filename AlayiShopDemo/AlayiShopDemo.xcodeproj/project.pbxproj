@@ -35,6 +35,7 @@
 		0FD12C741B4669A500CD5C14 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD12C731B4669A500CD5C14 /* DetailViewController.m */; };
 		0FDA99761B4B66B4000E4CE4 /* AddSelfFoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FDA99751B4B66B4000E4CE4 /* AddSelfFoodViewController.m */; };
 		330F55C81B54DDDF006084ED /* GoodsInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 330F55C71B54DDDF006084ED /* GoodsInfoModel.m */; };
+		331309321B55518600CD264E /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 331309311B55518600CD264E /* AboutViewController.m */; };
 		331751691B45228400A55B92 /* PersonalController.m in Sources */ = {isa = PBXBuildFile; fileRef = 331751681B45228400A55B92 /* PersonalController.m */; };
 		33199CDD1B540E9700C16E10 /* CartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 33199CDB1B540E9700C16E10 /* CartCell.m */; };
 		33199CDE1B540E9700C16E10 /* CartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33199CDC1B540E9700C16E10 /* CartCell.xib */; };
@@ -196,6 +197,8 @@
 		0FDA99751B4B66B4000E4CE4 /* AddSelfFoodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddSelfFoodViewController.m; sourceTree = "<group>"; };
 		330F55C61B54DDDF006084ED /* GoodsInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsInfoModel.h; sourceTree = "<group>"; };
 		330F55C71B54DDDF006084ED /* GoodsInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsInfoModel.m; sourceTree = "<group>"; };
+		331309301B55518600CD264E /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		331309311B55518600CD264E /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		331751671B45228400A55B92 /* PersonalController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalController.h; sourceTree = "<group>"; };
 		331751681B45228400A55B92 /* PersonalController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalController.m; sourceTree = "<group>"; };
 		33199CDA1B540E9700C16E10 /* CartCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartCell.h; sourceTree = "<group>"; };
@@ -480,6 +483,16 @@
 				3393DDE21B520FA80016BBD1 /* CategoryController.m */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		3313092F1B55515A00CD264E /* About(关于我们) */ = {
+			isa = PBXGroup;
+			children = (
+				331309301B55518600CD264E /* AboutViewController.h */,
+				331309311B55518600CD264E /* AboutViewController.m */,
+			);
+			name = "About(关于我们)";
+			path = About;
 			sourceTree = "<group>";
 		};
 		331C9CD71B48D40400EE773F /* Score(积分) */ = {
@@ -917,6 +930,7 @@
 		33D1D9B21B426950009ADF41 /* Personal(个人中心) */ = {
 			isa = PBXGroup;
 			children = (
+				3313092F1B55515A00CD264E /* About(关于我们) */,
 				331C9CD71B48D40400EE773F /* Score(积分) */,
 				33F955391B469CF200E25192 /* Order(订单) */,
 				333A42721B454E1700E2FFBD /* MoerController(更多) */,
@@ -1200,6 +1214,7 @@
 				0F70D5191B495FFB008962B2 /* SelfFoodCollectionViewCell.m in Sources */,
 				33D1D9801B42688D009ADF41 /* AFURLConnectionOperation.m in Sources */,
 				3394F2A91B46468B00CB951C /* AdviseController.m in Sources */,
+				331309321B55518600CD264E /* AboutViewController.m in Sources */,
 				331A47F61B48350400AF3B71 /* OrderInfoTableController.m in Sources */,
 				33D1D97F1B42688D009ADF41 /* AFSecurityPolicy.m in Sources */,
 				33FA4F441B538CD50073B226 /* MultilevelCollectionViewCell.m in Sources */,
