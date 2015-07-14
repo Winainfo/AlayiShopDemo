@@ -10,4 +10,6 @@
 
 @interface DetailViewController : UIViewController
 
+@property (retain,nonatomic) NSDictionary *detailDic;
+
 @end

@@ -13,6 +13,7 @@
 //UIView 的类目，可直接设置frame,size...
 #import "UIView+Extension.h"
 
+#import "DetailViewController.h"
 #import "Category_Cell.h"
 #import "RequestData.h"
 #import "UIImageView+WebCache.h"
@@ -84,6 +85,7 @@
     cell.goodsPriceLabel.text=self.goodsArray[indexPath.row][@"formatPrice"];
     cell.goodsSaleslabel.text=[NSString stringWithFormat:@"销量:%@笔",self.goodsArray[indexPath.row][@"salenum"]];
     cell.goodsSpecLabel.text=self.goodsArray[indexPath.row][@"norm"];
+    cell.goodsID = (int)self.goodsArray[indexPath.row][@"id"];
     //照片
     //拼接图片网址
     NSString *urlStr =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.goodsArray[indexPath.row][@"pic"]];
@@ -92,6 +94,22 @@
     [cell.goodsImagView sd_setImageWithURL:imgUrl];
     return cell;
 }
+//点击图片，跳到详情页
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *gID = self.goodsArray[indexPath.row][@"id"];
+    NSDictionary *params2=[NSDictionary dictionaryWithObjectsAndKeys:gID,@"id", nil];
+    [RequestData getFoodById:params2 FinishCallbackBlock:^(NSDictionary *data) {
+        NSLog(@"=======详情信息：%@",data);
+        //跳转不同的故事版
+        UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"yjh" bundle:nil];
+        DetailViewController *detailV = [storyboard instantiateViewControllerWithIdentifier:@"详情View"];
+        detailV.detailDic = data;
+         NSLog(@"=======详情信息：%@",detailV.detailDic);
+        [self.navigationController pushViewController:detailV animated:YES];
+    }];
+}
+
 #pragma mark 实现UICollectionViewDelegateFlowLayout代理
 /**
  *  定义每个UICollectionView的间距
@@ -129,6 +147,50 @@
  */
 - (IBAction)salesSort:(UIButton *)sender {
     UIButton *btn = (UIButton *)sender;
+    //如果type=5有值，则为推荐菜
+    if (type&&(type.intValue!=0)) {
+        type = @"0";
+        switch (btn.tag) {
+            case 100:
+            {
+                //是否阅读协议
+                if (_sales_flag) {
+                    self.salesImageView.image=[UIImage imageNamed:@"arrow_price_down"];
+                    //销量降序
+                    NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:@"10",@"pageSize",@"1",@"currPage",@"",@"sortid",@"",@"name",@"5",@"type",nil];
+                    [RequestData getFoodListWithPage:params FinishCallbackBlock:^(NSDictionary *data)  {
+                        self.goodsArray=data[@"foodList"];
+                        NSLog(@"%@",data);
+                        //调用主线程
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            [self.collectionView reloadData];
+                        });
+                    }];
+                    _sales_flag = NO;
+                }else{
+                    self.salesImageView.image=[UIImage imageNamed:@"arrow_price_up"];
+                   //销量升序
+                    NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:@"10",@"pageSize",@"1",@"currPage",@"",@"sortid",@"",@"name",@"5",@"type",nil];
+                    [RequestData getFoodListWithPage:params FinishCallbackBlock:^(NSDictionary *data)  {
+                        self.goodsArray=data[@"foodList"];
+                        NSLog(@"%@",data);
+                        //调用主线程
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            [self.collectionView reloadData];
+                        });
+                    }];
+                    _sales_flag = YES;
+                }
+            }
+                break;
+                
+            default:
+                break;
+        }
+
+    }
+    else{//type没有值，则为所有菜或者搜索菜名结果
+        
     switch (btn.tag) {
         case 100:
         {
@@ -171,6 +233,7 @@
         default:
             break;
     }
+    }
 }
 /**
  *  按价格排序
@@ -179,6 +242,50 @@
  */
 - (IBAction)priceSort:(UIButton *)sender {
     UIButton *btn = (UIButton *)sender;
+    //如果type=5有值，则为推荐菜
+    if (type&&(type.intValue!=0)) {
+       type = @"0";
+        switch (btn.tag) {
+            case 100:
+            {
+                //是否阅读协议
+                if (_sales_flag) {
+                    self.salesImageView.image=[UIImage imageNamed:@"arrow_price_down"];
+                    //销量降序
+                    NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:@"10",@"pageSize",@"1",@"currPage",@"",@"sortid",@"",@"name",@"5",@"type",nil];
+                    [RequestData getFoodListWithPage:params FinishCallbackBlock:^(NSDictionary *data)  {
+                        self.goodsArray=data[@"foodList"];
+                        NSLog(@"%@",data);
+                        //调用主线程
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            [self.collectionView reloadData];
+                        });
+                    }];
+                    _sales_flag = NO;
+                }else{
+                    self.salesImageView.image=[UIImage imageNamed:@"arrow_price_up"];
+                    //销量升序
+                    NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:@"10",@"pageSize",@"1",@"currPage",@"",@"sortid",@"",@"name",@"5",@"type",nil];
+                    [RequestData getFoodListWithPage:params FinishCallbackBlock:^(NSDictionary *data)  {
+                        self.goodsArray=data[@"foodList"];
+                        NSLog(@"%@",data);
+                        //调用主线程
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            [self.collectionView reloadData];
+                        });
+                    }];
+                    _sales_flag = YES;
+                }
+            }
+                break;
+                
+            default:
+                break;
+        }
+        
+    }
+     else{//type没有值或者type=0，则为所有菜或者搜索菜名结果
+    
     switch (btn.tag) {
         case 101:
         { 
@@ -220,6 +327,7 @@
         default:
             break;
     }
+ }
 }
 
 #pragma mark 文本框代理
@@ -236,6 +344,7 @@
         NSLog(@"搜索结果 == %@",foodListArr);
         //为搜索结果赋值
         self.goodsArray = foodListArr;
+        self.searchName = textField.text;
         [self.collectionView reloadData];
     }];
     //搜索完成清空输入框的文字
