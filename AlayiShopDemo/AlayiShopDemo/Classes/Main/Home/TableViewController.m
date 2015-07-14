@@ -37,7 +37,7 @@
     //最新推荐
     [self recomGoodsData];
     //自制菜
-    [self memberGoodsData];
+    //[self memberGoodsData];
 }
 #pragma mark 滚动视图
 /**

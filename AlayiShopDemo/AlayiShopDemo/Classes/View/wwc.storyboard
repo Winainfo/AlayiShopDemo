@@ -313,7 +313,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view alpha="0.78000000000000003" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YI5-wH-4yB">
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YI5-wH-4yB">
                                 <rect key="frame" x="0.0" y="479" width="198" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="总金额:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gF1-uw-GLo">
@@ -460,7 +460,7 @@
                                     <constraint firstAttribute="bottom" secondItem="gcO-Ku-2kR" secondAttribute="bottom" constant="4" id="wRR-tY-o4Y"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="1" sectionHeaderHeight="15" sectionFooterHeight="100" translatesAutoresizingMaskIntoConstraints="NO" id="PKj-85-OSB">
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="1" sectionHeaderHeight="15" sectionFooterHeight="100" translatesAutoresizingMaskIntoConstraints="NO" id="PKj-85-OSB">
                                 <rect key="frame" x="0.0" y="64" width="320" height="415"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>

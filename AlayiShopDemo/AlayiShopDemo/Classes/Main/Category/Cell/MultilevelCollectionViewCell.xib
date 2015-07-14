@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="MultilevelCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="150"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="100" height="150"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food" translatesAutoresizingMaskIntoConstraints="NO" id="KYe-3Q-Zx0">
+                        <rect key="frame" x="5" y="5" width="90" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="gH6-Kz-mjT"/>
+                            <constraint firstAttribute="height" constant="100" id="qxT-Sg-pwE"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="gH6-Kz-mjT"/>
+                            </mask>
+                        </variation>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新鲜" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3g4-4R-YhK" customClass="ARLabel">
+                        <rect key="frame" x="0.0" y="0.0" width="26" height="13"/>
+                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="13"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="猪肉" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6cB-hO-JIZ" customClass="ARLabel">
+                        <rect key="frame" x="5" y="105" width="90" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="1hB-mT-xS0"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="13"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥80.80" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OxW-Ww-vSG" customClass="ARLabel">
+                        <rect key="frame" x="5" y="129" width="90" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="rXD-Rq-9Nr"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="13"/>
+                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="KYe-3Q-Zx0" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="0yR-U9-R5F"/>
+                <constraint firstAttribute="bottom" secondItem="OxW-Ww-vSG" secondAttribute="bottom" id="4aC-xV-TiZ"/>
+                <constraint firstItem="3g4-4R-YhK" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="APF-Lp-ETk"/>
+                <constraint firstItem="6cB-hO-JIZ" firstAttribute="top" secondItem="KYe-3Q-Zx0" secondAttribute="bottom" id="ZJT-av-DnD"/>
+                <constraint firstItem="6cB-hO-JIZ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="aCC-Yo-g0Z"/>
+                <constraint firstAttribute="trailing" secondItem="OxW-Ww-vSG" secondAttribute="trailing" constant="5" id="cR9-Pj-GOb"/>
+                <constraint firstItem="KYe-3Q-Zx0" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="eOE-Vd-tGk"/>
+                <constraint firstItem="KYe-3Q-Zx0" firstAttribute="trailing" secondItem="6cB-hO-JIZ" secondAttribute="trailing" id="iRL-Pp-SZ9"/>
+                <constraint firstItem="KYe-3Q-Zx0" firstAttribute="leading" secondItem="6cB-hO-JIZ" secondAttribute="leading" id="lgD-zO-BBk"/>
+                <constraint firstAttribute="trailing" secondItem="KYe-3Q-Zx0" secondAttribute="trailing" constant="5" id="nbk-uP-sVO"/>
+                <constraint firstAttribute="trailing" secondItem="6cB-hO-JIZ" secondAttribute="trailing" constant="5" id="nz1-Nb-A3z"/>
+                <constraint firstItem="OxW-Ww-vSG" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="oab-Ae-u7m"/>
+                <constraint firstItem="3g4-4R-YhK" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="tnu-Ew-2DT"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="eOE-Vd-tGk"/>
+                    <exclude reference="nbk-uP-sVO"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="goodsImagView" destination="KYe-3Q-Zx0" id="UY6-3y-BeH"/>
+                <outlet property="goodsNameLabel" destination="6cB-hO-JIZ" id="LY0-Rp-7RL"/>
+                <outlet property="goodsPriceLabel" destination="OxW-Ww-vSG" id="39u-m6-I8I"/>
+                <outlet property="goodsSpecLabel" destination="3g4-4R-YhK" id="MZ5-E2-ovl"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="food" width="329" height="220"/>
+    </resources>
+</document>
