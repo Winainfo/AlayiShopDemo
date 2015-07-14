@@ -7,6 +7,7 @@
 //
 
 #import "CategoryController.h"
+
 //自定义搜索栏的头
 #import "HWSearchBar.h"
 //UIView 的类目，可直接设置frame,size...
@@ -134,8 +135,10 @@
             //是否阅读协议
             if (_sales_flag) {
                 self.salesImageView.image=[UIImage imageNamed:@"arrow_price_down"];
+                //nsstring转换为UTF-8
+                NSString *name =[self.searchName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
                 //销量降序
-                NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:@"10",@"pageSize",@"1",@"currPage",@"",@"sortid",@"",@"name",@"1",@"type",nil];
+                NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:@"10",@"pageSize",@"1",@"currPage",@"",@"sortid",name,@"name",@"1",@"type",nil];
                 [RequestData getFoodListWithPage:params FinishCallbackBlock:^(NSDictionary *data)  {
                     self.goodsArray=data[@"foodList"];
                     NSLog(@"%@",data);
@@ -147,8 +150,10 @@
                 _sales_flag = NO;
             }else{
                 self.salesImageView.image=[UIImage imageNamed:@"arrow_price_up"];
+                //nsstring转换为UTF-8
+                NSString *name =[self.searchName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
                 //销量升序
-                NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:@"10",@"pageSize",@"1",@"currPage",@"",@"sortid",@"",@"name",@"2",@"type",nil];
+                NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:@"10",@"pageSize",@"1",@"currPage",@"",@"sortid",name,@"name",@"2",@"type",nil];
                 [RequestData getFoodListWithPage:params FinishCallbackBlock:^(NSDictionary *data)  {
                     self.goodsArray=data[@"foodList"];
                     NSLog(@"%@",data);
@@ -179,8 +184,10 @@
         { 
             if (_price_flag) {
                 self.priceImageView.image=[UIImage imageNamed:@"arrow_price_down"];
+                //nsstring转换为UTF-8
+                NSString *name =[self.searchName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
                 //价格降序
-                NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:@"10",@"pageSize",@"1",@"currPage",@"",@"sortid",@"",@"name",@"3",@"type",nil];
+                NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:@"10",@"pageSize",@"1",@"currPage",@"",@"sortid",name,@"name",@"3",@"type",nil];
                 [RequestData getFoodListWithPage:params FinishCallbackBlock:^(NSDictionary *data)  {
                     self.goodsArray=data[@"foodList"];
                     NSLog(@"%@",data);
@@ -192,8 +199,10 @@
                 _price_flag = NO;
             }else{
                 self.priceImageView.image=[UIImage imageNamed:@"arrow_price_up"];
+                //nsstring转换为UTF-8
+                NSString *name =[self.searchName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
                 //价格升序
-                NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:@"10",@"pageSize",@"1",@"currPage",@"",@"sortid",@"",@"name",@"4",@"type",nil];
+                NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:@"10",@"pageSize",@"1",@"currPage",@"",@"sortid",name,@"name",@"4",@"type",nil];
                 [RequestData getFoodListWithPage:params FinishCallbackBlock:^(NSDictionary *data)  {
                     self.goodsArray=data[@"foodList"];
                     NSLog(@"%@",data);

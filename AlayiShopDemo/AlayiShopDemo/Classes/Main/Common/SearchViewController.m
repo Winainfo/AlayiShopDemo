@@ -123,6 +123,7 @@
         [self.navigationController pushViewController:cateV animated:YES];
         //为搜索结果赋值
         cateV.goodsArray = foodListArr;
+        cateV.searchName = history.Hname ;
         
         
     }];
@@ -182,6 +183,7 @@
         [self.navigationController pushViewController:cateV animated:YES];
         //为搜索结果赋值
         cateV.goodsArray = foodListArr;
+        cateV.searchName = textField.text;
         
     }];
     //搜索完成清空输入框的文字
