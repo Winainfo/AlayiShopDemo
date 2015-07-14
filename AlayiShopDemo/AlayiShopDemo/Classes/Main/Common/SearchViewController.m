@@ -140,7 +140,7 @@
 //        NSLog(@"tv.vid=%d;Vid=%d",tv.Vid,Vid);
         [HistoryClass deleteHISTORY:hid];
         self.hisArr = [HistoryClass findall];
-        NSLog(@"%lu",self.hisArr.count);
+//        NSLog(@"%lu",self.hisArr.count);
         [self.hitoryTable reloadData];
     }
 }

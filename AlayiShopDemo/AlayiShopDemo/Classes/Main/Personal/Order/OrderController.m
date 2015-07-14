@@ -21,14 +21,6 @@
 
 @implementation OrderController
 @synthesize type;
-//-(void)viewWillAppear:(BOOL)animated{
-////    AccountModel *account=[AccountTool account];
-////    //获取用户所有订单0.用户所有订单、1.未付款订单、2.进行中的订单、3.已完成的订单
-////    NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:type,@"type",account.userId,@"userid",@"5",@"pageSize",@"1",@"currPage", nil];
-////    [RequestData getUserOrderListWithPage:params FinishCallbackBlock:^(NSDictionary *data) {
-////        NSLog(@"%@",data);
-////    }];
-//}
 - (void)viewDidLoad {
     [super viewDidLoad];
     if ([type isEqualToString:@"0"]) {
