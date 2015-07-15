@@ -1,13 +1,7 @@
-//
-//  MultilevelMenu.m
-//  AlayiShopDemo
-//
-//  Created by 吴金林 on 15/7/13.
-//  Copyright (c) 2015年 kolin. All rights reserved.
-//
 
 #import "MultilevelMenu.h"
 #import "MultilevelTableViewCell.h"
+#import "DetailViewController.h"
 #import "MultilevelCollectionViewCell.h"
 #import "UIImageView+WebCache.h"
 #import "RequestData.h"
@@ -30,6 +24,7 @@
 {
     
     if (self  == [super initWithFrame:frame]) {
+        
         
         _block=selectIndex;
         self.leftSelectColor=[UIColor blackColor];
@@ -104,6 +99,11 @@
         }];
     }
     return self;
+}
+
+//代理方法，导航栏跳转
+-(void)pushView:(id)view
+{
 }
 
 -(void)setNeedToScorllerIndex:(NSInteger)needToScorllerIndex{
@@ -260,14 +260,11 @@
     cell.backgroundColor=self.leftUnSelectBgColor;
 }
 
-#pragma mark---imageCollectionView--------------------------
-
+#pragma mark---imageCollectionView------------------
+//内容
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return self.rightArray.count;
 }
-
-
-
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     MultilevelCollectionViewCell *cell=[collectionView dequeueReusableCellWithReuseIdentifier:kMultilevelCollectionViewCell forIndexPath:indexPath];
@@ -275,6 +272,7 @@
     cell.goodsNameLabel.text=self.rightArray[indexPath.row][@"name"];
     cell.goodsPriceLabel.text=self.rightArray[indexPath.row][@"formatPrice"];
     cell.goodsSpecLabel.text=self.rightArray[indexPath.row][@"norm"];
+    cell.gID = self.rightArray[indexPath.row][@"id"];
    // cell.backgroundColor=[UIColor clearColor];
     cell.goodsImagView.backgroundColor=UIColorFromRGB(0xF8FCF8);
     //照片
@@ -287,7 +285,7 @@
     cell.layer.borderWidth=0.3;
     return cell;
 }
-
+//布局
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     return CGSizeMake(100, 150);
@@ -299,6 +297,27 @@
     CGSize size={kScreenWidth,44};
     return size;
 }
+//点击进入详情页
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    MultilevelCollectionViewCell *cell= [MultilevelCollectionViewCell new];
+    cell.gID = self.rightArray[indexPath.row][@"id"];
+    
+    //请求详情页信息
+    NSDictionary *params2=[NSDictionary dictionaryWithObjectsAndKeys:cell.gID,@"id", nil];
+    [RequestData getFoodById:params2 FinishCallbackBlock:^(NSDictionary *data) {
+        NSLog(@"=======详情信息：%@",data);
+        //跳转不同的故事版
+        UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"yjh" bundle:nil];
+        DetailViewController *detailV = [storyboard instantiateViewControllerWithIdentifier:@"详情View"];
+        detailV.detailDic = data;
+        NSLog(@"=======详情信息：%@",detailV.detailDic);
+        [self.delete pushView:detailV];
+        
+    }];
+    
+}
+
 
 
 #pragma mark---记录滑动的坐标

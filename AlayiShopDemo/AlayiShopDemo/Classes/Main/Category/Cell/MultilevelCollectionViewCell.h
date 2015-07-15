@@ -17,4 +17,7 @@
 @property (weak, nonatomic) IBOutlet ARLabel *goodsNameLabel;
 /**商品价格*/
 @property (weak, nonatomic) IBOutlet ARLabel *goodsPriceLabel;
+/**商品ID**/
+@property (retain, nonatomic) NSString * gID;
+
 @end

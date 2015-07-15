@@ -8,7 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #define kLeftWidth 90
+
+//创建协议
+@protocol CategoryDelete <NSObject>
+-(void)pushView:(id)view;
+@end
 @interface MultilevelMenu : UIView<UITableViewDataSource,UITableViewDelegate,UICollectionViewDelegateFlowLayout,UICollectionViewDataSource,UICollectionViewDelegate>
+
+
+@property (assign,nonatomic)id<CategoryDelete>delete;
 @property(strong,nonatomic,readonly) NSArray * allData;
 
 
