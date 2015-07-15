@@ -20,9 +20,7 @@
 		0F6A5F441B5297D000B4E1D7 /* DB.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6A5F431B5297D000B4E1D7 /* DB.m */; };
 		0F6A5F471B5297DD00B4E1D7 /* HistoryClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6A5F461B5297DD00B4E1D7 /* HistoryClass.m */; };
 		0F6A5F4B1B52A4D800B4E1D7 /* HITORY.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 0F6A5F4A1B52A4D800B4E1D7 /* HITORY.sqlite */; };
-		0F70D5111B493B4F008962B2 /* AboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F70D5101B493B4F008962B2 /* AboutUsViewController.m */; };
 		0F70D5141B4959AE008962B2 /* SelfFoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F70D5131B4959AE008962B2 /* SelfFoodViewController.m */; };
-		0F70D5191B495FFB008962B2 /* SelfFoodCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F70D5171B495FFB008962B2 /* SelfFoodCollectionViewCell.m */; };
 		0F80D93A1B42B15700C46D72 /* wwc.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F80D9391B42B15700C46D72 /* wwc.storyboard */; };
 		0F944E3C1B44ED4100E5ED82 /* FinallyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F944E361B44ED4100E5ED82 /* FinallyViewController.m */; };
 		0F944E3D1B44ED4100E5ED82 /* SequenceCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F944E381B44ED4100E5ED82 /* SequenceCollectionViewCell.m */; };
@@ -56,6 +54,11 @@
 		33887C4E1B4BD1C700E2F57D /* OrderInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 33887C4C1B4BD1C700E2F57D /* OrderInfoCell.m */; };
 		33887C4F1B4BD1C700E2F57D /* OrderInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33887C4D1B4BD1C700E2F57D /* OrderInfoCell.xib */; };
 		33887C521B4BE76C00E2F57D /* OrderInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33887C511B4BE76C00E2F57D /* OrderInfoController.m */; };
+		339333AF1B55F79A00C7BE03 /* SelfFoodCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 339333AD1B55F79A00C7BE03 /* SelfFoodCollectionViewCell.m */; };
+		339333B01B55F79A00C7BE03 /* SelfFoodCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 339333AE1B55F79A00C7BE03 /* SelfFoodCollectionViewCell.xib */; };
+		339333B31B55F7C300C7BE03 /* SelfFoodController.m in Sources */ = {isa = PBXBuildFile; fileRef = 339333B21B55F7C300C7BE03 /* SelfFoodController.m */; };
+		339333B61B560EAB00C7BE03 /* EditFoodController.m in Sources */ = {isa = PBXBuildFile; fileRef = 339333B51B560EAB00C7BE03 /* EditFoodController.m */; };
+		339333B81B565A8E00C7BE03 /* IMG_0125.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 339333B71B565A8E00C7BE03 /* IMG_0125.PNG */; };
 		3393DDE31B520FA80016BBD1 /* CategoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3393DDE21B520FA80016BBD1 /* CategoryController.m */; };
 		3394F2A61B463B7000CB951C /* BZGFormField.m in Sources */ = {isa = PBXBuildFile; fileRef = 3394F2A51B463B7000CB951C /* BZGFormField.m */; };
 		3394F2A91B46468B00CB951C /* AdviseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3394F2A81B46468B00CB951C /* AdviseController.m */; };
@@ -169,13 +172,8 @@
 		0F6A5F451B5297DD00B4E1D7 /* HistoryClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryClass.h; sourceTree = "<group>"; };
 		0F6A5F461B5297DD00B4E1D7 /* HistoryClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryClass.m; sourceTree = "<group>"; };
 		0F6A5F4A1B52A4D800B4E1D7 /* HITORY.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = HITORY.sqlite; sourceTree = "<group>"; };
-		0F70D50F1B493B4F008962B2 /* AboutUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutUsViewController.h; sourceTree = "<group>"; };
-		0F70D5101B493B4F008962B2 /* AboutUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutUsViewController.m; sourceTree = "<group>"; };
 		0F70D5121B4959AE008962B2 /* SelfFoodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelfFoodViewController.h; sourceTree = "<group>"; };
 		0F70D5131B4959AE008962B2 /* SelfFoodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelfFoodViewController.m; sourceTree = "<group>"; };
-		0F70D5161B495FFB008962B2 /* SelfFoodCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelfFoodCollectionViewCell.h; sourceTree = "<group>"; };
-		0F70D5171B495FFB008962B2 /* SelfFoodCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelfFoodCollectionViewCell.m; sourceTree = "<group>"; };
-		0F70D5181B495FFB008962B2 /* SelfFoodCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelfFoodCollectionViewCell.xib; sourceTree = "<group>"; };
 		0F80D9391B42B15700C46D72 /* wwc.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = wwc.storyboard; sourceTree = "<group>"; };
 		0F944E351B44ED4100E5ED82 /* FinallyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinallyViewController.h; sourceTree = "<group>"; };
 		0F944E361B44ED4100E5ED82 /* FinallyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinallyViewController.m; sourceTree = "<group>"; };
@@ -234,6 +232,14 @@
 		33887C4D1B4BD1C700E2F57D /* OrderInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderInfoCell.xib; sourceTree = "<group>"; };
 		33887C501B4BE76C00E2F57D /* OrderInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderInfoController.h; sourceTree = "<group>"; };
 		33887C511B4BE76C00E2F57D /* OrderInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderInfoController.m; sourceTree = "<group>"; };
+		339333AC1B55F79A00C7BE03 /* SelfFoodCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelfFoodCollectionViewCell.h; sourceTree = "<group>"; };
+		339333AD1B55F79A00C7BE03 /* SelfFoodCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelfFoodCollectionViewCell.m; sourceTree = "<group>"; };
+		339333AE1B55F79A00C7BE03 /* SelfFoodCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelfFoodCollectionViewCell.xib; sourceTree = "<group>"; };
+		339333B11B55F7C300C7BE03 /* SelfFoodController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelfFoodController.h; sourceTree = "<group>"; };
+		339333B21B55F7C300C7BE03 /* SelfFoodController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelfFoodController.m; sourceTree = "<group>"; };
+		339333B41B560EAB00C7BE03 /* EditFoodController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditFoodController.h; sourceTree = "<group>"; };
+		339333B51B560EAB00C7BE03 /* EditFoodController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditFoodController.m; sourceTree = "<group>"; };
+		339333B71B565A8E00C7BE03 /* IMG_0125.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_0125.PNG; sourceTree = "<group>"; };
 		3393DDE11B520FA80016BBD1 /* CategoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryController.h; sourceTree = "<group>"; };
 		3393DDE21B520FA80016BBD1 /* CategoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryController.m; sourceTree = "<group>"; };
 		3394F2A41B463B7000CB951C /* BZGFormField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BZGFormField.h; sourceTree = "<group>"; };
@@ -459,16 +465,6 @@
 			name = DataBase;
 			sourceTree = "<group>";
 		};
-		0F70D5151B495F8C008962B2 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				0F70D5161B495FFB008962B2 /* SelfFoodCollectionViewCell.h */,
-				0F70D5171B495FFB008962B2 /* SelfFoodCollectionViewCell.m */,
-				0F70D5181B495FFB008962B2 /* SelfFoodCollectionViewCell.xib */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		0F7DFFC51B43CC2D00C48B07 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -531,6 +527,29 @@
 			path = MoerController;
 			sourceTree = "<group>";
 		};
+		339333AA1B55F75500C7BE03 /* SelfFood(自制菜) */ = {
+			isa = PBXGroup;
+			children = (
+				339333AB1B55F77900C7BE03 /* Cell */,
+				339333B11B55F7C300C7BE03 /* SelfFoodController.h */,
+				339333B21B55F7C300C7BE03 /* SelfFoodController.m */,
+				339333B41B560EAB00C7BE03 /* EditFoodController.h */,
+				339333B51B560EAB00C7BE03 /* EditFoodController.m */,
+			);
+			name = "SelfFood(自制菜)";
+			path = SelfFood;
+			sourceTree = "<group>";
+		};
+		339333AB1B55F77900C7BE03 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				339333AC1B55F79A00C7BE03 /* SelfFoodCollectionViewCell.h */,
+				339333AD1B55F79A00C7BE03 /* SelfFoodCollectionViewCell.m */,
+				339333AE1B55F79A00C7BE03 /* SelfFoodCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		3393DDD91B5203BF0016BBD1 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -582,7 +601,6 @@
 		33CBCFD61B43C9E100FADD5F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				0F70D5151B495F8C008962B2 /* Model */,
 				33CBCFDC1B4404AF00FADD5F /* PersonalTableViewController.h */,
 				33CBCFDD1B4404AF00FADD5F /* PersonalTableViewController.m */,
 				331751671B45228400A55B92 /* PersonalController.h */,
@@ -595,8 +613,6 @@
 				33F955311B46805500E25192 /* UserInfoController.m */,
 				33F955361B468A0C00E25192 /* EditUserController.h */,
 				33F955371B468A0C00E25192 /* EditUserController.m */,
-				0F70D50F1B493B4F008962B2 /* AboutUsViewController.h */,
-				0F70D5101B493B4F008962B2 /* AboutUsViewController.m */,
 				0F70D5121B4959AE008962B2 /* SelfFoodViewController.h */,
 				0F70D5131B4959AE008962B2 /* SelfFoodViewController.m */,
 				0FDA99741B4B66B4000E4CE4 /* AddSelfFoodViewController.h */,
@@ -915,6 +931,7 @@
 		33D1D9B11B426918009ADF41 /* Cart(购物车) */ = {
 			isa = PBXGroup;
 			children = (
+				339333B71B565A8E00C7BE03 /* IMG_0125.PNG */,
 				33199CDA1B540E9700C16E10 /* CartCell.h */,
 				33199CDB1B540E9700C16E10 /* CartCell.m */,
 				33199CDC1B540E9700C16E10 /* CartCell.xib */,
@@ -930,6 +947,7 @@
 		33D1D9B21B426950009ADF41 /* Personal(个人中心) */ = {
 			isa = PBXGroup;
 			children = (
+				339333AA1B55F75500C7BE03 /* SelfFood(自制菜) */,
 				3313092F1B55515A00CD264E /* About(关于我们) */,
 				331C9CD71B48D40400EE773F /* Score(积分) */,
 				33F955391B469CF200E25192 /* Order(订单) */,
@@ -1126,11 +1144,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				339333B01B55F79A00C7BE03 /* SelfFoodCollectionViewCell.xib in Resources */,
 				33D1D9041B426756009ADF41 /* Main.storyboard in Resources */,
 				0F3A02A11B4E5A2600A0782E /* yjh.storyboard in Resources */,
 				33D1D9911B42688D009ADF41 /* MBProgressHUD.bundle in Resources */,
 				0F6A5F4B1B52A4D800B4E1D7 /* HITORY.sqlite in Resources */,
 				3383227F1B427AA5004CE9C2 /* wjl.storyboard in Resources */,
+				339333B81B565A8E00C7BE03 /* IMG_0125.PNG in Resources */,
 				33D1D98F1B42688D009ADF41 /* IQKeyboardManager.bundle in Resources */,
 				33EA3E641B4CC7AF00278995 /* tableCell.xib in Resources */,
 				0FA5A6A31B47AD7200ED2A10 /* CommentTableViewCell.xib in Resources */,
@@ -1198,6 +1218,7 @@
 				33FA4F3A1B536AEF0073B226 /* CollectionReusableView.m in Sources */,
 				33D1D9841B42688D009ADF41 /* IQNSArray+Sort.m in Sources */,
 				33FA4F481B5393EE0073B226 /* MultilevelMenu.m in Sources */,
+				339333B61B560EAB00C7BE03 /* EditFoodController.m in Sources */,
 				0F70D5141B4959AE008962B2 /* SelfFoodViewController.m in Sources */,
 				33C418501B45167E002C8601 /* AccountTool.m in Sources */,
 				33D1D9A61B42688D009ADF41 /* SDWebImageManager.m in Sources */,
@@ -1209,9 +1230,7 @@
 				33D1D9921B42688D009ADF41 /* MBProgressHUD.m in Sources */,
 				33D1D9A31B42688D009ADF41 /* SDWebImageDecoder.m in Sources */,
 				33D4E80E1B4986DA00E55A45 /* UIView+MJExtension.m in Sources */,
-				0F70D5111B493B4F008962B2 /* AboutUsViewController.m in Sources */,
 				33D1D98C1B42688D009ADF41 /* IQTitleBarButtonItem.m in Sources */,
-				0F70D5191B495FFB008962B2 /* SelfFoodCollectionViewCell.m in Sources */,
 				33D1D9801B42688D009ADF41 /* AFURLConnectionOperation.m in Sources */,
 				3394F2A91B46468B00CB951C /* AdviseController.m in Sources */,
 				331309321B55518600CD264E /* AboutViewController.m in Sources */,
@@ -1227,6 +1246,7 @@
 				33D1D9851B42688D009ADF41 /* IQUIView+Hierarchy.m in Sources */,
 				33D1D9AB1B42688D009ADF41 /* UIImage+WebP.m in Sources */,
 				3394F2A61B463B7000CB951C /* BZGFormField.m in Sources */,
+				339333B31B55F7C300C7BE03 /* SelfFoodController.m in Sources */,
 				0FDA99761B4B66B4000E4CE4 /* AddSelfFoodViewController.m in Sources */,
 				33CBCFDE1B4404AF00FADD5F /* PersonalTableViewController.m in Sources */,
 				0F6A5F471B5297DD00B4E1D7 /* HistoryClass.m in Sources */,
@@ -1237,6 +1257,7 @@
 				33D4E80C1B4986DA00E55A45 /* UIScrollView+MJExtension.m in Sources */,
 				33D4E80A1B4986DA00E55A45 /* MJRefreshFooterView.m in Sources */,
 				33D1D97B1B42688D009ADF41 /* AFHTTPRequestOperation.m in Sources */,
+				339333AF1B55F79A00C7BE03 /* SelfFoodCollectionViewCell.m in Sources */,
 				33D1D9AC1B42688D009ADF41 /* UIImageView+HighlightedWebCache.m in Sources */,
 				33D1D9831B42688D009ADF41 /* AFURLSessionManager.m in Sources */,
 				33D1D9821B42688D009ADF41 /* AFURLResponseSerialization.m in Sources */,

@@ -664,6 +664,54 @@
     }];
 }
 
+#pragma mark 删除自制菜信息
+/**
+ * 删除自制菜信息
+ *
+ *  @param data  <#data description#>
+ *  @param block <#block description#>
+ */
++(void)delSelfFood:(NSDictionary *)data FinishCallbackBlock:(void (^)(NSDictionary *))block
+{
+    //1.请求管理者
+    AFHTTPRequestOperationManager *mgr=[AFHTTPRequestOperationManager manager];
+    mgr.responseSerializer=[AFJSONResponseSerializer serializer];
+    //2.拼接参数
+    NSString *jsonDic=[RequestData getJsonStr:data];
+    NSDictionary *params=@{@"method":@"delSelfFood",@"appid":APPID,@"data":jsonDic};
+    //3.发生请求
+    [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"请求成功--");
+        block(responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"请求失败-%@",error);
+    }];
+}
+
+#pragma mark 编辑自制菜信息
+/**
+ * 编辑自制菜信息
+ *
+ *  @param data  <#data description#>
+ *  @param block <#block description#>
+ */
++(void)saveSelfFood:(NSDictionary *)data FinishCallbackBlock:(void (^)(NSDictionary *))block
+{
+    //1.请求管理者
+    AFHTTPRequestOperationManager *mgr=[AFHTTPRequestOperationManager manager];
+    mgr.responseSerializer=[AFJSONResponseSerializer serializer];
+    //2.拼接参数
+    NSString *jsonDic=[RequestData getJsonStr:data];
+    NSDictionary *params=@{@"method":@"saveSelfFood",@"appid":APPID,@"data":jsonDic};
+    //3.发生请求
+    [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"请求成功--");
+        block(responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"请求失败-%@",error);
+    }];
+}
+
 /**
  *  将传入的二进制数据转为字符串后将content字段删除
  *  @param data 包含content字段的二进制数据

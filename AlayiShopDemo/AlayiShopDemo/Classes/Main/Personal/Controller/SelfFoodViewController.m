@@ -11,9 +11,10 @@
 @interface SelfFoodViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 @property(retain,nonatomic)UICollectionView *selfFoodV;//九宫格视图
 @property(retain,nonatomic)NSMutableArray *selfFoodListArr;//所有自制菜的数组
-@property(retain,nonatomic)NSMutableArray *titleArr;
-@property(retain,nonatomic)NSMutableArray *picUrlArr;
-@property(retain,nonatomic)NSMutableArray *picArr;
+//@property(retain,nonatomic)NSMutableArray *titleArr;
+//@property(retain,nonatomic)NSMutableArray *picUrlArr;
+//@property(retain,nonatomic)NSMutableArray *picArr;
+@property(retain,nonatomic)NSArray *goodsArray;
 
 @end
 
@@ -26,10 +27,10 @@
     [self setNavStyle];
     
     //为数组申请空间
-    self.selfFoodListArr = [NSMutableArray arrayWithCapacity:1];
-    self.titleArr = [NSMutableArray arrayWithCapacity:1];
-    self.picUrlArr = [NSMutableArray arrayWithCapacity:1];
-    self.picArr = [NSMutableArray arrayWithCapacity:1];
+//    self.selfFoodListArr = [NSMutableArray arrayWithCapacity:1];
+//    self.titleArr = [NSMutableArray arrayWithCapacity:1];
+//    self.picUrlArr = [NSMutableArray arrayWithCapacity:1];
+//    self.picArr = [NSMutableArray arrayWithCapacity:1];
     
     //创建展示自制菜的九宫格
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
@@ -44,7 +45,11 @@
     [_selfFoodV registerNib:nib forCellWithReuseIdentifier:@"SelfFoodCollectionViewCell"];
     
     //调用接口请求数据
-    NSDictionary *prama = [NSDictionary dictionaryWithObjectsAndKeys:@"10",@"pageSize",@"1",@"currPage",@"32",@"userid", nil];
+    NSDictionary *prama = [NSDictionary dictionaryWithObjectsAndKeys:@"10",@"pageSize",@"1",@"currPage",@"1",@"userid", nil];
+    [RequestData getUserSelfFoodWithPage:prama FinishCallbackBlock:^(NSDictionary *data) {
+        self.goodsArray=data[@"selfFoodList"];
+        NSLog(@"%@",self.goodsArray);
+    }];
  
 }
 
@@ -68,23 +73,23 @@
 #pragma mark -- collectionView 代理 --
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return self.titleArr.count;
-//    return 10;
+   // return self.goodsArray.count;
+  return 10;
 }
-//定义展示的Section的个数
--(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
-{
-    return 1;
-    
-}
+////定义展示的Section的个数
+//-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+//{
+//    return 1;
+//    
+//}
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     SelfFoodCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"SelfFoodCollectionViewCell" forIndexPath:indexPath];
 
     //设置自制菜的图片
-    [cell.foodImage sd_setImageWithURL:self.picUrlArr[indexPath.row]];
+   // [cell.foodImage sd_setImageWithURL:self.picUrlArr[indexPath.row]];
     //设置自制菜菜名
-    cell.foodTitle.text = self.titleArr[indexPath.row];
+    cell.foodTitle.text = @"asdas";
     return cell;
 }
 //设置单元格尺寸的代理

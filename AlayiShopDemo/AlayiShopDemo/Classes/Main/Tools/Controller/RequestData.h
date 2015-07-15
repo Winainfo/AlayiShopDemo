@@ -212,4 +212,12 @@
  *  @param block <#block description#>
  */
 +(void)getAllHotFoodList:(NSDictionary *)data FinishCallbackBlock:(void (^)(NSDictionary *))block;
+/**
+ 删除自制菜
+ */
++(void)delSelfFood:(NSDictionary *)data FinishCallbackBlock:(void (^)(NSDictionary *))block;
+/**
+ 保存自制菜
+ */
++(void)saveSelfFood:(NSDictionary *)data FinishCallbackBlock:(void (^)(NSDictionary *))block;
 @end

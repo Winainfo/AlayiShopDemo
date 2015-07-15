@@ -110,17 +110,5 @@
 
 }
 
-/**
- int numberInt =[self.numText.text intValue];
- if (numberInt==200) {
- [self.addBtn setBackgroundImage:[UIImage imageNamed:@"syncart_more_btn_disable"] forState: UIControlStateNormal];
- return;
- }
- [self.subBtn setBackgroundImage:[UIImage imageNamed:@"syncart_less_btn_enable"] forState: UIControlStateNormal];
- [self.selectImage setImage:[UIImage imageNamed:@"syncart_round_check2"]];
- _flag=YES;
- ++numberInt;
- self.numText.text=[NSString stringWithFormat:@"%d",numberInt];
- */
 
 @end
