@@ -107,6 +107,7 @@
         detailV.detailDic = data;
          NSLog(@"=======详情信息：%@",detailV.detailDic);
         [self.navigationController pushViewController:detailV animated:YES];
+        
     }];
 }
 

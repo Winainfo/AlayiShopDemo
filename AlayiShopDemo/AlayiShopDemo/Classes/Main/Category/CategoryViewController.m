@@ -10,7 +10,7 @@
 #import "MultilevelMenu.h"
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
-@interface CategoryViewController ()
+@interface CategoryViewController ()<CategoryDelete>
 
 @end
 
@@ -27,6 +27,12 @@
     }];
     view.needToScorllerIndex=0;
     view.isRecordLastScroll=YES;
+    view.delete = self;
     [self.view addSubview:view];
 }
+
+-(void)pushView:(id)view{
+    [self.navigationController pushViewController:view animated:YES];
+}
+
 @end
