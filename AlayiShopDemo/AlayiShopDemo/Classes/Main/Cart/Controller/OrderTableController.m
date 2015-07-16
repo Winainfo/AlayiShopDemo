@@ -11,6 +11,7 @@
 #import "AccountTool.h"
 #import "SettleController.h"
 #import "UIImageView+WebCache.h"
+#import "OrderTool.h"
 @interface OrderTableController ()
 @property (strong, nonatomic) IBOutlet UITableView *myTableView;
 @property (weak, nonatomic) IBOutlet UITableViewCell *AddressCell;
@@ -18,7 +19,13 @@
 @end
 
 @implementation OrderTableController
-
+-(void)viewWillAppear:(BOOL)animated
+{
+    OrderModel *order=[OrderTool order];
+    self.nameLabel.text=order.receivename;
+    self.phoneLabel.text=order.telephone;
+    self.addressLabel.text=order.sendaddress;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     UIColor *bgColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"address_info_bg"]];
@@ -49,6 +56,7 @@
                 UIImageView *imageV = [[UIImageView alloc]initWithFrame:CGRectMake((i*70)+10, 0,60, 60)];
                 [imageV sd_setImageWithURL:imgUrl];
                 [self.srollView addSubview:imageV];
+                self.countLabel.text=[NSString stringWithFormat:@"共%lu件",self.goodArray.count];
             }
             
         }else{

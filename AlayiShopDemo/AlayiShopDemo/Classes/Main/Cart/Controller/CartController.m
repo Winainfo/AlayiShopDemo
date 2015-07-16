@@ -16,7 +16,7 @@
 @property(assign,nonatomic)BOOL flag;
 @property(assign,nonatomic)BOOL editFlag;
 @property(retain,nonatomic)NSArray *goodArray;
-@property(retain,nonatomic)NSArray *goodArray1;
+@property(retain,nonatomic)NSDictionary *goodArray1;
 @property(retain,nonatomic)NSMutableArray *infoArr;
 @property(assign,nonatomic)float allPrice;
 /**结算*/
@@ -53,6 +53,7 @@
     NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:account.userId,@"userid",nil];
     [RequestData getUserCartList:params FinishCallbackBlock:^(NSDictionary *data) {
         NSLog(@"%@",data);
+        self.goodArray1=data;
         self.goodArray=data[@"cartList"];
         if (self.goodArray.count<1) {
             self.myTableView.hidden=YES;
@@ -86,8 +87,8 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.myTableView reloadData];
         });
+           [self totalPrice];
     }];
-    
     self.countView.hidden=NO;
     self.deleteView.hidden=YES;
 }
@@ -235,8 +236,8 @@
         GoodsInfoModel *model=[self.infoArr objectAtIndex:i];
         model.selectState=_flag;
     }
-    //计算价格
-    [self totalPrice];
+//    //计算价格
+//    [self totalPrice];
     //刷新表格
     [self.myTableView reloadData];
 }
@@ -247,14 +248,17 @@
     for ( int i =0; i<self.infoArr.count; i++)
     {
         GoodsInfoModel *model = [self.infoArr objectAtIndex:i];
-        if (model.selectState)
-        {
+//        if (model.selectState)
+//        {
             self.allPrice = self.allPrice + model.goodsNum *model.goodsPrice;
-        }
+//        }
     }
     
+    
+    
     //给总价文本赋值
-    self.priceCount.text=[NSString stringWithFormat:@"合计:¥ %.2f",self.allPrice];
+    NSString *price=_goodArray1[@"sumprice"];
+    self.priceCount.text=[NSString stringWithFormat:@"合计:¥ %@",price];
     
     //每次算完要重置为0，因为每次的都是全部循环算一遍
     self.allPrice = 0.00;
@@ -301,11 +305,19 @@
     [RequestData updateCartNumber:params FinishCallbackBlock:^(NSDictionary *data) {
         NSLog(@"加--%@",data);
     }];
+    //获取用户购物车的信息
+    NSDictionary *param=[NSDictionary dictionaryWithObjectsAndKeys:account.userId,@"userid",nil];
+    [RequestData getUserCartList:param FinishCallbackBlock:^(NSDictionary *data) {
+        //给总价文本赋值
+        NSString *price=data[@"sumprice"];
+        self.priceCount.text=[NSString stringWithFormat:@"合计:¥ %@",price];
+    }];
+    
     //刷新表格
     [_myTableView reloadData];
-    
-    //计算总价
-    [self totalPrice];
+//
+//    //计算总价
+//    [self totalPrice];
     
 }
 /**
