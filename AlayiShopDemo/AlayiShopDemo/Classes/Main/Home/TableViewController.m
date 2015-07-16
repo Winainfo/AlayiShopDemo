@@ -8,6 +8,8 @@
 
 #import "TableViewController.h"
 #import "UIImageView+WebCache.h"
+#import "SearchViewController.h"
+#import "DetailViewController.h"
 @interface TableViewController ()<UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *myScrollView;
 @property (weak, nonatomic) IBOutlet UIPageControl *myPageControl;
@@ -38,7 +40,32 @@
     [self recomGoodsData];
     //自制菜
     //[self memberGoodsData];
+    //标题
+    self.title = @"阿拉亿菜";
+    
+    [self setNavStyle];
 }
+
+//设置导航栏按钮样式
+-(void)setNavStyle
+{
+    
+    //导航栏右侧按钮
+    UIButton *rightBtn=[UIButton buttonWithType:UIButtonTypeCustom];
+    [rightBtn setImage:[UIImage imageNamed:@"sousuo"] forState:UIControlStateNormal];
+    rightBtn.frame=CGRectMake(-5, 5, 30, 30);
+    [rightBtn addTarget:self action:@selector(searchClick) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *right=[[UIBarButtonItem alloc]initWithCustomView:rightBtn];
+    self.navigationItem.rightBarButtonItem=right;
+}
+//跳转到搜索页
+-(void)searchClick
+{
+    UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"yjh" bundle:nil];
+    SearchViewController *searchV = [storyboard instantiateViewControllerWithIdentifier:@"searchView"];
+    [self.navigationController pushViewController:searchV animated:YES];
+}
+
 #pragma mark 滚动视图
 /**
  *  请求数据
@@ -178,6 +205,44 @@
         //转换成url
         NSURL *imgUrl6 = [NSURL URLWithString:urlStr6];
         [self.freshGoodsImage6 sd_setImageWithURL:imgUrl6];
+        
+        //设置图片的tag值
+        NSString *fid1 = self.freshArray[0][@"id"];
+        self.freshGoodsImage1.tag = (int)([fid1 intValue]+100);
+        self.freshGoodsImage1.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tap1 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapFreshImage1)];
+        [self.freshGoodsImage1 addGestureRecognizer:tap1];
+        
+        NSString *fid2 = self.freshArray[1][@"id"];
+        self.freshGoodsImage2.tag = (int)([fid2 intValue]+100);
+        self.freshGoodsImage2.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tap2 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapFreshImage2)];
+        [self.freshGoodsImage2 addGestureRecognizer:tap2];
+        
+        NSString *fid3 = self.freshArray[2][@"id"];
+        self.freshGoodsImage3.tag = (int)([fid3 intValue]+100);
+        self.freshGoodsImage3.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tap3 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapFreshImage3)];
+        [self.freshGoodsImage1 addGestureRecognizer:tap3];
+        
+        NSString *fid4 = self.freshArray[3][@"id"];
+        self.freshGoodsImage4.tag = (int)([fid4 intValue]+100);
+        self.freshGoodsImage4.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tap4 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapFreshImage4)];
+        [self.freshGoodsImage1 addGestureRecognizer:tap4];
+        
+        NSString *fid5 = self.freshArray[4][@"id"];
+        self.freshGoodsImage5.tag = (int)([fid5 intValue]+100);
+        self.freshGoodsImage5.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tap5 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapFreshImage5)];
+        [self.freshGoodsImage1 addGestureRecognizer:tap5];
+        
+        NSString *fid6 = self.freshArray[5][@"id"];
+        self.freshGoodsImage6.tag = (int)([fid6 intValue]+100);
+        self.freshGoodsImage6.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tap6 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapFreshImage6)];
+        [self.freshGoodsImage1 addGestureRecognizer:tap6];
+        
     }];
 }
 
@@ -239,6 +304,43 @@
         //转换成url
         NSURL *imgUrl6 = [NSURL URLWithString:urlStr6];
         [self.recomGoodsImage6 sd_setImageWithURL:imgUrl6];
+        
+        //设置图片的tag值
+        NSString *fid1 = self.recomArray[0][@"id"];
+        self.recomGoodsImage1.tag = (int)([fid1 intValue]+100);
+        self.recomGoodsImage1.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tap1 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapRecomGoodsImage1)];
+        [self.recomGoodsImage1 addGestureRecognizer:tap1];
+        
+        NSString *fid2 = self.recomArray[1][@"id"];
+        self.recomGoodsImage2.tag = (int)([fid2 intValue]+100);
+        self.recomGoodsImage2.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tap2 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapRecomGoodsImage2)];
+        [self.recomGoodsImage2 addGestureRecognizer:tap2];
+        
+        NSString *fid3 = self.recomArray[2][@"id"];
+        self.recomGoodsImage3.tag = (int)([fid3 intValue]+100);
+        self.recomGoodsImage3.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tap3 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapRecomGoodsImage3)];
+        [self.recomGoodsImage3 addGestureRecognizer:tap3];
+        
+        NSString *fid4 = self.recomArray[3][@"id"];
+        self.recomGoodsImage4.tag = (int)([fid4 intValue]+100);
+        self.recomGoodsImage4.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tap4 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapRecomGoodsImage4)];
+        [self.recomGoodsImage4 addGestureRecognizer:tap4];
+        
+        NSString *fid5 = self.recomArray[4][@"id"];
+        self.recomGoodsImage5.tag = (int)([fid5 intValue]+100);
+        self.recomGoodsImage5.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tap5 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapRecomGoodsImage5)];
+        [self.recomGoodsImage1 addGestureRecognizer:tap5];
+        
+        NSString *fid6 = self.recomArray[5][@"id"];
+        self.recomGoodsImage6.tag = (int)([fid6 intValue]+100);
+        self.recomGoodsImage6.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tap6 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapRecomGoodsImage6)];
+        [self.recomGoodsImage1 addGestureRecognizer:tap6];
     }];
 }
 
@@ -313,4 +415,218 @@
         [theSegue setValue:@"5" forKey:@"type"];
     }
 }
+
+#pragma mark == 图片点击，进入详情页 ==
+/**
+ *  点击新鲜菜品进入详情页
+ */
+-(void)tapFreshImage1
+{
+    int fid = (int)(self.freshGoodsImage1.tag -100);
+    NSString *Fid = [NSString stringWithFormat:@"%d",fid];
+    
+    NSDictionary *prama = [NSDictionary dictionaryWithObjectsAndKeys:Fid,@"id", nil];
+    
+    [RequestData getFoodById:prama FinishCallbackBlock:^(NSDictionary *data) {
+        NSLog(@"=======详情信息：%@",data);
+        //跳转不同的故事版
+        UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"yjh" bundle:nil];
+        DetailViewController *detailV = [storyboard instantiateViewControllerWithIdentifier:@"详情View"];
+        detailV.detailDic = data;
+        NSLog(@"=======详情信息：%@",detailV.detailDic);
+        [self.navigationController pushViewController:detailV animated:YES];
+    }];
+    
+}
+-(void)tapFreshImage2
+{
+    int fid = (int)(self.freshGoodsImage2.tag -100);
+    NSString *Fid = [NSString stringWithFormat:@"%d",fid];
+    
+    NSDictionary *prama = [NSDictionary dictionaryWithObjectsAndKeys:Fid,@"id", nil];
+    
+    [RequestData getFoodById:prama FinishCallbackBlock:^(NSDictionary *data) {
+        NSLog(@"=======详情信息：%@",data);
+        //跳转不同的故事版
+        UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"yjh" bundle:nil];
+        DetailViewController *detailV = [storyboard instantiateViewControllerWithIdentifier:@"详情View"];
+        detailV.detailDic = data;
+        NSLog(@"=======详情信息：%@",detailV.detailDic);
+        [self.navigationController pushViewController:detailV animated:YES];
+    }];
+}
+-(void)tapFreshImage3
+{
+    int fid = (int)(self.freshGoodsImage3.tag -100);
+    NSString *Fid = [NSString stringWithFormat:@"%d",fid];
+    
+    NSDictionary *prama = [NSDictionary dictionaryWithObjectsAndKeys:Fid,@"id", nil];
+    
+    [RequestData getFoodById:prama FinishCallbackBlock:^(NSDictionary *data) {
+        NSLog(@"=======详情信息：%@",data);
+        //跳转不同的故事版
+        UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"yjh" bundle:nil];
+        DetailViewController *detailV = [storyboard instantiateViewControllerWithIdentifier:@"详情View"];
+        detailV.detailDic = data;
+        NSLog(@"=======详情信息：%@",detailV.detailDic);
+        [self.navigationController pushViewController:detailV animated:YES];
+    }];
+}
+-(void)tapFreshImage4
+{
+    int fid = (int)(self.freshGoodsImage4.tag -100);
+    NSString *Fid = [NSString stringWithFormat:@"%d",fid];
+    
+    NSDictionary *prama = [NSDictionary dictionaryWithObjectsAndKeys:Fid,@"id", nil];
+    
+    [RequestData getFoodById:prama FinishCallbackBlock:^(NSDictionary *data) {
+        NSLog(@"=======详情信息：%@",data);
+        //跳转不同的故事版
+        UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"yjh" bundle:nil];
+        DetailViewController *detailV = [storyboard instantiateViewControllerWithIdentifier:@"详情View"];
+        detailV.detailDic = data;
+        NSLog(@"=======详情信息：%@",detailV.detailDic);
+        [self.navigationController pushViewController:detailV animated:YES];
+    }];
+}
+-(void)tapFreshImage5
+{
+    int fid = (int)(self.freshGoodsImage5.tag -100);
+    NSString *Fid = [NSString stringWithFormat:@"%d",fid];
+    
+    NSDictionary *prama = [NSDictionary dictionaryWithObjectsAndKeys:Fid,@"id", nil];
+    
+    [RequestData getFoodById:prama FinishCallbackBlock:^(NSDictionary *data) {
+        NSLog(@"=======详情信息：%@",data);
+        //跳转不同的故事版
+        UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"yjh" bundle:nil];
+        DetailViewController *detailV = [storyboard instantiateViewControllerWithIdentifier:@"详情View"];
+        detailV.detailDic = data;
+        NSLog(@"=======详情信息：%@",detailV.detailDic);
+        [self.navigationController pushViewController:detailV animated:YES];
+    }];
+}
+-(void)tapFreshImage6
+{
+    int fid = (int)(self.freshGoodsImage6.tag -100);
+    NSString *Fid = [NSString stringWithFormat:@"%d",fid];
+    
+    NSDictionary *prama = [NSDictionary dictionaryWithObjectsAndKeys:Fid,@"id", nil];
+    
+    [RequestData getFoodById:prama FinishCallbackBlock:^(NSDictionary *data) {
+        NSLog(@"=======详情信息：%@",data);
+        //跳转不同的故事版
+        UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"yjh" bundle:nil];
+        DetailViewController *detailV = [storyboard instantiateViewControllerWithIdentifier:@"详情View"];
+        detailV.detailDic = data;
+        NSLog(@"=======详情信息：%@",detailV.detailDic);
+        [self.navigationController pushViewController:detailV animated:YES];
+    }];
+}
+/**
+ *  点击推荐菜品进入详情页
+ */
+-(void)tapRecomGoodsImage1
+{
+    int fid = (int)(self.recomGoodsImage1.tag -100);
+    NSString *Fid = [NSString stringWithFormat:@"%d",fid];
+    
+    NSDictionary *prama = [NSDictionary dictionaryWithObjectsAndKeys:Fid,@"id", nil];
+    
+    [RequestData getFoodById:prama FinishCallbackBlock:^(NSDictionary *data) {
+        NSLog(@"=======详情信息：%@",data);
+        //跳转不同的故事版
+        UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"yjh" bundle:nil];
+        DetailViewController *detailV = [storyboard instantiateViewControllerWithIdentifier:@"详情View"];
+        detailV.detailDic = data;
+        NSLog(@"=======详情信息：%@",detailV.detailDic);
+        [self.navigationController pushViewController:detailV animated:YES];
+    }];
+}
+-(void)tapRecomGoodsImage2
+{
+    int fid = (int)(self.recomGoodsImage2.tag -100);
+    NSString *Fid = [NSString stringWithFormat:@"%d",fid];
+    
+    NSDictionary *prama = [NSDictionary dictionaryWithObjectsAndKeys:Fid,@"id", nil];
+    
+    [RequestData getFoodById:prama FinishCallbackBlock:^(NSDictionary *data) {
+        NSLog(@"=======详情信息：%@",data);
+        //跳转不同的故事版
+        UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"yjh" bundle:nil];
+        DetailViewController *detailV = [storyboard instantiateViewControllerWithIdentifier:@"详情View"];
+        detailV.detailDic = data;
+        NSLog(@"=======详情信息：%@",detailV.detailDic);
+        [self.navigationController pushViewController:detailV animated:YES];
+    }];
+}
+-(void)tapRecomGoodsImage3
+{
+    int fid = (int)(self.recomGoodsImage3.tag -100);
+    NSString *Fid = [NSString stringWithFormat:@"%d",fid];
+    
+    NSDictionary *prama = [NSDictionary dictionaryWithObjectsAndKeys:Fid,@"id", nil];
+    
+    [RequestData getFoodById:prama FinishCallbackBlock:^(NSDictionary *data) {
+        NSLog(@"=======详情信息：%@",data);
+        //跳转不同的故事版
+        UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"yjh" bundle:nil];
+        DetailViewController *detailV = [storyboard instantiateViewControllerWithIdentifier:@"详情View"];
+        detailV.detailDic = data;
+        NSLog(@"=======详情信息：%@",detailV.detailDic);
+        [self.navigationController pushViewController:detailV animated:YES];
+    }];
+}
+-(void)tapRecomGoodsImage4
+{
+    int fid = (int)(self.recomGoodsImage4.tag -100);
+    NSString *Fid = [NSString stringWithFormat:@"%d",fid];
+    
+    NSDictionary *prama = [NSDictionary dictionaryWithObjectsAndKeys:Fid,@"id", nil];
+    
+    [RequestData getFoodById:prama FinishCallbackBlock:^(NSDictionary *data) {
+        NSLog(@"=======详情信息：%@",data);
+        //跳转不同的故事版
+        UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"yjh" bundle:nil];
+        DetailViewController *detailV = [storyboard instantiateViewControllerWithIdentifier:@"详情View"];
+        detailV.detailDic = data;
+        NSLog(@"=======详情信息：%@",detailV.detailDic);
+        [self.navigationController pushViewController:detailV animated:YES];
+    }];
+}
+-(void)tapRecomGoodsImage5
+{
+    int fid = (int)(self.recomGoodsImage5.tag -100);
+    NSString *Fid = [NSString stringWithFormat:@"%d",fid];
+    
+    NSDictionary *prama = [NSDictionary dictionaryWithObjectsAndKeys:Fid,@"id", nil];
+    
+    [RequestData getFoodById:prama FinishCallbackBlock:^(NSDictionary *data) {
+        NSLog(@"=======详情信息：%@",data);
+        //跳转不同的故事版
+        UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"yjh" bundle:nil];
+        DetailViewController *detailV = [storyboard instantiateViewControllerWithIdentifier:@"详情View"];
+        detailV.detailDic = data;
+        NSLog(@"=======详情信息：%@",detailV.detailDic);
+        [self.navigationController pushViewController:detailV animated:YES];
+    }];
+}
+-(void)tapRecomGoodsImage6
+{
+    int fid = (int)(self.recomGoodsImage6.tag -100);
+    NSString *Fid = [NSString stringWithFormat:@"%d",fid];
+    
+    NSDictionary *prama = [NSDictionary dictionaryWithObjectsAndKeys:Fid,@"id", nil];
+    
+    [RequestData getFoodById:prama FinishCallbackBlock:^(NSDictionary *data) {
+        NSLog(@"=======详情信息：%@",data);
+        //跳转不同的故事版
+        UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"yjh" bundle:nil];
+        DetailViewController *detailV = [storyboard instantiateViewControllerWithIdentifier:@"详情View"];
+        detailV.detailDic = data;
+        NSLog(@"=======详情信息：%@",detailV.detailDic);
+        [self.navigationController pushViewController:detailV animated:YES];
+    }];
+}
+
 @end

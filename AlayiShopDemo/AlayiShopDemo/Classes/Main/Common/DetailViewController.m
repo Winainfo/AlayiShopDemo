@@ -5,9 +5,11 @@
 #import "ARLabel.h"
 #import "UIImageView+WebCache.h"
 #import "RequestData.h"
+#import "AccountTool.h"
+#import "LoginController.h"
 #define WIDTH [UIScreen mainScreen].bounds.size.width
 
-@interface DetailViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface DetailViewController ()<UITableViewDataSource,UITableViewDelegate,UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UIView *detailView;//详情的底部视图
 @property (weak, nonatomic) IBOutlet UIView *assessView;//评价的底部视图
 @property (weak, nonatomic) IBOutlet ARLabel *goodsNum;//底部商品数量
@@ -61,10 +63,6 @@ static BOOL isAssess = NO;
     self.goodsArea.text = [NSString stringWithFormat:@"产地：%@",foodDic[@"pop"]];
     self.goodsDescribe.text = foodDic[@"content"];
     self.foodid = foodDic[@"id"];
-    self.ordnum = foodDic[@"ordnum"];
-    //显示的购物车数量和服务器同步
-    self.goodsNum.text = self.ordnum;
-    self.goodsNumText.text = self.ordnum;
     
     /*  请求图片 */
     NSString *urlStr =[NSString stringWithFormat:@"http://www.alayicai.com/%@",foodDic[@"bigpic"]];
@@ -76,6 +74,8 @@ static BOOL isAssess = NO;
     //转换成url
     NSURL *imgUrl2 = [NSURL URLWithString:urlStr2];
     [self.goodsDetailImage sd_setImageWithURL:imgUrl2];
+    
+     self.tabBarController.tabBar.hidden = YES;
     
 }
 
@@ -94,7 +94,7 @@ static BOOL isAssess = NO;
     UIButton *rightBtn=[UIButton buttonWithType:UIButtonTypeCustom];
     [rightBtn setImage:[UIImage imageNamed:@"sns_more"] forState:UIControlStateNormal];
     rightBtn.frame=CGRectMake(-5, 5, 30, 30);
-    [rightBtn addTarget:self action:@selector(backView) forControlEvents:UIControlEventTouchUpInside];
+    [rightBtn addTarget:self action:@selector(appraiseClick) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *right=[[UIBarButtonItem alloc]initWithCustomView:rightBtn];
     self.navigationItem.rightBarButtonItem=right;
 }
@@ -103,6 +103,66 @@ static BOOL isAssess = NO;
 {
     [self.navigationController popViewControllerAnimated:YES];
 }
+//跳转到评价页
+-(void)appraiseClick
+{
+    //沙盒路径
+    AccountModel *account=[AccountTool account];
+    if(account)//已登陆
+    {
+        //跳出提示框，在提示框中输入评价
+        UIAlertView *appraiseAlertV = [[UIAlertView alloc]initWithTitle:@"输入评价" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+        [appraiseAlertV setAlertViewStyle:UIAlertViewStylePlainTextInput];
+        [appraiseAlertV textFieldAtIndex:0];
+        [appraiseAlertV show];
+        appraiseAlertV.delegate = self;
+        appraiseAlertV.tag = 100;
+    }else//未登录
+    {
+       //提示先登录
+        UIAlertView *loginAlertV = [[UIAlertView alloc]initWithTitle:@"提示" message:@"您未登录阿拉亿菜！" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+        [loginAlertV show];
+        loginAlertV.delegate = self;
+        loginAlertV.tag = 101;
+    }
+    
+}
+#pragma mark == AlertView == 代理
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (alertView.tag == 100)
+    {
+        if (buttonIndex==1)//提交评论
+        {
+            //获取评论内容
+            UITextField *appraiseTxt = [alertView textFieldAtIndex:0];
+            AccountModel *account=[AccountTool account];
+            //调用评论接口
+            NSDictionary *param=[NSDictionary dictionaryWithObjectsAndKeys:account.userId,@"userid",account.name,@"username",@"1",@"type",self.foodid,@"relateid",appraiseTxt.text,@"text", nil];
+            [RequestData addFoodComment:param FinishCallbackBlock:^(NSDictionary *data) {
+                NSString * code = data[@"code"];
+                if ([code isEqualToString:@"0"]) {
+                    NSLog( @"评价成功！" );
+                }else
+                {
+                    NSLog(@"评价失败！");
+                }
+            }];
+            
+        }
+    }else if (alertView.tag == 101)
+    {
+        if (buttonIndex==1)//跳转到登录页面
+        {
+            NSLog(@"跳转登录页");
+            UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            LoginController *loginV = [storyboard instantiateViewControllerWithIdentifier:@"LoginView"];
+            [self.navigationController pushViewController:loginV animated:YES];
+        }
+    }
+    
+}
+
 
 #pragma mark 表格代理
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -140,25 +200,31 @@ static BOOL isAssess = NO;
 //添加到购物车
 - (IBAction)addCarts:(id)sender {
     
+    int num = [self.goodsNum.text intValue];
+    num +=1;
+    self.goodsNum.text = [NSString stringWithFormat:@"%d",num];
+    self.goodsNumText.text = self.goodsNum.text;
+    
     //获取购物车列表
     NSDictionary *param=[NSDictionary dictionaryWithObjectsAndKeys:@"32",@"userid", nil];
     [RequestData getUserCartList:param FinishCallbackBlock:^(NSDictionary *data) {
         NSArray *cartListArr = data[@"cartList"];
+        NSLog(@"====订单列表：%@",cartListArr);
         for (id obj in cartListArr) {
            NSString *fid = obj[@"foodid"];
             //如果商品ID存在于购物车，则进行更新购物车
             if ([fid isEqualToString:self.foodid]) {
-                NSDictionary *param2=[NSDictionary dictionaryWithObjectsAndKeys:self.foodid,@"id",@"32",@"userid",@"1",@"number",nil];
+                NSDictionary *param2=[NSDictionary dictionaryWithObjectsAndKeys:self.foodid,@"id",@"32",@"userid",self.goodsNumText.text,@"number",nil];
                 [RequestData updateCartNumber:param2 FinishCallbackBlock:^(NSDictionary *data) {
                     NSString *backCode = data[@"code"];
                     if([backCode isEqualToString:@"0"])
                     {
                         NSLog(@"更新成功！");
+                        inCart = YES;
                     }else{
                         NSLog(@"更新失败！");
                     }
                 }];
-                inCart = YES;
             }
         }
          //如果商品ID不存在于购物车，则添加商品到购物车
@@ -178,28 +244,31 @@ static BOOL isAssess = NO;
         
     }];
     
+}
+//加号
+- (IBAction)addCartsNum:(id)sender {
+    
     int num = [self.goodsNum.text intValue];
     num +=1;
     self.goodsNum.text = [NSString stringWithFormat:@"%d",num];
     self.goodsNumText.text = self.goodsNum.text;
-}
-//加号
-- (IBAction)addCartsNum:(id)sender {
     
     //获取购物车列表
     NSDictionary *param=[NSDictionary dictionaryWithObjectsAndKeys:@"32",@"userid", nil];
     [RequestData getUserCartList:param FinishCallbackBlock:^(NSDictionary *data) {
         NSArray *cartListArr = data[@"cartList"];
+        NSLog(@"====订单列表：%@",cartListArr);
         for (id obj in cartListArr) {
             NSString *fid = obj[@"foodid"];
             //如果商品ID存在于购物车，则进行更新购物车
             if ([fid isEqualToString:self.foodid]) {
-                NSDictionary *param2=[NSDictionary dictionaryWithObjectsAndKeys:self.foodid,@"id",@"32",@"userid",@"1",@"number",nil];
+                NSDictionary *param2=[NSDictionary dictionaryWithObjectsAndKeys:self.foodid,@"id",@"32",@"userid",self.goodsNumText.text,@"number",nil];
                 [RequestData updateCartNumber:param2 FinishCallbackBlock:^(NSDictionary *data) {
                     NSString *backCode = data[@"code"];
                     if([backCode isEqualToString:@"0"])
                     {
                         NSLog(@"更新成功！");
+                        inCart = YES;
                     }else{
                         NSLog(@"更新失败！");
                     }
@@ -222,23 +291,27 @@ static BOOL isAssess = NO;
         }
     }];
     
-    int num = [self.goodsNum.text intValue];
-    num +=1;
-    self.goodsNum.text = [NSString stringWithFormat:@"%d",num];
-    self.goodsNumText.text = self.goodsNum.text;
 }
 //减号
 - (IBAction)minusCartsNum:(id)sender {
     
+    
+    int num = [self.goodsNum.text intValue];
+    if (num != 0) {
+        num -=1;
+        self.goodsNum.text = [NSString stringWithFormat:@"%d",num];
+        self.goodsNumText.text = self.goodsNum.text;
+    }
     //获取购物车列表
     NSDictionary *param=[NSDictionary dictionaryWithObjectsAndKeys:@"32",@"userid", nil];
     [RequestData getUserCartList:param FinishCallbackBlock:^(NSDictionary *data) {
         NSArray *cartListArr = data[@"cartList"];
+        NSLog(@"====订单列表：%@",cartListArr);
         for (id obj in cartListArr) {
             NSString *fid = obj[@"foodid"];
             //如果商品ID存在于购物车，则进行删除购物车
             if ([fid isEqualToString:self.foodid]) {
-                NSDictionary *param2=[NSDictionary dictionaryWithObjectsAndKeys:self.foodid,@"id",@"32",@"userid",@"-1",@"number",nil];
+                NSDictionary *param2=[NSDictionary dictionaryWithObjectsAndKeys:self.foodid,@"id",@"32",@"userid",self.goodsNumText.text,@"number",nil];
                 [RequestData updateCartNumber:param2 FinishCallbackBlock:^(NSDictionary *data) {
                     NSString *backCode = data[@"code"];
                     if([backCode isEqualToString:@"0"])
@@ -248,13 +321,6 @@ static BOOL isAssess = NO;
                         NSLog(@"删除失败！");
                     }
                 }];
-            }
-            
-            int num = [self.goodsNum.text intValue];
-            if (num != 0) {
-                num -=1;
-                self.goodsNum.text = [NSString stringWithFormat:@"%d",num];
-                self.goodsNumText.text = self.goodsNum.text;
             }
             //如果商品不存在，则显示提示消息
             if ([self.goodsNumText.text isEqualToString:@"0"]) {

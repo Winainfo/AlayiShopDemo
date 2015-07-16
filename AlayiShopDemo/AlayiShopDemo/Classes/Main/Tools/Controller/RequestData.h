@@ -212,4 +212,11 @@
  *  @param block <#block description#>
  */
 +(void)getAllHotFoodList:(NSDictionary *)data FinishCallbackBlock:(void (^)(NSDictionary *))block;
+/**
+ *  添加评论
+ *
+ *  @param data  <#data description#>
+ *  @param block <#block description#>
+ */
++(void)addFoodComment:(NSDictionary *)data FinishCallbackBlock:(void (^)(NSDictionary *))block;
 @end
