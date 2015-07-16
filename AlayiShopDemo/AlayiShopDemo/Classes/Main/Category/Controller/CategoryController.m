@@ -51,6 +51,18 @@
     self.navigationItem.titleView = _mySearchBar;
     //设置搜索栏的代理
     _mySearchBar.delegate=self;
+    
+     self.tabBarController.tabBar.hidden = YES;
+}
+
+//隐藏和显示底部标签栏
+-(void)viewWillAppear:(BOOL)animated
+{
+    self.tabBarController.tabBar.hidden = YES;
+}
+-(void)viewWillDisappear:(BOOL)animated
+{
+    self.tabBarController.tabBar.hidden = NO;
 }
 
 //设置导航栏按钮样式

@@ -776,4 +776,25 @@
     }
     return dic;
 }
+/**
+ *  添加评论
+ *
+ *  @param data  <#data description#>
+ *  @param block <#block description#>
+ */
++(void)addFoodComment:(NSDictionary *)data FinishCallbackBlock:(void (^)(NSDictionary *))block
+{
+    //1.请求管理者
+    AFHTTPRequestOperationManager *mgr=[AFHTTPRequestOperationManager manager];
+    mgr.responseSerializer=[AFJSONResponseSerializer serializer];
+    NSString *jsonDic=[RequestData getJsonStr:data];
+    NSDictionary *params=@{@"method":@"addFoodComment",@"appid":APPID,@"data":jsonDic};
+    [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"订单数据请求成功--");
+        block(responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"订单数据请求失败-%@",error);
+    }];
+}
+
 @end

@@ -8,7 +8,7 @@
         <!--Search View Controller-->
         <scene sceneID="bPk-iU-EC7">
             <objects>
-                <viewController id="2l9-TG-1rB" customClass="SearchViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="searchView" id="2l9-TG-1rB" customClass="SearchViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="U9Q-4o-ob0"/>
                         <viewControllerLayoutGuide type="bottom" id="gi9-wY-zWm"/>
