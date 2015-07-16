@@ -10,6 +10,14 @@
 #import "AFNetworking.h"
 @interface RequestData : NSObject
 /**
+ *  字典转字符串工具类
+ *
+ *  @param dic <#dic description#>
+ *
+ *  @return <#return value description#>
+ */
++(NSString*)getJsonStr:(NSDictionary*)dic;
+/**
  *  登录接口
  *
  *  @param data  传入字典
@@ -220,4 +228,26 @@
  保存自制菜
  */
 +(void)saveSelfFood:(NSDictionary *)data FinishCallbackBlock:(void (^)(NSDictionary *))block;
+
+/**
+ * 忘记密码、邮箱验证
+ *
+ *  @param data  <#data description#>
+ *  @param block <#block description#>
+ */
++(void)doforgot:(NSDictionary *)data FinishCallbackBlock:(void (^)(NSDictionary *))block;
+/**
+ * 忘记密码、修改密码
+ *
+ *  @param data  <#data description#>
+ *  @param block <#block description#>
+ */
++(void)dochgforgotpass:(NSDictionary *)data FinishCallbackBlock:(void (^)(NSDictionary *))block;
+/**
+ * 忘记密码、修改密码
+ *
+ *  @param data  <#data description#>
+ *  @param block <#block description#>
+ */
++(void)dochgforgotpass:(NSDictionary *)data FinishCallbackBlock:(void (^)(NSDictionary *))block;
 @end

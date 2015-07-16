@@ -295,10 +295,10 @@
     NSString *jsonDic=[RequestData getJsonStr:data];
     NSDictionary *params=@{@"method":@"doCartToOrder",@"appid":APPID,@"data":jsonDic};
     [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"更新购物车数据请求成功--");
+        NSLog(@"提交数据请求成功--");
         block(responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"更新购物车数据请求失败-%@",error);
+        NSLog(@"提交数据请求失败-%@",error);
     }];
 }
 /**

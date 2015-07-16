@@ -10,6 +10,7 @@
 #import "RequestData.h"
 #import "AccountTool.h"
 #import "UIImageView+WebCache.h"
+#import "SettleController.h"
 @interface CartController ()
 @property(retain,nonatomic)CartCell *cell;
 @property(assign,nonatomic)BOOL flag;
@@ -32,25 +33,6 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [self.myTableView reloadData];
-//    //获取用户购物车的信息
-//    AccountModel *account=[AccountTool account];
-//    NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:account.userId,@"userid",nil];
-//    [RequestData getUserCartList:params FinishCallbackBlock:^(NSDictionary *data) {
-//        NSLog(@"%@",data);
-//        self.goodArray1=data[@"cartList"];
-//        if (self.goodArray1.count<1) {
-//            self.myTableView.hidden=YES;
-//            self.countView.hidden=YES;
-//            self.nullView.hidden=NO;
-//            self.editBtn.hidden=YES;
-//        }else
-//        {
-//            self.myTableView.hidden=NO;
-//            self.countView.hidden=NO;
-//            self.nullView.hidden=YES;
-//            self.editBtn.hidden=NO;
-//        }
-//    }];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -364,6 +346,13 @@
     //删除所有
     [self.infoArr removeAllObjects];
     [self.myTableView reloadData];
+}
+
+- (IBAction)clickSender:(id)sender {
+    //设置故事板为第一启动
+    UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"wjl" bundle:nil];
+    SettleController *settle=[storyboard instantiateViewControllerWithIdentifier:@"订单结算View"];
+    [self.navigationController pushViewController:settle animated:YES];
 }
 
 @end
