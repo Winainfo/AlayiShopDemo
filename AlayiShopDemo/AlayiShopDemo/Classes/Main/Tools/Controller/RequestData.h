@@ -244,10 +244,59 @@
  */
 +(void)dochgforgotpass:(NSDictionary *)data FinishCallbackBlock:(void (^)(NSDictionary *))block;
 /**
- * 忘记密码、修改密码
+ *  添加评论
  *
  *  @param data  <#data description#>
  *  @param block <#block description#>
  */
-+(void)dochgforgotpass:(NSDictionary *)data FinishCallbackBlock:(void (^)(NSDictionary *))block;
++(void)addFoodComment:(NSDictionary *)data FinishCallbackBlock:(void (^)(NSDictionary *))block;
+/**
+ * 取消订单
+ *
+ *  @param data  <#data description#>
+ *  @param block <#block description#>
+ */
++(void)orderCancel:(NSDictionary *)data FinishCallbackBlock:(void (^)(NSDictionary *))block;
+/**
+ * 获取用户所有的送货地址信息
+ *
+ *  @param data  <#data description#>
+ *  @param block <#block description#>
+ */
++(void)getAllUserSendAddressByUserid:(NSDictionary *)data FinishCallbackBlock:(void (^)(NSDictionary *))block;
+/**
+ * 获取用户送货地址详细信息
+ *
+ *  @param data  <#data description#>
+ *  @param block <#block description#>
+ */
++(void)getUserSendAddressById:(NSDictionary *)data FinishCallbackBlock:(void (^)(NSDictionary *))block;
+/**
+ * 添加或修改用户送货地址信息
+ *
+ *  @param data  <#data description#>
+ *  @param block <#block description#>
+ */
++(void)saveUserSendAddress:(NSDictionary *)data FinishCallbackBlock:(void (^)(NSDictionary *))block;
+/**
+ * 删除用户送货地址信息
+ *
+ *  @param data  <#data description#>
+ *  @param block <#block description#>
+ */
++(void)delUserSendAddress:(NSDictionary *)data FinishCallbackBlock:(void (^)(NSDictionary *))block;
+/**
+ * 修改用户送货地址为默认地址
+ *
+ *  @param data  <#data description#>
+ *  @param block <#block description#>
+ */
++(void)updateIsdefault:(NSDictionary *)data FinishCallbackBlock:(void (^)(NSDictionary *))block;
+/**
+ * 根据地址、电话、姓名，获取用户所有的送货地址信息
+ *
+ *  @param data  <#data description#>
+ *  @param block <#block description#>
+ */
++(void)getAllUserSendAddressByAddressPhoneName:(NSDictionary *)data FinishCallbackBlock:(void (^)(NSDictionary *))block;
 @end

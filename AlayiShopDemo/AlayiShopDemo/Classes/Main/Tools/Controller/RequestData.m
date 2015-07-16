@@ -790,11 +790,151 @@
     NSString *jsonDic=[RequestData getJsonStr:data];
     NSDictionary *params=@{@"method":@"addFoodComment",@"appid":APPID,@"data":jsonDic};
     [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"订单数据请求成功--");
+        NSLog(@"添加请求成功--");
         block(responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"订单数据请求失败-%@",error);
+        NSLog(@"数据请求失败-%@",error);
+    }];
+}
+/**
+ *  取消订单
+ *
+ *  @param data  <#data description#>
+ *  @param block <#block description#>
+ */
++(void)orderCancel:(NSDictionary *)data FinishCallbackBlock:(void (^)(NSDictionary *))block
+{
+    //1.请求管理者
+    AFHTTPRequestOperationManager *mgr=[AFHTTPRequestOperationManager manager];
+    mgr.responseSerializer=[AFJSONResponseSerializer serializer];
+    NSString *jsonDic=[RequestData getJsonStr:data];
+    NSDictionary *params=@{@"method":@"orderCancel",@"appid":APPID,@"data":jsonDic};
+    [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"添加请求成功--");
+        block(responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"数据请求失败-%@",error);
+    }];
+}
+/**
+ *  获取用户所有的送货地址信息
+ *
+ *  @param data  <#data description#>
+ *  @param block <#block description#>
+ */
++(void)getAllUserSendAddressByUserid:(NSDictionary *)data FinishCallbackBlock:(void (^)(NSDictionary *))block
+{
+    //1.请求管理者
+    AFHTTPRequestOperationManager *mgr=[AFHTTPRequestOperationManager manager];
+    mgr.responseSerializer=[AFJSONResponseSerializer serializer];
+    NSString *jsonDic=[RequestData getJsonStr:data];
+    NSDictionary *params=@{@"method":@"getAllUserSendAddressByUserid",@"appid":APPID,@"data":jsonDic};
+    [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"添加请求成功--");
+        block(responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"数据请求失败-%@",error);
     }];
 }
 
+/**
+ *  获取用户所有的送货地址信息
+ *
+ *  @param data  <#data description#>
+ *  @param block <#block description#>
+ */
++(void)getUserSendAddressById:(NSDictionary *)data FinishCallbackBlock:(void (^)(NSDictionary *))block
+{
+    //1.请求管理者
+    AFHTTPRequestOperationManager *mgr=[AFHTTPRequestOperationManager manager];
+    mgr.responseSerializer=[AFJSONResponseSerializer serializer];
+    NSString *jsonDic=[RequestData getJsonStr:data];
+    NSDictionary *params=@{@"method":@"getUserSendAddressById",@"appid":APPID,@"data":jsonDic};
+    [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"添加请求成功--");
+        block(responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"数据请求失败-%@",error);
+    }];
+}
+/**
+ *  添加或修改用户送货地址信息
+ *
+ *  @param data  <#data description#>
+ *  @param block <#block description#>
+ */
++(void)saveUserSendAddress:(NSDictionary *)data FinishCallbackBlock:(void (^)(NSDictionary *))block
+{
+    //1.请求管理者
+    AFHTTPRequestOperationManager *mgr=[AFHTTPRequestOperationManager manager];
+    mgr.responseSerializer=[AFJSONResponseSerializer serializer];
+    NSString *jsonDic=[RequestData getJsonStr:data];
+    NSDictionary *params=@{@"method":@"saveUserSendAddress",@"appid":APPID,@"data":jsonDic};
+    [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"添加请求成功--");
+        block(responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"数据请求失败-%@",error);
+    }];
+}
+/**
+ *  删除用户送货地址信息
+ *
+ *  @param data  <#data description#>
+ *  @param block <#block description#>
+ */
++(void)delUserSendAddress:(NSDictionary *)data FinishCallbackBlock:(void (^)(NSDictionary *))block
+{
+    //1.请求管理者
+    AFHTTPRequestOperationManager *mgr=[AFHTTPRequestOperationManager manager];
+    mgr.responseSerializer=[AFJSONResponseSerializer serializer];
+    NSString *jsonDic=[RequestData getJsonStr:data];
+    NSDictionary *params=@{@"method":@"delUserSendAddress",@"appid":APPID,@"data":jsonDic};
+    [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"添加请求成功--");
+        block(responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"数据请求失败-%@",error);
+    }];
+}
+/**
+ *  修改用户送货地址为默认地址
+ *
+ *  @param data  <#data description#>
+ *  @param block <#block description#>
+ */
++(void)updateIsdefault:(NSDictionary *)data FinishCallbackBlock:(void (^)(NSDictionary *))block
+{
+    //1.请求管理者
+    AFHTTPRequestOperationManager *mgr=[AFHTTPRequestOperationManager manager];
+    mgr.responseSerializer=[AFJSONResponseSerializer serializer];
+    NSString *jsonDic=[RequestData getJsonStr:data];
+    NSDictionary *params=@{@"method":@"updateIsdefault",@"appid":APPID,@"data":jsonDic};
+    [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"添加请求成功--");
+        block(responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"数据请求失败-%@",error);
+    }];
+}
+/**
+ *  根据地址、电话、姓名，获取用户所有的送货地址信息
+ *
+ *  @param data  <#data description#>
+ *  @param block <#block description#>
+ */
++(void)getAllUserSendAddressByAddressPhoneName:(NSDictionary *)data FinishCallbackBlock:(void (^)(NSDictionary *))block
+{
+    //1.请求管理者
+    AFHTTPRequestOperationManager *mgr=[AFHTTPRequestOperationManager manager];
+    mgr.responseSerializer=[AFJSONResponseSerializer serializer];
+    NSString *jsonDic=[RequestData getJsonStr:data];
+    NSDictionary *params=@{@"method":@"getAllUserSendAddressByAddressPhoneName",@"appid":APPID,@"data":jsonDic};
+    [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"添加请求成功--");
+        block(responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"数据请求失败-%@",error);
+    }];
+}
 @end
