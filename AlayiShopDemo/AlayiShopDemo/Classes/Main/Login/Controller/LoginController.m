@@ -131,7 +131,7 @@
        NSString *code=data[@"code"];
         if ([code isEqualToString:@"0"]) {
             //设置故事板为第一启动
-            UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"wjl" bundle:nil];
+            UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
            PersonalController *Personal=[storyboard instantiateViewControllerWithIdentifier:@"个人中心View"];
             PersonalTableViewController *PersonalTable=[PersonalTableViewController new];
             PersonalTable.userName=data[@"user"][@"name"];

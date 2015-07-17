@@ -114,7 +114,7 @@
     [RequestData getFoodById:params2 FinishCallbackBlock:^(NSDictionary *data) {
         NSLog(@"=======详情信息：%@",data);
         //跳转不同的故事版
-        UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"yjh" bundle:nil];
+        UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
         DetailViewController *detailV = [storyboard instantiateViewControllerWithIdentifier:@"详情View"];
         detailV.detailDic = data;
          NSLog(@"=======详情信息：%@",detailV.detailDic);

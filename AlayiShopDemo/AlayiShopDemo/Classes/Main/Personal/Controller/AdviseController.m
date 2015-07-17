@@ -108,7 +108,7 @@
 {
     if (alertView.tag==10&&buttonIndex==0) {
         //设置故事板为第一启动
-        UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"wjl" bundle:nil];
+        UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
         PersonalController *Personal=[storyboard instantiateViewControllerWithIdentifier:@"个人中心View"];
         [self.navigationController pushViewController:Personal animated:YES];
 

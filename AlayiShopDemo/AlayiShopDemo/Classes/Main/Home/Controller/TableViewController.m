@@ -572,16 +572,5 @@
     }];
 }
 
-- (IBAction)clickBtn:(UIButton *)sender {
-    UIButton *btn=(UIButton *)sender;
-    switch (btn.tag) {
-        case 100:
-            NSLog(@"----%@",self.freshArray[0][@"id"]);
-            break;
-            
-        default:
-            break;
-    }
-}
 
 @end

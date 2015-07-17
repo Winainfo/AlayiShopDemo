@@ -337,7 +337,7 @@
 {
     NSLog(@"%@",self.goods[indexPath.row][@"orderid"]);
     //设置故事板为第一启动
-    UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"wjl" bundle:nil];
+    UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
     OrderInfoTableController *order=[storyboard instantiateViewControllerWithIdentifier:@"订单明细View"];
     order.orderNum=self.goods[indexPath.row][@"orderid"];
     order.formatSumprice=self.goods[indexPath.row][@"formatSumprice"];

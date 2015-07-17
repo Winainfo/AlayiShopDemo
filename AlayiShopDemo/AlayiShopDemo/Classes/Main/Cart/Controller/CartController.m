@@ -362,7 +362,7 @@
 
 - (IBAction)clickSender:(id)sender {
     //设置故事板为第一启动
-    UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"wjl" bundle:nil];
+    UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
     SettleController *settle=[storyboard instantiateViewControllerWithIdentifier:@"订单结算View"];
     [self.navigationController pushViewController:settle animated:YES];
 }

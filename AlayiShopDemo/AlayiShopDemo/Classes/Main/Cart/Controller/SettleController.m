@@ -84,7 +84,7 @@
         NSLog(@"---成功--%@",data);
 //        if ([data[@"code"]isEqualToString:@"0"]) {
 //            //设置故事板为第一启动
-//            UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"wjl" bundle:nil];
+//            UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
 //            OrderController *orderView=[storyboard instantiateViewControllerWithIdentifier:@"我的订单View"];
 //            orderView.type=@"0";
 //            [self.navigationController pushViewController:orderView animated:YES];

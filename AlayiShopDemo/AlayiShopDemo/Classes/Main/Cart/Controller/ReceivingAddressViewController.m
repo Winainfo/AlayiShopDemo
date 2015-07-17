@@ -147,7 +147,7 @@
         case 200:
         {
             //设置故事板为第一启动
-            UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"wjl" bundle:nil];
+            UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
             AddressTableController *address=[storyboard instantiateViewControllerWithIdentifier:@"添加地址View"];
             address.flag=@"1";
             address.f_id=self.addressArray[index.row][@"id"];
