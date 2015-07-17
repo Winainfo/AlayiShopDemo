@@ -145,6 +145,8 @@
             PersonalTable.userName=data[@"user"][@"name"];
             PersonalTable.score=data[@"user"][@"pilescore"];
             [self.navigationController pushViewController:Personal animated:YES];
+        }else{
+            
         }
     }];
 }

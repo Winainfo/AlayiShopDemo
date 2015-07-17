@@ -30,9 +30,37 @@
 @end
 
 @implementation CartController
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [self.myTableView reloadData];
+    if (self.goodArray.count<1) {
+        self.myTableView.hidden=YES;
+        self.countView.hidden=YES;
+        self.nullView.hidden=NO;
+        self.editBtn.hidden=YES;
+    }else
+    {
+        self.myTableView.hidden=NO;
+        self.countView.hidden=NO;
+        self.nullView.hidden=YES;
+        self.editBtn.hidden=NO;
+    }
+}
 -(void)viewWillAppear:(BOOL)animated
 {
     [self.myTableView reloadData];
+    if (self.goodArray.count<1) {
+        self.myTableView.hidden=YES;
+        self.countView.hidden=YES;
+        self.nullView.hidden=NO;
+        self.editBtn.hidden=YES;
+    }else
+    {
+        self.myTableView.hidden=NO;
+        self.countView.hidden=NO;
+        self.nullView.hidden=YES;
+        self.editBtn.hidden=NO;
+    }
 }
 - (void)viewDidLoad {
     [super viewDidLoad];

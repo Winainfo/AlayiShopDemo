@@ -78,24 +78,25 @@
  提交订单
  */
 - (IBAction)submitClick:(UIButton *)sender {
-    AccountModel *account=[AccountTool account];
-    OrderModel *orderModel=[OrderTool order];
-    NSString *address=[order.addressLabel.text stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    NSString *phone=[order.phoneLabel.text stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    NSString *name=[order.nameLabel.text stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    NSDictionary *dic = @{@"paytype":orderModel.paytype,@"taketype":orderModel.taketype,@"sendaddress":address,@"telephone":phone,@"receivename":name,@"gettimestr":@"2015-07-29%2011:23:00",@"remark":@"123"};
-    //需要上传的参数
-    NSDictionary *dicy=@{@"userid":account.userId,@"username":account.name,@"order":dic};
-    [RequestData doCartToOrder:dicy FinishCallbackBlock:^(NSDictionary *data) {
-        NSLog(@"---成功--%@",data);
-//        if ([data[@"code"]isEqualToString:@"0"]) {
-//            //设置故事板为第一启动
-//            UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//            OrderController *orderView=[storyboard instantiateViewControllerWithIdentifier:@"我的订单View"];
-//            orderView.type=@"0";
-//            [self.navigationController pushViewController:orderView animated:YES];
-//        }
-    }];
+    NSLog(@"-----");
+//    AccountModel *account=[AccountTool account];
+//    OrderModel *orderModel=[OrderTool order];
+//    NSString *address=[order.addressLabel.text stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+//    NSString *phone=[order.phoneLabel.text stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+//    NSString *name=[order.nameLabel.text stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+//    NSDictionary *dic = @{@"paytype":orderModel.paytype,@"taketype":orderModel.taketype,@"sendaddress":address,@"telephone":phone,@"receivename":name,@"gettimestr":@"2015-07-29%2011:23:00",@"remark":@"123"};
+//    //需要上传的参数
+//    NSDictionary *dicy=@{@"userid":account.userId,@"username":account.name,@"order":dic};
+//    [RequestData doCartToOrder:dicy FinishCallbackBlock:^(NSDictionary *data) {
+//        NSLog(@"---成功--%@",data);
+////        if ([data[@"code"]isEqualToString:@"0"]) {
+////            //设置故事板为第一启动
+////            UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
+////            OrderController *orderView=[storyboard instantiateViewControllerWithIdentifier:@"我的订单View"];
+////            orderView.type=@"0";
+////            [self.navigationController pushViewController:orderView animated:YES];
+////        }
+//    }];
 }
 
 @end
