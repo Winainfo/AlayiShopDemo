@@ -1,5 +1,6 @@
 #import "AppDelegate.h"
-
+#import "UMSocial.h"
+#define UMKey @"55a363f167e58e5dda004c5a"
 @interface AppDelegate ()
 
 @end
@@ -8,7 +9,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+    //注册友盟
+    [UMSocialData setAppKey:UMKey];
     return YES;
 }
 

@@ -187,7 +187,7 @@
         NSLog(@"搜索结果 == %@",foodListArr);
         
         //设置故事板为第一启动
-        UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"wjl" bundle:nil];
+        UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
         CategoryController *cateV=[storyboard instantiateViewControllerWithIdentifier:@"分类View"];
         [self.navigationController pushViewController:cateV animated:YES];
         //为搜索结果赋值

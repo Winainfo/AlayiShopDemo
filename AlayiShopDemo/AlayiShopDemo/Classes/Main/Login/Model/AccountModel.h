@@ -23,7 +23,6 @@
 @property (retain,nonatomic)NSString *sex;
 /**电话*/
 @property (retain,nonatomic)NSString *telephone;
-
 /**字典转换成数据模型*/
 +(instancetype)accountWithDict:(NSDictionary *)dict;
 @end

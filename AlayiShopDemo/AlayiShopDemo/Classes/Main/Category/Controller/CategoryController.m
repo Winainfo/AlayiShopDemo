@@ -114,7 +114,7 @@
     [RequestData getFoodById:params2 FinishCallbackBlock:^(NSDictionary *data) {
         NSLog(@"=======详情信息：%@",data);
         //跳转不同的故事版
-        UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"yjh" bundle:nil];
+        UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
         DetailViewController *detailV = [storyboard instantiateViewControllerWithIdentifier:@"详情View"];
         detailV.detailDic = data;
          NSLog(@"=======详情信息：%@",detailV.detailDic);
@@ -170,7 +170,7 @@
                 if (_sales_flag) {
                     self.salesImageView.image=[UIImage imageNamed:@"arrow_price_down"];
                     //销量降序
-                    NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:@"10",@"pageSize",@"1",@"currPage",@"",@"sortid",@"",@"name",@"5",@"type",nil];
+                    NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:@"10",@"pageSize",@"1",@"currPage",@"",@"sortid",@"鱼",@"name",@"5",@"type",nil];
                     [RequestData getFoodListWithPage:params FinishCallbackBlock:^(NSDictionary *data)  {
                         self.goodsArray=data[@"foodList"];
                         NSLog(@"%@",data);
@@ -183,7 +183,7 @@
                 }else{
                     self.salesImageView.image=[UIImage imageNamed:@"arrow_price_up"];
                    //销量升序
-                    NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:@"10",@"pageSize",@"1",@"currPage",@"",@"sortid",@"",@"name",@"5",@"type",nil];
+                    NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:@"10",@"pageSize",@"1",@"currPage",@"",@"sortid",@"鱼",@"name",@"5",@"type",nil];
                     [RequestData getFoodListWithPage:params FinishCallbackBlock:^(NSDictionary *data)  {
                         self.goodsArray=data[@"foodList"];
                         NSLog(@"%@",data);
@@ -213,7 +213,7 @@
                 //nsstring转换为UTF-8
                 NSString *name =[self.searchName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
                 //销量降序
-                NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:@"10",@"pageSize",@"1",@"currPage",@"",@"sortid",name,@"name",@"1",@"type",nil];
+                NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:@"10",@"pageSize",@"1",@"currPage",@"",@"sortid",@"鱼",@"name",@"1",@"type",nil];
                 [RequestData getFoodListWithPage:params FinishCallbackBlock:^(NSDictionary *data)  {
                     self.goodsArray=data[@"foodList"];
                     NSLog(@"%@",data);
@@ -228,7 +228,7 @@
                 //nsstring转换为UTF-8
                 NSString *name =[self.searchName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
                 //销量升序
-                NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:@"10",@"pageSize",@"1",@"currPage",@"",@"sortid",name,@"name",@"2",@"type",nil];
+                NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:@"10",@"pageSize",@"1",@"currPage",@"",@"sortid",@"鱼",@"name",@"2",@"type",nil];
                 [RequestData getFoodListWithPage:params FinishCallbackBlock:^(NSDictionary *data)  {
                     self.goodsArray=data[@"foodList"];
                     NSLog(@"%@",data);

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddressCell" rowHeight="60" id="KGk-i7-Jjw" customClass="AddressCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DwB-Ej-ZSX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HYu-jE-T3b" customClass="ARLabel">
+                                <rect key="frame" x="16" y="2" width="56" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="IlM-gE-itw"/>
+                                    <constraint firstAttribute="width" constant="56" id="NWg-nC-Ts5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="150000000000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="el3-2Z-GSF" customClass="ARLabel">
+                                <rect key="frame" x="80" y="2" width="151" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="ChM-UE-nno"/>
+                                    <constraint firstAttribute="width" constant="151" id="S9Z-mJ-Zyt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="福建泉州惠安" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTG-Vh-HQw" customClass="ARLabel">
+                                <rect key="frame" x="16" y="25" width="264" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="264" id="20d-jp-OWB"/>
+                                    <constraint firstAttribute="height" constant="35" id="I0n-AV-xRs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="12"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" tag="200" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HAO-6L-hQb">
+                                <rect key="frame" x="289" y="19" width="23" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="23" id="KOO-l0-ztN"/>
+                                    <constraint firstAttribute="height" constant="22" id="Wnp-XB-hMp"/>
+                                </constraints>
+                                <state key="normal" image="MyAddressManager_edit">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="editBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="6kK-gN-5AE"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B0q-zA-Ch1">
+                                <rect key="frame" x="280" y="15" width="1" height="30"/>
+                                <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="1" id="Yuz-dP-ucj"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Usw-uH-mug">
+                                <rect key="frame" x="0.0" y="59" width="320" height="1"/>
+                                <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="aPy-4G-LXI"/>
+                                </constraints>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="anv-xB-emT">
+                                <rect key="frame" x="9" y="19" width="271" height="38"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="默认" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IaD-mM-kUo" customClass="ARLabel">
+                                        <rect key="frame" x="4" y="8" width="40" height="21"/>
+                                        <color key="backgroundColor" red="0.91764705879999997" green="0.2274509804" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="ml1-Wa-KLT"/>
+                                            <constraint firstAttribute="width" constant="40" id="thH-8d-Qrt"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="福建泉州惠安" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QjI-GD-6J6" customClass="ARLabel">
+                                        <rect key="frame" x="52" y="-1" width="219" height="39"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="39" id="eYF-xP-ZqS"/>
+                                            <constraint firstAttribute="width" constant="219" id="oaJ-KB-ztL"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="12"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="271" id="18j-mj-B5d"/>
+                                    <constraint firstAttribute="height" constant="38" id="4bE-0Y-Yx0"/>
+                                    <constraint firstAttribute="bottom" secondItem="QjI-GD-6J6" secondAttribute="bottom" id="6uX-9S-sZn"/>
+                                    <constraint firstItem="QjI-GD-6J6" firstAttribute="leading" secondItem="IaD-mM-kUo" secondAttribute="trailing" constant="8" symbolic="YES" id="RVb-JY-7cg"/>
+                                    <constraint firstItem="QjI-GD-6J6" firstAttribute="top" secondItem="anv-xB-emT" secondAttribute="top" constant="-1" id="aDA-bc-aVt"/>
+                                    <constraint firstAttribute="trailing" secondItem="QjI-GD-6J6" secondAttribute="trailing" id="cY2-Dg-2CG"/>
+                                    <constraint firstItem="IaD-mM-kUo" firstAttribute="top" secondItem="anv-xB-emT" secondAttribute="top" constant="8" id="ice-El-bC2"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="MTG-Vh-HQw" firstAttribute="leading" secondItem="DwB-Ej-ZSX" secondAttribute="leading" constant="16" id="6Tb-dz-amu"/>
+                            <constraint firstAttribute="bottom" secondItem="Usw-uH-mug" secondAttribute="bottom" id="9ni-hb-QLj"/>
+                            <constraint firstItem="Usw-uH-mug" firstAttribute="leading" secondItem="DwB-Ej-ZSX" secondAttribute="leading" id="JQk-KV-vcl"/>
+                            <constraint firstAttribute="trailing" secondItem="Usw-uH-mug" secondAttribute="trailing" id="K1U-oG-E3R"/>
+                            <constraint firstAttribute="trailing" secondItem="HAO-6L-hQb" secondAttribute="trailing" constant="8" id="Lrt-59-Sw7"/>
+                            <constraint firstItem="B0q-zA-Ch1" firstAttribute="top" secondItem="DwB-Ej-ZSX" secondAttribute="top" constant="15" id="NEE-mh-UiI"/>
+                            <constraint firstItem="HYu-jE-T3b" firstAttribute="leading" secondItem="DwB-Ej-ZSX" secondAttribute="leading" constant="16" id="Rzv-hp-kJA"/>
+                            <constraint firstItem="Usw-uH-mug" firstAttribute="top" secondItem="anv-xB-emT" secondAttribute="bottom" constant="2" id="T9z-qT-UML"/>
+                            <constraint firstAttribute="bottom" secondItem="MTG-Vh-HQw" secondAttribute="bottom" id="YpQ-1K-IyO"/>
+                            <constraint firstItem="el3-2Z-GSF" firstAttribute="leading" secondItem="HYu-jE-T3b" secondAttribute="trailing" constant="8" id="bmD-X9-8dA"/>
+                            <constraint firstItem="HAO-6L-hQb" firstAttribute="top" secondItem="DwB-Ej-ZSX" secondAttribute="top" constant="19" id="h5d-v6-ntI"/>
+                            <constraint firstAttribute="bottom" secondItem="B0q-zA-Ch1" secondAttribute="bottom" constant="15" id="kUh-lp-why"/>
+                            <constraint firstItem="HAO-6L-hQb" firstAttribute="leading" secondItem="B0q-zA-Ch1" secondAttribute="trailing" constant="8" id="lfG-V1-ZMf"/>
+                            <constraint firstItem="HYu-jE-T3b" firstAttribute="top" secondItem="DwB-Ej-ZSX" secondAttribute="top" constant="2" id="v0s-qe-qKT"/>
+                            <constraint firstItem="anv-xB-emT" firstAttribute="leading" secondItem="DwB-Ej-ZSX" secondAttribute="leading" constant="9" id="vjC-sG-N8y"/>
+                            <constraint firstItem="el3-2Z-GSF" firstAttribute="top" secondItem="DwB-Ej-ZSX" secondAttribute="top" constant="2" id="xaV-Pc-s7c"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="DwB-Ej-ZSX" secondAttribute="trailing" id="VFh-0C-Hjr"/>
+                    <constraint firstItem="DwB-Ej-ZSX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Zhq-4x-JMU"/>
+                    <constraint firstAttribute="bottom" secondItem="DwB-Ej-ZSX" secondAttribute="bottom" constant="-1" id="egb-6p-hkK"/>
+                    <constraint firstItem="DwB-Ej-ZSX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="f05-37-m8L"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="isdefaultView" destination="anv-xB-emT" id="OJv-NS-xTH"/>
+                <outlet property="receivename" destination="HYu-jE-T3b" id="epC-hl-BNr"/>
+                <outlet property="sendaddress" destination="MTG-Vh-HQw" id="g1G-Xm-vtJ"/>
+                <outlet property="telephone" destination="el3-2Z-GSF" id="b5o-tW-Pbh"/>
+            </connections>
+            <point key="canvasLocation" x="117" y="226"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="MyAddressManager_edit" width="14" height="14"/>
+    </resources>
+</document>

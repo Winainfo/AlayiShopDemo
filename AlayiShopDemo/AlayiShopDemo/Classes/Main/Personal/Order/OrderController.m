@@ -21,6 +21,15 @@
 
 @implementation OrderController
 @synthesize type;
+//隐藏和显示底部标签栏
+-(void)viewWillDisappear:(BOOL)animated
+{
+    self.tabBarController.tabBar.hidden = NO;
+}
+-(void)viewWillAppear:(BOOL)animated
+{
+    self.tabBarController.tabBar.hidden = YES;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     if ([type isEqualToString:@"0"]) {
@@ -337,7 +346,7 @@
 {
     NSLog(@"%@",self.goods[indexPath.row][@"orderid"]);
     //设置故事板为第一启动
-    UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"wjl" bundle:nil];
+    UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
     OrderInfoTableController *order=[storyboard instantiateViewControllerWithIdentifier:@"订单明细View"];
     order.orderNum=self.goods[indexPath.row][@"orderid"];
     order.formatSumprice=self.goods[indexPath.row][@"formatSumprice"];

@@ -15,6 +15,15 @@
 
 @implementation OrderInfoController
 @synthesize orderId;
+//隐藏和显示底部标签栏
+-(void)viewWillDisappear:(BOOL)animated
+{
+    self.tabBarController.tabBar.hidden = NO;
+}
+-(void)viewWillAppear:(BOOL)animated
+{
+    self.tabBarController.tabBar.hidden = YES;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self getOrderInfo];

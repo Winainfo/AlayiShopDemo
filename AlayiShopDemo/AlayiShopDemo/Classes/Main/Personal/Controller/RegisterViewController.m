@@ -8,6 +8,7 @@
 
 #import "RegisterViewController.h"
 #import "BZGFormField.h"
+#import "RequestData.h"
 #define WIDTH [UIScreen mainScreen].bounds.size.width
 
 @interface RegisterViewController ()
@@ -26,7 +27,15 @@
 @end
 
 @implementation RegisterViewController
-
+//隐藏和显示底部标签栏
+-(void)viewWillDisappear:(BOOL)animated
+{
+    self.tabBarController.tabBar.hidden = NO;
+}
+-(void)viewWillAppear:(BOOL)animated
+{
+    self.tabBarController.tabBar.hidden = YES;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -49,7 +58,15 @@
         [registerAlertV show];
     }else
     {
+        NSString *sex=[NSString stringWithFormat:@"%i",self.sexId];
+        NSString *name=[self.userName.textField.text stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        //需要上传的参数
+        NSDictionary *dic=@{@"name":name,@"password":self.passwordTxt.textField.text,@"email":self.mailboxTxt.textField.text,@"sex":sex,@"telephone":self.phoneNum.textField.text};
+        [RequestData registers:dic FinishCallbackBlock:^(NSString *data) {
+            NSLog(@"---注册成功%@---",data);
+        }];
         NSLog(@"发起注册请求");
+        
     }
 }
 
@@ -84,7 +101,7 @@
     //更改导航栏返回按钮图片
     UIButton *leftBtn=[UIButton buttonWithType:UIButtonTypeCustom];
     [leftBtn setImage:[UIImage imageNamed:@"my_left_arrow"] forState:UIControlStateNormal];
-    leftBtn.frame=CGRectMake(-5, 5, 30, 30);
+    leftBtn.frame=CGRectMake(0, 0, 30, 30);
     [leftBtn addTarget:self action:@selector(backView) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *left=[[UIBarButtonItem alloc]initWithCustomView:leftBtn];
     self.navigationItem.leftBarButtonItem=left;
@@ -92,7 +109,7 @@
     UIButton *rightBtn=[UIButton buttonWithType:UIButtonTypeCustom];
     [rightBtn setTitle:@"注册" forState:UIControlStateNormal];
     [rightBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    rightBtn.frame=CGRectMake(-5, 5, 60, 30);
+    rightBtn.frame=CGRectMake(0, 0, 60, 30);
     [rightBtn addTarget:self action:@selector(registerClick:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *right=[[UIBarButtonItem alloc]initWithCustomView:rightBtn];
     self.navigationItem.rightBarButtonItem =right;
@@ -121,6 +138,7 @@
     /*手机号*/
     self.phoneNum.textField.placeholder=@"请输入手机号";
     self.phoneNum.textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    self.phoneNum.textField.keyboardType=UIKeyboardTypePhonePad;
     [self.phoneNum setTextValidationBlock:^BOOL(NSString *text) {
         NSString *phoneRegex = @"^(0|86|17951)?(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])[0-9]{8}$";
         NSPredicate *phoneTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",phoneRegex];
@@ -151,7 +169,8 @@
     /*用户密码*/
     self.passwordTxt.textField.placeholder=@"请输入密码";
     self.passwordTxt.textField.clearButtonMode = UITextFieldViewModeWhileEditing;
-    self.passwordTxt.textField.keyboardType=UIKeyboardTypePhonePad;
+    self.passwordTxt.textField.secureTextEntry=YES;
+    self.confirm.textField.secureTextEntry=YES;
     [self.passwordTxt setTextValidationBlock:^BOOL(NSString *text) {
         if (text.length<1) {
             weakSelf.passwordTxt.alertView.title=@"密码不能为空！";
@@ -163,7 +182,6 @@
     /*确认密码*/
     self.confirm.textField.placeholder=@"确认密码";
     self.confirm.textField.clearButtonMode = UITextFieldViewModeWhileEditing;
-    self.confirm.textField.keyboardType=UIKeyboardTypePhonePad;
     [self.confirm setTextValidationBlock:^BOOL(NSString *text) {
         if (![text isEqualToString: self.passwordTxt.textField.text] ) {
             weakSelf.confirm.alertView.title=@"前后密码不一致!";
