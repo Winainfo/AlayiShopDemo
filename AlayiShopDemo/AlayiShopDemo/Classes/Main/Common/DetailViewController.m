@@ -7,6 +7,7 @@
 #import "RequestData.h"
 #import "AccountTool.h"
 #import "LoginController.h"
+#import "UMSocial.h"
 #define WIDTH [UIScreen mainScreen].bounds.size.width
 
 @interface DetailViewController ()<UITableViewDataSource,UITableViewDelegate,UIAlertViewDelegate>
@@ -357,10 +358,15 @@ static BOOL isAssess = NO;
 }
 
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+//点击分享
+- (IBAction)shareDetail:(id)sender {
+    NSString *strAndUrl = [NSString stringWithFormat:@"%@,%@",self.goodsDescribe.text,@"http://www.alayicai.com"];
+    [UMSocialSnsService presentSnsIconSheetView:self
+                                         appKey:nil
+                                      shareText:strAndUrl
+                                     shareImage:self.goodsImage.image
+                                shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina,UMShareToTencent,UMShareToRenren,UMShareToQzone,nil]
+                                       delegate:self];
 }
-
 
 @end
