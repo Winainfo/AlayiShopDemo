@@ -18,7 +18,9 @@
 @property (retain,nonatomic) NSArray *freshArray;
 @property (retain,nonatomic) NSArray *recomArray;
 @property (retain,nonatomic) NSArray *memberArray;
-@property (weak, nonatomic) IBOutlet UIView *freshGoodsView;
+
+//滚动广告图片的tag值
+@property (retain,nonatomic) NSMutableArray *scrollImageTags;
 
 @end
 //获得当前屏幕宽高点数（非像素）
@@ -101,11 +103,23 @@
     for (int i=0; i<images.count; i++) {
         //拼接图片网址·
         NSString *urlStr =[NSString stringWithFormat:@"http://www.alayicai.com%@",images[i][@"pic"]];
+        
+        //获取图片的ID存入tag值数组
+        [self.scrollImageTags addObject:images[i][@"id"]];
+        
         //转换成url
         NSURL *imgUrl = [NSURL URLWithString:urlStr];
         UIImageView *imageV = [[UIImageView alloc]initWithFrame:CGRectMake(i*frame.size.width, 0, frame.size.width, frame.size.height)];
         [imageV sd_setImageWithURL:imgUrl];
         [self.myScrollView addSubview:imageV];
+        
+        //为图片添加Tag值
+        imageV.tag = (int)([self.scrollImageTags[i] intValue]+100);
+        imageV.userInteractionEnabled = YES;
+        UITapGestureRecognizer *scrollTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(scrollViewClick)];
+        [imageV addGestureRecognizer:scrollTap];
+        
+        
     }
 }
 
@@ -163,57 +177,90 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.myTableView reloadData];
         });
-        if (self.freshArray.count>0) {
-            //名字
-            self.freshNameLabel1.text=self.freshArray[0][@"name"];
-            self.freshNameLabel2.text=self.freshArray[1][@"name"];
-            self.freshNameLabel3.text=self.freshArray[2][@"name"];
-            self.freshNameLabel4.text=self.freshArray[3][@"name"];
-            self.freshNameLabel5.text=self.freshArray[4][@"name"];
-            self.freshNameLabel6.text=self.freshArray[5][@"name"];
-            //价格
-            self.freshPriceLabel1.text=self.freshArray[0][@"formatPrice"];
-            self.freshPriceLabel2.text=self.freshArray[1][@"formatPrice"];
-            self.freshPriceLabel3.text=self.freshArray[2][@"formatPrice"];
-            //规格
-            self.freshSpecLabel1.text=self.freshArray[0][@"norm"];
-            self.freshSpecLabel2.text=self.freshArray[1][@"norm"];
-            self.freshSpecLabel3.text=self.freshArray[2][@"norm"];
-            //照片
-            //拼接图片网址·
-            NSString *urlStr =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.freshArray[0][@"pic"]];
-            //转换成url
-            NSURL *imgUrl1 = [NSURL URLWithString:urlStr];
-            [self.freshGoodsImage1 sd_setImageWithURL:imgUrl1];
-            
-            NSString *urlStr2 =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.freshArray[1][@"pic"]];
-            //转换成url
-            NSURL *imgUrl2 = [NSURL URLWithString:urlStr2];
-            [self.freshGoodsImage2 sd_setImageWithURL:imgUrl2];
-            
-            NSString *urlStr3 =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.freshArray[2][@"pic"]];
-            //转换成url
-            NSURL *imgUrl3 = [NSURL URLWithString:urlStr3];
-            [self.freshGoodsImage3 sd_setImageWithURL:imgUrl3];
-            
-            NSString *urlStr4 =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.freshArray[3][@"pic"]];
-            //转换成url
-            NSURL *imgUrl4 = [NSURL URLWithString:urlStr4];
-            [self.freshGoodsImage4 sd_setImageWithURL:imgUrl4];
-            
-            NSString *urlStr5 =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.freshArray[4][@"pic"]];
-            //转换成url
-            NSURL *imgUrl5 = [NSURL URLWithString:urlStr5];
-            [self.freshGoodsImage5 sd_setImageWithURL:imgUrl5];
-            
-            NSString *urlStr6 =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.freshArray[5][@"pic"]];
-            //转换成url
-            NSURL *imgUrl6 = [NSURL URLWithString:urlStr6];
-            [self.freshGoodsImage6 sd_setImageWithURL:imgUrl6];
-        }else
-        {
-            
-        }
+        //名字
+        self.freshNameLabel1.text=self.freshArray[0][@"name"];
+        self.freshNameLabel2.text=self.freshArray[1][@"name"];
+        self.freshNameLabel3.text=self.freshArray[2][@"name"];
+        self.freshNameLabel4.text=self.freshArray[3][@"name"];
+        self.freshNameLabel5.text=self.freshArray[4][@"name"];
+        self.freshNameLabel6.text=self.freshArray[5][@"name"];
+        //价格
+        self.freshPriceLabel1.text=self.freshArray[0][@"formatPrice"];
+        self.freshPriceLabel2.text=self.freshArray[1][@"formatPrice"];
+        self.freshPriceLabel3.text=self.freshArray[2][@"formatPrice"];
+        //规格
+        self.freshSpecLabel1.text=self.freshArray[0][@"norm"];
+        self.freshSpecLabel2.text=self.freshArray[1][@"norm"];
+        self.freshSpecLabel3.text=self.freshArray[2][@"norm"];
+        //照片
+        //拼接图片网址·
+        NSString *urlStr =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.freshArray[0][@"pic"]];
+        //转换成url
+        NSURL *imgUrl1 = [NSURL URLWithString:urlStr];
+        [self.freshGoodsImage1 sd_setImageWithURL:imgUrl1];
+        
+        NSString *urlStr2 =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.freshArray[1][@"pic"]];
+        //转换成url
+        NSURL *imgUrl2 = [NSURL URLWithString:urlStr2];
+        [self.freshGoodsImage2 sd_setImageWithURL:imgUrl2];
+        
+        NSString *urlStr3 =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.freshArray[2][@"pic"]];
+        //转换成url
+        NSURL *imgUrl3 = [NSURL URLWithString:urlStr3];
+        [self.freshGoodsImage3 sd_setImageWithURL:imgUrl3];
+        
+        NSString *urlStr4 =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.freshArray[3][@"pic"]];
+        //转换成url
+        NSURL *imgUrl4 = [NSURL URLWithString:urlStr4];
+        [self.freshGoodsImage4 sd_setImageWithURL:imgUrl4];
+        
+        NSString *urlStr5 =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.freshArray[4][@"pic"]];
+        //转换成url
+        NSURL *imgUrl5 = [NSURL URLWithString:urlStr5];
+        [self.freshGoodsImage5 sd_setImageWithURL:imgUrl5];
+        
+        NSString *urlStr6 =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.freshArray[5][@"pic"]];
+        //转换成url
+        NSURL *imgUrl6 = [NSURL URLWithString:urlStr6];
+        [self.freshGoodsImage6 sd_setImageWithURL:imgUrl6];
+        
+        //设置图片的tag值
+        NSString *fid1 = self.freshArray[0][@"id"];
+        self.freshGoodsImage1.tag = (int)([fid1 intValue]+100);
+        self.freshGoodsImage1.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tap1 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapFreshImage1)];
+        [self.freshGoodsImage1 addGestureRecognizer:tap1];
+        
+        NSString *fid2 = self.freshArray[1][@"id"];
+        self.freshGoodsImage2.tag = (int)([fid2 intValue]+100);
+        self.freshGoodsImage2.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tap2 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapFreshImage2)];
+        [self.freshGoodsImage2 addGestureRecognizer:tap2];
+        
+        NSString *fid3 = self.freshArray[2][@"id"];
+        self.freshGoodsImage3.tag = (int)([fid3 intValue]+100);
+        self.freshGoodsImage3.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tap3 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapFreshImage3)];
+        [self.freshGoodsImage3 addGestureRecognizer:tap3];
+        
+        NSString *fid4 = self.freshArray[3][@"id"];
+        self.freshGoodsImage4.tag = (int)([fid4 intValue]+100);
+        self.freshGoodsImage4.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tap4 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapFreshImage4)];
+        [self.freshGoodsImage4 addGestureRecognizer:tap4];
+        
+        NSString *fid5 = self.freshArray[4][@"id"];
+        self.freshGoodsImage5.tag = (int)([fid5 intValue]+100);
+        self.freshGoodsImage5.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tap5 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapFreshImage5)];
+        [self.freshGoodsImage5 addGestureRecognizer:tap5];
+        
+        NSString *fid6 = self.freshArray[5][@"id"];
+        self.freshGoodsImage6.tag = (int)([fid6 intValue]+100);
+        self.freshGoodsImage6.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tap6 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapFreshImage6)];
+        [self.freshGoodsImage6 addGestureRecognizer:tap6];
+        
     }];
 }
 
@@ -229,58 +276,89 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.myTableView reloadData];
         });
-        if (self.recomArray.count>0) {
-            //名字
-            self.recomNameLabel1.text=self.recomArray[0][@"name"];
-            self.recomNameLabel2.text=self.recomArray[1][@"name"];
-            self.recomNameLabel3.text=self.recomArray[2][@"name"];
-            self.recomNameLabel4.text=self.recomArray[3][@"name"];
-            self.recomNameLabel5.text=self.recomArray[4][@"name"];
-            self.recomNameLabel6.text=self.recomArray[5][@"name"];
-            //价格
-            self.recomPriceLabel1.text=self.recomArray[0][@"formatPrice"];
-            self.recomPriceLabel2.text=self.recomArray[1][@"formatPrice"];
-            self.recomPriceLabel3.text=self.recomArray[2][@"formatPrice"];
-            //规格
-            self.recomSpecLabel1.text=self.recomArray[0][@"norm"];
-            self.recomSpecLabel2.text=self.recomArray[1][@"norm"];
-            self.recomSpecLabel3.text=self.recomArray[2][@"norm"];
-            //照片
-            //拼接图片网址·
-            NSString *urlStr =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.recomArray[0][@"pic"]];
-            //转换成url
-            NSURL *imgUrl1 = [NSURL URLWithString:urlStr];
-            [self.recomGoodsImage1 sd_setImageWithURL:imgUrl1];
-            
-            NSString *urlStr2 =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.recomArray[1][@"pic"]];
-            //转换成url
-            NSURL *imgUrl2 = [NSURL URLWithString:urlStr2];
-            [self.recomGoodsImage2 sd_setImageWithURL:imgUrl2];
-            
-            NSString *urlStr3 =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.recomArray[2][@"pic"]];
-            //转换成url
-            NSURL *imgUrl3 = [NSURL URLWithString:urlStr3];
-            [self.recomGoodsImage3 sd_setImageWithURL:imgUrl3];
-            
-            NSString *urlStr4 =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.recomArray[3][@"pic"]];
-            //转换成url
-            NSURL *imgUrl4 = [NSURL URLWithString:urlStr4];
-            [self.recomGoodsImage4 sd_setImageWithURL:imgUrl4];
-            
-            NSString *urlStr5 =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.recomArray[4][@"pic"]];
-            //转换成url
-            NSURL *imgUrl5 = [NSURL URLWithString:urlStr5];
-            [self.recomGoodsImage5 sd_setImageWithURL:imgUrl5];
-            
-            NSString *urlStr6 =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.recomArray[5][@"pic"]];
-            //转换成url
-            NSURL *imgUrl6 = [NSURL URLWithString:urlStr6];
-            [self.recomGoodsImage6 sd_setImageWithURL:imgUrl6];
-
-        }else
-        {
-            
-        }
+        //名字
+        self.recomNameLabel1.text=self.recomArray[0][@"name"];
+        self.recomNameLabel2.text=self.recomArray[1][@"name"];
+        self.recomNameLabel3.text=self.recomArray[2][@"name"];
+        self.recomNameLabel4.text=self.recomArray[3][@"name"];
+        self.recomNameLabel5.text=self.recomArray[4][@"name"];
+        self.recomNameLabel6.text=self.recomArray[5][@"name"];
+        //价格
+        self.recomPriceLabel1.text=self.recomArray[0][@"formatPrice"];
+        self.recomPriceLabel2.text=self.recomArray[1][@"formatPrice"];
+        self.recomPriceLabel3.text=self.recomArray[2][@"formatPrice"];
+        //规格
+        self.recomSpecLabel1.text=self.recomArray[0][@"norm"];
+        self.recomSpecLabel2.text=self.recomArray[1][@"norm"];
+        self.recomSpecLabel3.text=self.recomArray[2][@"norm"];
+        //照片
+        //拼接图片网址·
+        NSString *urlStr =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.recomArray[0][@"pic"]];
+        //转换成url
+        NSURL *imgUrl1 = [NSURL URLWithString:urlStr];
+        [self.recomGoodsImage1 sd_setImageWithURL:imgUrl1];
+        
+        NSString *urlStr2 =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.recomArray[1][@"pic"]];
+        //转换成url
+        NSURL *imgUrl2 = [NSURL URLWithString:urlStr2];
+        [self.recomGoodsImage2 sd_setImageWithURL:imgUrl2];
+        
+        NSString *urlStr3 =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.recomArray[2][@"pic"]];
+        //转换成url
+        NSURL *imgUrl3 = [NSURL URLWithString:urlStr3];
+        [self.recomGoodsImage3 sd_setImageWithURL:imgUrl3];
+        
+        NSString *urlStr4 =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.recomArray[3][@"pic"]];
+        //转换成url
+        NSURL *imgUrl4 = [NSURL URLWithString:urlStr4];
+        [self.recomGoodsImage4 sd_setImageWithURL:imgUrl4];
+        
+        NSString *urlStr5 =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.recomArray[4][@"pic"]];
+        //转换成url
+        NSURL *imgUrl5 = [NSURL URLWithString:urlStr5];
+        [self.recomGoodsImage5 sd_setImageWithURL:imgUrl5];
+        
+        NSString *urlStr6 =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.recomArray[5][@"pic"]];
+        //转换成url
+        NSURL *imgUrl6 = [NSURL URLWithString:urlStr6];
+        [self.recomGoodsImage6 sd_setImageWithURL:imgUrl6];
+        
+        //设置图片的tag值
+        NSString *FoodId1 = self.recomArray[0][@"id"];
+        self.recomGoodsImage1.tag = (int)([FoodId1 intValue]+100);
+        self.recomGoodsImage1.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tap1 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapRecomGoodsImage1)];
+        [self.recomGoodsImage1 addGestureRecognizer:tap1];
+        
+        NSString *FoodId2 = self.recomArray[1][@"id"];
+        self.recomGoodsImage2.tag = (int)([FoodId2 intValue]+100);
+        self.recomGoodsImage2.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tap2 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapRecomGoodsImage2)];
+        [self.recomGoodsImage2 addGestureRecognizer:tap2];
+        
+        NSString *FoodId3 = self.recomArray[2][@"id"];
+        self.recomGoodsImage3.tag = (int)([FoodId3 intValue]+100);
+        self.recomGoodsImage3.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tap3 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapRecomGoodsImage3)];
+        [self.recomGoodsImage3 addGestureRecognizer:tap3];
+        
+        NSString *FoodId4 = self.recomArray[3][@"id"];
+        self.recomGoodsImage4.tag = (int)([FoodId4 intValue]+100);
+        self.recomGoodsImage4.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tap4 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapRecomGoodsImage4)];
+        [self.recomGoodsImage4 addGestureRecognizer:tap4];
+        
+        NSString *FoodId5 = self.recomArray[4][@"id"];
+        self.recomGoodsImage5.tag = (int)([FoodId5 intValue]+100);
+        self.recomGoodsImage5.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tap5 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapRecomGoodsImage5)];
+        [self.recomGoodsImage5 addGestureRecognizer:tap5];
+        
+        NSString *FoodId6 = self.recomArray[5][@"id"];
+        self.recomGoodsImage6.tag = (int)([FoodId6 intValue]+100);
+        self.recomGoodsImage6.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tap6 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapRecomGoodsImage6)];
+        [self.recomGoodsImage6 addGestureRecognizer:tap6];
     }];
 }
 
@@ -571,6 +649,96 @@
         NSLog(@"=======详情信息：%@",detailV.detailDic);
         [self.navigationController pushViewController:detailV animated:YES];
     }];
+}
+/**
+ *  点击滚动视图图片进入详情页
+ */
+-(void)scrollViewClick
+{
+    int pageNum = (int)self.myPageControl.currentPage;
+    NSString *fid = nil;
+    NSDictionary *prama = nil;
+    switch (pageNum) {
+        case 0:
+        {
+            fid = self.scrollImageTags[0];
+            
+            prama = [NSDictionary dictionaryWithObjectsAndKeys:fid,@"id", nil];
+            [RequestData getFoodById:prama FinishCallbackBlock:^(NSDictionary *data) {
+                NSLog(@"=======详情信息：%@",data);
+                //跳转不同的故事版
+                UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"yjh" bundle:nil];
+                DetailViewController *detailV = [storyboard instantiateViewControllerWithIdentifier:@"详情View"];
+                detailV.detailDic = data;
+                NSLog(@"=======详情信息：%@",detailV.detailDic);
+                [self.navigationController pushViewController:detailV animated:YES];
+            }];
+        }
+            break;
+        case 1:
+        {
+            fid = self.scrollImageTags[1];
+            prama = [NSDictionary dictionaryWithObjectsAndKeys:fid,@"id", nil];
+            [RequestData getFoodById:prama FinishCallbackBlock:^(NSDictionary *data) {
+                NSLog(@"=======详情信息：%@",data);
+                //跳转不同的故事版
+                UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"yjh" bundle:nil];
+                DetailViewController *detailV = [storyboard instantiateViewControllerWithIdentifier:@"详情View"];
+                detailV.detailDic = data;
+                NSLog(@"=======详情信息：%@",detailV.detailDic);
+                [self.navigationController pushViewController:detailV animated:YES];
+            }];
+        }
+            break;
+        case 2:
+        {
+            fid = self.scrollImageTags[2];
+            prama = [NSDictionary dictionaryWithObjectsAndKeys:fid,@"id", nil];
+            [RequestData getFoodById:prama FinishCallbackBlock:^(NSDictionary *data) {
+                NSLog(@"=======详情信息：%@",data);
+                //跳转不同的故事版
+                UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"yjh" bundle:nil];
+                DetailViewController *detailV = [storyboard instantiateViewControllerWithIdentifier:@"详情View"];
+                detailV.detailDic = data;
+                NSLog(@"=======详情信息：%@",detailV.detailDic);
+                [self.navigationController pushViewController:detailV animated:YES];
+            }];
+        }
+            break;
+        case 3:
+        {
+            fid = self.scrollImageTags[3];
+            prama = [NSDictionary dictionaryWithObjectsAndKeys:fid,@"id", nil];
+            [RequestData getFoodById:prama FinishCallbackBlock:^(NSDictionary *data) {
+                NSLog(@"=======详情信息：%@",data);
+                //跳转不同的故事版
+                UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"yjh" bundle:nil];
+                DetailViewController *detailV = [storyboard instantiateViewControllerWithIdentifier:@"详情View"];
+                detailV.detailDic = data;
+                NSLog(@"=======详情信息：%@",detailV.detailDic);
+                [self.navigationController pushViewController:detailV animated:YES];
+            }];
+        }
+            break;
+        case 4:
+        {
+            fid = self.scrollImageTags[4];
+            prama = [NSDictionary dictionaryWithObjectsAndKeys:fid,@"id", nil];
+            [RequestData getFoodById:prama FinishCallbackBlock:^(NSDictionary *data) {
+                NSLog(@"=======详情信息：%@",data);
+                //跳转不同的故事版
+                UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"yjh" bundle:nil];
+                DetailViewController *detailV = [storyboard instantiateViewControllerWithIdentifier:@"详情View"];
+                detailV.detailDic = data;
+                NSLog(@"=======详情信息：%@",detailV.detailDic);
+                [self.navigationController pushViewController:detailV animated:YES];
+            }];
+        }
+            break;
+        default:
+            break;
+    }
+    
 }
 
 
