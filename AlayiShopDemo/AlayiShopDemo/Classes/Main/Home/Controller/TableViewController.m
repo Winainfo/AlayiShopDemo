@@ -42,8 +42,6 @@
     [self recomGoodsData];
     //自制菜
     //[self memberGoodsData];
-    //标题
-    self.title = @"阿拉亿菜";
     
     [self setNavStyle];
     
@@ -52,7 +50,10 @@
 //设置导航栏按钮样式
 -(void)setNavStyle
 {
-    
+    //标题
+    self.title = @"阿拉亿菜";
+    //设置导航栏标题颜色和字体大小UITextAttributeFont:[UIFont fontWithName:@"Heiti TC" size:0.0]
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"Heiti Sc" size:16.0],NSForegroundColorAttributeName:[UIColor blackColor]}];
     //导航栏右侧按钮
     UIButton *rightBtn=[UIButton buttonWithType:UIButtonTypeCustom];
     [rightBtn setImage:[UIImage imageNamed:@"sousuo"] forState:UIControlStateNormal];
@@ -64,7 +65,7 @@
 //跳转到搜索页
 -(void)searchClick
 {
-    UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"yjh" bundle:nil];
+    UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
     SearchViewController *searchV = [storyboard instantiateViewControllerWithIdentifier:@"searchView"];
     [self.navigationController pushViewController:searchV animated:YES];
 }

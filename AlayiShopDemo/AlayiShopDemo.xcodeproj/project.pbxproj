@@ -32,12 +32,10 @@
 		331C9CDB1B48D42D00EE773F /* ScoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 331C9CD91B48D42D00EE773F /* ScoreCell.m */; };
 		331C9CDC1B48D42D00EE773F /* ScoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 331C9CDA1B48D42D00EE773F /* ScoreCell.xib */; };
 		331C9CDF1B48DA1100EE773F /* ScoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 331C9CDE1B48DA1100EE773F /* ScoreController.m */; };
-		3324CC751B4286E300E74E93 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3324CC741B4286E300E74E93 /* TestViewController.m */; };
 		3324D03F1B46EC99001DA5C4 /* WaterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3324D03D1B46EC99001DA5C4 /* WaterCell.m */; };
 		3324D0401B46EC99001DA5C4 /* WaterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3324D03E1B46EC99001DA5C4 /* WaterCell.xib */; };
 		333A42781B45675300E2FFBD /* MoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 333A42771B45675300E2FFBD /* MoreController.m */; };
 		333A427B1B4575CF00E2FFBD /* AboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 333A427A1B4575CF00E2FFBD /* AboutController.m */; };
-		334E03D21B4C22AB00DC3ABD /* API.m in Sources */ = {isa = PBXBuildFile; fileRef = 334E03D11B4C22AB00DC3ABD /* API.m */; };
 		33681C801B58D93300037F9B /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33681C7F1B58D93300037F9B /* TableViewController.m */; };
 		33681C851B58DA0A00037F9B /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33681C821B58DA0A00037F9B /* CategoryViewController.m */; };
 		33681C861B58DA0A00037F9B /* MultilevelMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 33681C841B58DA0A00037F9B /* MultilevelMenu.m */; };
@@ -195,8 +193,6 @@
 		331C9CDA1B48D42D00EE773F /* ScoreCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScoreCell.xib; sourceTree = "<group>"; };
 		331C9CDD1B48DA1100EE773F /* ScoreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreController.h; sourceTree = "<group>"; };
 		331C9CDE1B48DA1100EE773F /* ScoreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreController.m; sourceTree = "<group>"; };
-		3324CC731B4286E300E74E93 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
-		3324CC741B4286E300E74E93 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		3324D03C1B46EC99001DA5C4 /* WaterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterCell.h; sourceTree = "<group>"; };
 		3324D03D1B46EC99001DA5C4 /* WaterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterCell.m; sourceTree = "<group>"; };
 		3324D03E1B46EC99001DA5C4 /* WaterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WaterCell.xib; sourceTree = "<group>"; };
@@ -204,8 +200,6 @@
 		333A42771B45675300E2FFBD /* MoreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreController.m; sourceTree = "<group>"; };
 		333A42791B4575CF00E2FFBD /* AboutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutController.h; sourceTree = "<group>"; };
 		333A427A1B4575CF00E2FFBD /* AboutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutController.m; sourceTree = "<group>"; };
-		334E03D01B4C22AB00DC3ABD /* API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = API.h; sourceTree = "<group>"; };
-		334E03D11B4C22AB00DC3ABD /* API.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = API.m; sourceTree = "<group>"; };
 		33681C7E1B58D93300037F9B /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		33681C7F1B58D93300037F9B /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		33681C811B58DA0A00037F9B /* CategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryViewController.h; sourceTree = "<group>"; };
@@ -780,8 +774,6 @@
 				33D1D9021B426756009ADF41 /* Main.storyboard */,
 				33D1D8FE1B42671A009ADF41 /* AppDelegate.h */,
 				33D1D8FF1B42671A009ADF41 /* AppDelegate.m */,
-				3324CC731B4286E300E74E93 /* TestViewController.h */,
-				3324CC741B4286E300E74E93 /* TestViewController.m */,
 				0F3A02A01B4E5A2600A0782E /* yjh.storyboard */,
 				3383227E1B427AA5004CE9C2 /* wjl.storyboard */,
 				0F80D9391B42B15700C46D72 /* wwc.storyboard */,
@@ -1026,8 +1018,6 @@
 		33D1DAF61B4271EA009ADF41 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				334E03D01B4C22AB00DC3ABD /* API.h */,
-				334E03D11B4C22AB00DC3ABD /* API.m */,
 				338322801B427BFC004CE9C2 /* RequestData.h */,
 				338322811B427BFC004CE9C2 /* RequestData.m */,
 			);
@@ -1250,7 +1240,6 @@
 				33C418531B451B09002C8601 /* UIWindow+Extension.m in Sources */,
 				0F98CBF21B4C064600151A26 /* RegisterViewController.m in Sources */,
 				33D1D9891B42688D009ADF41 /* IQSegmentedNextPrevious.m in Sources */,
-				334E03D21B4C22AB00DC3ABD /* API.m in Sources */,
 				33FA4F3A1B536AEF0073B226 /* CollectionReusableView.m in Sources */,
 				33D1D9841B42688D009ADF41 /* IQNSArray+Sort.m in Sources */,
 				339333B61B560EAB00C7BE03 /* EditFoodController.m in Sources */,
@@ -1273,7 +1262,6 @@
 				331A47F61B48350400AF3B71 /* OrderInfoTableController.m in Sources */,
 				33D1D97F1B42688D009ADF41 /* AFSecurityPolicy.m in Sources */,
 				33FA4F441B538CD50073B226 /* MultilevelCollectionViewCell.m in Sources */,
-				3324CC751B4286E300E74E93 /* TestViewController.m in Sources */,
 				33F9553E1B46A11800E25192 /* orderCell.m in Sources */,
 				33EA3E681B4CC91B00278995 /* ARLabel.m in Sources */,
 				33D1D9851B42688D009ADF41 /* IQUIView+Hierarchy.m in Sources */,

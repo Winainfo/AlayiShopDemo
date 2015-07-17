@@ -18,8 +18,14 @@
 @end
 
 @implementation SettleController
+//隐藏和显示底部标签栏
+-(void)viewWillDisappear:(BOOL)animated
+{
+    self.tabBarController.tabBar.hidden = NO;
+}
 -(void)viewWillAppear:(BOOL)animated
 {
+     self.tabBarController.tabBar.hidden = YES;
     OrderModel *orderModel=[OrderTool order];
     NSLog(@"----%@----",orderModel.paytype);
     if ([orderModel.paytype isEqualToString:@"1"]) {

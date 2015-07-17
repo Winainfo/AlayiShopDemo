@@ -45,7 +45,6 @@ static BOOL isAssess = NO;
     
       [self setNavStyle];
     self.detailView.backgroundColor =  [UIColor colorWithWhite:0.85 alpha:1.000];
-    self.title = @"商品详情";
     
     //注册xib
     UINib *nib = [UINib nibWithNibName:@"CommentTableViewCell" bundle:[NSBundle mainBundle]];
@@ -82,13 +81,15 @@ static BOOL isAssess = NO;
 //设置导航栏按钮样式
 -(void)setNavStyle
 {
-    //更改导航栏返回按钮图片
-    UIButton *leftBtn=[UIButton buttonWithType:UIButtonTypeCustom];
-    [leftBtn setImage:[UIImage imageNamed:@"my_left_arrow"] forState:UIControlStateNormal];
-    leftBtn.frame=CGRectMake(-5, 5, 50, 50);
-    [leftBtn addTarget:self action:@selector(backView) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *left=[[UIBarButtonItem alloc]initWithCustomView:leftBtn];
-    self.navigationItem.leftBarButtonItem=left;
+    self.title=@"商品详情";
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"Heiti Sc" size:16.0],NSForegroundColorAttributeName:[UIColor blackColor]}];
+    //重写返回按钮
+    UIButton *back=[UIButton buttonWithType:UIButtonTypeCustom];
+    [back setFrame:CGRectMake(0, 0, 13, 13 )];
+    [back setBackgroundImage:[UIImage imageNamed:@"my_left_arrow"] forState:UIControlStateNormal];
+    [back addTarget:self action:@selector(backView) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *barButton=[[UIBarButtonItem alloc]initWithCustomView:back];
+    self.navigationItem.leftBarButtonItem=barButton;
     
     //导航栏右侧按钮
     UIButton *rightBtn=[UIButton buttonWithType:UIButtonTypeCustom];

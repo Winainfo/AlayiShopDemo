@@ -3,7 +3,6 @@
 #import "SelfFoodCollectionViewCell.h"
 #import "RequestData.h"
 #import "UIImageView+WebCache.h"
-#import "API.h"
 #import "MJRefresh.h"
 #define HEIGHT [UIScreen mainScreen].bounds.size.height
 #define WIDTH [UIScreen mainScreen].bounds.size.width

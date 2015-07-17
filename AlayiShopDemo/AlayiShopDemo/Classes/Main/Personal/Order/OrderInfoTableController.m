@@ -16,6 +16,15 @@
 
 @implementation OrderInfoTableController
 @synthesize name;
+//隐藏和显示底部标签栏
+-(void)viewWillDisappear:(BOOL)animated
+{
+    self.tabBarController.tabBar.hidden = NO;
+}
+-(void)viewWillAppear:(BOOL)animated
+{
+    self.tabBarController.tabBar.hidden = YES;
+}
 - (void)viewDidLoad {
     self.title=@"订单明细";
     //设置导航栏标题颜色和字体大小UITextAttributeFont:[UIFont fontWithName:@"Heiti TC" size:0.0]

@@ -27,7 +27,15 @@
 @end
 
 @implementation RegisterViewController
-
+//隐藏和显示底部标签栏
+-(void)viewWillDisappear:(BOOL)animated
+{
+    self.tabBarController.tabBar.hidden = NO;
+}
+-(void)viewWillAppear:(BOOL)animated
+{
+    self.tabBarController.tabBar.hidden = YES;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -93,7 +101,7 @@
     //更改导航栏返回按钮图片
     UIButton *leftBtn=[UIButton buttonWithType:UIButtonTypeCustom];
     [leftBtn setImage:[UIImage imageNamed:@"my_left_arrow"] forState:UIControlStateNormal];
-    leftBtn.frame=CGRectMake(-5, 5, 30, 30);
+    leftBtn.frame=CGRectMake(0, 0, 30, 30);
     [leftBtn addTarget:self action:@selector(backView) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *left=[[UIBarButtonItem alloc]initWithCustomView:leftBtn];
     self.navigationItem.leftBarButtonItem=left;
@@ -101,7 +109,7 @@
     UIButton *rightBtn=[UIButton buttonWithType:UIButtonTypeCustom];
     [rightBtn setTitle:@"注册" forState:UIControlStateNormal];
     [rightBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    rightBtn.frame=CGRectMake(-5, 5, 60, 30);
+    rightBtn.frame=CGRectMake(0, 0, 60, 30);
     [rightBtn addTarget:self action:@selector(registerClick:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *right=[[UIBarButtonItem alloc]initWithCustomView:rightBtn];
     self.navigationItem.rightBarButtonItem =right;
