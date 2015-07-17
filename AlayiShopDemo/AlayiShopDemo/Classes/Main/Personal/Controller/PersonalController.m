@@ -8,6 +8,7 @@
 
 #import "PersonalController.h"
 #import "AccountTool.h"
+#import "TencentOpenAPI/QQApiInterface.h"
 @interface PersonalController ()
 @property (strong, nonatomic) IBOutlet UIView *ContainerA;//登录后
 @property (weak, nonatomic) IBOutlet UIView *ContainerB;//登录前
@@ -44,4 +45,27 @@
         self.ContainerB.hidden=NO;
     }
 }
+//跳转到QQ临时会话窗口
+- (IBAction)QQClick:(UIButton *)sender {
+    //跳转到QQ临时会话窗口
+    [self sendToQQWPA];
+}
+- (void)sendToQQWPA
+{
+    //设置一个有效的号码
+    NSString * qqNum = @"149583628";
+    
+    
+    QQApiWPAObject *wpaObj = [QQApiWPAObject objectWithUin:qqNum];
+    SendMessageToQQReq *req = [SendMessageToQQReq reqWithContent:wpaObj];
+    QQApiSendResultCode sent = [QQApiInterface sendReq:req];
+    [self handleSendResult:sent];
+}
+- (void)handleSendResult:(QQApiSendResultCode)sendResult
+{
+    NSLog(@"%s",__FUNCTION__);
+}
+
+
+
 @end
