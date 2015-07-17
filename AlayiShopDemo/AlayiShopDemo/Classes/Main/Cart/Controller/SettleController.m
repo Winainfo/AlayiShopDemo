@@ -35,6 +35,18 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.title=@"填写订单";
+    //设置导航栏标题颜色和字体大小UITextAttributeFont:[UIFont fontWithName:@"Heiti TC" size:0.0]
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"Heiti Sc" size:16.0],NSForegroundColorAttributeName:[UIColor blackColor]}];
+    //重写返回按钮
+    UIButton *back=[UIButton buttonWithType:UIButtonTypeCustom];
+    [back setFrame:CGRectMake(0, 0, 13, 13 )];
+    [back setBackgroundImage:[UIImage imageNamed:@"my_left_arrow"] forState:UIControlStateNormal];
+    [back addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *barButton=[[UIBarButtonItem alloc]initWithCustomView:back];
+    self.navigationItem.leftBarButtonItem=barButton;
+    
     _goodsArray=self.container.subviews;
     UITableView *tableView=_goodsArray[0];
     order=tableView.dataSource;
@@ -47,6 +59,15 @@
     }];
 
 }
+/**
+ *  POP方法
+ *
+ *  @param sender <#sender description#>
+ */
+-(void)back:(id *)sender{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 /**
  提交订单
  */
@@ -61,13 +82,13 @@
     NSDictionary *dicy=@{@"userid":account.userId,@"username":account.name,@"order":dic};
     [RequestData doCartToOrder:dicy FinishCallbackBlock:^(NSDictionary *data) {
         NSLog(@"---成功--%@",data);
-        if ([data[@"code"]isEqualToString:@"0"]) {
-            //设置故事板为第一启动
-            UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"wjl" bundle:nil];
-            OrderController *orderView=[storyboard instantiateViewControllerWithIdentifier:@"我的订单View"];
-            orderView.type=@"0";
-            [self.navigationController pushViewController:orderView animated:YES];
-        }
+//        if ([data[@"code"]isEqualToString:@"0"]) {
+//            //设置故事板为第一启动
+//            UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"wjl" bundle:nil];
+//            OrderController *orderView=[storyboard instantiateViewControllerWithIdentifier:@"我的订单View"];
+//            orderView.type=@"0";
+//            [self.navigationController pushViewController:orderView animated:YES];
+//        }
     }];
 }
 

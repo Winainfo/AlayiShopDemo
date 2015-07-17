@@ -18,6 +18,8 @@
 @property (retain,nonatomic) NSArray *freshArray;
 @property (retain,nonatomic) NSArray *recomArray;
 @property (retain,nonatomic) NSArray *memberArray;
+@property (weak, nonatomic) IBOutlet UIView *freshGoodsView;
+
 @end
 //获得当前屏幕宽高点数（非像素）
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
@@ -44,6 +46,7 @@
     self.title = @"阿拉亿菜";
     
     [self setNavStyle];
+    
 }
 
 //设置导航栏按钮样式
@@ -567,6 +570,18 @@
         NSLog(@"=======详情信息：%@",detailV.detailDic);
         [self.navigationController pushViewController:detailV animated:YES];
     }];
+}
+
+- (IBAction)clickBtn:(UIButton *)sender {
+    UIButton *btn=(UIButton *)sender;
+    switch (btn.tag) {
+        case 100:
+            NSLog(@"----%@",self.freshArray[0][@"id"]);
+            break;
+            
+        default:
+            break;
+    }
 }
 
 @end

@@ -14,6 +14,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title=@"收货地址";
+    //设置导航栏标题颜色和字体大小UITextAttributeFont:[UIFont fontWithName:@"Heiti TC" size:0.0]
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"Heiti Sc" size:16.0],NSForegroundColorAttributeName:[UIColor blackColor]}];
+    //重写返回按钮
+    UIButton *back=[UIButton buttonWithType:UIButtonTypeCustom];
+    [back setFrame:CGRectMake(0, 0, 13, 13 )];
+    [back setBackgroundImage:[UIImage imageNamed:@"my_left_arrow"] forState:UIControlStateNormal];
+    [back addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *barButton=[[UIBarButtonItem alloc]initWithCustomView:back];
+    self.navigationItem.leftBarButtonItem=barButton;
+    
     // Do any additional setup after loading the view.
     self.addressArray = [NSMutableArray arrayWithCapacity:1];
     [self getAllUserSendAddressByUserid];//网络请求数据
@@ -24,6 +35,14 @@
     self.addresstableView.tableFooterView = [[UIView alloc] init];;
 }
 
+/**
+ *  POP方法
+ *
+ *  @param sender <#sender description#>
+ */
+-(void)back:(id *)sender{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 #pragma mark --- 用户所有的送货地址信息
 - (void)getAllUserSendAddressByUserid{

@@ -34,6 +34,15 @@
     }else if([flag isEqualToString:@"1"]){
         self.title=@"编辑收货地址";
     }
+    //设置导航栏标题颜色和字体大小UITextAttributeFont:[UIFont fontWithName:@"Heiti TC" size:0.0]
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"Heiti Sc" size:16.0],NSForegroundColorAttributeName:[UIColor blackColor]}];
+    //重写返回按钮
+    UIButton *back=[UIButton buttonWithType:UIButtonTypeCustom];
+    [back setFrame:CGRectMake(0, 0, 13, 13 )];
+    [back setBackgroundImage:[UIImage imageNamed:@"my_left_arrow"] forState:UIControlStateNormal];
+    [back addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *barButton=[[UIBarButtonItem alloc]initWithCustomView:back];
+    self.navigationItem.leftBarButtonItem=barButton;
     //监听文本输入框的改变
     //1.拿到通知中心
     NSNotificationCenter *center=[NSNotificationCenter defaultCenter];
@@ -50,6 +59,14 @@
     }];
 }
 
+/**
+ *  POP方法
+ *
+ *  @param sender <#sender description#>
+ */
+-(void)back:(id *)sender{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 -(void)dealloc
 {
     //移除监听
