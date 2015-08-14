@@ -119,7 +119,7 @@
     cell.numLabel.text=[NSString stringWithFormat:@"x %@",self.goodsArray[indexPath.row][@"number"]];
     cell.priceLabel.text=self.goodsArray[indexPath.row][@"formatFoodPrice"];
     //拼接图片网址·
-    NSString *urlStr =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.goodsArray[indexPath.row][@"foodpic"]];
+    NSString *urlStr =[NSString stringWithFormat:@"http://www.alayicai.com/%@",self.goodsArray[indexPath.row][@"foodpic"]];
     //转换成url
     NSURL *imgUrl = [NSURL URLWithString:urlStr];
     [cell.goodsImageView sd_setImageWithURL:imgUrl];

@@ -48,7 +48,12 @@
     //获取加密的sign
     NSString *sign = [self getMD5StrMethod:@"login" andData:jsonDic andAppId:APPID andAppKey:APPKEY];
     NSLog(@"---%@---",sign);
-    NSDictionary *params=@{@"method":@"login",@"appid":APPID,@"data":jsonDic,@"sign":sign};
+    //去除空格和\n
+    NSString *resString =
+    [[jsonDic stringByReplacingOccurrencesOfString:@" " withString:@""]
+     stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    //const char *cStr = [resString UTF8String];
+    NSDictionary *params=@{@"method":@"login",@"appid":APPID,@"data":resString,@"sign":sign};
     [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"登录请求成功-----%@",responseObject[@"code"]);
         block(responseObject);
@@ -72,7 +77,12 @@
     NSString *jsonDic=[RequestData getJsonStr:data];
     //获取加密的sign
     NSString *sign = [self getMD5StrMethod:@"register" andData:jsonDic andAppId:APPID andAppKey:APPKEY];
-    NSDictionary *params=@{@"method":@"register",@"appid":APPID,@"data":jsonDic,@"sign":sign};
+    //去除空格和\n
+    NSString *resString =
+    [[jsonDic stringByReplacingOccurrencesOfString:@" " withString:@""]
+     stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    
+    NSDictionary *params=@{@"method":@"register",@"appid":APPID,@"data":resString,@"sign":sign};
     [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
          NSLog(@"注册请求成功-----%@",responseObject[@"code"]);
         block(responseObject[@"code"]);
@@ -95,7 +105,11 @@
     NSString *jsonDic=[RequestData getJsonStr:data];
     //获取加密的sign
     NSString *sign = [self getMD5StrMethod:@"getFoodSortList" andData:jsonDic andAppId:APPID andAppKey:APPKEY];
-    NSDictionary *params=@{@"method":@"getFoodSortList",@"appid":APPID,@"data":jsonDic,@"sign":sign};
+    //去除空格和\n
+    NSString *resString =
+    [[jsonDic stringByReplacingOccurrencesOfString:@" " withString:@""]
+     stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    NSDictionary *params=@{@"method":@"getFoodSortList",@"appid":APPID,@"data":resString,@"sign":sign};
     [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
          NSLog(@"分类请求成功--");
         block(responseObject);
@@ -120,14 +134,17 @@
     NSString *jsonDic=[RequestData getJsonStr:data];
     //获取加密的sign
     NSString *sign = [self getMD5StrMethod:@"getFoodListWithPage" andData:jsonDic andAppId:APPID andAppKey:APPKEY];
-    NSDictionary *params=@{@"method":@"getFoodListWithPage",@"appid":APPID,@"data":jsonDic,@"sign":sign};
+    //去除空格和\n
+    NSString *resString =
+    [[jsonDic stringByReplacingOccurrencesOfString:@" " withString:@""]stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    NSDictionary *params=@{@"method":@"getFoodListWithPage",@"appid":APPID,@"data":resString,@"sign":sign};
     //3.发生请求
     [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         //NSData *data = responseObject;
         NSString *str=[[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];
         NSString *newstr=[RequestData flattenHTML:str trimWhiteSpace:YES];
         NSDictionary *dict=[RequestData dictionaryWithJsonString:newstr];
-        NSLog(@"信息数据请求成功--");
+        NSLog(@"信息数据请求成功--%@",dict);
         block(dict);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"信息数据请求失败-%@",error);
@@ -148,7 +165,11 @@
     NSString *jsonDic=[RequestData getJsonStr:data];
     //获取加密的sign
     NSString *sign = [self getMD5StrMethod:@"getFoodById" andData:jsonDic andAppId:APPID andAppKey:APPKEY];
-    NSDictionary *params=@{@"method":@"getFoodById",@"appid":APPID,@"data":jsonDic,@"sign":sign};
+    //去除空格和\n
+    NSString *resString =
+    [[jsonDic stringByReplacingOccurrencesOfString:@" " withString:@""]
+     stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    NSDictionary *params=@{@"method":@"getFoodById",@"appid":APPID,@"data":resString,@"sign":sign};
     [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"数据请求成功--");
         block(responseObject);
@@ -171,7 +192,11 @@
     NSString *jsonDic=[RequestData getJsonStr:data];
     //获取加密的sign
     NSString *sign = [self getMD5StrMethod:@"getUserCartList" andData:jsonDic andAppId:APPID andAppKey:APPKEY];
-    NSDictionary *params=@{@"method":@"getUserCartList",@"appid":APPID,@"data":jsonDic,@"sign":sign};
+    //去除空格和\n
+    NSString *resString =
+    [[jsonDic stringByReplacingOccurrencesOfString:@" " withString:@""]
+     stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    NSDictionary *params=@{@"method":@"getUserCartList",@"appid":APPID,@"data":resString,@"sign":sign};
     [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"购物车数据请求成功--");
         block(responseObject);
@@ -193,7 +218,11 @@
     NSString *jsonDic=[RequestData getJsonStr:data];
     //获取加密的sign
     NSString *sign = [self getMD5StrMethod:@"getUserCartListCount" andData:jsonDic andAppId:APPID andAppKey:APPKEY];
-    NSDictionary *params=@{@"method":@"getUserCartListCount",@"appid":APPID,@"data":jsonDic,@"sign":sign};
+    //去除空格和\n
+    NSString *resString =
+    [[jsonDic stringByReplacingOccurrencesOfString:@" " withString:@""]
+     stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    NSDictionary *params=@{@"method":@"getUserCartListCount",@"appid":APPID,@"data":resString,@"sign":sign};
     [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"购物车数据请求成功--");
         block(responseObject);
@@ -215,7 +244,11 @@
     NSString *jsonDic=[RequestData getJsonStr:data];
     //获取加密的sign
     NSString *sign = [self getMD5StrMethod:@"doAddCart" andData:jsonDic andAppId:APPID andAppKey:APPKEY];
-    NSDictionary *params=@{@"method":@"doAddCart",@"appid":APPID,@"data":jsonDic,@"sign":sign};
+    //去除空格和\n
+    NSString *resString =
+    [[jsonDic stringByReplacingOccurrencesOfString:@" " withString:@""]
+     stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    NSDictionary *params=@{@"method":@"doAddCart",@"appid":APPID,@"data":resString,@"sign":sign};
     [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"购物车数据请求成功--");
         block(responseObject);
@@ -237,7 +270,11 @@
     NSString *jsonDic=[RequestData getJsonStr:data];
     //获取加密的sign
     NSString *sign = [self getMD5StrMethod:@"doDeleteCart" andData:jsonDic andAppId:APPID andAppKey:APPKEY];
-    NSDictionary *params=@{@"method":@"doDeleteCart",@"appid":APPID,@"data":jsonDic,@"sign":sign};
+    //去除空格和\n
+    NSString *resString =
+    [[jsonDic stringByReplacingOccurrencesOfString:@" " withString:@""]
+     stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    NSDictionary *params=@{@"method":@"doDeleteCart",@"appid":APPID,@"data":resString,@"sign":sign};
     [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"购物车数据请求成功--");
         block(responseObject);
@@ -259,7 +296,11 @@
     NSString *jsonDic=[RequestData getJsonStr:data];
     //获取加密的sign
     NSString *sign = [self getMD5StrMethod:@"delUserAllCart" andData:jsonDic andAppId:APPID andAppKey:APPKEY];
-    NSDictionary *params=@{@"method":@"delUserAllCart",@"appid":APPID,@"data":jsonDic,@"sign":sign};
+    //去除空格和\n
+    NSString *resString =
+    [[jsonDic stringByReplacingOccurrencesOfString:@" " withString:@""]
+     stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    NSDictionary *params=@{@"method":@"delUserAllCart",@"appid":APPID,@"data":resString,@"sign":sign};
     [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"购物车数据请求成功--");
         block(responseObject);
@@ -281,7 +322,11 @@
     NSString *jsonDic=[RequestData getJsonStr:data];
     //获取加密的sign
     NSString *sign = [self getMD5StrMethod:@"updateCartNumber" andData:jsonDic andAppId:APPID andAppKey:APPKEY];
-    NSDictionary *params=@{@"method":@"updateCartNumber",@"appid":APPID,@"data":jsonDic,@"sign":sign};
+    //去除空格和\n
+    NSString *resString =
+    [[jsonDic stringByReplacingOccurrencesOfString:@" " withString:@""]
+     stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    NSDictionary *params=@{@"method":@"updateCartNumber",@"appid":APPID,@"data":resString,@"sign":sign};
     [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"更新购物车数据请求成功--");
         block(responseObject);
@@ -298,7 +343,11 @@
     NSString *jsonDic=[RequestData getJsonStr:data];
     //获取加密的sign
     NSString *sign = [self getMD5StrMethod:@"getShopList" andData:jsonDic andAppId:APPID andAppKey:APPKEY];
-    NSDictionary *params=@{@"method":@"getShopList",@"appid":APPID,@"data":jsonDic,@"sign":sign};
+    //去除空格和\n
+    NSString *resString =
+    [[jsonDic stringByReplacingOccurrencesOfString:@" " withString:@""]
+     stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    NSDictionary *params=@{@"method":@"getShopList",@"appid":APPID,@"data":resString,@"sign":sign};
     [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"更新购物车数据请求成功--");
         block(responseObject);
@@ -321,7 +370,11 @@
     NSString *jsonDic=[RequestData getJsonStr:data];
     //获取加密的sign
     NSString *sign = [self getMD5StrMethod:@"doCartToOrder" andData:jsonDic andAppId:APPID andAppKey:APPKEY];
-    NSDictionary *params=@{@"method":@"doCartToOrder",@"appid":APPID,@"data":jsonDic,@"sign":sign};
+    //去除空格和\n
+    NSString *resString =
+    [[jsonDic stringByReplacingOccurrencesOfString:@" " withString:@""]
+     stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    NSDictionary *params=@{@"method":@"doCartToOrder",@"appid":APPID,@"data":resString,@"sign":sign};
     [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"提交数据请求成功--");
         block(responseObject);
@@ -343,7 +396,11 @@
     NSString *jsonDic=[RequestData getJsonStr:data];
     //获取加密的sign
     NSString *sign = [self getMD5StrMethod:@"getUserOrderListWithPage" andData:jsonDic andAppId:APPID andAppKey:APPKEY];
-    NSDictionary *params=@{@"method":@"getUserOrderListWithPage",@"appid":APPID,@"data":jsonDic,@"sign":sign};
+    //去除空格和\n
+    NSString *resString =
+    [[jsonDic stringByReplacingOccurrencesOfString:@" " withString:@""]
+     stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    NSDictionary *params=@{@"method":@"getUserOrderListWithPage",@"appid":APPID,@"data":resString,@"sign":sign};
     [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"订单数据请求成功--");
         block(responseObject);
@@ -365,7 +422,11 @@
     NSString *jsonDic=[RequestData getJsonStr:data];
     //获取加密的sign
     NSString *sign = [self getMD5StrMethod:@"getOrderInfoByOrderid" andData:jsonDic andAppId:APPID andAppKey:APPKEY];
-    NSDictionary *params=@{@"method":@"getOrderInfoByOrderid",@"appid":APPID,@"data":jsonDic,@"sign":sign};
+    //去除空格和\n
+    NSString *resString =
+    [[jsonDic stringByReplacingOccurrencesOfString:@" " withString:@""]
+     stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    NSDictionary *params=@{@"method":@"getOrderInfoByOrderid",@"appid":APPID,@"data":resString,@"sign":sign};
     [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"订单数据请求成功--");
         block(responseObject);
@@ -387,7 +448,11 @@
     NSString *jsonDic=[RequestData getJsonStr:data];
     //获取加密的sign
     NSString *sign = [self getMD5StrMethod:@"getOrderListByOrderid" andData:jsonDic andAppId:APPID andAppKey:APPKEY];
-    NSDictionary *params=@{@"method":@"getOrderListByOrderid",@"appid":APPID,@"data":jsonDic,@"sign":sign};
+    //去除空格和\n
+    NSString *resString =
+    [[jsonDic stringByReplacingOccurrencesOfString:@" " withString:@""]
+     stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    NSDictionary *params=@{@"method":@"getOrderListByOrderid",@"appid":APPID,@"data":resString,@"sign":sign};
     [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"订单数据请求成功--");
         block(responseObject);
@@ -411,7 +476,11 @@
     NSString *jsonDic=[RequestData getJsonStr:data];
     //获取加密的sign
     NSString *sign = [self getMD5StrMethod:@"getInfoSortList" andData:jsonDic andAppId:APPID andAppKey:APPKEY];
-    NSDictionary *params=@{@"method":@"getInfoSortList",@"appid":APPID,@"data":jsonDic,@"sign":sign};
+    //去除空格和\n
+    NSString *resString =
+    [[jsonDic stringByReplacingOccurrencesOfString:@" " withString:@""]
+     stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    NSDictionary *params=@{@"method":@"getInfoSortList",@"appid":APPID,@"data":resString,@"sign":sign};
     //3.发生请求
     [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"信息数据请求成功--");
@@ -435,7 +504,11 @@
     NSString *jsonDic=[RequestData getJsonStr:data];
     //获取加密的sign
     NSString *sign = [self getMD5StrMethod:@"getInfoListWithPage" andData:jsonDic andAppId:APPID andAppKey:APPKEY];
-    NSDictionary *params=@{@"method":@"getInfoListWithPage",@"appid":APPID,@"data":jsonDic,@"sign":sign};
+    //去除空格和\n
+    NSString *resString =
+    [[jsonDic stringByReplacingOccurrencesOfString:@" " withString:@""]
+     stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    NSDictionary *params=@{@"method":@"getInfoListWithPage",@"appid":APPID,@"data":resString,@"sign":sign};
     //3.发生请求
     [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"信息数据请求成功--");
@@ -460,7 +533,11 @@
     NSString *jsonDic=[RequestData getJsonStr:data];
     //获取加密的sign
     NSString *sign = [self getMD5StrMethod:@"getInfoById" andData:jsonDic andAppId:APPID andAppKey:APPKEY];
-    NSDictionary *params=@{@"method":@"getInfoById",@"appid":APPID,@"data":jsonDic,@"sign":sign};
+    //去除空格和\n
+    NSString *resString =
+    [[jsonDic stringByReplacingOccurrencesOfString:@" " withString:@""]
+     stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    NSDictionary *params=@{@"method":@"getInfoById",@"appid":APPID,@"data":resString,@"sign":sign};
     //3.发生请求
     
     [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -491,7 +568,11 @@
     NSString *jsonDic=[RequestData getJsonStr:data];
     //获取加密的sign
     NSString *sign = [self getMD5StrMethod:@"doAddUserFeedback" andData:jsonDic andAppId:APPID andAppKey:APPKEY];
-    NSDictionary *params=@{@"method":@"doAddUserFeedback",@"appid":APPID,@"data":jsonDic,@"sign":sign};
+    //去除空格和\n
+    NSString *resString =
+    [[jsonDic stringByReplacingOccurrencesOfString:@" " withString:@""]
+     stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    NSDictionary *params=@{@"method":@"doAddUserFeedback",@"appid":APPID,@"data":resString,@"sign":sign};
     //3.发生请求
     [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"信息数据请求成功--");
@@ -517,7 +598,11 @@
     NSString *jsonDic=[RequestData getJsonStr:data];
     //获取加密的sign
     NSString *sign = [self getMD5StrMethod:@"getAllSelfFoodWithPage" andData:jsonDic andAppId:APPID andAppKey:APPKEY];
-    NSDictionary *params=@{@"method":@"getAllSelfFoodWithPage",@"appid":APPID,@"data":jsonDic,@"sign":sign};
+    //去除空格和\n
+    NSString *resString =
+    [[jsonDic stringByReplacingOccurrencesOfString:@" " withString:@""]
+     stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    NSDictionary *params=@{@"method":@"getAllSelfFoodWithPage",@"appid":APPID,@"data":resString,@"sign":sign};
     //3.发生请求
     [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"自制菜数据请求成功--%@---",responseObject);
@@ -541,7 +626,11 @@
     NSString *jsonDic=[RequestData getJsonStr:data];
     //获取加密的sign
     NSString *sign = [self getMD5StrMethod:@"getUserSelfFoodWithPage" andData:jsonDic andAppId:APPID andAppKey:APPKEY];
-    NSDictionary *params=@{@"method":@"getUserSelfFoodWithPage",@"appid":APPID,@"data":jsonDic,@"sign":sign};
+    //去除空格和\n
+    NSString *resString =
+    [[jsonDic stringByReplacingOccurrencesOfString:@" " withString:@""]
+     stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    NSDictionary *params=@{@"method":@"getUserSelfFoodWithPage",@"appid":APPID,@"data":resString,@"sign":sign};
     //3.发生请求
     [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"自制菜数据请求成功--");
@@ -565,7 +654,11 @@
     NSString *jsonDic=[RequestData getJsonStr:data];
     //获取加密的sign
     NSString *sign = [self getMD5StrMethod:@"getSelfFoodById" andData:jsonDic andAppId:APPID andAppKey:APPKEY];
-    NSDictionary *params=@{@"method":@"getSelfFoodById",@"appid":APPID,@"data":jsonDic,@"sign":sign};
+    //去除空格和\n
+    NSString *resString =
+    [[jsonDic stringByReplacingOccurrencesOfString:@" " withString:@""]
+     stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    NSDictionary *params=@{@"method":@"getSelfFoodById",@"appid":APPID,@"data":resString,@"sign":sign};
     //3.发生请求
     [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"自制菜数据请求成功--");
@@ -590,7 +683,11 @@
     NSString *jsonDic=[RequestData getJsonStr:data];
     //获取加密的sign
     NSString *sign = [self getMD5StrMethod:@"getFoodCommentList" andData:jsonDic andAppId:APPID andAppKey:APPKEY];
-    NSDictionary *params=@{@"method":@"getFoodCommentList",@"appid":APPID,@"data":jsonDic,@"sign":sign};
+    //去除空格和\n
+    NSString *resString =
+    [[jsonDic stringByReplacingOccurrencesOfString:@" " withString:@""]
+     stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    NSDictionary *params=@{@"method":@"getFoodCommentList",@"appid":APPID,@"data":resString,@"sign":sign};
     //3.发生请求
     [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"评论数据请求成功--");
@@ -615,7 +712,11 @@
     NSString *jsonDic=[RequestData getJsonStr:data];
     //获取加密的sign
     NSString *sign = [self getMD5StrMethod:@"getUsercenterInfo" andData:jsonDic andAppId:APPID andAppKey:APPKEY];
-    NSDictionary *params=@{@"method":@"getUsercenterInfo",@"appid":APPID,@"data":jsonDic,@"sign":sign};
+    //去除空格和\n
+    NSString *resString =
+    [[jsonDic stringByReplacingOccurrencesOfString:@" " withString:@""]
+     stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    NSDictionary *params=@{@"method":@"getUsercenterInfo",@"appid":APPID,@"data":resString,@"sign":sign};
     //3.发生请求
     [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"积分数据请求成功--");
@@ -639,7 +740,11 @@
     NSString *jsonDic=[RequestData getJsonStr:data];
     //获取加密的sign
     NSString *sign = [self getMD5StrMethod:@"getUserAllScoreWithPage" andData:jsonDic andAppId:APPID andAppKey:APPKEY];
-    NSDictionary *params=@{@"method":@"getUserAllScoreWithPage",@"appid":APPID,@"data":jsonDic,@"sign":sign};
+    //去除空格和\n
+    NSString *resString =
+    [[jsonDic stringByReplacingOccurrencesOfString:@" " withString:@""]
+     stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    NSDictionary *params=@{@"method":@"getUserAllScoreWithPage",@"appid":APPID,@"data":resString,@"sign":sign};
     //3.发生请求
     [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"积分数据请求成功--");
@@ -665,7 +770,11 @@
     NSString *jsonDic=[RequestData getJsonStr:data];
     //获取加密的sign
     NSString *sign = [self getMD5StrMethod:@"chgpass" andData:jsonDic andAppId:APPID andAppKey:APPKEY];
-    NSDictionary *params=@{@"method":@"chgpass",@"appid":APPID,@"data":jsonDic,@"sign":sign};
+    //去除空格和\n
+    NSString *resString =
+    [[jsonDic stringByReplacingOccurrencesOfString:@" " withString:@""]
+     stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    NSDictionary *params=@{@"method":@"chgpass",@"appid":APPID,@"data":resString,@"sign":sign};
     //3.发生请求
     [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"修改密码请求成功--");
@@ -689,7 +798,11 @@
     NSString *jsonDic=[RequestData getJsonStr:data];
     //获取加密的sign
     NSString *sign = [self getMD5StrMethod:@"dobjzh" andData:jsonDic andAppId:APPID andAppKey:APPKEY];
-    NSDictionary *params=@{@"method":@"dobjzh",@"appid":APPID,@"data":jsonDic,@"sign":sign};
+    //去除空格和\n
+    NSString *resString =
+    [[jsonDic stringByReplacingOccurrencesOfString:@" " withString:@""]
+     stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    NSDictionary *params=@{@"method":@"dobjzh",@"appid":APPID,@"data":resString,@"sign":sign};
     //3.发生请求
     [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"修改帐号请求成功--");
@@ -714,7 +827,11 @@
     NSString *jsonDic=[RequestData getJsonStr:data];
     //获取加密的sign
     NSString *sign = [self getMD5StrMethod:@"getAllHotFoodList" andData:jsonDic andAppId:APPID andAppKey:APPKEY];
-    NSDictionary *params=@{@"method":@"getAllHotFoodList",@"appid":APPID,@"data":jsonDic,@"sign":sign};
+    //去除空格和\n
+    NSString *resString =
+    [[jsonDic stringByReplacingOccurrencesOfString:@" " withString:@""]
+     stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    NSDictionary *params=@{@"method":@"getAllHotFoodList",@"appid":APPID,@"data":resString,@"sign":sign};
     //3.发生请求
     [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"请求成功--");
@@ -740,7 +857,11 @@
     NSString *jsonDic=[RequestData getJsonStr:data];
     //获取加密的sign
     NSString *sign = [self getMD5StrMethod:@"delSelfFood" andData:jsonDic andAppId:APPID andAppKey:APPKEY];
-    NSDictionary *params=@{@"method":@"delSelfFood",@"appid":APPID,@"data":jsonDic,@"sign":sign};
+    //去除空格和\n
+    NSString *resString =
+    [[jsonDic stringByReplacingOccurrencesOfString:@" " withString:@""]
+     stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    NSDictionary *params=@{@"method":@"delSelfFood",@"appid":APPID,@"data":resString,@"sign":sign};
     //3.发生请求
     [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"请求成功--");
@@ -766,7 +887,11 @@
     NSString *jsonDic=[RequestData getJsonStr:data];
     //获取加密的sign
     NSString *sign = [self getMD5StrMethod:@"saveSelfFood" andData:jsonDic andAppId:APPID andAppKey:APPKEY];
-    NSDictionary *params=@{@"method":@"saveSelfFood",@"appid":APPID,@"data":jsonDic,@"sign":sign};
+    //去除空格和\n
+    NSString *resString =
+    [[jsonDic stringByReplacingOccurrencesOfString:@" " withString:@""]
+     stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    NSDictionary *params=@{@"method":@"saveSelfFood",@"appid":APPID,@"data":resString,@"sign":sign};
     //3.发生请求
     [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"请求成功--");
@@ -854,7 +979,11 @@
     NSString *jsonDic=[RequestData getJsonStr:data];
     //获取加密的sign
     NSString *sign = [self getMD5StrMethod:@"addFoodComment" andData:jsonDic andAppId:APPID andAppKey:APPKEY];
-    NSDictionary *params=@{@"method":@"addFoodComment",@"appid":APPID,@"data":jsonDic,@"sign":sign};
+    //去除空格和\n
+    NSString *resString =
+    [[jsonDic stringByReplacingOccurrencesOfString:@" " withString:@""]
+     stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    NSDictionary *params=@{@"method":@"addFoodComment",@"appid":APPID,@"data":resString,@"sign":sign};
     [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"添加请求成功--");
         block(responseObject);
@@ -876,7 +1005,11 @@
     NSString *jsonDic=[RequestData getJsonStr:data];
     //获取加密的sign
     NSString *sign = [self getMD5StrMethod:@"orderCancel" andData:jsonDic andAppId:APPID andAppKey:APPKEY];
-    NSDictionary *params=@{@"method":@"orderCancel",@"appid":APPID,@"data":jsonDic,@"sign":sign};
+    //去除空格和\n
+    NSString *resString =
+    [[jsonDic stringByReplacingOccurrencesOfString:@" " withString:@""]
+     stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    NSDictionary *params=@{@"method":@"orderCancel",@"appid":APPID,@"data":resString,@"sign":sign};
     [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"添加请求成功--");
         block(responseObject);
@@ -898,7 +1031,11 @@
     NSString *jsonDic=[RequestData getJsonStr:data];
     //获取加密的sign
     NSString *sign = [self getMD5StrMethod:@"getAllUserSendAddressByUserid" andData:jsonDic andAppId:APPID andAppKey:APPKEY];
-    NSDictionary *params=@{@"method":@"getAllUserSendAddressByUserid",@"appid":APPID,@"data":jsonDic,@"sign":sign};
+    //去除空格和\n
+    NSString *resString =
+    [[jsonDic stringByReplacingOccurrencesOfString:@" " withString:@""]
+     stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    NSDictionary *params=@{@"method":@"getAllUserSendAddressByUserid",@"appid":APPID,@"data":resString,@"sign":sign};
     [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"添加请求成功--");
         block(responseObject);
@@ -921,7 +1058,11 @@
     NSString *jsonDic=[RequestData getJsonStr:data];
     //获取加密的sign
     NSString *sign = [self getMD5StrMethod:@"getUserSendAddressById" andData:jsonDic andAppId:APPID andAppKey:APPKEY];
-    NSDictionary *params=@{@"method":@"getUserSendAddressById",@"appid":APPID,@"data":jsonDic,@"sign":sign};
+    //去除空格和\n
+    NSString *resString =
+    [[jsonDic stringByReplacingOccurrencesOfString:@" " withString:@""]
+     stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    NSDictionary *params=@{@"method":@"getUserSendAddressById",@"appid":APPID,@"data":resString,@"sign":sign};
     [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"添加请求成功--");
         block(responseObject);
@@ -943,7 +1084,11 @@
     NSString *jsonDic=[RequestData getJsonStr:data];
     //获取加密的sign
     NSString *sign = [self getMD5StrMethod:@"saveUserSendAddress" andData:jsonDic andAppId:APPID andAppKey:APPKEY];
-    NSDictionary *params=@{@"method":@"saveUserSendAddress",@"appid":APPID,@"data":jsonDic,@"sign":sign};
+    //去除空格和\n
+    NSString *resString =
+    [[jsonDic stringByReplacingOccurrencesOfString:@" " withString:@""]
+     stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    NSDictionary *params=@{@"method":@"saveUserSendAddress",@"appid":APPID,@"data":resString,@"sign":sign};
     [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"添加请求成功--");
         block(responseObject);
@@ -965,7 +1110,11 @@
     NSString *jsonDic=[RequestData getJsonStr:data];
     //获取加密的sign
     NSString *sign = [self getMD5StrMethod:@"delUserSendAddress" andData:jsonDic andAppId:APPID andAppKey:APPKEY];
-    NSDictionary *params=@{@"method":@"delUserSendAddress",@"appid":APPID,@"data":jsonDic,@"sign":sign};
+    //去除空格和\n
+    NSString *resString =
+    [[jsonDic stringByReplacingOccurrencesOfString:@" " withString:@""]
+     stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    NSDictionary *params=@{@"method":@"delUserSendAddress",@"appid":APPID,@"data":resString,@"sign":sign};
     [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"添加请求成功--");
         block(responseObject);
@@ -987,7 +1136,11 @@
     NSString *jsonDic=[RequestData getJsonStr:data];
     //获取加密的sign
     NSString *sign = [self getMD5StrMethod:@"updateIsdefault" andData:jsonDic andAppId:APPID andAppKey:APPKEY];
-    NSDictionary *params=@{@"method":@"updateIsdefault",@"appid":APPID,@"data":jsonDic,@"sign":sign};
+    //去除空格和\n
+    NSString *resString =
+    [[jsonDic stringByReplacingOccurrencesOfString:@" " withString:@""]
+     stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    NSDictionary *params=@{@"method":@"updateIsdefault",@"appid":APPID,@"data":resString,@"sign":sign};
     [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"添加请求成功--");
         block(responseObject);
@@ -1009,7 +1162,11 @@
     NSString *jsonDic=[RequestData getJsonStr:data];
     //获取加密的sign
     NSString *sign = [self getMD5StrMethod:@"getAllUserSendAddressByAddressPhoneName" andData:jsonDic andAppId:APPID andAppKey:APPKEY];
-    NSDictionary *params=@{@"method":@"getAllUserSendAddressByAddressPhoneName",@"appid":APPID,@"data":jsonDic,@"sign":sign};
+    //去除空格和\n
+    NSString *resString =
+    [[jsonDic stringByReplacingOccurrencesOfString:@" " withString:@""]
+     stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    NSDictionary *params=@{@"method":@"getAllUserSendAddressByAddressPhoneName",@"appid":APPID,@"data":resString,@"sign":sign};
     [mgr POST:URL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"添加请求成功--");
         block(responseObject);

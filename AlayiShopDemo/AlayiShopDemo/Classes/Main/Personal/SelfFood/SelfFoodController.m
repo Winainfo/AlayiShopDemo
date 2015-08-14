@@ -60,7 +60,7 @@
     cell.foodId=self.goodsArray[indexPath.row][@"id"];
     //照片
     //拼接图片网址
-    NSString *urlStr =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.goodsArray[indexPath.row][@"pic"]];
+    NSString *urlStr =[NSString stringWithFormat:@"http://www.alayicai.com/%@",self.goodsArray[indexPath.row][@"pic"]];
     //转换成url
     NSURL *imgUrl = [NSURL URLWithString:urlStr];
     [cell.foodImage sd_setImageWithURL:imgUrl];

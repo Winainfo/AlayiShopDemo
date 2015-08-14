@@ -214,7 +214,7 @@
             }
             for (int i=0; i<imageArray.count; i++) {
                 //拼接图片网址·
-                NSString *urlStr =[NSString stringWithFormat:@"http://www.alayicai.com%@",imageArray[i][@"foodpic"]];
+                NSString *urlStr =[NSString stringWithFormat:@"http://www.alayicai.com/%@",imageArray[i][@"foodpic"]];
                 //转换成url
                 NSURL *imgUrl = [NSURL URLWithString:urlStr];
                 UIImageView *imageV = [[UIImageView alloc]initWithFrame:CGRectMake((i*80)+5, 0, 70, 80)];
@@ -253,7 +253,7 @@
                 }
                 for (int i=0; i<imageArray.count; i++) {
                     //拼接图片网址·
-                    NSString *urlStr =[NSString stringWithFormat:@"http://www.alayicai.com%@",imageArray[i][@"foodpic"]];
+                    NSString *urlStr =[NSString stringWithFormat:@"http://www.alayicai.com/%@",imageArray[i][@"foodpic"]];
                     //转换成url
                     NSURL *imgUrl = [NSURL URLWithString:urlStr];
                     UIImageView *imageV = [[UIImageView alloc]initWithFrame:CGRectMake((i*80)+5, 0, 70, 80)];
@@ -326,7 +326,7 @@
             }
             for (int i=0; i<imageArray.count; i++) {
                 //拼接图片网址·
-                NSString *urlStr =[NSString stringWithFormat:@"http://www.alayicai.com%@",imageArray[i][@"foodpic"]];
+                NSString *urlStr =[NSString stringWithFormat:@"http://www.alayicai.com/%@",imageArray[i][@"foodpic"]];
                 //转换成url
                 NSURL *imgUrl = [NSURL URLWithString:urlStr];
                 UIImageView *imageV = [[UIImageView alloc]initWithFrame:CGRectMake((i*80)+5, 0, 70, 80)];

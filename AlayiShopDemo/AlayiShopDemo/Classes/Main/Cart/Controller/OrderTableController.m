@@ -54,7 +54,7 @@
             self.ViewB.hidden=YES;
             for (int i=0; i<self.goodArray.count; i++) {
                 //拼接图片网址·
-                NSString *urlStr =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.goodArray[i][@"foodpic"]];
+                NSString *urlStr =[NSString stringWithFormat:@"http://www.alayicai.com/%@",self.goodArray[i][@"foodpic"]];
                 //转换成url
                 NSURL *imgUrl = [NSURL URLWithString:urlStr];
                 UIImageView *imageV = [[UIImageView alloc]initWithFrame:CGRectMake((i*70)+10, 0,60, 60)];
@@ -67,7 +67,7 @@
             self.ViewA.hidden=YES;
             self.ViewB.hidden=NO;
             //拼接图片网址·
-            NSString *urlStr =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.goodArray[0][@"foodpic"]];
+            NSString *urlStr =[NSString stringWithFormat:@"http://www.alayicai.com/%@",self.goodArray[0][@"foodpic"]];
             //转换成url
             NSURL *imgUrl = [NSURL URLWithString:urlStr];
             [self.foodImageView sd_setImageWithURL:imgUrl];

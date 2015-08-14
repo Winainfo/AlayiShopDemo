@@ -277,7 +277,7 @@
     cell.goodsImagView.backgroundColor=UIColorFromRGB(0xF8FCF8);
     //照片
     //拼接图片网址·
-    NSString *urlStr =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.rightArray[indexPath.row][@"pic"]];
+    NSString *urlStr =[NSString stringWithFormat:@"http://www.alayicai.com/%@",self.rightArray[indexPath.row][@"pic"]];
     //转换成url
     NSURL *imgUrl = [NSURL URLWithString:urlStr];
     [cell.goodsImagView sd_setImageWithURL:imgUrl];

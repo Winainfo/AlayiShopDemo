@@ -67,7 +67,7 @@
            self.infoView.hidden=YES;
            for (int i=0; i<self.goodsArray.count; i++) {
                //拼接图片网址·
-               NSString *urlStr =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.goodsArray[i][@"foodpic"]];
+               NSString *urlStr =[NSString stringWithFormat:@"http://www.alayicai.com/%@",self.goodsArray[i][@"foodpic"]];
                //转换成url
                NSURL *imgUrl = [NSURL URLWithString:urlStr];
                UIImageView *imageV = [[UIImageView alloc]initWithFrame:CGRectMake((i*80)+5, 0, 70, 80)];
@@ -87,7 +87,7 @@
        self.paytypeLabel.text=self.statuText;
        self.taketypeLabel.text=self.taketype;
        //拼接图片网址·
-       NSString *urlStr =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.goodsArray[0][@"foodpic"]];
+       NSString *urlStr =[NSString stringWithFormat:@"http://www.alayicai.com/%@",self.goodsArray[0][@"foodpic"]];
        //转换成url
        NSURL *imgUrl = [NSURL URLWithString:urlStr];
        [self.faceImageView sd_setImageWithURL:imgUrl];

@@ -35,7 +35,7 @@
     NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:@"10",@"pageSize",@"1",@"currPage",@"",@"sortid",@"",@"name",type,@"type",nil];
     [RequestData getFoodListWithPage:params FinishCallbackBlock:^(NSDictionary *data)  {
         self.goodsArray=data[@"foodList"];
-        NSLog(@"%@",data);
+        NSLog(@"分类-----%@",data);
         //调用主线程
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.collectionView reloadData];
@@ -100,9 +100,10 @@
     cell.goodsID = (int)self.goodsArray[indexPath.row][@"id"];
     //照片
     //拼接图片网址
-    NSString *urlStr =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.goodsArray[indexPath.row][@"pic"]];
+    NSString *urlStr =[NSString stringWithFormat:@"http://www.alayicai.com/%@",self.goodsArray[indexPath.row][@"pic"]];
     //转换成url
     NSURL *imgUrl = [NSURL URLWithString:urlStr];
+    NSLog(@"---图片路径:%@",imgUrl);
     [cell.goodsImagView sd_setImageWithURL:imgUrl];
     return cell;
 }

@@ -102,7 +102,7 @@
     //为滚动视图添加图片
     for (int i=0; i<images.count; i++) {
         //拼接图片网址·
-        NSString *urlStr =[NSString stringWithFormat:@"http://www.alayicai.com%@",images[i][@"pic"]];
+        NSString *urlStr =[NSString stringWithFormat:@"http://www.alayicai.com/%@",images[i][@"pic"]];
         
         //获取图片的ID存入tag值数组
         [self.scrollImageTags addObject:images[i][@"id"]];
@@ -194,32 +194,32 @@
         self.freshSpecLabel3.text=self.freshArray[2][@"norm"];
         //照片
         //拼接图片网址·
-        NSString *urlStr =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.freshArray[0][@"pic"]];
+        NSString *urlStr =[NSString stringWithFormat:@"http://www.alayicai.com/%@",self.freshArray[0][@"pic"]];
         //转换成url
         NSURL *imgUrl1 = [NSURL URLWithString:urlStr];
         [self.freshGoodsImage1 sd_setImageWithURL:imgUrl1];
         
-        NSString *urlStr2 =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.freshArray[1][@"pic"]];
+        NSString *urlStr2 =[NSString stringWithFormat:@"http://www.alayicai.com/%@",self.freshArray[1][@"pic"]];
         //转换成url
         NSURL *imgUrl2 = [NSURL URLWithString:urlStr2];
         [self.freshGoodsImage2 sd_setImageWithURL:imgUrl2];
         
-        NSString *urlStr3 =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.freshArray[2][@"pic"]];
+        NSString *urlStr3 =[NSString stringWithFormat:@"http://www.alayicai.com/%@",self.freshArray[2][@"pic"]];
         //转换成url
         NSURL *imgUrl3 = [NSURL URLWithString:urlStr3];
         [self.freshGoodsImage3 sd_setImageWithURL:imgUrl3];
         
-        NSString *urlStr4 =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.freshArray[3][@"pic"]];
+        NSString *urlStr4 =[NSString stringWithFormat:@"http://www.alayicai.com/%@",self.freshArray[3][@"pic"]];
         //转换成url
         NSURL *imgUrl4 = [NSURL URLWithString:urlStr4];
         [self.freshGoodsImage4 sd_setImageWithURL:imgUrl4];
         
-        NSString *urlStr5 =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.freshArray[4][@"pic"]];
+        NSString *urlStr5 =[NSString stringWithFormat:@"http://www.alayicai.com/%@",self.freshArray[4][@"pic"]];
         //转换成url
         NSURL *imgUrl5 = [NSURL URLWithString:urlStr5];
         [self.freshGoodsImage5 sd_setImageWithURL:imgUrl5];
         
-        NSString *urlStr6 =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.freshArray[5][@"pic"]];
+        NSString *urlStr6 =[NSString stringWithFormat:@"http://www.alayicai.com/%@",self.freshArray[5][@"pic"]];
         //转换成url
         NSURL *imgUrl6 = [NSURL URLWithString:urlStr6];
         [self.freshGoodsImage6 sd_setImageWithURL:imgUrl6];
@@ -293,32 +293,32 @@
         self.recomSpecLabel3.text=self.recomArray[2][@"norm"];
         //照片
         //拼接图片网址·
-        NSString *urlStr =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.recomArray[0][@"pic"]];
+        NSString *urlStr =[NSString stringWithFormat:@"http://www.alayicai.com/%@",self.recomArray[0][@"pic"]];
         //转换成url
         NSURL *imgUrl1 = [NSURL URLWithString:urlStr];
         [self.recomGoodsImage1 sd_setImageWithURL:imgUrl1];
         
-        NSString *urlStr2 =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.recomArray[1][@"pic"]];
+        NSString *urlStr2 =[NSString stringWithFormat:@"http://www.alayicai.com/%@",self.recomArray[1][@"pic"]];
         //转换成url
         NSURL *imgUrl2 = [NSURL URLWithString:urlStr2];
         [self.recomGoodsImage2 sd_setImageWithURL:imgUrl2];
         
-        NSString *urlStr3 =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.recomArray[2][@"pic"]];
+        NSString *urlStr3 =[NSString stringWithFormat:@"http://www.alayicai.com/%@",self.recomArray[2][@"pic"]];
         //转换成url
         NSURL *imgUrl3 = [NSURL URLWithString:urlStr3];
         [self.recomGoodsImage3 sd_setImageWithURL:imgUrl3];
         
-        NSString *urlStr4 =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.recomArray[3][@"pic"]];
+        NSString *urlStr4 =[NSString stringWithFormat:@"http://www.alayicai.com/%@",self.recomArray[3][@"pic"]];
         //转换成url
         NSURL *imgUrl4 = [NSURL URLWithString:urlStr4];
         [self.recomGoodsImage4 sd_setImageWithURL:imgUrl4];
         
-        NSString *urlStr5 =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.recomArray[4][@"pic"]];
+        NSString *urlStr5 =[NSString stringWithFormat:@"http://www.alayicai.com/%@",self.recomArray[4][@"pic"]];
         //转换成url
         NSURL *imgUrl5 = [NSURL URLWithString:urlStr5];
         [self.recomGoodsImage5 sd_setImageWithURL:imgUrl5];
         
-        NSString *urlStr6 =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.recomArray[5][@"pic"]];
+        NSString *urlStr6 =[NSString stringWithFormat:@"http://www.alayicai.com/%@",self.recomArray[5][@"pic"]];
         //转换成url
         NSURL *imgUrl6 = [NSURL URLWithString:urlStr6];
         [self.recomGoodsImage6 sd_setImageWithURL:imgUrl6];
@@ -384,32 +384,32 @@
             self.memberNameLabel6.text=self.memberArray[5][@"title"];
             //照片
             //拼接图片网址·
-            NSString *urlStr =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.memberArray[0][@"pic"]];
+            NSString *urlStr =[NSString stringWithFormat:@"http://www.alayicai.com/%@",self.memberArray[0][@"pic"]];
             //转换成url
             NSURL *imgUrl1 = [NSURL URLWithString:urlStr];
             [self.memberGoodsImage1 sd_setImageWithURL:imgUrl1];
             
-            NSString *urlStr2 =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.memberArray[1][@"pic"]];
+            NSString *urlStr2 =[NSString stringWithFormat:@"http://www.alayicai.com/%@",self.memberArray[1][@"pic"]];
             //转换成url
             NSURL *imgUrl2 = [NSURL URLWithString:urlStr2];
             [self.memberGoodsImage2 sd_setImageWithURL:imgUrl2];
             
-            NSString *urlStr3 =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.memberArray[2][@"pic"]];
+            NSString *urlStr3 =[NSString stringWithFormat:@"http://www.alayicai.com/%@",self.memberArray[2][@"pic"]];
             //转换成url
             NSURL *imgUrl3 = [NSURL URLWithString:urlStr3];
             [self.memberGoodsImage3 sd_setImageWithURL:imgUrl3];
             
-            NSString *urlStr4 =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.memberArray[3][@"pic"]];
+            NSString *urlStr4 =[NSString stringWithFormat:@"http://www.alayicai.com/%@",self.memberArray[3][@"pic"]];
             //转换成url
             NSURL *imgUrl4 = [NSURL URLWithString:urlStr4];
             [self.memberGoodsImage4 sd_setImageWithURL:imgUrl4];
             
-            NSString *urlStr5 =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.memberArray[4][@"pic"]];
+            NSString *urlStr5 =[NSString stringWithFormat:@"http://www.alayicai.com/%@",self.memberArray[4][@"pic"]];
             //转换成url
             NSURL *imgUrl5 = [NSURL URLWithString:urlStr5];
             [self.memberGoodsImage5 sd_setImageWithURL:imgUrl5];
             
-            NSString *urlStr6 =[NSString stringWithFormat:@"http://www.alayicai.com%@",self.memberArray[5][@"pic"]];
+            NSString *urlStr6 =[NSString stringWithFormat:@"http://www.alayicai.com/%@",self.memberArray[5][@"pic"]];
             //转换成url
             NSURL *imgUrl6 = [NSURL URLWithString:urlStr6];
             [self.memberGoodsImage6 sd_setImageWithURL:imgUrl6];
@@ -452,7 +452,7 @@
     [RequestData getFoodById:prama FinishCallbackBlock:^(NSDictionary *data) {
         NSLog(@"=======详情信息：%@",data);
         //跳转不同的故事版
-        UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"yjh" bundle:nil];
+        UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
         DetailViewController *detailV = [storyboard instantiateViewControllerWithIdentifier:@"详情View"];
         detailV.detailDic = data;
         NSLog(@"=======详情信息：%@",detailV.detailDic);
@@ -470,7 +470,7 @@
     [RequestData getFoodById:prama FinishCallbackBlock:^(NSDictionary *data) {
         NSLog(@"=======详情信息：%@",data);
         //跳转不同的故事版
-        UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"yjh" bundle:nil];
+        UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
         DetailViewController *detailV = [storyboard instantiateViewControllerWithIdentifier:@"详情View"];
         detailV.detailDic = data;
         NSLog(@"=======详情信息：%@",detailV.detailDic);
@@ -487,7 +487,7 @@
     [RequestData getFoodById:prama FinishCallbackBlock:^(NSDictionary *data) {
         NSLog(@"=======详情信息：%@",data);
         //跳转不同的故事版
-        UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"yjh" bundle:nil];
+        UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
         DetailViewController *detailV = [storyboard instantiateViewControllerWithIdentifier:@"详情View"];
         detailV.detailDic = data;
         NSLog(@"=======详情信息：%@",detailV.detailDic);
@@ -504,7 +504,7 @@
     [RequestData getFoodById:prama FinishCallbackBlock:^(NSDictionary *data) {
         NSLog(@"=======详情信息：%@",data);
         //跳转不同的故事版
-        UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"yjh" bundle:nil];
+        UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
         DetailViewController *detailV = [storyboard instantiateViewControllerWithIdentifier:@"详情View"];
         detailV.detailDic = data;
         NSLog(@"=======详情信息：%@",detailV.detailDic);
@@ -521,7 +521,7 @@
     [RequestData getFoodById:prama FinishCallbackBlock:^(NSDictionary *data) {
         NSLog(@"=======详情信息：%@",data);
         //跳转不同的故事版
-        UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"yjh" bundle:nil];
+        UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
         DetailViewController *detailV = [storyboard instantiateViewControllerWithIdentifier:@"详情View"];
         detailV.detailDic = data;
         NSLog(@"=======详情信息：%@",detailV.detailDic);
@@ -538,7 +538,7 @@
     [RequestData getFoodById:prama FinishCallbackBlock:^(NSDictionary *data) {
         NSLog(@"=======详情信息：%@",data);
         //跳转不同的故事版
-        UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"yjh" bundle:nil];
+        UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
         DetailViewController *detailV = [storyboard instantiateViewControllerWithIdentifier:@"详情View"];
         detailV.detailDic = data;
         NSLog(@"=======详情信息：%@",detailV.detailDic);
@@ -558,7 +558,7 @@
     [RequestData getFoodById:prama FinishCallbackBlock:^(NSDictionary *data) {
         NSLog(@"=======详情信息：%@",data);
         //跳转不同的故事版
-        UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"yjh" bundle:nil];
+        UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
         DetailViewController *detailV = [storyboard instantiateViewControllerWithIdentifier:@"详情View"];
         detailV.detailDic = data;
         NSLog(@"=======详情信息：%@",detailV.detailDic);
@@ -575,7 +575,7 @@
     [RequestData getFoodById:prama FinishCallbackBlock:^(NSDictionary *data) {
         NSLog(@"=======详情信息：%@",data);
         //跳转不同的故事版
-        UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"yjh" bundle:nil];
+        UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
         DetailViewController *detailV = [storyboard instantiateViewControllerWithIdentifier:@"详情View"];
         detailV.detailDic = data;
         NSLog(@"=======详情信息：%@",detailV.detailDic);
@@ -592,7 +592,7 @@
     [RequestData getFoodById:prama FinishCallbackBlock:^(NSDictionary *data) {
         NSLog(@"=======详情信息：%@",data);
         //跳转不同的故事版
-        UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"yjh" bundle:nil];
+        UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
         DetailViewController *detailV = [storyboard instantiateViewControllerWithIdentifier:@"详情View"];
         detailV.detailDic = data;
         NSLog(@"=======详情信息：%@",detailV.detailDic);
@@ -609,7 +609,7 @@
     [RequestData getFoodById:prama FinishCallbackBlock:^(NSDictionary *data) {
         NSLog(@"=======详情信息：%@",data);
         //跳转不同的故事版
-        UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"yjh" bundle:nil];
+        UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
         DetailViewController *detailV = [storyboard instantiateViewControllerWithIdentifier:@"详情View"];
         detailV.detailDic = data;
         NSLog(@"=======详情信息：%@",detailV.detailDic);
@@ -626,7 +626,7 @@
     [RequestData getFoodById:prama FinishCallbackBlock:^(NSDictionary *data) {
         NSLog(@"=======详情信息：%@",data);
         //跳转不同的故事版
-        UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"yjh" bundle:nil];
+        UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
         DetailViewController *detailV = [storyboard instantiateViewControllerWithIdentifier:@"详情View"];
         detailV.detailDic = data;
         NSLog(@"=======详情信息：%@",detailV.detailDic);
@@ -643,7 +643,7 @@
     [RequestData getFoodById:prama FinishCallbackBlock:^(NSDictionary *data) {
         NSLog(@"=======详情信息：%@",data);
         //跳转不同的故事版
-        UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"yjh" bundle:nil];
+        UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
         DetailViewController *detailV = [storyboard instantiateViewControllerWithIdentifier:@"详情View"];
         detailV.detailDic = data;
         NSLog(@"=======详情信息：%@",detailV.detailDic);
@@ -667,7 +667,7 @@
             [RequestData getFoodById:prama FinishCallbackBlock:^(NSDictionary *data) {
                 NSLog(@"=======详情信息：%@",data);
                 //跳转不同的故事版
-                UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"yjh" bundle:nil];
+                UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
                 DetailViewController *detailV = [storyboard instantiateViewControllerWithIdentifier:@"详情View"];
                 detailV.detailDic = data;
                 NSLog(@"=======详情信息：%@",detailV.detailDic);
@@ -682,7 +682,7 @@
             [RequestData getFoodById:prama FinishCallbackBlock:^(NSDictionary *data) {
                 NSLog(@"=======详情信息：%@",data);
                 //跳转不同的故事版
-                UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"yjh" bundle:nil];
+                UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
                 DetailViewController *detailV = [storyboard instantiateViewControllerWithIdentifier:@"详情View"];
                 detailV.detailDic = data;
                 NSLog(@"=======详情信息：%@",detailV.detailDic);
@@ -697,7 +697,7 @@
             [RequestData getFoodById:prama FinishCallbackBlock:^(NSDictionary *data) {
                 NSLog(@"=======详情信息：%@",data);
                 //跳转不同的故事版
-                UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"yjh" bundle:nil];
+                UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
                 DetailViewController *detailV = [storyboard instantiateViewControllerWithIdentifier:@"详情View"];
                 detailV.detailDic = data;
                 NSLog(@"=======详情信息：%@",detailV.detailDic);
@@ -712,7 +712,7 @@
             [RequestData getFoodById:prama FinishCallbackBlock:^(NSDictionary *data) {
                 NSLog(@"=======详情信息：%@",data);
                 //跳转不同的故事版
-                UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"yjh" bundle:nil];
+                UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
                 DetailViewController *detailV = [storyboard instantiateViewControllerWithIdentifier:@"详情View"];
                 detailV.detailDic = data;
                 NSLog(@"=======详情信息：%@",detailV.detailDic);
@@ -727,7 +727,7 @@
             [RequestData getFoodById:prama FinishCallbackBlock:^(NSDictionary *data) {
                 NSLog(@"=======详情信息：%@",data);
                 //跳转不同的故事版
-                UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"yjh" bundle:nil];
+                UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
                 DetailViewController *detailV = [storyboard instantiateViewControllerWithIdentifier:@"详情View"];
                 detailV.detailDic = data;
                 NSLog(@"=======详情信息：%@",detailV.detailDic);

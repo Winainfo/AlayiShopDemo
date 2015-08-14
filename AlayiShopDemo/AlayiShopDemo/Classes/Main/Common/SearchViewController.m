@@ -120,7 +120,7 @@
     HistoryClass *history = self.hisArr[(self.hisArr.count-1-indexPath.row)];
     NSString *hitoryName =[history.Hname stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     //通过历史搜索进行查找商品
-    NSDictionary *param=[NSDictionary dictionaryWithObjectsAndKeys:@"10",@"pageSize",@"1",@"currPage",@"",@"sortid",hitoryName,@"name",@"",@"type", nil];
+    NSDictionary *param=[NSDictionary dictionaryWithObjectsAndKeys:@"10",@"pageSize",@"1",@"currPage",@"",@"sortid",history.Hname,@"name",@"",@"type", nil];
     [RequestData getFoodListWithPage:param FinishCallbackBlock:^(NSDictionary * data) {
         
         NSArray *foodListArr = data[@"foodList"];

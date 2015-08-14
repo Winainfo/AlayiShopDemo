@@ -82,7 +82,7 @@
 {
     //照片
     //拼接图片网址·
-    NSString *urlStr =[NSString stringWithFormat:@"http://www.alayicai.com%@",goodsModel.imageName];
+    NSString *urlStr =[NSString stringWithFormat:@"http://www.alayicai.com/%@",goodsModel.imageName];
     //转换成url
     NSURL *imgUrl = [NSURL URLWithString:urlStr];
     [self.goodsImageView sd_setImageWithURL:imgUrl];

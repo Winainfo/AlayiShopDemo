@@ -34,7 +34,7 @@
          self.describeText.text=data[@"selfFood"][@"fmtContent"];
          //照片
          //拼接图片网址
-         NSString *urlStr =[NSString stringWithFormat:@"http://www.alayicai.com%@",data[@"selfFood"][@"pic"]];
+         NSString *urlStr =[NSString stringWithFormat:@"http://www.alayicai.com/%@",data[@"selfFood"][@"pic"]];
          //转换成url
          NSURL *imgUrl = [NSURL URLWithString:urlStr];
          [self.goodsImageView sd_setImageWithURL:imgUrl];
