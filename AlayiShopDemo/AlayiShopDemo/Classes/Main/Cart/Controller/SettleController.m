@@ -38,6 +38,9 @@
     }else if([orderModel.taketype isEqualToString:@"2"]) {
         order.sendLabel.text=@"送货上门";
     }
+    order.addressLabel.text=orderModel.sendaddress;
+     NSDictionary *params=[NSDictionary dictionaryWithObjectsAndKeys:self.addressId,@"id",nil];
+//    [RequestData getUserSendAddressById: FinishCallbackBlock:<#^(NSDictionary *)block#>]
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -79,24 +82,32 @@
  */
 - (IBAction)submitClick:(UIButton *)sender {
     NSLog(@"-----");
-//    AccountModel *account=[AccountTool account];
-//    OrderModel *orderModel=[OrderTool order];
+    AccountModel *account=[AccountTool account];
+    OrderModel *orderModel=[OrderTool order];
 //    NSString *address=[order.addressLabel.text stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 //    NSString *phone=[order.phoneLabel.text stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 //    NSString *name=[order.nameLabel.text stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-//    NSDictionary *dic = @{@"paytype":orderModel.paytype,@"taketype":orderModel.taketype,@"sendaddress":address,@"telephone":phone,@"receivename":name,@"gettimestr":@"2015-07-29%2011:23:00",@"remark":@"123"};
+//    NSDictionary *dic = @{@"paytype":orderModel.paytype,@"taketype":orderModel.taketype,@"sendaddress":order.addressLabel.text,@"telephone":order.phoneLabel.text,@"receivename":order.nameLabel.text,@"gettimestr":@"2015-07-29%2011:23:00"};
+   
+    NSDictionary *dic=[NSDictionary dictionaryWithObjectsAndKeys:orderModel.paytype,@"paytype",orderModel.taketype,@"taketype",orderModel.sendaddress,@"sendaddress",order.phoneLabel.text,@"telephone",order.nameLabel.text,@"receivename",@"2015-07-29%2011:23:00",@"gettimestr",nil];
+     NSString *jsonDic=[RequestData getJsonStr:dic];
+    NSLog(@"---%@---",orderModel.sendaddress);
+    NSDictionary *param=[NSDictionary dictionaryWithObjectsAndKeys:account.userId,@"userid",account.name,@"username",dic,@"order", nil];
 //    //需要上传的参数
+//    NSDictionary *param=@{@"userid":account.userId,@"username":account.name,@"order":dic};
+//    NSLog(@"---%@---",orderModel.paytype);
+//     NSDictionary *dic = @{@"paytype":@"2",@"taketype":@"2",@"sendaddress":order.addressLabel.text,@"telephone":order.phoneLabel.text,@"receivename":order.nameLabel.text,@"gettimestr":@"2015-07-29%2011:23:00"};
 //    NSDictionary *dicy=@{@"userid":account.userId,@"username":account.name,@"order":dic};
-//    [RequestData doCartToOrder:dicy FinishCallbackBlock:^(NSDictionary *data) {
-//        NSLog(@"---成功--%@",data);
-////        if ([data[@"code"]isEqualToString:@"0"]) {
-////            //设置故事板为第一启动
-////            UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
-////            OrderController *orderView=[storyboard instantiateViewControllerWithIdentifier:@"我的订单View"];
-////            orderView.type=@"0";
-////            [self.navigationController pushViewController:orderView animated:YES];
-////        }
-//    }];
+    [RequestData doCartToOrder:param FinishCallbackBlock:^(NSDictionary *data) {
+        NSLog(@"---成功--%@",data[@"content"]);
+//        if ([data[@"code"]isEqualToString:@"0"]) {
+//            //设置故事板为第一启动
+//            UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//            OrderController *orderView=[storyboard instantiateViewControllerWithIdentifier:@"我的订单View"];
+//            orderView.type=@"0";
+//            [self.navigationController pushViewController:orderView animated:YES];
+//        }
+    }];
 }
 
 @end

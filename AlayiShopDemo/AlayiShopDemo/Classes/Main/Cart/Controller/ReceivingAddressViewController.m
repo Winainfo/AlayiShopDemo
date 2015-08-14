@@ -101,16 +101,16 @@
  */
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"点击点击");
-    OrderModel *order=[OrderModel new];
-    order.telephone=self.addressArray[indexPath.row][@"telephone"];
-    order.sendaddress=self.addressArray[indexPath.row][@"sendaddress"];
-    order.receivename=self.addressArray[indexPath.row][@"receivename"];
-    [OrderTool saveOrder:order];
+//    OrderModel *order=[OrderModel new];
+//    order.telephone=self.addressArray[indexPath.row][@"telephone"];
+//    order.sendaddress=self.addressArray[indexPath.row][@"sendaddress"];
+//    order.receivename=self.addressArray[indexPath.row][@"receivename"];
+//    [OrderTool saveOrder:order];
     //指定跳转
     for(UIViewController *controller in self.navigationController.viewControllers) {
         if([controller isKindOfClass:[SettleController class]]){
             SettleController *settle=(SettleController *)controller;
+            settle.addressId=self.addressArray[indexPath.row][@"id"];
             [self.navigationController popToViewController:settle animated:YES];
         }
     }
@@ -135,7 +135,7 @@
 
 - (IBAction)addClick:(UIButton *)sender {
     //设置故事板为第一启动
-    UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"wjl" bundle:nil];
+    UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
     AddressTableController *address=[storyboard instantiateViewControllerWithIdentifier:@"添加地址View"];
     address.flag=@"0";
     [self.navigationController pushViewController:address animated:YES];

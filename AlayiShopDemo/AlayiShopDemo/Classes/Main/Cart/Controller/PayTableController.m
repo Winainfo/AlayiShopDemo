@@ -110,8 +110,13 @@
     order.paytype=self.paytype;
     order.taketype=self.taketype;
     [OrderTool saveOrder:order];
-    [self.navigationController popViewControllerAnimated:YES];
-   
+    //指定跳转
+    for(UIViewController *controller in self.navigationController.viewControllers) {
+        if([controller isKindOfClass:[SettleController class]]){
+            SettleController *settle=(SettleController *)controller;
+            [self.navigationController popToViewController:settle animated:YES];
+        }
+    }
 }
 
 

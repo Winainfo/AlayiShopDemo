@@ -10,7 +10,6 @@
 		0F1C80D31B43CD8400FB72E3 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1C80D21B43CD8400FB72E3 /* UIView+Extension.m */; };
 		0F1C817C1B441F6A00FB72E3 /* HWSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1C81791B441F6A00FB72E3 /* HWSearchBar.m */; };
 		0F1C817D1B441F6A00FB72E3 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1C817B1B441F6A00FB72E3 /* UIView+Extension.m */; };
-		0F3A02A11B4E5A2600A0782E /* yjh.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F3A02A01B4E5A2600A0782E /* yjh.storyboard */; };
 		0F6872D71B43BF770001D528 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6872D61B43BF770001D528 /* SearchViewController.m */; };
 		0F6A5F3B1B5263C400B4E1D7 /* HistoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6A5F391B5263C400B4E1D7 /* HistoryTableViewCell.m */; };
 		0F6A5F3C1B5263C400B4E1D7 /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F6A5F3A1B5263C400B4E1D7 /* HistoryTableViewCell.xib */; };
@@ -19,7 +18,6 @@
 		0F6A5F471B5297DD00B4E1D7 /* HistoryClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6A5F461B5297DD00B4E1D7 /* HistoryClass.m */; };
 		0F6A5F4B1B52A4D800B4E1D7 /* HITORY.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 0F6A5F4A1B52A4D800B4E1D7 /* HITORY.sqlite */; };
 		0F70D5141B4959AE008962B2 /* SelfFoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F70D5131B4959AE008962B2 /* SelfFoodViewController.m */; };
-		0F80D93A1B42B15700C46D72 /* wwc.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F80D9391B42B15700C46D72 /* wwc.storyboard */; };
 		0F98CBEC1B4BC64C00151A26 /* EvaluateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F98CBEB1B4BC64C00151A26 /* EvaluateViewController.m */; };
 		0F98CBF21B4C064600151A26 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F98CBF11B4C064600151A26 /* RegisterViewController.m */; };
 		0FA5A6A21B47AD7200ED2A10 /* CommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA5A6A01B47AD7200ED2A10 /* CommentTableViewCell.m */; };
@@ -60,7 +58,6 @@
 		33681CC61B58FBB500037F9B /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 33681CC41B58FBB500037F9B /* TencentOpenApi_IOS_Bundle.bundle */; };
 		33681CC71B58FBB500037F9B /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33681CC51B58FBB500037F9B /* TencentOpenAPI.framework */; };
 		33681CC91B58FEA000037F9B /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 33681CC81B58FEA000037F9B /* libc++.dylib */; };
-		3383227F1B427AA5004CE9C2 /* wjl.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3383227E1B427AA5004CE9C2 /* wjl.storyboard */; };
 		338322821B427BFC004CE9C2 /* RequestData.m in Sources */ = {isa = PBXBuildFile; fileRef = 338322811B427BFC004CE9C2 /* RequestData.m */; };
 		33887C4E1B4BD1C700E2F57D /* OrderInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 33887C4C1B4BD1C700E2F57D /* OrderInfoCell.m */; };
 		33887C4F1B4BD1C700E2F57D /* OrderInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33887C4D1B4BD1C700E2F57D /* OrderInfoCell.xib */; };
@@ -177,7 +174,6 @@
 		0F1C81791B441F6A00FB72E3 /* HWSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWSearchBar.m; sourceTree = "<group>"; };
 		0F1C817A1B441F6A00FB72E3 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		0F1C817B1B441F6A00FB72E3 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
-		0F3A02A01B4E5A2600A0782E /* yjh.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = yjh.storyboard; sourceTree = "<group>"; };
 		0F6872D51B43BF770001D528 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		0F6872D61B43BF770001D528 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		0F6A5F381B5263C400B4E1D7 /* HistoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryTableViewCell.h; sourceTree = "<group>"; };
@@ -191,7 +187,6 @@
 		0F6A5F4A1B52A4D800B4E1D7 /* HITORY.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = HITORY.sqlite; sourceTree = "<group>"; };
 		0F70D5121B4959AE008962B2 /* SelfFoodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelfFoodViewController.h; sourceTree = "<group>"; };
 		0F70D5131B4959AE008962B2 /* SelfFoodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelfFoodViewController.m; sourceTree = "<group>"; };
-		0F80D9391B42B15700C46D72 /* wwc.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = wwc.storyboard; sourceTree = "<group>"; };
 		0F98CBEA1B4BC64C00151A26 /* EvaluateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvaluateViewController.h; sourceTree = "<group>"; };
 		0F98CBEB1B4BC64C00151A26 /* EvaluateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EvaluateViewController.m; sourceTree = "<group>"; };
 		0F98CBF01B4C064600151A26 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
@@ -265,7 +260,6 @@
 		33681CC41B58FBB500037F9B /* TencentOpenApi_IOS_Bundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TencentOpenApi_IOS_Bundle.bundle; sourceTree = "<group>"; };
 		33681CC51B58FBB500037F9B /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
 		33681CC81B58FEA000037F9B /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
-		3383227E1B427AA5004CE9C2 /* wjl.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = wjl.storyboard; sourceTree = "<group>"; };
 		338322801B427BFC004CE9C2 /* RequestData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestData.h; sourceTree = "<group>"; };
 		338322811B427BFC004CE9C2 /* RequestData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestData.m; sourceTree = "<group>"; };
 		33887C4B1B4BD1C700E2F57D /* OrderInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderInfoCell.h; sourceTree = "<group>"; };
@@ -935,9 +929,6 @@
 				33D1D9021B426756009ADF41 /* Main.storyboard */,
 				33D1D8FE1B42671A009ADF41 /* AppDelegate.h */,
 				33D1D8FF1B42671A009ADF41 /* AppDelegate.m */,
-				0F3A02A01B4E5A2600A0782E /* yjh.storyboard */,
-				3383227E1B427AA5004CE9C2 /* wjl.storyboard */,
-				0F80D9391B42B15700C46D72 /* wwc.storyboard */,
 			);
 			name = "View(视图)";
 			path = View;
@@ -1335,13 +1326,11 @@
 				33681CC61B58FBB500037F9B /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				339333B01B55F79A00C7BE03 /* SelfFoodCollectionViewCell.xib in Resources */,
 				33D1D9041B426756009ADF41 /* Main.storyboard in Resources */,
-				0F3A02A11B4E5A2600A0782E /* yjh.storyboard in Resources */,
 				33D1D9911B42688D009ADF41 /* MBProgressHUD.bundle in Resources */,
 				33681CBA1B58E8E400037F9B /* UMSLoginViewController.xib in Resources */,
 				0F6A5F4B1B52A4D800B4E1D7 /* HITORY.sqlite in Resources */,
 				33681CB81B58E8E400037F9B /* UMShareEditViewController.xib in Resources */,
 				33681CB91B58E8E400037F9B /* UMShareEditViewControlleriPad.xib in Resources */,
-				3383227F1B427AA5004CE9C2 /* wjl.storyboard in Resources */,
 				33681CB51B58E8E400037F9B /* UMSCommentDetailController.xib in Resources */,
 				33681CBD1B58E8E400037F9B /* UMSocialSDKResourcesNew.bundle in Resources */,
 				33681CBC1B58E8E400037F9B /* UMSShareListController.xib in Resources */,
@@ -1354,7 +1343,6 @@
 				33681CC11B58E8E400037F9B /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				33FA4F401B536CC70073B226 /* MultilevelTableViewCell.xib in Resources */,
 				338CB6F61B581E3500501296 /* AddressCell.xib in Resources */,
-				0F80D93A1B42B15700C46D72 /* wwc.storyboard in Resources */,
 				33887C4F1B4BD1C700E2F57D /* OrderInfoCell.xib in Resources */,
 				331C9CDC1B48D42D00EE773F /* ScoreCell.xib in Resources */,
 				33D1D8D81B426689009ADF41 /* Images.xcassets in Resources */,

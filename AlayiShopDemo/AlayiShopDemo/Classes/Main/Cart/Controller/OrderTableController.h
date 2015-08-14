@@ -39,4 +39,5 @@
 @property (weak, nonatomic) IBOutlet UIView *ViewB;
 /**总金额*/
 @property(retain,nonatomic)NSString *sumPrice;
+
 @end

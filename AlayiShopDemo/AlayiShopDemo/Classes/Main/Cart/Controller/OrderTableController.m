@@ -19,15 +19,19 @@
 @end
 
 @implementation OrderTableController
--(void)viewWillAppear:(BOOL)animated
-{
+//-(void)viewWillAppear:(BOOL)animated
+//{
+//    OrderModel *order=[OrderTool order];
+//    self.nameLabel.text=order.receivename;
+//    self.phoneLabel.text=order.telephone;
+//    self.addressLabel.text=order.sendaddress;
+//}
+- (void)viewDidLoad {
+    [super viewDidLoad];
     OrderModel *order=[OrderTool order];
     self.nameLabel.text=order.receivename;
     self.phoneLabel.text=order.telephone;
     self.addressLabel.text=order.sendaddress;
-}
-- (void)viewDidLoad {
-    [super viewDidLoad];
     UIColor *bgColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"address_info_bg"]];
     [self.AddressCell setBackgroundColor:bgColor];
     [self showData];

@@ -19,4 +19,5 @@
 @property(retain,nonatomic) NSString *paytype;
 /**取货方式*/
 @property(retain,nonatomic) NSString *taketype;
+@property(retain,nonatomic)NSString *addressId;
 @end
